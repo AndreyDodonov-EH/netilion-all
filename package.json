@@ -1,0 +1,29 @@
+{
+  "name": "netilion-all",
+  "version": "01.00.00",
+  "description": "https://api.staging-env.iiot.endress.com/doc/v1/",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.7.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3"
+  },
+  "author": "Andrey.Dodonov@endress.com",
+  "homepage": "https://github.com/AndreyDodonov-EH/netilion-all",
+  "bugs": "https://github.com/AndreyDodonov-EH/netilion-all/issues",
+  "repository": {
+    "url": "https://github.com/AndreyDodonov-EH/netilion-all",
+    "type": "git"
+  }
+  
+}
