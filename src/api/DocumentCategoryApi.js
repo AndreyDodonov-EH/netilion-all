@@ -224,7 +224,7 @@
 
     /**
      * Get all categories of one document
-     * Returns a list of all categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of all categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} documentId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -281,7 +281,7 @@
 
     /**
      * Get all categories of one document
-     * Returns a list of all categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of all categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} documentId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -304,7 +304,7 @@
 
     /**
      * Get all possible categories for the specified document
-     * Returns a list of all possible categories for the specific document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible categories for the specific document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} documentId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -361,7 +361,7 @@
 
     /**
      * Get all possible categories for the specified document
-     * Returns a list of all possible categories for the specific document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible categories for the specific document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} documentId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -384,7 +384,7 @@
 
     /**
      * Get a range of document categories
-     * Returns a list of all document categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all document categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -434,7 +434,7 @@
 
     /**
      * Get a range of document categories
-     * Returns a list of all document categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all document categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -456,7 +456,7 @@
 
     /**
      * Get a single document category
-     * Get a specific document category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Get a specific document category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} id Id of document category to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -499,7 +499,7 @@
 
     /**
      * Get a single document category
-     * Get a specific document category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Get a specific document category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} id Id of document category to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -515,7 +515,7 @@
 
     /**
      * Get all documents of one category
-     * Returns a list of all documents that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of all documents that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} categoryId Id of the category
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -578,7 +578,7 @@
 
     /**
      * Get all documents of one category
-     * Returns a list of all documents that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of all documents that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} categoryId Id of the category
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load

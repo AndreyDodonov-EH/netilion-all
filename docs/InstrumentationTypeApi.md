@@ -129,7 +129,7 @@ null (empty response body)
 
 Get the type of the specific instrumentation
 
-Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
+Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 Get a single instrumentation type
 
-Get a specific instrumentation type identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent, tenant&#x60;&#x60;&#x60;
+Get a specific instrumentation type identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent, tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 Get a range of instrumentation types
 
-Returns a list of all event types that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent, tenant&#x60;&#x60;&#x60;
+Returns a list of all event types that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent, tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 Get all possible types of the specified instrumentation
 
-Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript

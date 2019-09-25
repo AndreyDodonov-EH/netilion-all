@@ -69,8 +69,8 @@
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
-      if (data.hasOwnProperty('symol')) {
-        obj['symol'] = ApiClient.convertToType(data['symol'], 'String');
+      if (data.hasOwnProperty('symbol')) {
+        obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -89,9 +89,9 @@
   exports.prototype['code'] = undefined;
   /**
    * Symbol of the unit.
-   * @member {String} symol
+   * @member {String} symbol
    */
-  exports.prototype['symol'] = undefined;
+  exports.prototype['symbol'] = undefined;
   /**
    * Supports translations. Whitespaces are trimmed.
    * @member {String} name

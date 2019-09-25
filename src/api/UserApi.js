@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccessRightsResponse', 'model/CurrentUserResponse', 'model/DataExportRequest', 'model/DataExportResponse', 'model/DataExportsResponse', 'model/EmailChangeRequest', 'model/ErrorResponse', 'model/Notifications', 'model/PasswordChangeRequest', 'model/ResetPasswordRequest', 'model/ResetTokenRequest', 'model/SignInsResponse', 'model/SpecificationsDelete', 'model/SpecificationsRename', 'model/SpecificationsRequest', 'model/SpecificationsResponse', 'model/TechnicalUserCreateResponse', 'model/TechnicalUserRequest', 'model/TechnicalUsersResponse', 'model/UsageResponse', 'model/UserChangeRequest', 'model/UserGroupIDs', 'model/UserGroupsWithUsers', 'model/UserPublicResponse', 'model/UserRequest', 'model/UserResponse', 'model/UserRoleIDs', 'model/UserRolesResponse', 'model/UsersResponse'], factory);
+    define(['ApiClient', 'model/AccessRightsResponse', 'model/CurrentUserResponse', 'model/DataExportRequest', 'model/DataExportResponse', 'model/DataExportsResponse', 'model/EmailChangeRequest', 'model/ErrorResponse', 'model/Notifications', 'model/PasswordChangeRequest', 'model/ResetPasswordRequest', 'model/ResetTokenRequest', 'model/SignInsResponse', 'model/SpecificationsDelete', 'model/SpecificationsRename', 'model/SpecificationsRequest', 'model/SpecificationsResponse', 'model/TechnicalUserCreateResponse', 'model/TechnicalUserPasswordResponse', 'model/TechnicalUserRequest', 'model/TechnicalUsersResponse', 'model/UsageResponse', 'model/UserChangeRequest', 'model/UserGroupIDs', 'model/UserGroupsWithUsers', 'model/UserPublicResponse', 'model/UserRequest', 'model/UserResponse', 'model/UserRoleIDs', 'model/UserRolesResponse', 'model/UsersResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AccessRightsResponse'), require('../model/CurrentUserResponse'), require('../model/DataExportRequest'), require('../model/DataExportResponse'), require('../model/DataExportsResponse'), require('../model/EmailChangeRequest'), require('../model/ErrorResponse'), require('../model/Notifications'), require('../model/PasswordChangeRequest'), require('../model/ResetPasswordRequest'), require('../model/ResetTokenRequest'), require('../model/SignInsResponse'), require('../model/SpecificationsDelete'), require('../model/SpecificationsRename'), require('../model/SpecificationsRequest'), require('../model/SpecificationsResponse'), require('../model/TechnicalUserCreateResponse'), require('../model/TechnicalUserRequest'), require('../model/TechnicalUsersResponse'), require('../model/UsageResponse'), require('../model/UserChangeRequest'), require('../model/UserGroupIDs'), require('../model/UserGroupsWithUsers'), require('../model/UserPublicResponse'), require('../model/UserRequest'), require('../model/UserResponse'), require('../model/UserRoleIDs'), require('../model/UserRolesResponse'), require('../model/UsersResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/AccessRightsResponse'), require('../model/CurrentUserResponse'), require('../model/DataExportRequest'), require('../model/DataExportResponse'), require('../model/DataExportsResponse'), require('../model/EmailChangeRequest'), require('../model/ErrorResponse'), require('../model/Notifications'), require('../model/PasswordChangeRequest'), require('../model/ResetPasswordRequest'), require('../model/ResetTokenRequest'), require('../model/SignInsResponse'), require('../model/SpecificationsDelete'), require('../model/SpecificationsRename'), require('../model/SpecificationsRequest'), require('../model/SpecificationsResponse'), require('../model/TechnicalUserCreateResponse'), require('../model/TechnicalUserPasswordResponse'), require('../model/TechnicalUserRequest'), require('../model/TechnicalUsersResponse'), require('../model/UsageResponse'), require('../model/UserChangeRequest'), require('../model/UserGroupIDs'), require('../model/UserGroupsWithUsers'), require('../model/UserPublicResponse'), require('../model/UserRequest'), require('../model/UserResponse'), require('../model/UserRoleIDs'), require('../model/UserRolesResponse'), require('../model/UsersResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.NetilionApiDocumentation) {
       root.NetilionApiDocumentation = {};
     }
-    root.NetilionApiDocumentation.UserApi = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.AccessRightsResponse, root.NetilionApiDocumentation.CurrentUserResponse, root.NetilionApiDocumentation.DataExportRequest, root.NetilionApiDocumentation.DataExportResponse, root.NetilionApiDocumentation.DataExportsResponse, root.NetilionApiDocumentation.EmailChangeRequest, root.NetilionApiDocumentation.ErrorResponse, root.NetilionApiDocumentation.Notifications, root.NetilionApiDocumentation.PasswordChangeRequest, root.NetilionApiDocumentation.ResetPasswordRequest, root.NetilionApiDocumentation.ResetTokenRequest, root.NetilionApiDocumentation.SignInsResponse, root.NetilionApiDocumentation.SpecificationsDelete, root.NetilionApiDocumentation.SpecificationsRename, root.NetilionApiDocumentation.SpecificationsRequest, root.NetilionApiDocumentation.SpecificationsResponse, root.NetilionApiDocumentation.TechnicalUserCreateResponse, root.NetilionApiDocumentation.TechnicalUserRequest, root.NetilionApiDocumentation.TechnicalUsersResponse, root.NetilionApiDocumentation.UsageResponse, root.NetilionApiDocumentation.UserChangeRequest, root.NetilionApiDocumentation.UserGroupIDs, root.NetilionApiDocumentation.UserGroupsWithUsers, root.NetilionApiDocumentation.UserPublicResponse, root.NetilionApiDocumentation.UserRequest, root.NetilionApiDocumentation.UserResponse, root.NetilionApiDocumentation.UserRoleIDs, root.NetilionApiDocumentation.UserRolesResponse, root.NetilionApiDocumentation.UsersResponse);
+    root.NetilionApiDocumentation.UserApi = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.AccessRightsResponse, root.NetilionApiDocumentation.CurrentUserResponse, root.NetilionApiDocumentation.DataExportRequest, root.NetilionApiDocumentation.DataExportResponse, root.NetilionApiDocumentation.DataExportsResponse, root.NetilionApiDocumentation.EmailChangeRequest, root.NetilionApiDocumentation.ErrorResponse, root.NetilionApiDocumentation.Notifications, root.NetilionApiDocumentation.PasswordChangeRequest, root.NetilionApiDocumentation.ResetPasswordRequest, root.NetilionApiDocumentation.ResetTokenRequest, root.NetilionApiDocumentation.SignInsResponse, root.NetilionApiDocumentation.SpecificationsDelete, root.NetilionApiDocumentation.SpecificationsRename, root.NetilionApiDocumentation.SpecificationsRequest, root.NetilionApiDocumentation.SpecificationsResponse, root.NetilionApiDocumentation.TechnicalUserCreateResponse, root.NetilionApiDocumentation.TechnicalUserPasswordResponse, root.NetilionApiDocumentation.TechnicalUserRequest, root.NetilionApiDocumentation.TechnicalUsersResponse, root.NetilionApiDocumentation.UsageResponse, root.NetilionApiDocumentation.UserChangeRequest, root.NetilionApiDocumentation.UserGroupIDs, root.NetilionApiDocumentation.UserGroupsWithUsers, root.NetilionApiDocumentation.UserPublicResponse, root.NetilionApiDocumentation.UserRequest, root.NetilionApiDocumentation.UserResponse, root.NetilionApiDocumentation.UserRoleIDs, root.NetilionApiDocumentation.UserRolesResponse, root.NetilionApiDocumentation.UsersResponse);
   }
-}(this, function(ApiClient, AccessRightsResponse, CurrentUserResponse, DataExportRequest, DataExportResponse, DataExportsResponse, EmailChangeRequest, ErrorResponse, Notifications, PasswordChangeRequest, ResetPasswordRequest, ResetTokenRequest, SignInsResponse, SpecificationsDelete, SpecificationsRename, SpecificationsRequest, SpecificationsResponse, TechnicalUserCreateResponse, TechnicalUserRequest, TechnicalUsersResponse, UsageResponse, UserChangeRequest, UserGroupIDs, UserGroupsWithUsers, UserPublicResponse, UserRequest, UserResponse, UserRoleIDs, UserRolesResponse, UsersResponse) {
+}(this, function(ApiClient, AccessRightsResponse, CurrentUserResponse, DataExportRequest, DataExportResponse, DataExportsResponse, EmailChangeRequest, ErrorResponse, Notifications, PasswordChangeRequest, ResetPasswordRequest, ResetTokenRequest, SignInsResponse, SpecificationsDelete, SpecificationsRename, SpecificationsRequest, SpecificationsResponse, TechnicalUserCreateResponse, TechnicalUserPasswordResponse, TechnicalUserRequest, TechnicalUsersResponse, UsageResponse, UserChangeRequest, UserGroupIDs, UserGroupsWithUsers, UserPublicResponse, UserRequest, UserResponse, UserRoleIDs, UserRolesResponse, UsersResponse) {
   'use strict';
 
   /**
@@ -372,6 +372,59 @@
      */
     this.deleteCurrentUserNotifications = function(id) {
       return this.deleteCurrentUserNotificationsWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a technical user
+     * Delete a technical user identified by the id in the URL.
+     * @param {Number} id Id of the technical user to delete
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteTechnicalUserWithHttpInfo = function(id) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteTechnicalUser");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['API-Key', 'Authentication'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/technical_users/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete a technical user
+     * Delete a technical user identified by the id in the URL.
+     * @param {Number} id Id of the technical user to delete
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.deleteTechnicalUser = function(id) {
+      return this.deleteTechnicalUserWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -754,7 +807,7 @@
 
     /**
      * Get relevant notifications for the current authenticated user
-     * Returns a list of all notifications available for the authenticated user on the current client application. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all notifications available for the authenticated user on the current client application. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -808,7 +861,7 @@
 
     /**
      * Get relevant notifications for the current authenticated user
-     * Returns a list of all notifications available for the authenticated user on the current client application. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all notifications available for the authenticated user on the current client application. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -1955,6 +2008,59 @@
      */
     this.resetPassword = function(body) {
       return this.resetPasswordWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * create a new password for a technical user
+     *  Password is automatically generated an can not be defined. The generated password is part of the response (but cannot be later received again). 
+     * @param {Number} id Id of the technical user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TechnicalUserPasswordResponse} and HTTP response
+     */
+    this.resetPasswordTechnicalUserWithHttpInfo = function(id) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling resetPasswordTechnicalUser");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['API-Key', 'Authentication'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TechnicalUserPasswordResponse;
+
+      return this.apiClient.callApi(
+        '/technical_users/{id}/reset_password', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * create a new password for a technical user
+     *  Password is automatically generated an can not be defined. The generated password is part of the response (but cannot be later received again). 
+     * @param {Number} id Id of the technical user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TechnicalUserPasswordResponse}
+     */
+    this.resetPasswordTechnicalUser = function(id) {
+      return this.resetPasswordTechnicalUserWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

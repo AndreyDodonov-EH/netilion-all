@@ -535,7 +535,7 @@
 
     /**
      * Get all products of a company
-     * Receive a list of products of a specific company, identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
+     * Receive a list of products of a specific company, identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
      * @param {Number} companyId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -596,7 +596,7 @@
 
     /**
      * Get all products of a company
-     * Receive a list of products of a specific company, identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
+     * Receive a list of products of a specific company, identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
      * @param {Number} companyId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load

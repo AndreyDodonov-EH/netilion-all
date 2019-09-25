@@ -129,7 +129,7 @@ null (empty response body)
 
 Get the status of a specific document
 
-Returns the status of the document. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns the status of the document. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 Get a single document status
 
-Get a specific document status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Get a specific document status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 Get a range of document statuses
 
-Returns a list of all document statuses that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all document statuses that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 Get all possible statuses for the specified document
 
-Returns a list of all possible document statuses for the specified document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all possible document statuses for the specified document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript

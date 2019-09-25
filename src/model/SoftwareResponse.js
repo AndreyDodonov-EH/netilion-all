@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/NestedIDHref', 'model/SoftwareResponseSoftwareType'], factory);
+    define(['ApiClient', 'model/Links15', 'model/NestedIDHref', 'model/SoftwareResponseSoftwareType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./NestedIDHref'), require('./SoftwareResponseSoftwareType'));
+    module.exports = factory(require('../ApiClient'), require('./Links15'), require('./NestedIDHref'), require('./SoftwareResponseSoftwareType'));
   } else {
     // Browser globals (root is window)
     if (!root.NetilionApiDocumentation) {
       root.NetilionApiDocumentation = {};
     }
-    root.NetilionApiDocumentation.SoftwareResponse = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.NestedIDHref, root.NetilionApiDocumentation.SoftwareResponseSoftwareType);
+    root.NetilionApiDocumentation.SoftwareResponse = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.Links15, root.NetilionApiDocumentation.NestedIDHref, root.NetilionApiDocumentation.SoftwareResponseSoftwareType);
   }
-}(this, function(ApiClient, NestedIDHref, SoftwareResponseSoftwareType) {
+}(this, function(ApiClient, Links15, NestedIDHref, SoftwareResponseSoftwareType) {
   'use strict';
 
 
@@ -43,16 +43,22 @@
    * Constructs a new <code>SoftwareResponse</code>.
    * @alias module:model/SoftwareResponse
    * @class
+   * @param id {Number} Id of object
+   * @param versionNumber {String} 
+   * @param tenant {module:model/NestedIDHref} 
+   * @param softwareType {module:model/SoftwareResponseSoftwareType} 
+   * @param links {module:model/Links15} 
    */
-  var exports = function() {
+  var exports = function(id, versionNumber, tenant, softwareType, links) {
     var _this = this;
 
+    _this['id'] = id;
+    _this['version_number'] = versionNumber;
 
 
-
-
-
-
+    _this['tenant'] = tenant;
+    _this['software_type'] = softwareType;
+    _this['links'] = links;
   };
 
   /**
@@ -84,11 +90,15 @@
       if (data.hasOwnProperty('software_type')) {
         obj['software_type'] = SoftwareResponseSoftwareType.constructFromObject(data['software_type']);
       }
+      if (data.hasOwnProperty('links')) {
+        obj['links'] = Links15.constructFromObject(data['links']);
+      }
     }
     return obj;
   }
 
   /**
+   * Id of object
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
@@ -112,6 +122,10 @@
    * @member {module:model/SoftwareResponseSoftwareType} software_type
    */
   exports.prototype['software_type'] = undefined;
+  /**
+   * @member {module:model/Links15} links
+   */
+  exports.prototype['links'] = undefined;
 
 
 

@@ -129,7 +129,7 @@ null (empty response body)
 
 Get the type of a specific event
 
-Returns the type of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns the type of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 Get a single event type
 
-Get a specific event type identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Get a specific event type identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 Get all possible types for the specified event
 
-Returns a list of all possible event types for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all possible event types for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 Get a range of event types
 
-Returns a list of all event types that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all event types that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript

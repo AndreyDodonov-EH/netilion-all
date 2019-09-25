@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **nodes** | [**Link**](Link.md) |  | [optional] 
 **pictures** | [**Link**](Link.md) |  | [optional] 
 **specifications** | [**Link**](Link.md) |  | [optional] 
+**thresholds** | [**Link**](Link.md) |  | [optional] 
 
 

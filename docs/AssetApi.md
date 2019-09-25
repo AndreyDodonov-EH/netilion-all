@@ -882,7 +882,7 @@ Name | Type | Description  | Notes
 
 Get the status of the specific asset
 
-Returns the status of the asset. Needed if only permission on asset but not on tenant. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+Returns the status of the asset. Needed if only permission on asset but not on tenant. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1072,7 +1072,7 @@ Name | Type | Description  | Notes
 
 Get all possible products of the specified assets
 
-Returns a list of all possible products for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
+Returns a list of all possible products for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 Get all possible statuses of the specified assets
 
-Returns a list of all possible asset statuses for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+Returns a list of all possible asset statuses for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1466,7 +1466,7 @@ Name | Type | Description  | Notes
 
 Get all documents of an asset
 
-Returns a list of all documents that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+Returns a list of all documents that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1632,7 +1632,7 @@ Name | Type | Description  | Notes
 
 Get all instrumentations of one asset
 
-Returns a list of all instrumentations that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type&#x60;&#x60;&#x60;
+Returns a list of all instrumentations that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript

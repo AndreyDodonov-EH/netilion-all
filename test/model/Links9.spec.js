@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src'], factory);
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src'));
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.NetilionApiDocumentation);
@@ -88,6 +88,12 @@
 
     it('should have the property specifications (base name: "specifications")', function() {
       // uncomment below and update the code to test the property specifications
+      //var instance = new NetilionApiDocumentation.Links9();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property thresholds (base name: "thresholds")', function() {
+      // uncomment below and update the code to test the property thresholds
       //var instance = new NetilionApiDocumentation.Links9();
       //expect(instance).to.be();
     });

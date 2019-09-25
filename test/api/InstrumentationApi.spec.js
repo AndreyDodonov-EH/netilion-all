@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src'], factory);
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src'));
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.NetilionApiDocumentation);
@@ -120,6 +120,16 @@
         done();
       });
     });
+    describe('createInstrumentationThreshold', function() {
+      it('should call createInstrumentationThreshold successfully', function(done) {
+        //uncomment below and update the code to test createInstrumentationThreshold
+        //instance.createInstrumentationThreshold(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteInstrumentation', function() {
       it('should call deleteInstrumentation successfully', function(done) {
         //uncomment below and update the code to test deleteInstrumentation
@@ -134,6 +144,16 @@
       it('should call deleteInstrumentationPicture successfully', function(done) {
         //uncomment below and update the code to test deleteInstrumentationPicture
         //instance.deleteInstrumentationPicture(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteInstrumentationThreshold', function() {
+      it('should call deleteInstrumentationThreshold successfully', function(done) {
+        //uncomment below and update the code to test deleteInstrumentationThreshold
+        //instance.deleteInstrumentationThreshold(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -254,6 +274,26 @@
       it('should call getInstrumentationStatusesOptions successfully', function(done) {
         //uncomment below and update the code to test getInstrumentationStatusesOptions
         //instance.getInstrumentationStatusesOptions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getInstrumentationThreshold', function() {
+      it('should call getInstrumentationThreshold successfully', function(done) {
+        //uncomment below and update the code to test getInstrumentationThreshold
+        //instance.getInstrumentationThreshold(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getInstrumentationThresholds', function() {
+      it('should call getInstrumentationThresholds successfully', function(done) {
+        //uncomment below and update the code to test getInstrumentationThresholds
+        //instance.getInstrumentationThresholds(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -444,6 +484,16 @@
       it('should call updateInstrumentationPictureLink successfully', function(done) {
         //uncomment below and update the code to test updateInstrumentationPictureLink
         //instance.updateInstrumentationPictureLink(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateInstrumentationThreshold', function() {
+      it('should call updateInstrumentationThreshold successfully', function(done) {
+        //uncomment below and update the code to test updateInstrumentationThreshold
+        //instance.updateInstrumentationThreshold(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

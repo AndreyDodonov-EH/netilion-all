@@ -363,8 +363,10 @@ Class | Method | HTTP request | Description
 *NetilionApiDocumentation.InstrumentationApi* | [**addNodesToInstrumentation**](docs/InstrumentationApi.md#addNodesToInstrumentation) | **POST** /instrumentations/{instrumentation_id}/nodes | Add nodes to an instrumentation
 *NetilionApiDocumentation.InstrumentationApi* | [**createEventForInstrumentation**](docs/InstrumentationApi.md#createEventForInstrumentation) | **POST** /instrumentations/{instrumentation_id}/events | Create a new event for an instrumentation
 *NetilionApiDocumentation.InstrumentationApi* | [**createInstrumentation**](docs/InstrumentationApi.md#createInstrumentation) | **POST** /instrumentations | Create a new instrumentation
+*NetilionApiDocumentation.InstrumentationApi* | [**createInstrumentationThreshold**](docs/InstrumentationApi.md#createInstrumentationThreshold) | **POST** /instrumentations/{instrumentation_id}/thresholds | Create an instrumentation threshold
 *NetilionApiDocumentation.InstrumentationApi* | [**deleteInstrumentation**](docs/InstrumentationApi.md#deleteInstrumentation) | **DELETE** /instrumentations/{id} | Delete an instrumentation
 *NetilionApiDocumentation.InstrumentationApi* | [**deleteInstrumentationPicture**](docs/InstrumentationApi.md#deleteInstrumentationPicture) | **DELETE** /instrumentations/{instrumentation_id}/pictures/{id} | Delete an instrumentation picture
+*NetilionApiDocumentation.InstrumentationApi* | [**deleteInstrumentationThreshold**](docs/InstrumentationApi.md#deleteInstrumentationThreshold) | **DELETE** /instrumentations/{instrumentation_id}/thresholds/{id} | Delete an instrumentation threshold
 *NetilionApiDocumentation.InstrumentationApi* | [**downloadInstrumentationPicture**](docs/InstrumentationApi.md#downloadInstrumentationPicture) | **GET** /instrumentations/{instrumentation_id}/pictures/{id}/download | Download an instrumentation picture
 *NetilionApiDocumentation.InstrumentationApi* | [**getAssetsOfInstrumentation**](docs/InstrumentationApi.md#getAssetsOfInstrumentation) | **GET** /instrumentations/{instrumentation_id}/assets | Get all assets of one instrumentation
 *NetilionApiDocumentation.InstrumentationApi* | [**getAssetsOfInstrumentationHistory**](docs/InstrumentationApi.md#getAssetsOfInstrumentationHistory) | **GET** /instrumentations/{instrumentation_id}/assets/history | Get all assets an instrumentation was assigned to
@@ -377,6 +379,8 @@ Class | Method | HTTP request | Description
 *NetilionApiDocumentation.InstrumentationApi* | [**getInstrumentationPicture**](docs/InstrumentationApi.md#getInstrumentationPicture) | **GET** /instrumentations/{instrumentation_id}/pictures/{id} | Get an instrumentation picture
 *NetilionApiDocumentation.InstrumentationApi* | [**getInstrumentationPictures**](docs/InstrumentationApi.md#getInstrumentationPictures) | **GET** /instrumentations/{id}/pictures | Get instrumentation pictures
 *NetilionApiDocumentation.InstrumentationApi* | [**getInstrumentationStatusesOptions**](docs/InstrumentationApi.md#getInstrumentationStatusesOptions) | **GET** /instrumentations/{instrumentation_id}/status-options | Get all possible statuses of the specified instrumentation
+*NetilionApiDocumentation.InstrumentationApi* | [**getInstrumentationThreshold**](docs/InstrumentationApi.md#getInstrumentationThreshold) | **GET** /instrumentations/{instrumentation_id}/thresholds/{id} | Get an instrumentation threshold
+*NetilionApiDocumentation.InstrumentationApi* | [**getInstrumentationThresholds**](docs/InstrumentationApi.md#getInstrumentationThresholds) | **GET** /instrumentations/{instrumentation_id}/thresholds | Get instrumentation thresholds
 *NetilionApiDocumentation.InstrumentationApi* | [**getInstrumentationTypesOptions**](docs/InstrumentationApi.md#getInstrumentationTypesOptions) | **GET** /instrumentations/{instrumentation_id}/type-options | Get all possible types of the specified instrumentation
 *NetilionApiDocumentation.InstrumentationApi* | [**getInstrumentations**](docs/InstrumentationApi.md#getInstrumentations) | **GET** /instrumentations | Get a range of instrumentations
 *NetilionApiDocumentation.InstrumentationApi* | [**getNodesOfInstrumentation**](docs/InstrumentationApi.md#getNodesOfInstrumentation) | **GET** /instrumentations/{instrumentation_id}/nodes | Get all nodes of one Instrumentation
@@ -396,6 +400,7 @@ Class | Method | HTTP request | Description
 *NetilionApiDocumentation.InstrumentationApi* | [**updateInstrumentation**](docs/InstrumentationApi.md#updateInstrumentation) | **PATCH** /instrumentations/{id} | Update an instrumentation
 *NetilionApiDocumentation.InstrumentationApi* | [**updateInstrumentationPicture**](docs/InstrumentationApi.md#updateInstrumentationPicture) | **PATCH** /instrumentations/{instrumentation_id}/pictures/{id} | Update an instrumentation picture
 *NetilionApiDocumentation.InstrumentationApi* | [**updateInstrumentationPictureLink**](docs/InstrumentationApi.md#updateInstrumentationPictureLink) | **PATCH** /instrumentations/{instrumentation_id}/pictures/links/{id} | Update an instrumentation picture link
+*NetilionApiDocumentation.InstrumentationApi* | [**updateInstrumentationThreshold**](docs/InstrumentationApi.md#updateInstrumentationThreshold) | **PATCH** /instrumentations/{instrumentation_id}/thresholds/{id} | Update an instrumentation threshold
 *NetilionApiDocumentation.InstrumentationApi* | [**updateSpecificationsOfInstrumentation**](docs/InstrumentationApi.md#updateSpecificationsOfInstrumentation) | **PATCH** /instrumentations/{instrumentation_id}/specifications | Update specifications of an instrumentation
 *NetilionApiDocumentation.InstrumentationApi* | [**uploadInstrumentationPicture**](docs/InstrumentationApi.md#uploadInstrumentationPicture) | **POST** /instrumentations/{id}/pictures | Upload an instrumentation picture
 *NetilionApiDocumentation.InstrumentationStatusApi* | [**createInstrumentationStatus**](docs/InstrumentationStatusApi.md#createInstrumentationStatus) | **POST** /instrumentation/statuses | Create a new instrumentation status
@@ -683,6 +688,11 @@ Class | Method | HTTP request | Description
 *NetilionApiDocumentation.TenantApi* | [**replaceTenantAdmins**](docs/TenantApi.md#replaceTenantAdmins) | **PATCH** /tenants/{tenant_id}/admins | Replace the admins of a tenant
 *NetilionApiDocumentation.TenantApi* | [**replaceTenantUsers**](docs/TenantApi.md#replaceTenantUsers) | **PATCH** /tenants/{tenant_id}/users | Replace the users of a tenant
 *NetilionApiDocumentation.TenantApi* | [**updateTenant**](docs/TenantApi.md#updateTenant) | **PATCH** /tenants/{id} | Update a tenant
+*NetilionApiDocumentation.ThresholdApi* | [**createInstrumentationThreshold**](docs/ThresholdApi.md#createInstrumentationThreshold) | **POST** /instrumentations/{instrumentation_id}/thresholds | Create an instrumentation threshold
+*NetilionApiDocumentation.ThresholdApi* | [**deleteInstrumentationThreshold**](docs/ThresholdApi.md#deleteInstrumentationThreshold) | **DELETE** /instrumentations/{instrumentation_id}/thresholds/{id} | Delete an instrumentation threshold
+*NetilionApiDocumentation.ThresholdApi* | [**getInstrumentationThreshold**](docs/ThresholdApi.md#getInstrumentationThreshold) | **GET** /instrumentations/{instrumentation_id}/thresholds/{id} | Get an instrumentation threshold
+*NetilionApiDocumentation.ThresholdApi* | [**getInstrumentationThresholds**](docs/ThresholdApi.md#getInstrumentationThresholds) | **GET** /instrumentations/{instrumentation_id}/thresholds | Get instrumentation thresholds
+*NetilionApiDocumentation.ThresholdApi* | [**updateInstrumentationThreshold**](docs/ThresholdApi.md#updateInstrumentationThreshold) | **PATCH** /instrumentations/{instrumentation_id}/thresholds/{id} | Update an instrumentation threshold
 *NetilionApiDocumentation.UnitApi* | [**getUnitById**](docs/UnitApi.md#getUnitById) | **GET** /units/{id} | Get a single Unit
 *NetilionApiDocumentation.UnitApi* | [**getUnits**](docs/UnitApi.md#getUnits) | **GET** /units | Get a range of units.
 *NetilionApiDocumentation.UserApi* | [**addUserGroupsToUser**](docs/UserApi.md#addUserGroupsToUser) | **POST** /users/{user_id}/usergroups | Add user groups to a user
@@ -691,6 +701,7 @@ Class | Method | HTTP request | Description
 *NetilionApiDocumentation.UserApi* | [**createTechnicalUser**](docs/UserApi.md#createTechnicalUser) | **POST** /technical_users | Create a new technical user
 *NetilionApiDocumentation.UserApi* | [**deleteCurrentUserDatasExport**](docs/UserApi.md#deleteCurrentUserDatasExport) | **DELETE** /users/current/data_exports/{id} | delete users data export for current user
 *NetilionApiDocumentation.UserApi* | [**deleteCurrentUserNotifications**](docs/UserApi.md#deleteCurrentUserNotifications) | **DELETE** /users/current/notifications/{id} | Delete the given notification for the current user
+*NetilionApiDocumentation.UserApi* | [**deleteTechnicalUser**](docs/UserApi.md#deleteTechnicalUser) | **DELETE** /technical_users/{id} | Delete a technical user
 *NetilionApiDocumentation.UserApi* | [**deleteUser**](docs/UserApi.md#deleteUser) | **DELETE** /users/{id} | Delete a user
 *NetilionApiDocumentation.UserApi* | [**emailChange**](docs/UserApi.md#emailChange) | **PATCH** /users/current/email | change email of current user
 *NetilionApiDocumentation.UserApi* | [**getCurrentUser**](docs/UserApi.md#getCurrentUser) | **GET** /users/current | Get current user
@@ -718,6 +729,7 @@ Class | Method | HTTP request | Description
 *NetilionApiDocumentation.UserApi* | [**replaceUserRolesOfUser**](docs/UserApi.md#replaceUserRolesOfUser) | **PATCH** /users/{user_id}/userroles | Replace the user roles of a user
 *NetilionApiDocumentation.UserApi* | [**requestPasswordReset**](docs/UserApi.md#requestPasswordReset) | **POST** /users/request_password_reset | request password reset instructions
 *NetilionApiDocumentation.UserApi* | [**resetPassword**](docs/UserApi.md#resetPassword) | **PATCH** /users/reset_password | reset password with token
+*NetilionApiDocumentation.UserApi* | [**resetPasswordTechnicalUser**](docs/UserApi.md#resetPasswordTechnicalUser) | **POST** /technical_users/{id}/reset_password | create a new password for a technical user
 *NetilionApiDocumentation.UserApi* | [**updateSpecificationsOfUsers**](docs/UserApi.md#updateSpecificationsOfUsers) | **PATCH** /users/{user_id}/specifications | Update specifications of a user
 *NetilionApiDocumentation.UserApi* | [**updateUser**](docs/UserApi.md#updateUser) | **PATCH** /users/{id} | Update a user
 *NetilionApiDocumentation.UserGroupApi* | [**addUsersToUserGroup**](docs/UserGroupApi.md#addUsersToUserGroup) | **POST** /usergroups/{usergroup_id}/users | Add users to a user group
@@ -841,6 +853,7 @@ Class | Method | HTTP request | Description
  - [NetilionApiDocumentation.Links13](docs/Links13.md)
  - [NetilionApiDocumentation.Links14](docs/Links14.md)
  - [NetilionApiDocumentation.Links15](docs/Links15.md)
+ - [NetilionApiDocumentation.Links16](docs/Links16.md)
  - [NetilionApiDocumentation.Links2](docs/Links2.md)
  - [NetilionApiDocumentation.Links3](docs/Links3.md)
  - [NetilionApiDocumentation.Links4](docs/Links4.md)
@@ -943,10 +956,14 @@ Class | Method | HTTP request | Description
  - [NetilionApiDocumentation.SuccessorsResponse](docs/SuccessorsResponse.md)
  - [NetilionApiDocumentation.TechnicalUserBase](docs/TechnicalUserBase.md)
  - [NetilionApiDocumentation.TechnicalUserCreateResponseLinks](docs/TechnicalUserCreateResponseLinks.md)
+ - [NetilionApiDocumentation.TechnicalUserPasswordResponse](docs/TechnicalUserPasswordResponse.md)
  - [NetilionApiDocumentation.TechnicalUsersResponse](docs/TechnicalUsersResponse.md)
  - [NetilionApiDocumentation.TenantBase](docs/TenantBase.md)
  - [NetilionApiDocumentation.Tenants](docs/Tenants.md)
  - [NetilionApiDocumentation.TenantsResponse](docs/TenantsResponse.md)
+ - [NetilionApiDocumentation.ThresholdBase](docs/ThresholdBase.md)
+ - [NetilionApiDocumentation.ThresholdResponse](docs/ThresholdResponse.md)
+ - [NetilionApiDocumentation.ThresholdsResponse](docs/ThresholdsResponse.md)
  - [NetilionApiDocumentation.UnitBase](docs/UnitBase.md)
  - [NetilionApiDocumentation.UnitsResponse](docs/UnitsResponse.md)
  - [NetilionApiDocumentation.UsageResponse](docs/UsageResponse.md)
@@ -1058,6 +1075,7 @@ Class | Method | HTTP request | Description
  - [NetilionApiDocumentation.TechnicalUserResponse](docs/TechnicalUserResponse.md)
  - [NetilionApiDocumentation.TenantRequest](docs/TenantRequest.md)
  - [NetilionApiDocumentation.TenantResponse](docs/TenantResponse.md)
+ - [NetilionApiDocumentation.ThresholdRequest](docs/ThresholdRequest.md)
  - [NetilionApiDocumentation.UnitResponse](docs/UnitResponse.md)
  - [NetilionApiDocumentation.UserAddressRequest](docs/UserAddressRequest.md)
  - [NetilionApiDocumentation.UserAddressResponse](docs/UserAddressResponse.md)

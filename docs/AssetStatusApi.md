@@ -129,7 +129,7 @@ null (empty response body)
 
 Get the status of the specific asset
 
-Returns the status of the asset. Needed if only permission on asset but not on tenant. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+Returns the status of the asset. Needed if only permission on asset but not on tenant. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 Get a single asset status
 
-Get a specific asset status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+Get a specific asset status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 Get a range of asset statuses
 
-Returns a list of all asset statuses that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.  Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+Returns a list of all asset statuses that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.  Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 Get all possible statuses of the specified assets
 
-Returns a list of all possible asset statuses for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+Returns a list of all possible asset statuses for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript

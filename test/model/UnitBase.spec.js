@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src'], factory);
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src'));
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.NetilionApiDocumentation);
@@ -62,8 +62,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property symol (base name: "symol")', function() {
-      // uncomment below and update the code to test the property symol
+    it('should have the property symbol (base name: "symbol")', function() {
+      // uncomment below and update the code to test the property symbol
       //var instance = new NetilionApiDocumentation.UnitBase();
       //expect(instance).to.be();
     });

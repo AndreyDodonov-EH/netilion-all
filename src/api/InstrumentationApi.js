@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AssetIDs', 'model/AssetsResponse', 'model/BillOfMaterialIDs', 'model/BillOfMaterialsResponse', 'model/DocumentIDs', 'model/DocumentsResponse', 'model/ErrorResponse', 'model/EventRequestNoInstrumentations', 'model/EventResponse', 'model/Events1', 'model/EventsResponse', 'model/InstrumentationAssetsHistoryResponse', 'model/InstrumentationRequest', 'model/InstrumentationResponse', 'model/InstrumentationStatusResponse', 'model/InstrumentationStatuses', 'model/InstrumentationTypeResponse', 'model/InstrumentationTypes', 'model/InstrumentationsResponse', 'model/NodeIDs', 'model/NodesResponse', 'model/PictureLinkRequest', 'model/PictureResponse', 'model/PicturesResponse', 'model/SpecificationHistoryResponse', 'model/SpecificationsDelete', 'model/SpecificationsRename', 'model/SpecificationsRequest', 'model/SpecificationsResponse'], factory);
+    define(['ApiClient', 'model/AssetIDs', 'model/AssetsResponse', 'model/BillOfMaterialIDs', 'model/BillOfMaterialsResponse', 'model/DocumentIDs', 'model/DocumentsResponse', 'model/ErrorResponse', 'model/EventRequestNoInstrumentations', 'model/EventResponse', 'model/Events1', 'model/EventsResponse', 'model/InstrumentationAssetsHistoryResponse', 'model/InstrumentationRequest', 'model/InstrumentationResponse', 'model/InstrumentationStatusResponse', 'model/InstrumentationStatuses', 'model/InstrumentationTypeResponse', 'model/InstrumentationTypes', 'model/InstrumentationsResponse', 'model/NodeIDs', 'model/NodesResponse', 'model/PictureLinkRequest', 'model/PictureResponse', 'model/PicturesResponse', 'model/SpecificationHistoryResponse', 'model/SpecificationsDelete', 'model/SpecificationsRename', 'model/SpecificationsRequest', 'model/SpecificationsResponse', 'model/ThresholdRequest', 'model/ThresholdResponse', 'model/ThresholdsResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AssetIDs'), require('../model/AssetsResponse'), require('../model/BillOfMaterialIDs'), require('../model/BillOfMaterialsResponse'), require('../model/DocumentIDs'), require('../model/DocumentsResponse'), require('../model/ErrorResponse'), require('../model/EventRequestNoInstrumentations'), require('../model/EventResponse'), require('../model/Events1'), require('../model/EventsResponse'), require('../model/InstrumentationAssetsHistoryResponse'), require('../model/InstrumentationRequest'), require('../model/InstrumentationResponse'), require('../model/InstrumentationStatusResponse'), require('../model/InstrumentationStatuses'), require('../model/InstrumentationTypeResponse'), require('../model/InstrumentationTypes'), require('../model/InstrumentationsResponse'), require('../model/NodeIDs'), require('../model/NodesResponse'), require('../model/PictureLinkRequest'), require('../model/PictureResponse'), require('../model/PicturesResponse'), require('../model/SpecificationHistoryResponse'), require('../model/SpecificationsDelete'), require('../model/SpecificationsRename'), require('../model/SpecificationsRequest'), require('../model/SpecificationsResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/AssetIDs'), require('../model/AssetsResponse'), require('../model/BillOfMaterialIDs'), require('../model/BillOfMaterialsResponse'), require('../model/DocumentIDs'), require('../model/DocumentsResponse'), require('../model/ErrorResponse'), require('../model/EventRequestNoInstrumentations'), require('../model/EventResponse'), require('../model/Events1'), require('../model/EventsResponse'), require('../model/InstrumentationAssetsHistoryResponse'), require('../model/InstrumentationRequest'), require('../model/InstrumentationResponse'), require('../model/InstrumentationStatusResponse'), require('../model/InstrumentationStatuses'), require('../model/InstrumentationTypeResponse'), require('../model/InstrumentationTypes'), require('../model/InstrumentationsResponse'), require('../model/NodeIDs'), require('../model/NodesResponse'), require('../model/PictureLinkRequest'), require('../model/PictureResponse'), require('../model/PicturesResponse'), require('../model/SpecificationHistoryResponse'), require('../model/SpecificationsDelete'), require('../model/SpecificationsRename'), require('../model/SpecificationsRequest'), require('../model/SpecificationsResponse'), require('../model/ThresholdRequest'), require('../model/ThresholdResponse'), require('../model/ThresholdsResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.NetilionApiDocumentation) {
       root.NetilionApiDocumentation = {};
     }
-    root.NetilionApiDocumentation.InstrumentationApi = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.AssetIDs, root.NetilionApiDocumentation.AssetsResponse, root.NetilionApiDocumentation.BillOfMaterialIDs, root.NetilionApiDocumentation.BillOfMaterialsResponse, root.NetilionApiDocumentation.DocumentIDs, root.NetilionApiDocumentation.DocumentsResponse, root.NetilionApiDocumentation.ErrorResponse, root.NetilionApiDocumentation.EventRequestNoInstrumentations, root.NetilionApiDocumentation.EventResponse, root.NetilionApiDocumentation.Events1, root.NetilionApiDocumentation.EventsResponse, root.NetilionApiDocumentation.InstrumentationAssetsHistoryResponse, root.NetilionApiDocumentation.InstrumentationRequest, root.NetilionApiDocumentation.InstrumentationResponse, root.NetilionApiDocumentation.InstrumentationStatusResponse, root.NetilionApiDocumentation.InstrumentationStatuses, root.NetilionApiDocumentation.InstrumentationTypeResponse, root.NetilionApiDocumentation.InstrumentationTypes, root.NetilionApiDocumentation.InstrumentationsResponse, root.NetilionApiDocumentation.NodeIDs, root.NetilionApiDocumentation.NodesResponse, root.NetilionApiDocumentation.PictureLinkRequest, root.NetilionApiDocumentation.PictureResponse, root.NetilionApiDocumentation.PicturesResponse, root.NetilionApiDocumentation.SpecificationHistoryResponse, root.NetilionApiDocumentation.SpecificationsDelete, root.NetilionApiDocumentation.SpecificationsRename, root.NetilionApiDocumentation.SpecificationsRequest, root.NetilionApiDocumentation.SpecificationsResponse);
+    root.NetilionApiDocumentation.InstrumentationApi = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.AssetIDs, root.NetilionApiDocumentation.AssetsResponse, root.NetilionApiDocumentation.BillOfMaterialIDs, root.NetilionApiDocumentation.BillOfMaterialsResponse, root.NetilionApiDocumentation.DocumentIDs, root.NetilionApiDocumentation.DocumentsResponse, root.NetilionApiDocumentation.ErrorResponse, root.NetilionApiDocumentation.EventRequestNoInstrumentations, root.NetilionApiDocumentation.EventResponse, root.NetilionApiDocumentation.Events1, root.NetilionApiDocumentation.EventsResponse, root.NetilionApiDocumentation.InstrumentationAssetsHistoryResponse, root.NetilionApiDocumentation.InstrumentationRequest, root.NetilionApiDocumentation.InstrumentationResponse, root.NetilionApiDocumentation.InstrumentationStatusResponse, root.NetilionApiDocumentation.InstrumentationStatuses, root.NetilionApiDocumentation.InstrumentationTypeResponse, root.NetilionApiDocumentation.InstrumentationTypes, root.NetilionApiDocumentation.InstrumentationsResponse, root.NetilionApiDocumentation.NodeIDs, root.NetilionApiDocumentation.NodesResponse, root.NetilionApiDocumentation.PictureLinkRequest, root.NetilionApiDocumentation.PictureResponse, root.NetilionApiDocumentation.PicturesResponse, root.NetilionApiDocumentation.SpecificationHistoryResponse, root.NetilionApiDocumentation.SpecificationsDelete, root.NetilionApiDocumentation.SpecificationsRename, root.NetilionApiDocumentation.SpecificationsRequest, root.NetilionApiDocumentation.SpecificationsResponse, root.NetilionApiDocumentation.ThresholdRequest, root.NetilionApiDocumentation.ThresholdResponse, root.NetilionApiDocumentation.ThresholdsResponse);
   }
-}(this, function(ApiClient, AssetIDs, AssetsResponse, BillOfMaterialIDs, BillOfMaterialsResponse, DocumentIDs, DocumentsResponse, ErrorResponse, EventRequestNoInstrumentations, EventResponse, Events1, EventsResponse, InstrumentationAssetsHistoryResponse, InstrumentationRequest, InstrumentationResponse, InstrumentationStatusResponse, InstrumentationStatuses, InstrumentationTypeResponse, InstrumentationTypes, InstrumentationsResponse, NodeIDs, NodesResponse, PictureLinkRequest, PictureResponse, PicturesResponse, SpecificationHistoryResponse, SpecificationsDelete, SpecificationsRename, SpecificationsRequest, SpecificationsResponse) {
+}(this, function(ApiClient, AssetIDs, AssetsResponse, BillOfMaterialIDs, BillOfMaterialsResponse, DocumentIDs, DocumentsResponse, ErrorResponse, EventRequestNoInstrumentations, EventResponse, Events1, EventsResponse, InstrumentationAssetsHistoryResponse, InstrumentationRequest, InstrumentationResponse, InstrumentationStatusResponse, InstrumentationStatuses, InstrumentationTypeResponse, InstrumentationTypes, InstrumentationsResponse, NodeIDs, NodesResponse, PictureLinkRequest, PictureResponse, PicturesResponse, SpecificationHistoryResponse, SpecificationsDelete, SpecificationsRename, SpecificationsRequest, SpecificationsResponse, ThresholdRequest, ThresholdResponse, ThresholdsResponse) {
   'use strict';
 
   /**
@@ -461,6 +461,66 @@
 
 
     /**
+     * Create an instrumentation threshold
+     * Create a new instrumentation threshold. Thresholds value order must be &#x60;&#x60;&#x60;low_low &lt; low &lt; high &lt; high_high&#x60;&#x60;&#x60;. This action requires &#x60;&#x60;&#x60;can_udpate&#x60;&#x60;&#x60; permission on the instrumentation.
+     * @param {Number} instrumentationId Id of the specified instrumentation
+     * @param {module:model/ThresholdRequest} body Object body that will be created.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ThresholdResponse} and HTTP response
+     */
+    this.createInstrumentationThresholdWithHttpInfo = function(instrumentationId, body) {
+      var postBody = body;
+
+      // verify the required parameter 'instrumentationId' is set
+      if (instrumentationId === undefined || instrumentationId === null) {
+        throw new Error("Missing the required parameter 'instrumentationId' when calling createInstrumentationThreshold");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createInstrumentationThreshold");
+      }
+
+
+      var pathParams = {
+        'instrumentation_id': instrumentationId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['API-Key', 'Authentication'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ThresholdResponse;
+
+      return this.apiClient.callApi(
+        '/instrumentations/{instrumentation_id}/thresholds', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Create an instrumentation threshold
+     * Create a new instrumentation threshold. Thresholds value order must be &#x60;&#x60;&#x60;low_low &lt; low &lt; high &lt; high_high&#x60;&#x60;&#x60;. This action requires &#x60;&#x60;&#x60;can_udpate&#x60;&#x60;&#x60; permission on the instrumentation.
+     * @param {Number} instrumentationId Id of the specified instrumentation
+     * @param {module:model/ThresholdRequest} body Object body that will be created.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ThresholdResponse}
+     */
+    this.createInstrumentationThreshold = function(instrumentationId, body) {
+      return this.createInstrumentationThresholdWithHttpInfo(instrumentationId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete an instrumentation
      * Delete a specific resource in your accessible scope, identified by the id in the URL.
      * @param {Number} id Id of the instrumentation to delete
@@ -568,6 +628,67 @@
      */
     this.deleteInstrumentationPicture = function(instrumentationId, id) {
       return this.deleteInstrumentationPictureWithHttpInfo(instrumentationId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete an instrumentation threshold
+     * Delete an instrumentation threshold.
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Number} id Id of the instrumentation threshold
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteInstrumentationThresholdWithHttpInfo = function(instrumentationId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'instrumentationId' is set
+      if (instrumentationId === undefined || instrumentationId === null) {
+        throw new Error("Missing the required parameter 'instrumentationId' when calling deleteInstrumentationThreshold");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteInstrumentationThreshold");
+      }
+
+
+      var pathParams = {
+        'instrumentation_id': instrumentationId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['API-Key', 'Authentication'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/instrumentations/{instrumentation_id}/thresholds/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete an instrumentation threshold
+     * Delete an instrumentation threshold.
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Number} id Id of the instrumentation threshold
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.deleteInstrumentationThreshold = function(instrumentationId, id) {
+      return this.deleteInstrumentationThresholdWithHttpInfo(instrumentationId, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1088,7 +1209,7 @@
 
     /**
      * Get a single instrumentation
-     * Get a specific instrumentation in your accessible scope, identified by the id in the URL.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type, type.parent, type.tenant, values, values.unit, values.asset &#x60;&#x60;&#x60; 
+     * Get a specific instrumentation in your accessible scope, identified by the id in the URL.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type, type.parent, type.tenant, values, values.unit, values.asset &#x60;&#x60;&#x60; 
      * @param {Number} id Id of the instrumentation to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response
@@ -1131,7 +1252,7 @@
 
     /**
      * Get a single instrumentation
-     * Get a specific instrumentation in your accessible scope, identified by the id in the URL.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type, type.parent, type.tenant, values, values.unit, values.asset &#x60;&#x60;&#x60; 
+     * Get a specific instrumentation in your accessible scope, identified by the id in the URL.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type, type.parent, type.tenant, values, values.unit, values.asset &#x60;&#x60;&#x60; 
      * @param {Number} id Id of the instrumentation to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response
@@ -1147,7 +1268,7 @@
 
     /**
      * Get the status of the specific instrumentation
-     * Returns the status of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the status of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -1190,7 +1311,7 @@
 
     /**
      * Get the status of the specific instrumentation
-     * Returns the status of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the status of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -1206,7 +1327,7 @@
 
     /**
      * Get the type of the specific instrumentation
-     * Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
+     * Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -1249,7 +1370,7 @@
 
     /**
      * Get the type of the specific instrumentation
-     * Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
+     * Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -1400,7 +1521,7 @@
 
     /**
      * Get all possible statuses of the specified instrumentation
-     * Returns a list of all possible instrumentation statuses for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible instrumentation statuses for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -1453,7 +1574,7 @@
 
     /**
      * Get all possible statuses of the specified instrumentation
-     * Returns a list of all possible instrumentation statuses for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible instrumentation statuses for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -1473,8 +1594,131 @@
 
 
     /**
+     * Get an instrumentation threshold
+     * Get a single threshold of an instrumentation.
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Number} id Id of the instrumentation threshold
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ThresholdResponse} and HTTP response
+     */
+    this.getInstrumentationThresholdWithHttpInfo = function(instrumentationId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'instrumentationId' is set
+      if (instrumentationId === undefined || instrumentationId === null) {
+        throw new Error("Missing the required parameter 'instrumentationId' when calling getInstrumentationThreshold");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getInstrumentationThreshold");
+      }
+
+
+      var pathParams = {
+        'instrumentation_id': instrumentationId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['API-Key', 'Authentication'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ThresholdResponse;
+
+      return this.apiClient.callApi(
+        '/instrumentations/{instrumentation_id}/thresholds/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get an instrumentation threshold
+     * Get a single threshold of an instrumentation.
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Number} id Id of the instrumentation threshold
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ThresholdResponse}
+     */
+    this.getInstrumentationThreshold = function(instrumentationId, id) {
+      return this.getInstrumentationThresholdWithHttpInfo(instrumentationId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get instrumentation thresholds
+     * Get all thresholds of an instrumentation.
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.key filter by key
+     * @param {String} opts.orderBy Order result by attribute value, accepts &#x60;key&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60;
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ThresholdsResponse} and HTTP response
+     */
+    this.getInstrumentationThresholdsWithHttpInfo = function(instrumentationId, opts) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'instrumentationId' is set
+      if (instrumentationId === undefined || instrumentationId === null) {
+        throw new Error("Missing the required parameter 'instrumentationId' when calling getInstrumentationThresholds");
+      }
+
+
+      var pathParams = {
+        'instrumentation_id': instrumentationId
+      };
+      var queryParams = {
+        'key': opts['key'],
+        'order_by': opts['orderBy'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['API-Key', 'Authentication'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ThresholdsResponse;
+
+      return this.apiClient.callApi(
+        '/instrumentations/{instrumentation_id}/thresholds', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get instrumentation thresholds
+     * Get all thresholds of an instrumentation.
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.key filter by key
+     * @param {String} opts.orderBy Order result by attribute value, accepts &#x60;key&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60;
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ThresholdsResponse}
+     */
+    this.getInstrumentationThresholds = function(instrumentationId, opts) {
+      return this.getInstrumentationThresholdsWithHttpInfo(instrumentationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get all possible types of the specified instrumentation
-     * Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -1527,7 +1771,7 @@
 
     /**
      * Get all possible types of the specified instrumentation
-     * Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} instrumentationId Id of the instrumentation
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -1548,7 +1792,7 @@
 
     /**
      * Get a range of instrumentations
-     * Returns a list of instrumentations in your accessible scope. If the query has no matches, the response is an empty list.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type, type.tenant, type.parent&#x60;&#x60;&#x60; 
+     * Returns a list of instrumentations in your accessible scope. If the query has no matches, the response is an empty list.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type, type.tenant, type.parent&#x60;&#x60;&#x60; 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -1614,7 +1858,7 @@
 
     /**
      * Get a range of instrumentations
-     * Returns a list of instrumentations in your accessible scope. If the query has no matches, the response is an empty list.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type, type.tenant, type.parent&#x60;&#x60;&#x60; 
+     * Returns a list of instrumentations in your accessible scope. If the query has no matches, the response is an empty list.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type, type.tenant, type.parent&#x60;&#x60;&#x60; 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -2720,6 +2964,74 @@
      */
     this.updateInstrumentationPictureLink = function(instrumentationId, id, body) {
       return this.updateInstrumentationPictureLinkWithHttpInfo(instrumentationId, id, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update an instrumentation threshold
+     * Replaces the threshold belonging to an instrumentation. This action requires &#x60;can_udpate&#x60; permission on the instrumentation
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Number} id Id of the instrumentation threshold
+     * @param {module:model/ThresholdRequest} body Object body that will be updated.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ThresholdResponse} and HTTP response
+     */
+    this.updateInstrumentationThresholdWithHttpInfo = function(instrumentationId, id, body) {
+      var postBody = body;
+
+      // verify the required parameter 'instrumentationId' is set
+      if (instrumentationId === undefined || instrumentationId === null) {
+        throw new Error("Missing the required parameter 'instrumentationId' when calling updateInstrumentationThreshold");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateInstrumentationThreshold");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateInstrumentationThreshold");
+      }
+
+
+      var pathParams = {
+        'instrumentation_id': instrumentationId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['API-Key', 'Authentication'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ThresholdResponse;
+
+      return this.apiClient.callApi(
+        '/instrumentations/{instrumentation_id}/thresholds/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Update an instrumentation threshold
+     * Replaces the threshold belonging to an instrumentation. This action requires &#x60;can_udpate&#x60; permission on the instrumentation
+     * @param {Number} instrumentationId Id of the instrumentation
+     * @param {Number} id Id of the instrumentation threshold
+     * @param {module:model/ThresholdRequest} body Object body that will be updated.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ThresholdResponse}
+     */
+    this.updateInstrumentationThreshold = function(instrumentationId, id, body) {
+      return this.updateInstrumentationThresholdWithHttpInfo(instrumentationId, id, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

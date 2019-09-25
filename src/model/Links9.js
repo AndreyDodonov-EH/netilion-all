@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('specifications')) {
         obj['specifications'] = Link.constructFromObject(data['specifications']);
       }
+      if (data.hasOwnProperty('thresholds')) {
+        obj['thresholds'] = Link.constructFromObject(data['thresholds']);
+      }
     }
     return obj;
   }
@@ -112,6 +116,10 @@
    * @member {module:model/Link} specifications
    */
   exports.prototype['specifications'] = undefined;
+  /**
+   * @member {module:model/Link} thresholds
+   */
+  exports.prototype['thresholds'] = undefined;
 
 
 

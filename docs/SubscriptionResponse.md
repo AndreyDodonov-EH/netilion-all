@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **shippingAddress** | [**ShippingAddressResponse**](ShippingAddressResponse.md) |  | [optional] 
 **successor** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **predecessor** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
-**links** | [**Links15**](Links15.md) |  | [optional] 
+**links** | [**Links16**](Links16.md) |  | [optional] 
 
 

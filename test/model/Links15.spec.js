@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src'], factory);
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src'));
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.NetilionApiDocumentation);
@@ -56,14 +56,8 @@
       //expect(instance).to.be.a(NetilionApiDocumentation.Links15);
     });
 
-    it('should have the property assets (base name: "assets")', function() {
-      // uncomment below and update the code to test the property assets
-      //var instance = new NetilionApiDocumentation.Links15();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property specifications (base name: "specifications")', function() {
-      // uncomment below and update the code to test the property specifications
+    it('should have the property softwareAttachments (base name: "software_attachments")', function() {
+      // uncomment below and update the code to test the property softwareAttachments
       //var instance = new NetilionApiDocumentation.Links15();
       //expect(instance).to.be();
     });

@@ -155,7 +155,7 @@
 
     /**
      * Get the status of a specific document
-     * Returns the status of the document. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the status of the document. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} documentId Id of the specified document
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -198,7 +198,7 @@
 
     /**
      * Get the status of a specific document
-     * Returns the status of the document. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the status of the document. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} documentId Id of the specified document
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -214,7 +214,7 @@
 
     /**
      * Get a single document status
-     * Get a specific document status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Get a specific document status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} id Id of document status to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -257,7 +257,7 @@
 
     /**
      * Get a single document status
-     * Get a specific document status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Get a specific document status identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} id Id of document status to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -273,7 +273,7 @@
 
     /**
      * Get a range of document statuses
-     * Returns a list of all document statuses that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all document statuses that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -321,7 +321,7 @@
 
     /**
      * Get a range of document statuses
-     * Returns a list of all document statuses that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all document statuses that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -342,7 +342,7 @@
 
     /**
      * Get all possible statuses for the specified document
-     * Returns a list of all possible document statuses for the specified document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible document statuses for the specified document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} documentId Id of the specified document
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -399,7 +399,7 @@
 
     /**
      * Get all possible statuses for the specified document
-     * Returns a list of all possible document statuses for the specified document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible document statuses for the specified document. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} documentId Id of the specified document
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load

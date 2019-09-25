@@ -1095,7 +1095,7 @@ null (empty response body)
 
 Get all possible products of the specified assets
 
-Returns a list of all possible products for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
+Returns a list of all possible products for the specified asset. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 Get all categories of a product
 
-Get all categories for the specific product identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
+Get all categories for the specific product identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1249,7 +1249,7 @@ Name | Type | Description  | Notes
 
 Get all categories of one product
 
-Returns a list of all possible categories for the specific product available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60; \&quot;
+Returns a list of all possible categories for the specific product available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60; \&quot;
 
 ### Example
 ```javascript
@@ -1324,7 +1324,7 @@ Name | Type | Description  | Notes
 
 Get all documents of a product
 
-Returns a list of documents assigned to the specified product. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+Returns a list of documents assigned to the specified product. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1405,7 +1405,7 @@ Name | Type | Description  | Notes
 
 Get all edge device features of a product
 
-Returns a list of edge device features assigned to the specified product. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of edge device features assigned to the specified product. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -1474,7 +1474,7 @@ Name | Type | Description  | Notes
 
 Get a single product
 
-Get a specific product identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
+Get a specific product identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, specifications, specifications[key1,key2], categories, categories.parent&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1654,7 +1654,7 @@ Name | Type | Description  | Notes
 
 Get the status of a specific product
 
-Returns the status of the product. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns the status of the product. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -1961,7 +1961,7 @@ Name | Type | Description  | Notes
 
 Get all possible statuses for the specified product
 
-Returns a list of all possible product statuses for the specified product. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all possible product statuses for the specified product. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -2210,7 +2210,7 @@ Name | Type | Description  | Notes
 
 Get a range of products
 
-Returns a list of all products that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60; \&quot;
+Returns a list of all products that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, specifications, specifications[key1,key2], categories, categories.parent&#x60;&#x60;&#x60; \&quot;
 
 ### Example
 ```javascript
@@ -2241,6 +2241,8 @@ var opts = {
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
   'parentId': "parentId_example", // String | One or multiple ids (comma list). \"null\" to retrieve all objects without parent, \"!null\" for all objects with parent.
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
+  'specificationsKey': "specificationsKey_example", // String | Filter accepts `*` as wildcard (if used as single specifications filter), supports comma list of keys in connection with specifications_value filter
+  'specificationsValue': "specificationsValue_example", // String | Filter accepts `*` as wildcard, supports comma list of values in connection with specifications_key filter. Does not work for vectors
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
@@ -2266,6 +2268,8 @@ Name | Type | Description  | Notes
  **categoryId** | **String**| One or multiple ids (comma list). By adding &#x60;+&#x60; after the id, the filter considers the given category and all its children (e.g. 3+). | [optional] 
  **parentId** | **String**| One or multiple ids (comma list). \&quot;null\&quot; to retrieve all objects without parent, \&quot;!null\&quot; for all objects with parent. | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
+ **specificationsKey** | **String**| Filter accepts &#x60;*&#x60; as wildcard (if used as single specifications filter), supports comma list of keys in connection with specifications_value filter | [optional] 
+ **specificationsValue** | **String**| Filter accepts &#x60;*&#x60; as wildcard, supports comma list of values in connection with specifications_key filter. Does not work for vectors | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
  **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
@@ -2288,7 +2292,7 @@ Name | Type | Description  | Notes
 
 Get all products of a company
 
-Receive a list of products of a specific company, identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
+Receive a list of products of a specific company, identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, parent, manufacturer, pictures, categories, categories.parent&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -2527,7 +2531,7 @@ Name | Type | Description  | Notes
 
 Get a range of software of one product
 
-Returns a list of software. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;software_attachments&#x60;&#x60;&#x60;
+Returns a list of software. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;software_attachments&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -2552,7 +2556,9 @@ var productId = 789; // Number | The resource defined in the URL
 var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
-  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `version_number`, `name`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'include': "include_example", // String | Comma separated list of objects to include in response
+  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `version_number`, `name`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
 apiInstance.getSoftwaresOfProduct(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -2569,7 +2575,9 @@ Name | Type | Description  | Notes
  **productId** | **Number**| The resource defined in the URL | 
  **page** | **Number**| Page number to load | [optional] 
  **perPage** | **Number**| Number of items to load per page | [optional] 
+ **include** | **String**| Comma separated list of objects to include in response | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;version_number&#x60;, &#x60;name&#x60;, &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 

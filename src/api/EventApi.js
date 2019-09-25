@@ -590,7 +590,7 @@
 
     /**
      * Get the status of a specific event
-     * Returns the status of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the status of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -633,7 +633,7 @@
 
     /**
      * Get the status of a specific event
-     * Returns the status of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the status of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -649,7 +649,7 @@
 
     /**
      * Get the type of a specific event
-     * Returns the type of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the type of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -692,7 +692,7 @@
 
     /**
      * Get the type of a specific event
-     * Returns the type of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns the type of the event. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {String} opts.acceptLanguage The client&#39;s accepted languages. One or several (e.g. fr,de,en)
@@ -708,7 +708,7 @@
 
     /**
      * Get all possible statuses for the specified event
-     * Returns a list of all possible event statuses for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible event statuses for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -763,7 +763,7 @@
 
     /**
      * Get all possible statuses for the specified event
-     * Returns a list of all possible event statuses for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible event statuses for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -785,7 +785,7 @@
 
     /**
      * Get all possible types for the specified event
-     * Returns a list of all possible event types for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible event types for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -840,7 +840,7 @@
 
     /**
      * Get all possible types for the specified event
-     * Returns a list of all possible event types for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible event types for the specified event. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} eventId Id of the specified event
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load

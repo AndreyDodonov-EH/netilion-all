@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 Get a single notification
 
-Get a specific notification identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Get a specific notification identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 Get a range of notifications
 
-Returns a list of all notifications available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all notifications available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript

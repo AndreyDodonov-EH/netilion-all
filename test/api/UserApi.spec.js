@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src'], factory);
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src'));
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.NetilionApiDocumentation);
@@ -104,6 +104,16 @@
       it('should call deleteCurrentUserNotifications successfully', function(done) {
         //uncomment below and update the code to test deleteCurrentUserNotifications
         //instance.deleteCurrentUserNotifications(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteTechnicalUser', function() {
+      it('should call deleteTechnicalUser successfully', function(done) {
+        //uncomment below and update the code to test deleteTechnicalUser
+        //instance.deleteTechnicalUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -374,6 +384,16 @@
       it('should call resetPassword successfully', function(done) {
         //uncomment below and update the code to test resetPassword
         //instance.resetPassword(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('resetPasswordTechnicalUser', function() {
+      it('should call resetPasswordTechnicalUser successfully', function(done) {
+        //uncomment below and update the code to test resetPasswordTechnicalUser
+        //instance.resetPasswordTechnicalUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

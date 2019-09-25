@@ -595,7 +595,7 @@
 
     /**
      * Get all documents of one request for quotation
-     * Returns a list of documents. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of documents. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} requestForQuotationId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -660,7 +660,7 @@
 
     /**
      * Get all documents of one request for quotation
-     * Returns a list of documents. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of documents. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} requestForQuotationId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -829,7 +829,7 @@
 
     /**
      * Get the status of the specific request for quotation
-     * Returns the status of the request for quotation. Needed if only permission on request for quotation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+     * Returns the status of the request for quotation. Needed if only permission on request for quotation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
      * @param {Number} requestForQuotationId Id of the specified request for quotation
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response
@@ -874,7 +874,7 @@
 
     /**
      * Get the status of the specific request for quotation
-     * Returns the status of the request for quotation. Needed if only permission on request for quotation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+     * Returns the status of the request for quotation. Needed if only permission on request for quotation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include value: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
      * @param {Number} requestForQuotationId Id of the specified request for quotation
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response

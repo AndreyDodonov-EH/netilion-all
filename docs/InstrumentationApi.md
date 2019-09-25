@@ -11,8 +11,10 @@ Method | HTTP request | Description
 [**addNodesToInstrumentation**](InstrumentationApi.md#addNodesToInstrumentation) | **POST** /instrumentations/{instrumentation_id}/nodes | Add nodes to an instrumentation
 [**createEventForInstrumentation**](InstrumentationApi.md#createEventForInstrumentation) | **POST** /instrumentations/{instrumentation_id}/events | Create a new event for an instrumentation
 [**createInstrumentation**](InstrumentationApi.md#createInstrumentation) | **POST** /instrumentations | Create a new instrumentation
+[**createInstrumentationThreshold**](InstrumentationApi.md#createInstrumentationThreshold) | **POST** /instrumentations/{instrumentation_id}/thresholds | Create an instrumentation threshold
 [**deleteInstrumentation**](InstrumentationApi.md#deleteInstrumentation) | **DELETE** /instrumentations/{id} | Delete an instrumentation
 [**deleteInstrumentationPicture**](InstrumentationApi.md#deleteInstrumentationPicture) | **DELETE** /instrumentations/{instrumentation_id}/pictures/{id} | Delete an instrumentation picture
+[**deleteInstrumentationThreshold**](InstrumentationApi.md#deleteInstrumentationThreshold) | **DELETE** /instrumentations/{instrumentation_id}/thresholds/{id} | Delete an instrumentation threshold
 [**downloadInstrumentationPicture**](InstrumentationApi.md#downloadInstrumentationPicture) | **GET** /instrumentations/{instrumentation_id}/pictures/{id}/download | Download an instrumentation picture
 [**getAssetsOfInstrumentation**](InstrumentationApi.md#getAssetsOfInstrumentation) | **GET** /instrumentations/{instrumentation_id}/assets | Get all assets of one instrumentation
 [**getAssetsOfInstrumentationHistory**](InstrumentationApi.md#getAssetsOfInstrumentationHistory) | **GET** /instrumentations/{instrumentation_id}/assets/history | Get all assets an instrumentation was assigned to
@@ -25,6 +27,8 @@ Method | HTTP request | Description
 [**getInstrumentationPicture**](InstrumentationApi.md#getInstrumentationPicture) | **GET** /instrumentations/{instrumentation_id}/pictures/{id} | Get an instrumentation picture
 [**getInstrumentationPictures**](InstrumentationApi.md#getInstrumentationPictures) | **GET** /instrumentations/{id}/pictures | Get instrumentation pictures
 [**getInstrumentationStatusesOptions**](InstrumentationApi.md#getInstrumentationStatusesOptions) | **GET** /instrumentations/{instrumentation_id}/status-options | Get all possible statuses of the specified instrumentation
+[**getInstrumentationThreshold**](InstrumentationApi.md#getInstrumentationThreshold) | **GET** /instrumentations/{instrumentation_id}/thresholds/{id} | Get an instrumentation threshold
+[**getInstrumentationThresholds**](InstrumentationApi.md#getInstrumentationThresholds) | **GET** /instrumentations/{instrumentation_id}/thresholds | Get instrumentation thresholds
 [**getInstrumentationTypesOptions**](InstrumentationApi.md#getInstrumentationTypesOptions) | **GET** /instrumentations/{instrumentation_id}/type-options | Get all possible types of the specified instrumentation
 [**getInstrumentations**](InstrumentationApi.md#getInstrumentations) | **GET** /instrumentations | Get a range of instrumentations
 [**getNodesOfInstrumentation**](InstrumentationApi.md#getNodesOfInstrumentation) | **GET** /instrumentations/{instrumentation_id}/nodes | Get all nodes of one Instrumentation
@@ -44,6 +48,7 @@ Method | HTTP request | Description
 [**updateInstrumentation**](InstrumentationApi.md#updateInstrumentation) | **PATCH** /instrumentations/{id} | Update an instrumentation
 [**updateInstrumentationPicture**](InstrumentationApi.md#updateInstrumentationPicture) | **PATCH** /instrumentations/{instrumentation_id}/pictures/{id} | Update an instrumentation picture
 [**updateInstrumentationPictureLink**](InstrumentationApi.md#updateInstrumentationPictureLink) | **PATCH** /instrumentations/{instrumentation_id}/pictures/links/{id} | Update an instrumentation picture link
+[**updateInstrumentationThreshold**](InstrumentationApi.md#updateInstrumentationThreshold) | **PATCH** /instrumentations/{instrumentation_id}/thresholds/{id} | Update an instrumentation threshold
 [**updateSpecificationsOfInstrumentation**](InstrumentationApi.md#updateSpecificationsOfInstrumentation) | **PATCH** /instrumentations/{instrumentation_id}/specifications | Update specifications of an instrumentation
 [**uploadInstrumentationPicture**](InstrumentationApi.md#uploadInstrumentationPicture) | **POST** /instrumentations/{id}/pictures | Upload an instrumentation picture
 
@@ -451,6 +456,64 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="createInstrumentationThreshold"></a>
+# **createInstrumentationThreshold**
+> ThresholdResponse createInstrumentationThreshold(instrumentationId, body)
+
+Create an instrumentation threshold
+
+Create a new instrumentation threshold. Thresholds value order must be &#x60;&#x60;&#x60;low_low &lt; low &lt; high &lt; high_high&#x60;&#x60;&#x60;. This action requires &#x60;&#x60;&#x60;can_udpate&#x60;&#x60;&#x60; permission on the instrumentation.
+
+### Example
+```javascript
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+var API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: Authentication
+var Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be created.
+
+apiInstance.createInstrumentationThreshold(instrumentationId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be created. | 
+
+### Return type
+
+[**ThresholdResponse**](ThresholdResponse.md)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteInstrumentation"></a>
 # **deleteInstrumentation**
 > deleteInstrumentation(id)
@@ -550,6 +613,64 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentationId** | **Number**| Id of the instrumentation | 
  **id** | **Number**| Id of the instrumentation picture | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteInstrumentationThreshold"></a>
+# **deleteInstrumentationThreshold**
+> deleteInstrumentationThreshold(instrumentationId, id)
+
+Delete an instrumentation threshold
+
+Delete an instrumentation threshold.
+
+### Example
+```javascript
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+var API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: Authentication
+var Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+apiInstance.deleteInstrumentationThreshold(instrumentationId, id).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentationId** | **Number**| Id of the instrumentation | 
+ **id** | **Number**| Id of the instrumentation threshold | 
 
 ### Return type
 
@@ -1027,7 +1148,7 @@ Name | Type | Description  | Notes
 
 Get a single instrumentation
 
-Get a specific instrumentation in your accessible scope, identified by the id in the URL.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type, type.parent, type.tenant, values, values.unit, values.asset &#x60;&#x60;&#x60; 
+Get a specific instrumentation in your accessible scope, identified by the id in the URL.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type, type.parent, type.tenant, values, values.unit, values.asset &#x60;&#x60;&#x60; 
 
 ### Example
 ```javascript
@@ -1086,7 +1207,7 @@ Name | Type | Description  | Notes
 
 Get the status of the specific instrumentation
 
-Returns the status of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns the status of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -1145,7 +1266,7 @@ Name | Type | Description  | Notes
 
 Get the type of the specific instrumentation
 
-Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
+Returns the type of the instrumentation. Needed if only permission on instrumentation but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;parent&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
@@ -1331,7 +1452,7 @@ Name | Type | Description  | Notes
 
 Get all possible statuses of the specified instrumentation
 
-Returns a list of all possible instrumentation statuses for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all possible instrumentation statuses for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -1394,13 +1515,132 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getInstrumentationThreshold"></a>
+# **getInstrumentationThreshold**
+> ThresholdResponse getInstrumentationThreshold(instrumentationId, id)
+
+Get an instrumentation threshold
+
+Get a single threshold of an instrumentation.
+
+### Example
+```javascript
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+var API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: Authentication
+var Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+apiInstance.getInstrumentationThreshold(instrumentationId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentationId** | **Number**| Id of the instrumentation | 
+ **id** | **Number**| Id of the instrumentation threshold | 
+
+### Return type
+
+[**ThresholdResponse**](ThresholdResponse.md)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getInstrumentationThresholds"></a>
+# **getInstrumentationThresholds**
+> ThresholdsResponse getInstrumentationThresholds(instrumentationId, opts)
+
+Get instrumentation thresholds
+
+Get all thresholds of an instrumentation.
+
+### Example
+```javascript
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+var API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: Authentication
+var Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var opts = { 
+  'key': "key_example", // String | filter by key
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `key`. Add `-` as a prefix for descending order. Default value is `id`
+};
+apiInstance.getInstrumentationThresholds(instrumentationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentationId** | **Number**| Id of the instrumentation | 
+ **key** | **String**| filter by key | [optional] 
+ **orderBy** | **String**| Order result by attribute value, accepts &#x60;key&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
+
+### Return type
+
+[**ThresholdsResponse**](ThresholdsResponse.md)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getInstrumentationTypesOptions"></a>
 # **getInstrumentationTypesOptions**
 > InstrumentationTypes getInstrumentationTypesOptions(instrumentationId, opts)
 
 Get all possible types of the specified instrumentation
 
-Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all possible instrumentation types for the specified instrument. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -1469,7 +1709,7 @@ Name | Type | Description  | Notes
 
 Get a range of instrumentations
 
-Returns a list of instrumentations in your accessible scope. If the query has no matches, the response is an empty list.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type, type.tenant, type.parent&#x60;&#x60;&#x60; 
+Returns a list of instrumentations in your accessible scope. If the query has no matches, the response is an empty list.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type, type.tenant, type.parent&#x60;&#x60;&#x60; 
 
 ### Example
 ```javascript
@@ -2565,6 +2805,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PictureResponse**](PictureResponse.md)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateInstrumentationThreshold"></a>
+# **updateInstrumentationThreshold**
+> ThresholdResponse updateInstrumentationThreshold(instrumentationId, id, body)
+
+Update an instrumentation threshold
+
+Replaces the threshold belonging to an instrumentation. This action requires &#x60;can_udpate&#x60; permission on the instrumentation
+
+### Example
+```javascript
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+var API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: Authentication
+var Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+var body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be updated.
+
+apiInstance.updateInstrumentationThreshold(instrumentationId, id, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentationId** | **Number**| Id of the instrumentation | 
+ **id** | **Number**| Id of the instrumentation threshold | 
+ **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be updated. | 
+
+### Return type
+
+[**ThresholdResponse**](ThresholdResponse.md)
 
 ### Authorization
 

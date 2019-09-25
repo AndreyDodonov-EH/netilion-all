@@ -48,7 +48,6 @@
     var _this = this;
 
 
-
   };
 
   /**
@@ -62,24 +61,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('assets')) {
-        obj['assets'] = Link.constructFromObject(data['assets']);
-      }
-      if (data.hasOwnProperty('specifications')) {
-        obj['specifications'] = Link.constructFromObject(data['specifications']);
+      if (data.hasOwnProperty('software_attachments')) {
+        obj['software_attachments'] = Link.constructFromObject(data['software_attachments']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Link} assets
+   * @member {module:model/Link} software_attachments
    */
-  exports.prototype['assets'] = undefined;
-  /**
-   * @member {module:model/Link} specifications
-   */
-  exports.prototype['specifications'] = undefined;
+  exports.prototype['software_attachments'] = undefined;
 
 
 

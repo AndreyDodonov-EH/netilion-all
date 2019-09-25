@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**createTechnicalUser**](UserApi.md#createTechnicalUser) | **POST** /technical_users | Create a new technical user
 [**deleteCurrentUserDatasExport**](UserApi.md#deleteCurrentUserDatasExport) | **DELETE** /users/current/data_exports/{id} | delete users data export for current user
 [**deleteCurrentUserNotifications**](UserApi.md#deleteCurrentUserNotifications) | **DELETE** /users/current/notifications/{id} | Delete the given notification for the current user
+[**deleteTechnicalUser**](UserApi.md#deleteTechnicalUser) | **DELETE** /technical_users/{id} | Delete a technical user
 [**deleteUser**](UserApi.md#deleteUser) | **DELETE** /users/{id} | Delete a user
 [**emailChange**](UserApi.md#emailChange) | **PATCH** /users/current/email | change email of current user
 [**getCurrentUser**](UserApi.md#getCurrentUser) | **GET** /users/current | Get current user
@@ -37,6 +38,7 @@ Method | HTTP request | Description
 [**replaceUserRolesOfUser**](UserApi.md#replaceUserRolesOfUser) | **PATCH** /users/{user_id}/userroles | Replace the user roles of a user
 [**requestPasswordReset**](UserApi.md#requestPasswordReset) | **POST** /users/request_password_reset | request password reset instructions
 [**resetPassword**](UserApi.md#resetPassword) | **PATCH** /users/reset_password | reset password with token
+[**resetPasswordTechnicalUser**](UserApi.md#resetPasswordTechnicalUser) | **POST** /technical_users/{id}/reset_password | create a new password for a technical user
 [**updateSpecificationsOfUsers**](UserApi.md#updateSpecificationsOfUsers) | **PATCH** /users/{user_id}/specifications | Update specifications of a user
 [**updateUser**](UserApi.md#updateUser) | **PATCH** /users/{id} | Update a user
 
@@ -363,6 +365,61 @@ apiInstance.deleteCurrentUserNotifications(id).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of the notification to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteTechnicalUser"></a>
+# **deleteTechnicalUser**
+> deleteTechnicalUser(id)
+
+Delete a technical user
+
+Delete a technical user identified by the id in the URL.
+
+### Example
+```javascript
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+var API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: Authentication
+var Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var id = 789; // Number | Id of the technical user to delete
+
+apiInstance.deleteTechnicalUser(id).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**| Id of the technical user to delete | 
 
 ### Return type
 
@@ -773,7 +830,7 @@ null (empty response body)
 
 Get relevant notifications for the current authenticated user
 
-Returns a list of all notifications available for the authenticated user on the current client application. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+Returns a list of all notifications available for the authenticated user on the current client application. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;content&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
 
 ### Example
 ```javascript
@@ -1945,6 +2002,61 @@ null (empty response body)
 ### Authorization
 
 [API-Key](../README.md#API-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="resetPasswordTechnicalUser"></a>
+# **resetPasswordTechnicalUser**
+> TechnicalUserPasswordResponse resetPasswordTechnicalUser(id)
+
+create a new password for a technical user
+
+ Password is automatically generated an can not be defined. The generated password is part of the response (but cannot be later received again). 
+
+### Example
+```javascript
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+var API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: Authentication
+var Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var id = 789; // Number | Id of the technical user
+
+apiInstance.resetPasswordTechnicalUser(id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**| Id of the technical user | 
+
+### Return type
+
+[**TechnicalUserPasswordResponse**](TechnicalUserPasswordResponse.md)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
 
 ### HTTP request headers
 

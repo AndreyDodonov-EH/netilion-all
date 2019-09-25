@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BillingAddressResponse', 'model/Links15', 'model/NestedIDHref', 'model/NestedIDHrefName', 'model/ShippingAddressResponse', 'model/SubscriptionBase'], factory);
+    define(['ApiClient', 'model/BillingAddressResponse', 'model/Links16', 'model/NestedIDHref', 'model/NestedIDHrefName', 'model/ShippingAddressResponse', 'model/SubscriptionBase'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BillingAddressResponse'), require('./Links15'), require('./NestedIDHref'), require('./NestedIDHrefName'), require('./ShippingAddressResponse'), require('./SubscriptionBase'));
+    module.exports = factory(require('../ApiClient'), require('./BillingAddressResponse'), require('./Links16'), require('./NestedIDHref'), require('./NestedIDHrefName'), require('./ShippingAddressResponse'), require('./SubscriptionBase'));
   } else {
     // Browser globals (root is window)
     if (!root.NetilionApiDocumentation) {
       root.NetilionApiDocumentation = {};
     }
-    root.NetilionApiDocumentation.SubscriptionResponse = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.BillingAddressResponse, root.NetilionApiDocumentation.Links15, root.NetilionApiDocumentation.NestedIDHref, root.NetilionApiDocumentation.NestedIDHrefName, root.NetilionApiDocumentation.ShippingAddressResponse, root.NetilionApiDocumentation.SubscriptionBase);
+    root.NetilionApiDocumentation.SubscriptionResponse = factory(root.NetilionApiDocumentation.ApiClient, root.NetilionApiDocumentation.BillingAddressResponse, root.NetilionApiDocumentation.Links16, root.NetilionApiDocumentation.NestedIDHref, root.NetilionApiDocumentation.NestedIDHrefName, root.NetilionApiDocumentation.ShippingAddressResponse, root.NetilionApiDocumentation.SubscriptionBase);
   }
-}(this, function(ApiClient, BillingAddressResponse, Links15, NestedIDHref, NestedIDHrefName, ShippingAddressResponse, SubscriptionBase) {
+}(this, function(ApiClient, BillingAddressResponse, Links16, NestedIDHref, NestedIDHrefName, ShippingAddressResponse, SubscriptionBase) {
   'use strict';
 
 
@@ -91,7 +91,7 @@
         obj['predecessor'] = NestedIDHref.constructFromObject(data['predecessor']);
       }
       if (data.hasOwnProperty('links')) {
-        obj['links'] = Links15.constructFromObject(data['links']);
+        obj['links'] = Links16.constructFromObject(data['links']);
       }
     }
     return obj;
@@ -130,7 +130,7 @@
    */
   exports.prototype['predecessor'] = undefined;
   /**
-   * @member {module:model/Links15} links
+   * @member {module:model/Links16} links
    */
   exports.prototype['links'] = undefined;
 

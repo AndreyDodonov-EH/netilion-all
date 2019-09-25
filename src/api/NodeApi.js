@@ -439,7 +439,7 @@
 
     /**
      * Get all documents of a node
-     * Returns a list of documents. If the query has no matches, the response is an empty list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of documents. If the query has no matches, the response is an empty list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} nodeId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -502,7 +502,7 @@
 
     /**
      * Get all documents of a node
-     * Returns a list of documents. If the query has no matches, the response is an empty list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
+     * Returns a list of documents. If the query has no matches, the response is an empty list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;status, tenant, classification, categories, categories.parent, attachments&#x60;&#x60;&#x60;
      * @param {Number} nodeId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -528,7 +528,7 @@
 
     /**
      * Get all instrumentations of one node
-     * Returns a list of all instrumentations that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type&#x60;&#x60;&#x60;
+     * Returns a list of all instrumentations that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type&#x60;&#x60;&#x60;
      * @param {Number} nodeId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -597,7 +597,7 @@
 
     /**
      * Get all instrumentations of one node
-     * Returns a list of all instrumentations that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, type&#x60;&#x60;&#x60;
+     * Returns a list of all instrumentations that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.  Possible include values: &#x60;&#x60;&#x60;specifications, specifications[key1,key2], pictures, tenant, parent, status, worst_asset_status, type&#x60;&#x60;&#x60;
      * @param {Number} nodeId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -626,7 +626,7 @@
 
     /**
      * Get the type of the specific node
-     * Returns the type of the node. Needed if only permission on node but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+     * Returns the type of the node. Needed if only permission on node but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
      * @param {Number} nodeId Id of the node
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response
@@ -671,7 +671,7 @@
 
     /**
      * Get the type of the specific node
-     * Returns the type of the node. Needed if only permission on node but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
+     * Returns the type of the node. Needed if only permission on node but not on tenant. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant&#x60;&#x60;&#x60;
      * @param {Number} nodeId Id of the node
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response
@@ -688,7 +688,7 @@
 
     /**
      * Get all possible types of the specified node
-     * Returns a list of all possible node types for the specified node. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible node types for the specified node. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} nodeId Id of the node
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -741,7 +741,7 @@
 
     /**
      * Get all possible types of the specified node
-     * Returns a list of all possible node types for the specified node. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Returns a list of all possible node types for the specified node. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} nodeId Id of the node
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load

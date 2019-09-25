@@ -222,7 +222,7 @@
 
     /**
      * Get all products of a product category
-     * Get all products of a specific product category identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Get all products of a specific product category identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} categoryId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -281,7 +281,7 @@
 
     /**
      * Get all products of a product category
-     * Get all products of a specific product category identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language.
+     * Get all products of a specific product category identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language.
      * @param {Number} categoryId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -418,7 +418,7 @@
 
     /**
      * Get all categories of a product
-     * Get all categories for the specific product identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
+     * Get all categories for the specific product identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
      * @param {Number} productId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -477,7 +477,7 @@
 
     /**
      * Get all categories of a product
-     * Get all categories for the specific product identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
+     * Get all categories for the specific product identified by the id in the URL. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
      * @param {Number} productId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -501,7 +501,7 @@
 
     /**
      * Get all categories of one product
-     * Returns a list of all possible categories for the specific product available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60; \&quot;
+     * Returns a list of all possible categories for the specific product available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60; \&quot;
      * @param {Number} productId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -560,7 +560,7 @@
 
     /**
      * Get all categories of one product
-     * Returns a list of all possible categories for the specific product available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60; \&quot;
+     * Returns a list of all possible categories for the specific product available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60; \&quot;
      * @param {Number} productId The resource defined in the URL
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
@@ -584,7 +584,7 @@
 
     /**
      * Get a range of product categories
-     * Returns a list of all product categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
+     * Returns a list of all product categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -636,7 +636,7 @@
 
     /**
      * Get a range of product categories
-     * Returns a list of all product categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
+     * Returns a list of all product categories that are available in your scope. You can apply the query parameters listed below to get a filtered list. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number to load
      * @param {Number} opts.perPage Number of items to load per page
@@ -659,7 +659,7 @@
 
     /**
      * Get a single product category
-     * Get a specific product category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
+     * Get a specific product category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
      * @param {Number} id Id of product category to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response
@@ -704,7 +704,7 @@
 
     /**
      * Get a single product category
-     * Get a specific product category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translations set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
+     * Get a specific product category identified by the id in the URL. Parameters supporting translation: &#x60;&#x60;&#x60;name, description&#x60;&#x60;&#x60;. To get a translation set Accept-Language. Possible include values: &#x60;&#x60;&#x60;tenant, parent&#x60;&#x60;&#x60;
      * @param {Number} id Id of product category to fetch
      * @param {Object} opts Optional parameters
      * @param {String} opts.include Comma separated list of objects to include in response
