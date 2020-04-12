@@ -4,4 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Id of object | [optional] 
-**links** | **Object** |  | [optional] 
+**links** | [**Links7**](Links7.md) |  | [optional] 
+
+

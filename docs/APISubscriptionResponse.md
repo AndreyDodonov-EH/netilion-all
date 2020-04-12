@@ -8,4 +8,6 @@ Name | Type | Description | Notes
 **clientApplication** | [**NestedIDHrefName**](NestedIDHrefName.md) |  | [optional] 
 **billingAddress** | [**BillingAddressResponse**](BillingAddressResponse.md) |  | [optional] 
 **shippingAddress** | [**ShippingAddressResponse**](ShippingAddressResponse.md) |  | [optional] 
-**links** | **Object** |  | [optional] 
+**links** | [**Links**](Links.md) |  | [optional] 
+
+

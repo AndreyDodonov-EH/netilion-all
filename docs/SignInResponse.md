@@ -11,3 +11,5 @@ Name | Type | Description | Notes
 **deviceType** | **String** | type of the used device (desktop, tablet or mobile) | [optional] 
 **platformName** | **String** | name of the used platform | [optional] 
 **platformVersion** | **String** | version of the used platform | [optional] 
+
+

@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.PermissionApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getPermissionInheritances**](PermissionApi.md#getPermissionInheritances) | **GET** /permission_inheritances | Get a range of permission inheritances
 [**getPermissions**](PermissionApi.md#getPermissions) | **GET** /permissions | Get a range of permissions
 
+
 <a name="createPermissionInheritance"></a>
 # **createPermissionInheritance**
 > PermissionInheritanceResponse createPermissionInheritance(body)
@@ -23,25 +24,27 @@ Create a new permission inheritance, only needed if default permission inheritan
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let body = new NetilionApiDocumentation.PermissionInheritanceRequest(); // PermissionInheritanceRequest | Permission object that needs to be created.
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
 
-apiInstance.createPermissionInheritance(body).then((data) => {
+var body = new NetilionApiDocumentation.PermissionInheritanceRequest(); // PermissionInheritanceRequest | Permission object that needs to be created.
+
+apiInstance.createPermissionInheritance(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -76,25 +79,27 @@ Permissions must have a permission_type, assignable and permitable. To create mu
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let body = new NetilionApiDocumentation.PermissionRequest(); // PermissionRequest | Permission object that needs to be created.
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
 
-apiInstance.createPermissions(body).then((data) => {
+var body = new NetilionApiDocumentation.PermissionRequest(); // PermissionRequest | Permission object that needs to be created.
+
+apiInstance.createPermissions(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -129,25 +134,27 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let id = 789; // Number | Id of the permission to delete
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
 
-apiInstance.deletePermission(id).then(() => {
+var id = 789; // Number | Id of the permission to delete
+
+apiInstance.deletePermission(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -169,7 +176,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deletePermissionInheritance"></a>
@@ -182,25 +189,27 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let id = 789; // Number | Id of the permission inheritance to delete
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
 
-apiInstance.deletePermissionInheritance(id).then(() => {
+var id = 789; // Number | Id of the permission inheritance to delete
+
+apiInstance.deletePermissionInheritance(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -222,7 +231,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getPermissionById"></a>
@@ -235,27 +244,30 @@ Get a specific permission identified by the id in the URL.  Possible include val
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let id = 789; // Number | Id of the permission to fetch
-let opts = { 
-  'include': "include_example" // String | Comma separated list of objects to include in response
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
+
+var id = 789; // Number | Id of the permission to fetch
+
+var opts = { 
+  'include': "include_example", // String | Comma separated list of objects to include in response
 };
-apiInstance.getPermissionById(id, opts).then((data) => {
+apiInstance.getPermissionById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -278,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getPermissionInheritanceById"></a>
@@ -291,25 +303,27 @@ Get a specific permission inheritance identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let id = 789; // Number | Id of the permission inheritance to fetch
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
 
-apiInstance.getPermissionInheritanceById(id).then((data) => {
+var id = 789; // Number | Id of the permission inheritance to fetch
+
+apiInstance.getPermissionInheritanceById(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -331,12 +345,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getPermissionInheritances"></a>
 # **getPermissionInheritances**
-> Object getPermissionInheritances(opts)
+> PermissionInheritances getPermissionInheritances(opts)
 
 Get a range of permission inheritances
 
@@ -344,21 +358,23 @@ Returns a list of all permission inheritances that are available in your scope. 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'permissionType': "permissionType_example", // String | filter by one of the permission_types (`can_read`, `can_update`, `can_delete`, `can_permit`)
@@ -366,9 +382,9 @@ let opts = {
   'permissionInheritableType': "permissionInheritableType_example", // String | filter by a specific type of permitables eg. `Event`
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getPermissionInheritances(opts).then((data) => {
+apiInstance.getPermissionInheritances(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -387,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**PermissionInheritances**](PermissionInheritances.md)
 
 ### Authorization
 
@@ -395,12 +411,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getPermissions"></a>
 # **getPermissions**
-> Object getPermissions(opts)
+> Permissions getPermissions(opts)
 
 Get a range of permissions
 
@@ -408,21 +424,23 @@ Returns a list of all permissions that are available in your scope. You can appl
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.PermissionApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -433,9 +451,9 @@ let opts = {
   'permitableType': "permitableType_example", // String | filter by a specific type of permitables eg. `Asset` or `Node`
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getPermissions(opts).then((data) => {
+apiInstance.getPermissions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -457,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Permissions**](Permissions.md)
 
 ### Authorization
 
@@ -465,6 +483,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

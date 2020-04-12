@@ -1,15 +1,16 @@
 # NetilionApiDocumentation.InstrumentationValuesApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getInstrumentationValues**](InstrumentationValuesApi.md#getInstrumentationValues) | **GET** /instrumentations/{instrumentation_id}/values | Get latest values for the instrumentation.
 [**getInstrumentationValuesForKey**](InstrumentationValuesApi.md#getInstrumentationValuesForKey) | **GET** /instrumentations/{instrumentation_id}/values/{key} | Get instrumentation values for a specific key.
 
+
 <a name="getInstrumentationValues"></a>
 # **getInstrumentationValues**
-> AssetValuesResponse getInstrumentationValues(instrumentationId, opts)
+> AssetValuesResponse getInstrumentationValues(instrumentationId, , opts)
 
 Get latest values for the instrumentation.
 
@@ -17,22 +18,25 @@ Returns a collection of the latest values for all keys of the instrumentation. P
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationValuesApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationValuesApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -40,9 +44,9 @@ let opts = {
   'keyUnitId': "keyUnitId_example", // String | value of the provided key will be returned in the specified unit. If no key_unit is defined the last written unit will be returned. Accepted format is `key[unit_id]`. Multiple values can be provided in a comma seperated list.
   'group': "group_example" // String | Group of the asset value.
 };
-apiInstance.getInstrumentationValues(instrumentationId, opts).then((data) => {
+apiInstance.getInstrumentationValues(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -70,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationValuesForKey"></a>
@@ -83,23 +87,27 @@ Returns a collection of the history values of an values for the specified key. F
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationValuesApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let key = "key_example"; // String | key for the instrumentation values
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationValuesApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var key = "key_example"; // String | key for the instrumentation values
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page, default value is 500, maximum is 1000
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -110,9 +118,9 @@ let opts = {
   'interval': "interval_example", // String | Interval which is used for the aggregation. The value is mandatory if aggregation is defined. Supported intervals are number of `s, m, h, d, w`. Example `3h`.
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `timestamp`, add `-` as a prefix for descending order. Default value is `timestamp`
 };
-apiInstance.getInstrumentationValuesForKey(instrumentationId, key, opts).then((data) => {
+apiInstance.getInstrumentationValuesForKey(instrumentationId, key, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -144,6 +152,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

@@ -8,5 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **tenant** | [**NestedIDHref**](NestedIDHref.md) |  | 
-**softwareType** | **Object** |  | 
-**links** | **Object** |  | 
+**softwareType** | [**SoftwareResponseSoftwareType**](SoftwareResponseSoftwareType.md) |  | 
+**links** | [**Links18**](Links18.md) |  | 
+
+

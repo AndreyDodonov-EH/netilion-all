@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **description** | **String** | description text of the Instrumentation | [optional] 
 **criticality** | **String** | possible values are: undefined, low, medium and high. Undefined is assigned per default | [optional] 
 **accessibility** | **String** | possible values are: undefined, easy, moderate and difficult. Undefined is assigned per default | [optional] 
+
+

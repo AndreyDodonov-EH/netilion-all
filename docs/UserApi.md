@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.UserApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,9 +37,10 @@ Method | HTTP request | Description
 [**updateSpecificationsOfUsers**](UserApi.md#updateSpecificationsOfUsers) | **PATCH** /users/{user_id}/specifications | Update specifications of a user
 [**updateUser**](UserApi.md#updateUser) | **PATCH** /users/{id} | Update a user
 
+
 <a name="addUserGroupsToUser"></a>
 # **addUserGroupsToUser**
-> addUserGroupsToUser(bodyuserId)
+> addUserGroupsToUser(userId, body)
 
 Add user groups to a user
 
@@ -47,26 +48,29 @@ Add one or more user groups to a user identified by id in the url.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.UserGroupIDs(); // UserGroupIDs | Resources that shall be added.
-let userId = 789; // Number | Id of the user to whom the user groups will be added
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.addUserGroupsToUser(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the user to whom the user groups will be added
+
+var body = new NetilionApiDocumentation.UserGroupIDs(); // UserGroupIDs | Resources that shall be added.
+
+apiInstance.addUserGroupsToUser(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -76,8 +80,8 @@ apiInstance.addUserGroupsToUser(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserGroupIDs**](UserGroupIDs.md)| Resources that shall be added. | 
  **userId** | **Number**| Id of the user to whom the user groups will be added | 
+ **body** | [**UserGroupIDs**](UserGroupIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -94,7 +98,7 @@ null (empty response body)
 
 <a name="addUserRolesToUser"></a>
 # **addUserRolesToUser**
-> addUserRolesToUser(bodyuserId)
+> addUserRolesToUser(userId, body)
 
 Add user roles to a user
 
@@ -102,26 +106,29 @@ Add one or more user roles to a user. To work with roles, admin role is required
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.UserRoleIDs(); // UserRoleIDs | Resources that shall be added.
-let userId = 789; // Number | Id of the user to which the user roles will be added
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.addUserRolesToUser(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the user to which the user roles will be added
+
+var body = new NetilionApiDocumentation.UserRoleIDs(); // UserRoleIDs | Resources that shall be added.
+
+apiInstance.addUserRolesToUser(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -131,8 +138,8 @@ apiInstance.addUserRolesToUser(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserRoleIDs**](UserRoleIDs.md)| Resources that shall be added. | 
  **userId** | **Number**| Id of the user to which the user roles will be added | 
+ **body** | [**UserRoleIDs**](UserRoleIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -157,25 +164,27 @@ create the data export of the authenticated user in the current context.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.DataExportRequest(); // DataExportRequest | Resources that shall be added.
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.createCurrentUserDataExport(body).then((data) => {
+var body = new NetilionApiDocumentation.DataExportRequest(); // DataExportRequest | Resources that shall be added.
+
+apiInstance.createCurrentUserDataExport(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -210,25 +219,27 @@ Creates a new technical user. Password is automatically generated an can not be 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.TechnicalUserRequest(); // TechnicalUserRequest | Technical User object that needs to be registered
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.createTechnicalUser(body).then((data) => {
+var body = new NetilionApiDocumentation.TechnicalUserRequest(); // TechnicalUserRequest | Technical User object that needs to be registered
+
+apiInstance.createTechnicalUser(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -263,25 +274,27 @@ delete the data export of the authenticated user in the current context.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the data_export to delete
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.deleteCurrentUserDatasExport(id).then(() => {
+var id = 789; // Number | Id of the data_export to delete
+
+apiInstance.deleteCurrentUserDatasExport(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -303,7 +316,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteCurrentUserNotifications"></a>
@@ -316,25 +329,27 @@ Delete the given notification for the currently authenticated user.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the notification to delete
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.deleteCurrentUserNotifications(id).then(() => {
+var id = 789; // Number | Id of the notification to delete
+
+apiInstance.deleteCurrentUserNotifications(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -356,7 +371,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteTechnicalUser"></a>
@@ -369,25 +384,27 @@ Delete a technical user identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the technical user to delete
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.deleteTechnicalUser(id).then(() => {
+var id = 789; // Number | Id of the technical user to delete
+
+apiInstance.deleteTechnicalUser(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -409,7 +426,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteUser"></a>
@@ -422,25 +439,27 @@ Delete a specific resource in your permission scope identified by the id in the 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the user to delete
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.deleteUser(id).then(() => {
+var id = 789; // Number | Id of the user to delete
+
+apiInstance.deleteUser(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -462,7 +481,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCurrentUser"></a>
@@ -475,26 +494,28 @@ Get the user authenticated in the current context. Possible include values: &#x6
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let opts = { 
-  'include': "include_example" // String | Comma separated list of objects to include in response
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var opts = { 
+  'include': "include_example", // String | Comma separated list of objects to include in response
 };
-apiInstance.getCurrentUser(opts).then((data) => {
+apiInstance.getCurrentUser(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -516,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCurrentUserAccessRights"></a>
@@ -529,26 +550,29 @@ Get the access rights for a permitable of the authenticated user in the current 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let permitableId = 789; // Number | id of the permitable.
-let permitableType = "permitableType_example"; // String | permitable type eg. Asset, Node, EDM::EdgeDevice.
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.getCurrentUserAccessRights(permitableId, permitableType).then((data) => {
+var permitableId = 789; // Number | id of the permitable.
+
+var permitableType = "permitableType_example"; // String | permitable type eg. Asset, Node, EDM::EdgeDevice.
+
+apiInstance.getCurrentUserAccessRights(permitableId, permitableType).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -571,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCurrentUserDataExportbyId"></a>
@@ -584,25 +608,27 @@ Get the data exports of the authenticated user.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the data_export to fetch
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.getCurrentUserDataExportbyId(id).then((data) => {
+var id = 789; // Number | Id of the data_export to fetch
+
+apiInstance.getCurrentUserDataExportbyId(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -624,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCurrentUserDataExports"></a>
@@ -637,26 +663,28 @@ Get the data exports of the authenticated user.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var opts = { 
   'type': "type_example" // String | type of data export, can be complete or measurements.
 };
-apiInstance.getCurrentUserDataExports(opts).then((data) => {
+apiInstance.getCurrentUserDataExports(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -678,7 +706,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCurrentUserDataExportsFile"></a>
@@ -691,25 +719,27 @@ Get the data export file of the authenticated user in the current context. Conte
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the data_export to download
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.getCurrentUserDataExportsFile(id).then(() => {
+var id = 789; // Number | Id of the data_export to download
+
+apiInstance.getCurrentUserDataExportsFile(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -731,12 +761,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCurrentUserNotifications"></a>
 # **getCurrentUserNotifications**
-> Object getCurrentUserNotifications(opts)
+> Notifications getCurrentUserNotifications(opts)
 
 Get relevant notifications for the current authenticated user
 
@@ -744,21 +774,23 @@ Returns a list of all notifications available for the authenticated user on the 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'startDatetime': "startDatetime_example", // String | Expected date format is YYYY-MM-DDThh:mm:ss
@@ -767,12 +799,12 @@ let opts = {
   'endDatetime': "endDatetime_example", // String | Expected date format is YYYY-MM-DDThh:mm:ss
   'endDatetimeFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DDThh:mm:ss
   'endDatetimeTo': "endDatetimeTo_example", // String | Expected date format is YYYY-MM-DDThh:mm:ss
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getCurrentUserNotifications(opts).then((data) => {
+apiInstance.getCurrentUserNotifications(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -791,11 +823,11 @@ Name | Type | Description  | Notes
  **endDatetimeFrom** | **Date**| Expected date format is YYYY-MM-DDThh:mm:ss | [optional] 
  **endDatetimeTo** | **String**| Expected date format is YYYY-MM-DDThh:mm:ss | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**Notifications**](Notifications.md)
 
 ### Authorization
 
@@ -803,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSignInsOfUser"></a>
@@ -812,33 +844,36 @@ Name | Type | Description  | Notes
 
 Get sign_ins of a user
 
-Returns a list of all sign ins of a specific user identified by id in the url. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#x27;
+Returns a list of all sign ins of a specific user identified by id in the url. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#39;
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let userId = 789; // Number | Id of the user to fetch
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var userId = 789; // Number | Id of the user to fetch
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getSignInsOfUser(userId, opts).then((data) => {
+apiInstance.getSignInsOfUser(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -863,7 +898,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfUser"></a>
@@ -876,27 +911,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let userId = 789; // Number | Id of the specified user
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var userId = 789; // Number | Id of the specified user
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfUser(userId, opts).then((data) => {
+apiInstance.getSpecificationsOfUser(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -907,7 +945,7 @@ apiInstance.getSpecificationsOfUser(userId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| Id of the specified user | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -919,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getTechnicalUsers"></a>
@@ -932,30 +970,32 @@ Returns a list of technical users. If the query has no matches, the response is 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
   'email': "email_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `email`, `first_name`, `last_name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getTechnicalUsers(opts).then((data) => {
+apiInstance.getTechnicalUsers(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -981,7 +1021,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUsageOfUser"></a>
@@ -990,29 +1030,31 @@ Name | Type | Description  | Notes
 
 Get the use of storage and the number of assets registred of a user
 
-Returns the storage and number of assets of a specific user identified by id in the url.&#x27;
+Returns the storage and number of assets of a specific user identified by id in the url.&#39;
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let userId = 789; // Number | Id of the user to fetch
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.getUsageOfUser(userId).then((data) => {
+var userId = 789; // Number | Id of the user to fetch
+
+apiInstance.getUsageOfUser(userId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1034,7 +1076,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUserById"></a>
@@ -1047,27 +1089,30 @@ Get a specific user in your permission scope, identified by the id in the URL. P
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the user to fetch
-let opts = { 
-  'include': "include_example" // String | Comma separated list of objects to include in response
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var id = 789; // Number | Id of the user to fetch
+
+var opts = { 
+  'include': "include_example", // String | Comma separated list of objects to include in response
 };
-apiInstance.getUserById(id, opts).then((data) => {
+apiInstance.getUserById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1090,7 +1135,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUserGroupsOfUser"></a>
@@ -1099,34 +1144,37 @@ Name | Type | Description  | Notes
 
 Get the user groups of one user
 
-Returns a list of all usergroups of a specific user identified by id in the url. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#x27;
+Returns a list of all usergroups of a specific user identified by id in the url. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#39;
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let userId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var userId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUserGroupsOfUser(userId, opts).then((data) => {
+apiInstance.getUserGroupsOfUser(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1152,7 +1200,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUserRolesOfUser"></a>
@@ -1165,30 +1213,33 @@ Returns a list of all user roles that are available in your scope. You can apply
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let userId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var userId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUserRolesOfUser(userId, opts).then((data) => {
+apiInstance.getUserRolesOfUser(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1214,7 +1265,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUsers"></a>
@@ -1227,21 +1278,23 @@ Returns a list of users in your permission scope. If the query has no matches, t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1252,9 +1305,9 @@ let opts = {
   'specificationsValue': "specificationsValue_example", // String | Filter accepts `*` as wildcard, supports comma list of values in connection with specifications_key filter. Does not work for vectors
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `email`, `first_name`, `last_name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUsers(opts).then((data) => {
+apiInstance.getUsers(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1284,7 +1337,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="lookupUser"></a>
@@ -1297,25 +1350,27 @@ Get a user for a given email adress.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let email = "email_example"; // String | email of the user to lookup.
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.lookupUser(email).then((data) => {
+var email = "email_example"; // String | email of the user to lookup.
+
+apiInstance.lookupUser(email).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1337,12 +1392,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeSpecificationsFromUsers"></a>
 # **removeSpecificationsFromUsers**
-> removeSpecificationsFromUsers(bodyuserId)
+> removeSpecificationsFromUsers(userId, body)
 
 Delete specifications of a user
 
@@ -1350,26 +1405,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let userId = 789; // Number | Id of the specified user
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.removeSpecificationsFromUsers(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the specified user
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromUsers(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1379,8 +1437,8 @@ apiInstance.removeSpecificationsFromUsers(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **userId** | **Number**| Id of the specified user | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -1397,7 +1455,7 @@ null (empty response body)
 
 <a name="removeUserGroupFromUser"></a>
 # **removeUserGroupFromUser**
-> removeUserGroupFromUser(bodyuserId)
+> removeUserGroupFromUser(userId, body)
 
 Remove user groups from a user
 
@@ -1405,26 +1463,29 @@ Remove one or more user groups from a user identified by id in the url.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.UserGroupIDs(); // UserGroupIDs | Resources that shall be removed.
-let userId = 789; // Number | Id of the user from which the user groups will be removed
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.removeUserGroupFromUser(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the user from which the user groups will be removed
+
+var body = new NetilionApiDocumentation.UserGroupIDs(); // UserGroupIDs | Resources that shall be removed.
+
+apiInstance.removeUserGroupFromUser(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1434,8 +1495,8 @@ apiInstance.removeUserGroupFromUser(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserGroupIDs**](UserGroupIDs.md)| Resources that shall be removed. | 
  **userId** | **Number**| Id of the user from which the user groups will be removed | 
+ **body** | [**UserGroupIDs**](UserGroupIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1452,7 +1513,7 @@ null (empty response body)
 
 <a name="removeUserRolesFromUser"></a>
 # **removeUserRolesFromUser**
-> removeUserRolesFromUser(bodyuserId)
+> removeUserRolesFromUser(userId, body)
 
 Remove user roles from a user
 
@@ -1460,26 +1521,29 @@ Remove one or more user roles from a user. To work with roles, admin role is req
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.UserRoleIDs(); // UserRoleIDs | Resources that shall be removed.
-let userId = 789; // Number | Id of the user from which the user roles will be removed
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.removeUserRolesFromUser(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the user from which the user roles will be removed
+
+var body = new NetilionApiDocumentation.UserRoleIDs(); // UserRoleIDs | Resources that shall be removed.
+
+apiInstance.removeUserRolesFromUser(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1489,8 +1553,8 @@ apiInstance.removeUserRolesFromUser(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserRoleIDs**](UserRoleIDs.md)| Resources that shall be removed. | 
  **userId** | **Number**| Id of the user from which the user roles will be removed | 
+ **body** | [**UserRoleIDs**](UserRoleIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1507,7 +1571,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfUsers"></a>
 # **renameSpecificationsOfUsers**
-> renameSpecificationsOfUsers(bodyuserId)
+> renameSpecificationsOfUsers(userId, body)
 
 Rename a specification key
 
@@ -1515,26 +1579,29 @@ Rename one specification key of a user in your accessible scope. The key name al
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let userId = 789; // Number | Id of the specified user
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.renameSpecificationsOfUsers(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the specified user
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfUsers(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1544,8 +1611,8 @@ apiInstance.renameSpecificationsOfUsers(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **userId** | **Number**| Id of the specified user | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1562,7 +1629,7 @@ null (empty response body)
 
 <a name="replaceUserGroupsOfUser"></a>
 # **replaceUserGroupsOfUser**
-> replaceUserGroupsOfUser(bodyuserId)
+> replaceUserGroupsOfUser(userId, body)
 
 Replace the user groups of a user
 
@@ -1570,26 +1637,29 @@ Replaces all user groups belonging to a user. You can send a list of resources t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.UserGroupIDs(); // UserGroupIDs | Resources that shall be replaced.
-let userId = 789; // Number | Id of the user of which the user groups will be replaced
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.replaceUserGroupsOfUser(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the user of which the user groups will be replaced
+
+var body = new NetilionApiDocumentation.UserGroupIDs(); // UserGroupIDs | Resources that shall be replaced.
+
+apiInstance.replaceUserGroupsOfUser(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1599,8 +1669,8 @@ apiInstance.replaceUserGroupsOfUser(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserGroupIDs**](UserGroupIDs.md)| Resources that shall be replaced. | 
  **userId** | **Number**| Id of the user of which the user groups will be replaced | 
+ **body** | [**UserGroupIDs**](UserGroupIDs.md)| Resources that shall be replaced. | 
 
 ### Return type
 
@@ -1617,7 +1687,7 @@ null (empty response body)
 
 <a name="replaceUserRolesOfUser"></a>
 # **replaceUserRolesOfUser**
-> replaceUserRolesOfUser(bodyuserId)
+> replaceUserRolesOfUser(userId, body)
 
 Replace the user roles of a user
 
@@ -1625,26 +1695,29 @@ Replaces all user roles belonging to a user. You can send a list of resources th
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.UserRoleIDs(); // UserRoleIDs | Resources that shall be replaced
-let userId = 789; // Number | Id of the user of which the user roles will be replaced
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.replaceUserRolesOfUser(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the user of which the user roles will be replaced
+
+var body = new NetilionApiDocumentation.UserRoleIDs(); // UserRoleIDs | Resources that shall be replaced
+
+apiInstance.replaceUserRolesOfUser(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1654,8 +1727,8 @@ apiInstance.replaceUserRolesOfUser(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserRoleIDs**](UserRoleIDs.md)| Resources that shall be replaced | 
  **userId** | **Number**| Id of the user of which the user roles will be replaced | 
+ **body** | [**UserRoleIDs**](UserRoleIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -1680,25 +1753,27 @@ create a new password for a technical user
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let id = 789; // Number | Id of the technical user
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.resetPasswordTechnicalUser(id).then((data) => {
+var id = 789; // Number | Id of the technical user
+
+apiInstance.resetPasswordTechnicalUser(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1720,12 +1795,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateSpecificationsOfUsers"></a>
 # **updateSpecificationsOfUsers**
-> updateSpecificationsOfUsers(bodyuserId)
+> updateSpecificationsOfUsers(userId, body)
 
 Update specifications of a user
 
@@ -1733,26 +1808,29 @@ Update the specification object of a user in your accessible scope. To add speci
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let userId = 789; // Number | Id of the specified user
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.updateSpecificationsOfUsers(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the specified user
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfUsers(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1762,8 +1840,8 @@ apiInstance.updateSpecificationsOfUsers(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **userId** | **Number**| Id of the specified user | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -1780,7 +1858,7 @@ null (empty response body)
 
 <a name="updateUser"></a>
 # **updateUser**
-> updateUser(bodyid)
+> updateUser(id, body)
 
 Update a user
 
@@ -1788,26 +1866,29 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserApi();
-let body = new NetilionApiDocumentation.UserChangeRequest(); // UserChangeRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the user to update
+var apiInstance = new NetilionApiDocumentation.UserApi();
 
-apiInstance.updateUser(bodyid).then(() => {
+var id = 789; // Number | Id of the user to update
+
+var body = new NetilionApiDocumentation.UserChangeRequest(); // UserChangeRequest | Parameters that shall be updated.
+
+apiInstance.updateUser(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1817,8 +1898,8 @@ apiInstance.updateUser(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserChangeRequest**](UserChangeRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the user to update | 
+ **body** | [**UserChangeRequest**](UserChangeRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 

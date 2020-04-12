@@ -11,3 +11,5 @@ Name | Type | Description | Notes
 **next** | **String** | The link for the immediate next page of results. | [optional] 
 **first** | **String** | The link for the first page of results. | [optional] 
 **last** | **String** | The link for the last page of results. | [optional] 
+
+

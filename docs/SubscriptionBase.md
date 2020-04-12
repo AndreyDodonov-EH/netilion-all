@@ -17,3 +17,5 @@ Name | Type | Description | Notes
 **assetQuota** | **Number** | number of bought assets | [optional] 
 **storageQuota** | **Number** | number of bought storage (in bytes) | [optional] 
 **seatQuota** | **Number** | number of bought seats | [optional] 
+
+

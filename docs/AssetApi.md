@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.AssetApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -54,9 +54,10 @@ Method | HTTP request | Description
 [**updateSpecificationsOfAsset**](AssetApi.md#updateSpecificationsOfAsset) | **PATCH** /assets/{asset_id}/specifications | Update specifications of an asset
 [**uploadAssetPicture**](AssetApi.md#uploadAssetPicture) | **POST** /assets/{id}/pictures | Upload an asset picture
 
+
 <a name="addAssetPictureLink"></a>
 # **addAssetPictureLink**
-> PictureResponse addAssetPictureLink(bodyid)
+> PictureResponse addAssetPictureLink(id, body)
 
 Add a link as asset picture
 
@@ -64,26 +65,29 @@ Add an external resource as asset picture.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be created
-let id = 789; // Number | Id of the asset
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.addAssetPictureLink(bodyid).then((data) => {
+var id = 789; // Number | Id of the asset
+
+var body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be created
+
+apiInstance.addAssetPictureLink(id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -93,8 +97,8 @@ apiInstance.addAssetPictureLink(bodyid).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be created | 
  **id** | **Number**| Id of the asset | 
+ **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be created | 
 
 ### Return type
 
@@ -111,7 +115,7 @@ Name | Type | Description  | Notes
 
 <a name="addDeliveriesToAsset"></a>
 # **addDeliveriesToAsset**
-> addDeliveriesToAsset(bodyassetId)
+> addDeliveriesToAsset(assetId, body)
 
 Add deliveries to an asset
 
@@ -119,26 +123,29 @@ Add one or more deliveries to an asset.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be added.
-let assetId = 789; // Number | Id of the asset to which the deliveries will be added
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.addDeliveriesToAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset to which the deliveries will be added
+
+var body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be added.
+
+apiInstance.addDeliveriesToAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -148,8 +155,8 @@ apiInstance.addDeliveriesToAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be added. | 
  **assetId** | **Number**| Id of the asset to which the deliveries will be added | 
+ **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -166,7 +173,7 @@ null (empty response body)
 
 <a name="addDocumentsToAsset"></a>
 # **addDocumentsToAsset**
-> addDocumentsToAsset(bodyassetId)
+> addDocumentsToAsset(assetId, body)
 
 Add documents to an asset
 
@@ -174,26 +181,29 @@ Add one or more documents to an asset.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-let assetId = 789; // Number | Id of the asset to which the documents will be added
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.addDocumentsToAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset to which the documents will be added
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+
+apiInstance.addDocumentsToAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -203,8 +213,8 @@ apiInstance.addDocumentsToAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
  **assetId** | **Number**| Id of the asset to which the documents will be added | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -221,7 +231,7 @@ null (empty response body)
 
 <a name="addInstrumentationsToAsset"></a>
 # **addInstrumentationsToAsset**
-> addInstrumentationsToAsset(bodyassetId)
+> addInstrumentationsToAsset(assetId, body)
 
 Add instrumentations to an asset
 
@@ -229,26 +239,29 @@ Add one or more instrumentations to an asset. This action requires &#x60;can_per
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be added.
-let assetId = 789; // Number | Id of the asset to which the instrumentations will be added
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.addInstrumentationsToAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset to which the instrumentations will be added
+
+var body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be added.
+
+apiInstance.addInstrumentationsToAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -258,8 +271,8 @@ apiInstance.addInstrumentationsToAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be added. | 
  **assetId** | **Number**| Id of the asset to which the instrumentations will be added | 
+ **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -276,7 +289,7 @@ null (empty response body)
 
 <a name="addNodesToAsset"></a>
 # **addNodesToAsset**
-> addNodesToAsset(bodyassetId)
+> addNodesToAsset(assetId, body)
 
 Add nodes to an asset
 
@@ -284,26 +297,29 @@ Add one or more nodes to an asset. This action requires &#x60;can_permit&#x60; p
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be added.
-let assetId = 789; // Number | Id of the asset to which the nodes will be added
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.addNodesToAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset to which the nodes will be added
+
+var body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be added.
+
+apiInstance.addNodesToAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -313,8 +329,8 @@ apiInstance.addNodesToAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be added. | 
  **assetId** | **Number**| Id of the asset to which the nodes will be added | 
+ **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -331,7 +347,7 @@ null (empty response body)
 
 <a name="addSoftwaresToAsset"></a>
 # **addSoftwaresToAsset**
-> addSoftwaresToAsset(bodyassetId)
+> addSoftwaresToAsset(assetId, body)
 
 Add software to an asset
 
@@ -339,26 +355,29 @@ Add one or more software to an asset.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be added.
-let assetId = 789; // Number | Id of the asset to which the software will be added
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.addSoftwaresToAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset to which the software will be added
+
+var body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be added.
+
+apiInstance.addSoftwaresToAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -368,8 +387,8 @@ apiInstance.addSoftwaresToAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be added. | 
  **assetId** | **Number**| Id of the asset to which the software will be added | 
+ **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -394,25 +413,27 @@ Create a new asset. An asset is an instance of a product and therefore needs to 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.AssetRequest(); // AssetRequest | Asset object that needs to be created. serial_number, product are required
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.createAsset(body).then((data) => {
+var body = new NetilionApiDocumentation.AssetRequest(); // AssetRequest | Asset object that needs to be created. serial_number, product are required
+
+apiInstance.createAsset(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -439,7 +460,7 @@ Name | Type | Description  | Notes
 
 <a name="createEventForAsset"></a>
 # **createEventForAsset**
-> EventResponse createEventForAsset(bodyassetId)
+> EventResponse createEventForAsset(assetId, body)
 
 Create a new event for an asset
 
@@ -447,26 +468,29 @@ Events must have a name, and can have a start_datetime (if not provided, the dat
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.EventRequestNoAssets(); // EventRequestNoAssets | Object to be created.
-let assetId = 789; // Number | Id of the asset
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.createEventForAsset(bodyassetId).then((data) => {
+var assetId = 789; // Number | Id of the asset
+
+var body = new NetilionApiDocumentation.EventRequestNoAssets(); // EventRequestNoAssets | Object to be created.
+
+apiInstance.createEventForAsset(assetId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -476,8 +500,8 @@ apiInstance.createEventForAsset(bodyassetId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventRequestNoAssets**](EventRequestNoAssets.md)| Object to be created. | 
  **assetId** | **Number**| Id of the asset | 
+ **body** | [**EventRequestNoAssets**](EventRequestNoAssets.md)| Object to be created. | 
 
 ### Return type
 
@@ -502,25 +526,27 @@ Delete a specific resource identified by the id in the URL. Required Permissions
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let id = 789; // Number | Id of the asset to delete
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.deleteAsset(id).then(() => {
+var id = 789; // Number | Id of the asset to delete
+
+apiInstance.deleteAsset(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -542,7 +568,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteAssetPicture"></a>
@@ -555,26 +581,29 @@ Delete an asset picture.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the asset
-let id = 789; // Number | Id of the asset picture
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.deleteAssetPicture(assetId, id).then(() => {
+var assetId = 789; // Number | Id of the asset
+
+var id = 789; // Number | Id of the asset picture
+
+apiInstance.deleteAssetPicture(assetId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -597,12 +626,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteSpecificationsOfAsset"></a>
 # **deleteSpecificationsOfAsset**
-> deleteSpecificationsOfAsset(bodyassetId)
+> deleteSpecificationsOfAsset(assetId, body)
 
 Delete specifications of an asset
 
@@ -610,26 +639,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let assetId = 789; // Number | Id of the specified asset
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.deleteSpecificationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the specified asset
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.deleteSpecificationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -639,8 +671,8 @@ apiInstance.deleteSpecificationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **assetId** | **Number**| Id of the specified asset | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -665,26 +697,29 @@ Download an asset picture.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the asset
-let id = 789; // Number | Id of the asset picture
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.downloadAssetPicture(assetId, id).then(() => {
+var assetId = 789; // Number | Id of the asset
+
+var id = 789; // Number | Id of the asset picture
+
+apiInstance.downloadAssetPicture(assetId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -707,7 +742,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetById"></a>
@@ -720,27 +755,30 @@ Get a specific asset identified by the id in the URL. Possible include values: &
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let id = 789; // Number | Id of the asset to fetch
-let opts = { 
-  'include': "include_example" // String | Comma separated list of objects to include in response
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var id = 789; // Number | Id of the asset to fetch
+
+var opts = { 
+  'include': "include_example", // String | Comma separated list of objects to include in response
 };
-apiInstance.getAssetById(id, opts).then((data) => {
+apiInstance.getAssetById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -763,12 +801,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetCompanyOptions"></a>
 # **getAssetCompanyOptions**
-> Object getAssetCompanyOptions(assetId, opts)
+> Companies getAssetCompanyOptions(assetId, opts)
 
 Get all possible companies of the specified assets
 
@@ -776,22 +814,25 @@ Returns a list of all possible companies for the specified asset. You can apply 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -799,9 +840,9 @@ let opts = {
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetCompanyOptions(assetId, opts).then((data) => {
+apiInstance.getAssetCompanyOptions(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -821,7 +862,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Companies**](Companies.md)
 
 ### Authorization
 
@@ -829,12 +870,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetHistory"></a>
 # **getAssetHistory**
-> AssetHistoryResponse getAssetHistory(assetId, opts)
+> AssetHistoryResponse getAssetHistory(assetId, , opts)
 
 Get the history of an asset
 
@@ -842,30 +883,33 @@ Returns a collection of historical values of the asset identified by the id in t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'attribute': "attribute_example", // String | limit history to changes of a specific attribute e.g status or serial_number
   'from': new Date("2013-10-20"), // Date | Start date filter for history values. Starting with ```+``` will include the previous value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'to': new Date("2013-10-20"), // Date | End date for history values. Ending with ```+``` will include the next value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `datetime`, add `-` as a prefix for descending order.
 };
-apiInstance.getAssetHistory(assetId, opts).then((data) => {
+apiInstance.getAssetHistory(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -891,7 +935,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetIdStatus"></a>
@@ -904,28 +948,31 @@ Returns the status of the asset. Needed if only permission on asset but not on t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'include': "include_example", // String | Comma separated list of objects to include in response
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getAssetIdStatus(assetId, opts).then((data) => {
+apiInstance.getAssetIdStatus(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -937,7 +984,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **Number**| Id of the specified asset | 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -949,7 +996,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetPicture"></a>
@@ -962,26 +1009,29 @@ Get a single picture of an asset.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the asset
-let id = 789; // Number | Id of the asset picture
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.getAssetPicture(assetId, id).then((data) => {
+var assetId = 789; // Number | Id of the asset
+
+var id = 789; // Number | Id of the asset picture
+
+apiInstance.getAssetPicture(assetId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1004,7 +1054,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetPictures"></a>
@@ -1017,22 +1067,25 @@ Get all pictures of an asset.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let id = 789; // Number | Id of the asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var id = 789; // Number | Id of the asset
+
+var opts = { 
   'width': 56, // Number | filter by width
   'widthFrom': 56, // Number | filter by width_from
   'widthTo': 56, // Number | filter by width_to
@@ -1041,9 +1094,9 @@ let opts = {
   'heightTo': 56, // Number | filter by height_to
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetPictures(id, opts).then((data) => {
+apiInstance.getAssetPictures(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1072,12 +1125,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetProductOptions"></a>
 # **getAssetProductOptions**
-> Object getAssetProductOptions(assetId, opts)
+> Products getAssetProductOptions(assetId, opts)
 
 Get all possible products of the specified assets
 
@@ -1085,22 +1138,25 @@ Returns a list of all possible products for the specified asset. You can apply t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1113,9 +1169,9 @@ let opts = {
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetProductOptions(assetId, opts).then((data) => {
+apiInstance.getAssetProductOptions(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1140,7 +1196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Products**](Products.md)
 
 ### Authorization
 
@@ -1148,12 +1204,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetStatusesOptions"></a>
 # **getAssetStatusesOptions**
-> Object getAssetStatusesOptions(assetId, opts)
+> AssetStatuses getAssetStatusesOptions(assetId, opts)
 
 Get all possible statuses of the specified assets
 
@@ -1161,34 +1217,37 @@ Returns a list of all possible asset statuses for the specified asset. You can a
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'code': "code_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getAssetStatusesOptions(assetId, opts).then((data) => {
+apiInstance.getAssetStatusesOptions(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1206,11 +1265,11 @@ Name | Type | Description  | Notes
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**AssetStatuses**](AssetStatuses.md)
 
 ### Authorization
 
@@ -1218,12 +1277,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetTenantOptions"></a>
 # **getAssetTenantOptions**
-> Object getAssetTenantOptions(assetId, opts)
+> Tenants getAssetTenantOptions(assetId, opts)
 
 Get all possible tenants of the specified assets
 
@@ -1231,30 +1290,33 @@ Returns a list of all possible tenants for the specified asset. That is all publ
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetTenantOptions(assetId, opts).then((data) => {
+apiInstance.getAssetTenantOptions(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1272,7 +1334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Tenants**](Tenants.md)
 
 ### Authorization
 
@@ -1280,7 +1342,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssets"></a>
@@ -1293,21 +1355,23 @@ Returns a list of assets in your accessible scope. You can apply the query param
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1331,9 +1395,9 @@ let opts = {
   'instrumentationId': "instrumentationId_example", // String | One or multiple ids (comma list). Filter acccepts \"null\" for all objects with no nodes assigned or \"!null\" for any assigned node
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `serial_number`, `created_at` or `updated_at`, `last_seen_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssets(opts).then((data) => {
+apiInstance.getAssets(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1376,12 +1440,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDeliveriesOfAsset"></a>
 # **getDeliveriesOfAsset**
-> DeliveriesResponse getDeliveriesOfAsset(assetId, opts)
+> DeliveriesResponse getDeliveriesOfAsset(assetId, , opts)
 
 Get all deliveries of one asset
 
@@ -1389,22 +1453,25 @@ Returns a list of all deliveries that are available in your scope. You can apply
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   '_number': "_number_example", // String | Filter accepts `*` as wildcard
@@ -1417,9 +1484,9 @@ let opts = {
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getDeliveriesOfAsset(assetId, opts).then((data) => {
+apiInstance.getDeliveriesOfAsset(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1452,12 +1519,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDocumentsOfAsset"></a>
 # **getDocumentsOfAsset**
-> DocumentsResponse getDocumentsOfAsset(assetId, opts)
+> DocumentsResponse getDocumentsOfAsset(assetId, , opts)
 
 Get all documents of an asset
 
@@ -1465,22 +1532,25 @@ Returns a list of all documents that are available in your scope. You can apply 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1494,12 +1564,12 @@ let opts = {
   'validFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfAsset(assetId, opts).then((data) => {
+apiInstance.getDocumentsOfAsset(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1524,7 +1594,7 @@ Name | Type | Description  | Notes
  **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
  **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1536,12 +1606,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventsOfAsset"></a>
 # **getEventsOfAsset**
-> EventsResponse getEventsOfAsset(assetId, opts)
+> EventsResponse getEventsOfAsset(assetId, , opts)
 
 Get all events of one asset
 
@@ -1549,22 +1619,25 @@ Returns a list of all events belonging to an asset in your accessible scope. You
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1580,9 +1653,9 @@ let opts = {
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `start_datetime`, `end_datetime`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getEventsOfAsset(assetId, opts).then((data) => {
+apiInstance.getEventsOfAsset(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1618,12 +1691,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationsOfAsset"></a>
 # **getInstrumentationsOfAsset**
-> InstrumentationsResponse getInstrumentationsOfAsset(assetId, opts)
+> InstrumentationsResponse getInstrumentationsOfAsset(assetId, , opts)
 
 Get all instrumentations of one asset
 
@@ -1631,22 +1704,25 @@ Returns a list of all instrumentations that are available in your scope. You can
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1662,9 +1738,9 @@ let opts = {
   'nodeId': "nodeId_example", // String | One or multiple ids (comma list). Filter acccepts \"null\" for all objects with no nodes assigned or \"!null\" for any assigned node
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `tag`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getInstrumentationsOfAsset(assetId, opts).then((data) => {
+apiInstance.getInstrumentationsOfAsset(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1700,12 +1776,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationsOfAssetHistory"></a>
 # **getInstrumentationsOfAssetHistory**
-> AssetInstrumentationsHistoryResponse getInstrumentationsOfAssetHistory(assetId, opts)
+> AssetInstrumentationsHistoryResponse getInstrumentationsOfAssetHistory(assetId, , opts)
 
 Get all instrumentations an asset was assigned to
 
@@ -1713,22 +1789,25 @@ Returns a list of all instrumentations history available in your scope which hav
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'instrumentationId': "instrumentationId_example", // String | One or multiple ids (comma list). Expected id format is integer
@@ -1737,9 +1816,9 @@ let opts = {
   'eventDatetimeTo': new Date("2013-10-20"), // Date | Ending with + will include the next value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `event` or `event_datetime`, add `-` as a prefix for descending order.
 };
-apiInstance.getInstrumentationsOfAssetHistory(assetId, opts).then((data) => {
+apiInstance.getInstrumentationsOfAssetHistory(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1768,12 +1847,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNodesOfAsset"></a>
 # **getNodesOfAsset**
-> NodesResponse getNodesOfAsset(assetId, opts)
+> NodesResponse getNodesOfAsset(assetId, , opts)
 
 Get all nodes of one asset
 
@@ -1781,22 +1860,25 @@ Returns a list of all nodes that are available in your scope. You can apply quer
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1807,9 +1889,9 @@ let opts = {
   'hidden': true, // Boolean | Filter accepts true or false
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getNodesOfAsset(assetId, opts).then((data) => {
+apiInstance.getNodesOfAsset(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1840,12 +1922,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSoftwaresOfSoftware"></a>
 # **getSoftwaresOfSoftware**
-> SoftwaresResponse getSoftwaresOfSoftware(assetId, opts)
+> SoftwaresResponse getSoftwaresOfSoftware(assetId, , opts)
 
 Get a range of software of one asset
 
@@ -1853,31 +1935,34 @@ Returns a list of software. Parameters supporting translation: &#x60;&#x60;&#x60
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `version_number`, `name`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getSoftwaresOfSoftware(assetId, opts).then((data) => {
+apiInstance.getSoftwaresOfSoftware(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1892,7 +1977,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| Number of items to load per page | [optional] 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;version_number&#x60;, &#x60;name&#x60;, &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1904,7 +1989,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationHistoryOfAsset"></a>
@@ -1917,23 +2002,27 @@ This might be useful for history data. The response contains a collection of his
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the specified asset
-let key = "key_example"; // String | the exact key
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var key = "key_example"; // String | the exact key
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'sourceTimestampFrom': new Date("2013-10-20T19:20:30+01:00"), // Date | source_timestamp filter from. Starting with + will include the previous value as well. Expected date format is YYYY-MM-DDThh:mm:ss
@@ -1942,9 +2031,9 @@ let opts = {
   'updatedAtTo': new Date("2013-10-20T19:20:30+01:00"), // Date | updated_at filter to. Ending with + will include the next value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `source_timestamp` or `updated_at`, add `-` as a prefix for descending order.
 };
-apiInstance.getSpecificationHistoryOfAsset(assetId, key, opts).then((data) => {
+apiInstance.getSpecificationHistoryOfAsset(assetId, key, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1974,7 +2063,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfAsset"></a>
@@ -1987,27 +2076,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfAsset(assetId, opts).then((data) => {
+apiInstance.getSpecificationsOfAsset(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2018,7 +2110,7 @@ apiInstance.getSpecificationsOfAsset(assetId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **Number**| Id of the specified asset | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -2030,12 +2122,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSubscriptionsOfAsset"></a>
 # **getSubscriptionsOfAsset**
-> SubscriptionsResponse getSubscriptionsOfAsset(assetId, opts)
+> SubscriptionsResponse getSubscriptionsOfAsset(assetId, , opts)
 
 Get all subscriptions of asset
 
@@ -2043,22 +2135,25 @@ Returns a list of all subscriptions that are available in your scope. You can ap
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.AssetApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -2073,9 +2168,9 @@ let opts = {
   'endDate': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getSubscriptionsOfAsset(assetId, opts).then((data) => {
+apiInstance.getSubscriptionsOfAsset(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2110,12 +2205,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeDeliveriesFromAsset"></a>
 # **removeDeliveriesFromAsset**
-> removeDeliveriesFromAsset(bodyassetId)
+> removeDeliveriesFromAsset(assetId, body)
 
 Remove deliveries from an asset
 
@@ -2123,26 +2218,29 @@ Remove one or more deliveries from an asset in your accessible scope.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be removed.
-let assetId = 789; // Number | Id of the asset from which the deliveries will be removed
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.removeDeliveriesFromAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset from which the deliveries will be removed
+
+var body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be removed.
+
+apiInstance.removeDeliveriesFromAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2152,8 +2250,8 @@ apiInstance.removeDeliveriesFromAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be removed. | 
  **assetId** | **Number**| Id of the asset from which the deliveries will be removed | 
+ **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2170,7 +2268,7 @@ null (empty response body)
 
 <a name="removeDocumentsFromAsset"></a>
 # **removeDocumentsFromAsset**
-> removeDocumentsFromAsset(bodyassetId)
+> removeDocumentsFromAsset(assetId, body)
 
 Remove documents from an asset
 
@@ -2178,26 +2276,29 @@ Remove one or more documents from an asset.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-let assetId = 789; // Number | Id of the asset from which the documents will be removed
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.removeDocumentsFromAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset from which the documents will be removed
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+
+apiInstance.removeDocumentsFromAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2207,8 +2308,8 @@ apiInstance.removeDocumentsFromAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
  **assetId** | **Number**| Id of the asset from which the documents will be removed | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2225,7 +2326,7 @@ null (empty response body)
 
 <a name="removeEventFromAsset"></a>
 # **removeEventFromAsset**
-> removeEventFromAsset(bodyassetId)
+> removeEventFromAsset(assetId, body)
 
 Remove events from an asset
 
@@ -2233,26 +2334,29 @@ Remove one or more events from an asset in your accessible scope. If the event h
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = null; // Object | Resources that shall be removed.
-let assetId = 789; // Number | Id of the asset from which the events will removed.
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.removeEventFromAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset from which the events will removed.
+
+var body = new NetilionApiDocumentation.Events(); // Events | Resources that shall be removed.
+
+apiInstance.removeEventFromAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2262,8 +2366,8 @@ apiInstance.removeEventFromAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Resources that shall be removed. | 
  **assetId** | **Number**| Id of the asset from which the events will removed. | 
+ **body** | [**Events**](Events.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2280,7 +2384,7 @@ null (empty response body)
 
 <a name="removeInstrumentationsOfAsset"></a>
 # **removeInstrumentationsOfAsset**
-> removeInstrumentationsOfAsset(bodyassetId)
+> removeInstrumentationsOfAsset(assetId, body)
 
 Remove instrumentations from an asset
 
@@ -2288,26 +2392,29 @@ Remove one or more instrumentations from an asset in your accessible scope. This
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be removed.
-let assetId = 789; // Number | Id of the asset from which the instrumentations will be removed
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.removeInstrumentationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset from which the instrumentations will be removed
+
+var body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be removed.
+
+apiInstance.removeInstrumentationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2317,8 +2424,8 @@ apiInstance.removeInstrumentationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be removed. | 
  **assetId** | **Number**| Id of the asset from which the instrumentations will be removed | 
+ **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2335,7 +2442,7 @@ null (empty response body)
 
 <a name="removeNodesFromAsset"></a>
 # **removeNodesFromAsset**
-> removeNodesFromAsset(bodyassetId)
+> removeNodesFromAsset(assetId, body)
 
 Remove nodes from an asset
 
@@ -2343,26 +2450,29 @@ Remove one or more nodes from an asset in your accessible scope. &#x60;This acti
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be removed.
-let assetId = 789; // Number | Id of the asset from which the nodes will be removed
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.removeNodesFromAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset from which the nodes will be removed
+
+var body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be removed.
+
+apiInstance.removeNodesFromAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2372,8 +2482,8 @@ apiInstance.removeNodesFromAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be removed. | 
  **assetId** | **Number**| Id of the asset from which the nodes will be removed | 
+ **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2390,7 +2500,7 @@ null (empty response body)
 
 <a name="removeSoftwaresOfAsset"></a>
 # **removeSoftwaresOfAsset**
-> removeSoftwaresOfAsset(bodyassetId)
+> removeSoftwaresOfAsset(assetId, body)
 
 Remove software from an asset
 
@@ -2398,26 +2508,29 @@ Remove one or more software from an asset.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be removed.
-let assetId = 789; // Number | Id of the product from which the software will be removed
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.removeSoftwaresOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the product from which the software will be removed
+
+var body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be removed.
+
+apiInstance.removeSoftwaresOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2427,8 +2540,8 @@ apiInstance.removeSoftwaresOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be removed. | 
  **assetId** | **Number**| Id of the product from which the software will be removed | 
+ **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2445,7 +2558,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfAsset"></a>
 # **renameSpecificationsOfAsset**
-> renameSpecificationsOfAsset(bodyassetId)
+> renameSpecificationsOfAsset(assetId, body)
 
 Rename a specification key
 
@@ -2453,26 +2566,29 @@ Rename one specification key of an asset in your accessible scope. The key name 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let assetId = 789; // Number | Id of the specified asset
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.renameSpecificationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the specified asset
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2482,8 +2598,8 @@ apiInstance.renameSpecificationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **assetId** | **Number**| Id of the specified asset | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -2500,7 +2616,7 @@ null (empty response body)
 
 <a name="replaceDeliveriesOfAsset"></a>
 # **replaceDeliveriesOfAsset**
-> replaceDeliveriesOfAsset(bodyassetId)
+> replaceDeliveriesOfAsset(assetId, body)
 
 Replace the deliveries of an asset
 
@@ -2508,26 +2624,29 @@ Replaces all deliveries belonging to an asset in your accessible scope. You can 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be replaced
-let assetId = 789; // Number | Id of the asset of which the deliveries will be replaced
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.replaceDeliveriesOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset of which the deliveries will be replaced
+
+var body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be replaced
+
+apiInstance.replaceDeliveriesOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2537,8 +2656,8 @@ apiInstance.replaceDeliveriesOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be replaced | 
  **assetId** | **Number**| Id of the asset of which the deliveries will be replaced | 
+ **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2555,7 +2674,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfAsset"></a>
 # **replaceDocumentsOfAsset**
-> replaceDocumentsOfAsset(bodyassetId)
+> replaceDocumentsOfAsset(assetId, body)
 
 Replace the documents of an asset
 
@@ -2563,26 +2682,29 @@ Replaces all documents belonging to an asset. You can send a list of resources t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-let assetId = 789; // Number | Id of the asset of which the documents will be replaced
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.replaceDocumentsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset of which the documents will be replaced
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+
+apiInstance.replaceDocumentsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2592,8 +2714,8 @@ apiInstance.replaceDocumentsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
  **assetId** | **Number**| Id of the asset of which the documents will be replaced | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2610,7 +2732,7 @@ null (empty response body)
 
 <a name="replaceInstrumentationsOfAsset"></a>
 # **replaceInstrumentationsOfAsset**
-> replaceInstrumentationsOfAsset(bodyassetId)
+> replaceInstrumentationsOfAsset(assetId, body)
 
 Replace the instrumentations of an asset
 
@@ -2618,26 +2740,29 @@ Replaces all instrumentations belonging to an asset in your accessible scope. Yo
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be replaced
-let assetId = 789; // Number | Id of the asset of which the instrumentations will be replaced
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.replaceInstrumentationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset of which the instrumentations will be replaced
+
+var body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be replaced
+
+apiInstance.replaceInstrumentationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2647,8 +2772,8 @@ apiInstance.replaceInstrumentationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be replaced | 
  **assetId** | **Number**| Id of the asset of which the instrumentations will be replaced | 
+ **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2665,7 +2790,7 @@ null (empty response body)
 
 <a name="replaceNodesOfAsset"></a>
 # **replaceNodesOfAsset**
-> replaceNodesOfAsset(bodyassetId)
+> replaceNodesOfAsset(assetId, body)
 
 Replace the nodes of an asset
 
@@ -2673,26 +2798,29 @@ Replaces all nodes belonging to an asset in your accessible scope. You can send 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be replaced
-let assetId = 789; // Number | Id of the asset of which the nodes will be replaced
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.replaceNodesOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset of which the nodes will be replaced
+
+var body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be replaced
+
+apiInstance.replaceNodesOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2702,8 +2830,8 @@ apiInstance.replaceNodesOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be replaced | 
  **assetId** | **Number**| Id of the asset of which the nodes will be replaced | 
+ **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2720,7 +2848,7 @@ null (empty response body)
 
 <a name="replaceSoftwaresOfAsset"></a>
 # **replaceSoftwaresOfAsset**
-> replaceSoftwaresOfAsset(bodyassetId)
+> replaceSoftwaresOfAsset(assetId, body)
 
 Replace the software of an asset
 
@@ -2728,26 +2856,29 @@ Replaces all software belonging to an asset. You can send a list of resources th
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be replaced
-let assetId = 789; // Number | Id of the asset of which the software will be replaced
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.replaceSoftwaresOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset of which the software will be replaced
+
+var body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be replaced
+
+apiInstance.replaceSoftwaresOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2757,8 +2888,8 @@ apiInstance.replaceSoftwaresOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be replaced | 
  **assetId** | **Number**| Id of the asset of which the software will be replaced | 
+ **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2775,7 +2906,7 @@ null (empty response body)
 
 <a name="updateAsset"></a>
 # **updateAsset**
-> updateAsset(bodyid)
+> updateAsset(id, body)
 
 Update an asset
 
@@ -2783,26 +2914,29 @@ Update accessible parameters of the requested resource in your accessible scope.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.AssetRequest(); // AssetRequest | Parameters that shall be updated. To remove an associative object use "object_name": null
-let id = 789; // Number | Id of the asset to update
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.updateAsset(bodyid).then(() => {
+var id = 789; // Number | Id of the asset to update
+
+var body = new NetilionApiDocumentation.AssetRequest(); // AssetRequest | Parameters that shall be updated. To remove an associative object use \"object_name\": null
+
+apiInstance.updateAsset(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2812,8 +2946,8 @@ apiInstance.updateAsset(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssetRequest**](AssetRequest.md)| Parameters that shall be updated. To remove an associative object use &quot;object_name&quot;: null | 
  **id** | **Number**| Id of the asset to update | 
+ **body** | [**AssetRequest**](AssetRequest.md)| Parameters that shall be updated. To remove an associative object use \&quot;object_name\&quot;: null | 
 
 ### Return type
 
@@ -2830,7 +2964,7 @@ null (empty response body)
 
 <a name="updateAssetPicture"></a>
 # **updateAssetPicture**
-> PictureResponse updateAssetPicture(imageassetIdid)
+> PictureResponse updateAssetPicture(assetId, id, image)
 
 Update an asset picture
 
@@ -2838,27 +2972,31 @@ Upload a new asset picture. Check the file-storage quota. Allowed content-types 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let image = image_example; // Blob | 
-let assetId = 789; // Number | Id of the asset
-let id = 789; // Number | Id of the asset picture
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.updateAssetPicture(imageassetIdid).then((data) => {
+var assetId = 789; // Number | Id of the asset
+
+var id = 789; // Number | Id of the asset picture
+
+var image = "/path/to/file.txt"; // File | the image to upload (up to 1 MB)
+
+apiInstance.updateAssetPicture(assetId, id, image).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2868,9 +3006,9 @@ apiInstance.updateAssetPicture(imageassetIdid).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | **Blob**|  | 
  **assetId** | **Number**| Id of the asset | 
  **id** | **Number**| Id of the asset picture | 
+ **image** | **File**| the image to upload (up to 1 MB) | 
 
 ### Return type
 
@@ -2887,7 +3025,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAssetPictureLink"></a>
 # **updateAssetPictureLink**
-> PictureResponse updateAssetPictureLink(bodyassetIdid)
+> PictureResponse updateAssetPictureLink(assetId, id, body)
 
 Update an asset picture link
 
@@ -2895,27 +3033,31 @@ Update an asset picture link.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be updated
-let assetId = 789; // Number | Id of the asset
-let id = 789; // Number | Id of the asset picture
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.updateAssetPictureLink(bodyassetIdid).then((data) => {
+var assetId = 789; // Number | Id of the asset
+
+var id = 789; // Number | Id of the asset picture
+
+var body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be updated
+
+apiInstance.updateAssetPictureLink(assetId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2925,9 +3067,9 @@ apiInstance.updateAssetPictureLink(bodyassetIdid).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be updated | 
  **assetId** | **Number**| Id of the asset | 
  **id** | **Number**| Id of the asset picture | 
+ **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be updated | 
 
 ### Return type
 
@@ -2944,34 +3086,37 @@ Name | Type | Description  | Notes
 
 <a name="updateSpecificationsOfAsset"></a>
 # **updateSpecificationsOfAsset**
-> updateSpecificationsOfAsset(bodyassetId)
+> updateSpecificationsOfAsset(assetId, body)
 
 Update specifications of an asset
 
-Update the specification object of an asset in your accessible scope. To add specifications, just add the key and set the value object with value, unit and source_timestamp. To mark an existing specification to be unknown, the value could be set to null. To delete keys, use the delete method. Multiple specification objects can be sent in the same request. Keys inside a specification are unique and can only be added once. Keys can only consist of [a-z A-Z 0-9 . - _ ]. All uppercase A-Z are converted to lower-case a-z. For a key that is send multiple times in the request body, only the last key-value is saved.  It is possible to save complex objects in the value as vector. In this case the unit must be &#x27;vector&#x27; and the value a valid object in the following format: &#x60;&#x60;&#x60;       [           {             \&quot;key\&quot;: {              \&quot;value\&quot;: \&quot;string\&quot;,              \&quot;unit\&quot;: \&quot;string\&quot;            }           },           {             \&quot;second_key\&quot;: {               \&quot;value\&quot;: \&quot;string\&quot;             }           }        ]   &#x60;&#x60;&#x60;  - key can only consist of [a-z A-Z 0-9 . - _ ]. - value is mandatory, max length 6000 chars - unit is optional, max length 50 chars - its impossible to filter for vector values
+Update the specification object of an asset in your accessible scope. To add specifications, just add the key and set the value object with value, unit and source_timestamp. To mark an existing specification to be unknown, the value could be set to null. To delete keys, use the delete method. Multiple specification objects can be sent in the same request. Keys inside a specification are unique and can only be added once. Keys can only consist of [a-z A-Z 0-9 . - _ ]. All uppercase A-Z are converted to lower-case a-z. For a key that is send multiple times in the request body, only the last key-value is saved.  It is possible to save complex objects in the value as vector. In this case the unit must be &#39;vector&#39; and the value a valid object in the following format: &#x60;&#x60;&#x60;       [           {             \&quot;key\&quot;: {              \&quot;value\&quot;: \&quot;string\&quot;,              \&quot;unit\&quot;: \&quot;string\&quot;            }           },           {             \&quot;second_key\&quot;: {               \&quot;value\&quot;: \&quot;string\&quot;             }           }        ]   &#x60;&#x60;&#x60;  - key can only consist of [a-z A-Z 0-9 . - _ ]. - value is mandatory, max length 6000 chars - unit is optional, max length 50 chars - its impossible to filter for vector values
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let assetId = 789; // Number | Id of the specified asset
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.updateSpecificationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the specified asset
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2981,8 +3126,8 @@ apiInstance.updateSpecificationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **assetId** | **Number**| Id of the specified asset | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -2999,7 +3144,7 @@ null (empty response body)
 
 <a name="uploadAssetPicture"></a>
 # **uploadAssetPicture**
-> PictureResponse uploadAssetPicture(imageid)
+> PictureResponse uploadAssetPicture(id, image)
 
 Upload an asset picture
 
@@ -3007,26 +3152,29 @@ Upload a new asset picture. Checks the file-storage quota. Allowed content-types
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.AssetApi();
-let image = image_example; // Blob | 
-let id = 789; // Number | Id of the asset
+var apiInstance = new NetilionApiDocumentation.AssetApi();
 
-apiInstance.uploadAssetPicture(imageid).then((data) => {
+var id = 789; // Number | Id of the asset
+
+var image = "/path/to/file.txt"; // File | the image to upload (up to 1 MB)
+
+apiInstance.uploadAssetPicture(id, image).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3036,8 +3184,8 @@ apiInstance.uploadAssetPicture(imageid).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | **Blob**|  | 
  **id** | **Number**| Id of the asset | 
+ **image** | **File**| the image to upload (up to 1 MB) | 
 
 ### Return type
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **externalReference** | **String** | can be used to store id of external api subscription managment system | [optional] 
 **status** | **String** | status of the api subscription, can be  open, payment_required, confirmed, cancelled, scheduled_update and non_renewing | [optional] 
 **notificationStatus** | **String** | status of the mail notification for the api subscription, can be no_notification, first_notification, second_notification or alert_notification | [optional] 
-**subscriptionType** | **String** | type of the api subscription, can be &#x27;s&#x27; or &#x27;m&#x27; | [optional] 
+**subscriptionType** | **String** | type of the api subscription, can be &#39;s&#39; or &#39;m&#39; | [optional] 
 **customerPurchaseOrder** | **String** | reference for customer system | [optional] 
 **startDate** | **String** | start date of the api subscription | [optional] 
 **endDate** | **String** | end date of the api subscription | [optional] 
@@ -21,3 +21,5 @@ Name | Type | Description | Notes
 **apiCallsUsed** | **Number** | number of api calls used | [optional] 
 **storageUsed** | **Number** | number of storage used (in bytes) | [optional] 
 **uploadDownloadUsed** | **Number** | data up- and download used (in bytes) | [optional] 
+
+

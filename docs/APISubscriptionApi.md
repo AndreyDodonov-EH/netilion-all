@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.APISubscriptionApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,10 @@ Method | HTTP request | Description
 [**replaceEdgeDevicesOfApiSubscription**](APISubscriptionApi.md#replaceEdgeDevicesOfApiSubscription) | **PATCH** /api_subscriptions/{id}/edge_devices | Replace the edge devices of an api subscription
 [**updateAPISubscription**](APISubscriptionApi.md#updateAPISubscription) | **PATCH** /api_subscriptions/{id} | Update an api subscription
 
+
 <a name="addEdgeDevicesToApiSubscription"></a>
 # **addEdgeDevicesToApiSubscription**
-> addEdgeDevicesToApiSubscription(bodyid)
+> addEdgeDevicesToApiSubscription(id, body)
 
 Add edge devices to an api subscription
 
@@ -24,26 +25,29 @@ Add one or more edge devices to an api subscription.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let body = new NetilionApiDocumentation.EdgeDevicesIds(); // EdgeDevicesIds | Resources that shall be added.
-let id = 789; // Number | Id of the api subscription to which the edge devices will be added
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
 
-apiInstance.addEdgeDevicesToApiSubscription(bodyid).then(() => {
+var id = 789; // Number | Id of the api subscription to which the edge devices will be added
+
+var body = new NetilionApiDocumentation.EdgeDevicesIds(); // EdgeDevicesIds | Resources that shall be added.
+
+apiInstance.addEdgeDevicesToApiSubscription(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -53,8 +57,8 @@ apiInstance.addEdgeDevicesToApiSubscription(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EdgeDevicesIds**](EdgeDevicesIds.md)| Resources that shall be added. | 
  **id** | **Number**| Id of the api subscription to which the edge devices will be added | 
+ **body** | [**EdgeDevicesIds**](EdgeDevicesIds.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -79,25 +83,27 @@ Creates a new api subscription. Only available for technical_users of the ID app
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let body = new NetilionApiDocumentation.APISubscriptionRequest(); // APISubscriptionRequest | api subscription body
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
 
-apiInstance.createAPISubscription(body).then((data) => {
+var body = new NetilionApiDocumentation.APISubscriptionRequest(); // APISubscriptionRequest | api subscription body
+
+apiInstance.createAPISubscription(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -132,25 +138,27 @@ Delete a specific api subscription identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let id = 789; // Number | Id of the api subscription
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
 
-apiInstance.deleteAPISubscription(id).then(() => {
+var id = 789; // Number | Id of the api subscription
+
+apiInstance.deleteAPISubscription(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -172,7 +180,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAPISubscriptionById"></a>
@@ -185,27 +193,30 @@ Get a specific api subscription identified by the id in the URL.  Possible inclu
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let id = 789; // Number | Id of the api subscription to fetch
-let opts = { 
-  'include': "include_example" // String | Comma separated list of objects to include in response
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
+
+var id = 789; // Number | Id of the api subscription to fetch
+
+var opts = { 
+  'include': "include_example", // String | Comma separated list of objects to include in response
 };
-apiInstance.getAPISubscriptionById(id, opts).then((data) => {
+apiInstance.getAPISubscriptionById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -228,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAPISubscriptions"></a>
@@ -241,21 +252,23 @@ Returns a list of api subscriptions.  Possible include values: &#x60;&#x60;&#x60
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -269,9 +282,9 @@ let opts = {
   'endDate': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAPISubscriptions(opts).then((data) => {
+apiInstance.getAPISubscriptions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -304,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEdgeDevicesOfAPISubscription"></a>
@@ -317,22 +330,25 @@ Returns a list of all edge devices that are assigned to an api subscription. You
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let id = 789; // Number | Get a list of edge devices assigned to the api subscription identified by this id.
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
+
+var id = 789; // Number | Get a list of edge devices assigned to the api subscription identified by this id.
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -349,9 +365,9 @@ let opts = {
   'specificationsValue': "specificationsValue_example", // String | Filter accepts `*` as wildcard, supports comma list of values in connection with specifications_key filter. Does not work for vectors
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `serial_number`, `created_at` or `updated_at`, `last_seen_at`, `name`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getEdgeDevicesOfAPISubscription(id, opts).then((data) => {
+apiInstance.getEdgeDevicesOfAPISubscription(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -388,12 +404,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeEdgeDevicesFromApiSubscription"></a>
 # **removeEdgeDevicesFromApiSubscription**
-> removeEdgeDevicesFromApiSubscription(bodyid)
+> removeEdgeDevicesFromApiSubscription(id, body)
 
 Remove edge devices from an api subscription
 
@@ -401,26 +417,29 @@ Remove one or more edge devices from an api subscription in your accessible scop
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let body = new NetilionApiDocumentation.EdgeDevicesIds(); // EdgeDevicesIds | Resources that shall be removed.
-let id = 789; // Number | Id of the api subscription from which the edge devices will be removed
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
 
-apiInstance.removeEdgeDevicesFromApiSubscription(bodyid).then(() => {
+var id = 789; // Number | Id of the api subscription from which the edge devices will be removed
+
+var body = new NetilionApiDocumentation.EdgeDevicesIds(); // EdgeDevicesIds | Resources that shall be removed.
+
+apiInstance.removeEdgeDevicesFromApiSubscription(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -430,8 +449,8 @@ apiInstance.removeEdgeDevicesFromApiSubscription(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EdgeDevicesIds**](EdgeDevicesIds.md)| Resources that shall be removed. | 
  **id** | **Number**| Id of the api subscription from which the edge devices will be removed | 
+ **body** | [**EdgeDevicesIds**](EdgeDevicesIds.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -448,7 +467,7 @@ null (empty response body)
 
 <a name="replaceEdgeDevicesOfApiSubscription"></a>
 # **replaceEdgeDevicesOfApiSubscription**
-> replaceEdgeDevicesOfApiSubscription(bodyid)
+> replaceEdgeDevicesOfApiSubscription(id, body)
 
 Replace the edge devices of an api subscription
 
@@ -456,26 +475,29 @@ Replaces all edge devices belonging to an api subscription in your accessible sc
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let body = new NetilionApiDocumentation.EdgeDevicesIds(); // EdgeDevicesIds | Resources that shall be replaced
-let id = 789; // Number | Id of the api subscription of which the edge devices will be replaced
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
 
-apiInstance.replaceEdgeDevicesOfApiSubscription(bodyid).then(() => {
+var id = 789; // Number | Id of the api subscription of which the edge devices will be replaced
+
+var body = new NetilionApiDocumentation.EdgeDevicesIds(); // EdgeDevicesIds | Resources that shall be replaced
+
+apiInstance.replaceEdgeDevicesOfApiSubscription(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -485,8 +507,8 @@ apiInstance.replaceEdgeDevicesOfApiSubscription(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EdgeDevicesIds**](EdgeDevicesIds.md)| Resources that shall be replaced | 
  **id** | **Number**| Id of the api subscription of which the edge devices will be replaced | 
+ **body** | [**EdgeDevicesIds**](EdgeDevicesIds.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -503,7 +525,7 @@ null (empty response body)
 
 <a name="updateAPISubscription"></a>
 # **updateAPISubscription**
-> updateAPISubscription(bodyid)
+> updateAPISubscription(id, body)
 
 Update an api subscription
 
@@ -511,26 +533,29 @@ Update accessible parameters of the requested resource. Setting a successor or p
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
-let body = new NetilionApiDocumentation.APISubscriptionRequest(); // APISubscriptionRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the api subscription to update
+var apiInstance = new NetilionApiDocumentation.APISubscriptionApi();
 
-apiInstance.updateAPISubscription(bodyid).then(() => {
+var id = 789; // Number | Id of the api subscription to update
+
+var body = new NetilionApiDocumentation.APISubscriptionRequest(); // APISubscriptionRequest | Parameters that shall be updated.
+
+apiInstance.updateAPISubscription(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -540,8 +565,8 @@ apiInstance.updateAPISubscription(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**APISubscriptionRequest**](APISubscriptionRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the api subscription to update | 
+ **body** | [**APISubscriptionRequest**](APISubscriptionRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 

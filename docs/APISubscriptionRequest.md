@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **clientApplication** | [**NestedID**](NestedID.md) |  | [optional] 
 **billingAddress** | [**BillingAddressRequest**](BillingAddressRequest.md) |  | [optional] 
 **shippingAddress** | [**ShippingAddressRequest**](ShippingAddressRequest.md) |  | [optional] 
+
+

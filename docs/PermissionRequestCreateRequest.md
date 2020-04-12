@@ -4,4 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestMessage** | **String** | message to the owners | [optional] 
-**asset** | **Object** |  | 
+**asset** | [**PermissionRequestCreateRequestAsset**](PermissionRequestCreateRequestAsset.md) |  | 
+
+

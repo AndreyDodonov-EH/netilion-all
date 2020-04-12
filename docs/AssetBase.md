@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **description** | **String** | description text of the asset | [optional] 
 **productionDate** | **String** | Date of production of the asset | [optional] 
 **lastSeenAt** | **String** | last time this asset has been visited/seen/scanned by a person or edge device | [optional] 
+
+

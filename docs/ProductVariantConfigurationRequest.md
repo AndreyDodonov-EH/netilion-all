@@ -3,4 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**configurations** | **[Object]** |  | [optional] 
+**configurations** | [**[Features]**](Features.md) |  | [optional] 
+
+

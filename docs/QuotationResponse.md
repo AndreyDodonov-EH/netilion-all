@@ -8,4 +8,6 @@ Name | Type | Description | Notes
 **sender** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **receiver** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **lineItems** | [**[ProductLineItem]**](ProductLineItem.md) |  | [optional] 
-**links** | **Object** |  | [optional] 
+**links** | [**Links16**](Links16.md) |  | [optional] 
+
+

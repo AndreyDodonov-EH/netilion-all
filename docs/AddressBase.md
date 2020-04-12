@@ -11,3 +11,5 @@ Name | Type | Description | Notes
 **countryCode** | **String** | abbreviation of the country conform to ISO-3166 | 
 **phone** | **String** | phone number | [optional] 
 **companyName** | **String** | company name | [optional] 
+
+

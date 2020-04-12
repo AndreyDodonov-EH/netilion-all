@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.NotificationApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,10 @@ Method | HTTP request | Description
 [**replaceClientApplicationsOfNotification**](NotificationApi.md#replaceClientApplicationsOfNotification) | **PATCH** /notifications/{notification_id}/client_applications | Replace the client_applications of a notification
 [**updateNotification**](NotificationApi.md#updateNotification) | **PATCH** /notifications/{id} | Update a notification
 
+
 <a name="addClientApplicationsToNotification"></a>
 # **addClientApplicationsToNotification**
-> addClientApplicationsToNotification(bodynotificationId)
+> addClientApplicationsToNotification(notificationId, body)
 
 add client_applications to a notification
 
@@ -24,26 +25,29 @@ Add one or more client_applications to a notification.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be added.
-let notificationId = 789; // Number | Id of the notification to which the client_applications will be added
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
 
-apiInstance.addClientApplicationsToNotification(bodynotificationId).then(() => {
+var notificationId = 789; // Number | Id of the notification to which the client_applications will be added
+
+var body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be added.
+
+apiInstance.addClientApplicationsToNotification(notificationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -53,8 +57,8 @@ apiInstance.addClientApplicationsToNotification(bodynotificationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be added. | 
  **notificationId** | **Number**| Id of the notification to which the client_applications will be added | 
+ **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -79,25 +83,27 @@ The notification content can be formatted with markdown. The only html tag allow
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let body = new NetilionApiDocumentation.NotificationRequest(); // NotificationRequest | Notification object to create.
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
 
-apiInstance.createNotification(body).then((data) => {
+var body = new NetilionApiDocumentation.NotificationRequest(); // NotificationRequest | Notification object to create.
+
+apiInstance.createNotification(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -132,25 +138,27 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let id = 789; // Number | Id of the notification to delete
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
 
-apiInstance.deleteNotification(id).then(() => {
+var id = 789; // Number | Id of the notification to delete
+
+apiInstance.deleteNotification(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -172,7 +180,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getClientApplicationsOfNotification"></a>
@@ -185,31 +193,34 @@ Returns a list of client_applications in your accessible scope. If the query has
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let notificationId = 789; // Number | Id of the notification to update
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
+
+var notificationId = 789; // Number | Id of the notification to update
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'contactPersonId': "contactPersonId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getClientApplicationsOfNotification(notificationId, opts).then((data) => {
+apiInstance.getClientApplicationsOfNotification(notificationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -236,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNotificationById"></a>
@@ -249,27 +260,30 @@ Get a specific notification identified by the id in the URL. Parameters supporti
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let id = 789; // Number | Id of notification to fetch
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
+
+var id = 789; // Number | Id of notification to fetch
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getNotificationById(id, opts).then((data) => {
+apiInstance.getNotificationById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -280,7 +294,7 @@ apiInstance.getNotificationById(id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of notification to fetch | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -292,12 +306,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNotifications"></a>
 # **getNotifications**
-> Object getNotifications(opts)
+> Notifications getNotifications(opts)
 
 Get a range of notifications
 
@@ -305,21 +319,23 @@ Returns a list of all notifications available in your scope. You can apply the q
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'clientApplicationId': 789, // Number | One or multiple ids (comma list). Expected id format is integer
@@ -330,12 +346,12 @@ let opts = {
   'endDatetimeFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DDThh:mm:ss
   'endDatetimeTo': "endDatetimeTo_example", // String | Expected date format is YYYY-MM-DDThh:mm:ss
   'name': "name_example", // String | searches notifications with given name
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getNotifications(opts).then((data) => {
+apiInstance.getNotifications(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -356,11 +372,11 @@ Name | Type | Description  | Notes
  **endDatetimeTo** | **String**| Expected date format is YYYY-MM-DDThh:mm:ss | [optional] 
  **name** | **String**| searches notifications with given name | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**Notifications**](Notifications.md)
 
 ### Authorization
 
@@ -368,12 +384,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="remoteClientApplicationsFromNotification"></a>
 # **remoteClientApplicationsFromNotification**
-> remoteClientApplicationsFromNotification(bodynotificationId)
+> remoteClientApplicationsFromNotification(notificationId, body)
 
 Remove client_application form a notification
 
@@ -381,26 +397,29 @@ Remove one or more client_applications from a notification
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be removed.
-let notificationId = 789; // Number | Id of the notification from which the client_applications will be removed
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
 
-apiInstance.remoteClientApplicationsFromNotification(bodynotificationId).then(() => {
+var notificationId = 789; // Number | Id of the notification from which the client_applications will be removed
+
+var body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be removed.
+
+apiInstance.remoteClientApplicationsFromNotification(notificationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -410,8 +429,8 @@ apiInstance.remoteClientApplicationsFromNotification(bodynotificationId).then(()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be removed. | 
  **notificationId** | **Number**| Id of the notification from which the client_applications will be removed | 
+ **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -428,7 +447,7 @@ null (empty response body)
 
 <a name="replaceClientApplicationsOfNotification"></a>
 # **replaceClientApplicationsOfNotification**
-> replaceClientApplicationsOfNotification(bodynotificationId)
+> replaceClientApplicationsOfNotification(notificationId, body)
 
 Replace the client_applications of a notification
 
@@ -436,26 +455,29 @@ Replaces all client_applications belonging to a notificatoin. You can send a lis
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be replaced
-let notificationId = 789; // Number | Id of the notification of which the client_applications will be replaced
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
 
-apiInstance.replaceClientApplicationsOfNotification(bodynotificationId).then(() => {
+var notificationId = 789; // Number | Id of the notification of which the client_applications will be replaced
+
+var body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be replaced
+
+apiInstance.replaceClientApplicationsOfNotification(notificationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -465,8 +487,8 @@ apiInstance.replaceClientApplicationsOfNotification(bodynotificationId).then(() 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be replaced | 
  **notificationId** | **Number**| Id of the notification of which the client_applications will be replaced | 
+ **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -483,7 +505,7 @@ null (empty response body)
 
 <a name="updateNotification"></a>
 # **updateNotification**
-> updateNotification(bodyid, opts)
+> updateNotification(id, body, opts)
 
 Update a notification
 
@@ -491,28 +513,32 @@ Update accessible parameters of the requested resource. The notification content
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.NotificationApi();
-let body = new NetilionApiDocumentation.NotificationRequest(); // NotificationRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the notification to update
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.NotificationApi();
+
+var id = 789; // Number | Id of the notification to update
+
+var body = new NetilionApiDocumentation.NotificationRequest(); // NotificationRequest | Parameters that shall be updated.
+
+var opts = { 
   'contentLanguage': "contentLanguage_example" // String | language of the content
 };
-apiInstance.updateNotification(bodyid, opts).then(() => {
+apiInstance.updateNotification(id, body, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -522,8 +548,8 @@ apiInstance.updateNotification(bodyid, opts).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NotificationRequest**](NotificationRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the notification to update | 
+ **body** | [**NotificationRequest**](NotificationRequest.md)| Parameters that shall be updated. | 
  **contentLanguage** | **String**| language of the content | [optional] 
 
 ### Return type

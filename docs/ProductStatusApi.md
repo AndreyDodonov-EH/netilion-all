@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.ProductStatusApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getProductStatuses**](ProductStatusApi.md#getProductStatuses) | **GET** /product/statuses | Get a range of product statuses
 [**getProductStatusesOptions**](ProductStatusApi.md#getProductStatusesOptions) | **GET** /products/{product_id}/status-options | Get all possible statuses for the specified product
 [**updateProductStatus**](ProductStatusApi.md#updateProductStatus) | **PATCH** /product/statuses/{id} | Update a product status
+
 
 <a name="deleteProductStatus"></a>
 # **deleteProductStatus**
@@ -21,25 +22,27 @@ Delete the given product status identified by id
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductStatusApi();
-let id = 789; // Number | Id of the product status to delete
+var apiInstance = new NetilionApiDocumentation.ProductStatusApi();
 
-apiInstance.deleteProductStatus(id).then(() => {
+var id = 789; // Number | Id of the product status to delete
+
+apiInstance.deleteProductStatus(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,7 +64,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getProductIdStatus"></a>
@@ -74,27 +77,30 @@ Returns the status of the product. Parameters supporting translation: &#x60;&#x6
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductStatusApi();
-let productId = 789; // Number | Id of the specified product
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.ProductStatusApi();
+
+var productId = 789; // Number | Id of the specified product
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductIdStatus(productId, opts).then((data) => {
+apiInstance.getProductIdStatus(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -105,7 +111,7 @@ apiInstance.getProductIdStatus(productId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Number**| Id of the specified product | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -117,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getProductStatusById"></a>
@@ -130,27 +136,30 @@ Get a specific product status identified by the id in the URL. Parameters suppor
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductStatusApi();
-let id = 789; // Number | Id of product status to fetch
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.ProductStatusApi();
+
+var id = 789; // Number | Id of product status to fetch
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductStatusById(id, opts).then((data) => {
+apiInstance.getProductStatusById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -161,7 +170,7 @@ apiInstance.getProductStatusById(id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of product status to fetch | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -173,12 +182,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getProductStatuses"></a>
 # **getProductStatuses**
-> Object getProductStatuses(opts)
+> ProductStatuses getProductStatuses(opts)
 
 Get a range of product statuses
 
@@ -186,32 +195,34 @@ Returns a list of all product statuses that are available in your scope. You can
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductStatusApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.ProductStatusApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'code': "code_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductStatuses(opts).then((data) => {
+apiInstance.getProductStatuses(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -227,11 +238,11 @@ Name | Type | Description  | Notes
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**ProductStatuses**](ProductStatuses.md)
 
 ### Authorization
 
@@ -239,12 +250,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getProductStatusesOptions"></a>
 # **getProductStatusesOptions**
-> Object getProductStatusesOptions(productId, opts)
+> ProductStatuses getProductStatusesOptions(productId, opts)
 
 Get all possible statuses for the specified product
 
@@ -252,33 +263,36 @@ Returns a list of all possible product statuses for the specified product. You c
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductStatusApi();
-let productId = 789; // Number | Id of the specified product
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.ProductStatusApi();
+
+var productId = 789; // Number | Id of the specified product
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'code': "code_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductStatusesOptions(productId, opts).then((data) => {
+apiInstance.getProductStatusesOptions(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -295,11 +309,11 @@ Name | Type | Description  | Notes
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**ProductStatuses**](ProductStatuses.md)
 
 ### Authorization
 
@@ -307,12 +321,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateProductStatus"></a>
 # **updateProductStatus**
-> updateProductStatus(bodyid, opts)
+> updateProductStatus(id, body, opts)
 
 Update a product status
 
@@ -320,28 +334,32 @@ Updates accessible parameters of selected product status. Parameters supporting 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductStatusApi();
-let body = new NetilionApiDocumentation.ProductStatusRequest(); // ProductStatusRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the product status to update
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.ProductStatusApi();
+
+var id = 789; // Number | Id of the product status to update
+
+var body = new NetilionApiDocumentation.ProductStatusRequest(); // ProductStatusRequest | Parameters that shall be updated.
+
+var opts = { 
   'contentLanguage': "contentLanguage_example" // String | language of the content
 };
-apiInstance.updateProductStatus(bodyid, opts).then(() => {
+apiInstance.updateProductStatus(id, body, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -351,8 +369,8 @@ apiInstance.updateProductStatus(bodyid, opts).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductStatusRequest**](ProductStatusRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the product status to update | 
+ **body** | [**ProductStatusRequest**](ProductStatusRequest.md)| Parameters that shall be updated. | 
  **contentLanguage** | **String**| language of the content | [optional] 
 
 ### Return type

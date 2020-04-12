@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **firstName** | **String** | email to the user | [optional] 
 **lastName** | **String** | email to the user | [optional] 
 **href** | **String** | href to the nested resource | [optional] 
+
+

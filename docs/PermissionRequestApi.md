@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.PermissionRequestApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deletePermissionRequest**](PermissionRequestApi.md#deletePermissionRequest) | **DELETE** /permission_requests/{id} | Delete a permission request
 [**getPermissionRequestById**](PermissionRequestApi.md#getPermissionRequestById) | **GET** /permission_requests/{id} | Get a single permissionRequest
 [**updatePermissionRequest**](PermissionRequestApi.md#updatePermissionRequest) | **PATCH** /permission_requests/{id} | Update a permission request
+
 
 <a name="createPermissionRequest"></a>
 # **createPermissionRequest**
@@ -19,25 +20,27 @@ Permissions must have a permission_type, assignable and permitable.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
-let body = new NetilionApiDocumentation.PermissionRequestCreateRequest(); // PermissionRequestCreateRequest | Permission object that needs to be created.
+var apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
 
-apiInstance.createPermissionRequest(body).then((data) => {
+var body = new NetilionApiDocumentation.PermissionRequestCreateRequest(); // PermissionRequestCreateRequest | Permission object that needs to be created.
+
+apiInstance.createPermissionRequest(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -72,25 +75,27 @@ Delete a specific resource in your accessible scope, identified by the id in the
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
-let id = 789; // Number | Id of the permission request to delete
+var apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
 
-apiInstance.deletePermissionRequest(id).then(() => {
+var id = 789; // Number | Id of the permission request to delete
+
+apiInstance.deletePermissionRequest(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -112,7 +117,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getPermissionRequestById"></a>
@@ -125,25 +130,27 @@ Get a specific permission request identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
-let id = 789; // Number | Id of the permission request to fetch
+var apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
 
-apiInstance.getPermissionRequestById(id).then((data) => {
+var id = 789; // Number | Id of the permission request to fetch
+
+apiInstance.getPermissionRequestById(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -165,12 +172,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updatePermissionRequest"></a>
 # **updatePermissionRequest**
-> updatePermissionRequest(bodyid)
+> updatePermissionRequest(id, body)
 
 Update a permission request
 
@@ -178,26 +185,29 @@ Update accessible parameters of the requested resource in your accessible scope.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
-let body = new NetilionApiDocumentation.PermissionRequestUpdateRequest(); // PermissionRequestUpdateRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the permission request to update
+var apiInstance = new NetilionApiDocumentation.PermissionRequestApi();
 
-apiInstance.updatePermissionRequest(bodyid).then(() => {
+var id = 789; // Number | Id of the permission request to update
+
+var body = new NetilionApiDocumentation.PermissionRequestUpdateRequest(); // PermissionRequestUpdateRequest | Parameters that shall be updated.
+
+apiInstance.updatePermissionRequest(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -207,8 +217,8 @@ apiInstance.updatePermissionRequest(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PermissionRequestUpdateRequest**](PermissionRequestUpdateRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the permission request to update | 
+ **body** | [**PermissionRequestUpdateRequest**](PermissionRequestUpdateRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 

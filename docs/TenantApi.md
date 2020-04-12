@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.TenantApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,9 +19,10 @@ Method | HTTP request | Description
 [**replaceTenantUsers**](TenantApi.md#replaceTenantUsers) | **PATCH** /tenants/{tenant_id}/users | Replace the users of a tenant
 [**updateTenant**](TenantApi.md#updateTenant) | **PATCH** /tenants/{id} | Update a tenant
 
+
 <a name="addTenantAdmins"></a>
 # **addTenantAdmins**
-> addTenantAdmins(bodytenantId)
+> addTenantAdmins(tenantId, body)
 
 Add admins to a tenant
 
@@ -29,26 +30,29 @@ Add admins to a tenant. Only an admin of a tenant can add additional admins.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.AdminIDs(); // AdminIDs | Object body that will be created. Tenant name is required
-let tenantId = 789; // Number | Id of the tenant to which the users will be added as admins
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.addTenantAdmins(bodytenantId).then(() => {
+var tenantId = 789; // Number | Id of the tenant to which the users will be added as admins
+
+var body = new NetilionApiDocumentation.AdminIDs(); // AdminIDs | Object body that will be created. Tenant name is required
+
+apiInstance.addTenantAdmins(tenantId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -58,8 +62,8 @@ apiInstance.addTenantAdmins(bodytenantId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AdminIDs**](AdminIDs.md)| Object body that will be created. Tenant name is required | 
  **tenantId** | **Number**| Id of the tenant to which the users will be added as admins | 
+ **body** | [**AdminIDs**](AdminIDs.md)| Object body that will be created. Tenant name is required | 
 
 ### Return type
 
@@ -76,7 +80,7 @@ null (empty response body)
 
 <a name="addTenantUsers"></a>
 # **addTenantUsers**
-> addTenantUsers(bodytenantId)
+> addTenantUsers(tenantId, body)
 
 Add users to a tenant
 
@@ -84,26 +88,29 @@ Add users to a tenant. Only an admin of a tenant can add additional users.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Object body that will be created. Tenant name is required
-let tenantId = 789; // Number | Id of the tenant to which the users will be added
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.addTenantUsers(bodytenantId).then(() => {
+var tenantId = 789; // Number | Id of the tenant to which the users will be added
+
+var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Object body that will be created. Tenant name is required
+
+apiInstance.addTenantUsers(tenantId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,8 +120,8 @@ apiInstance.addTenantUsers(bodytenantId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserIDs**](UserIDs.md)| Object body that will be created. Tenant name is required | 
  **tenantId** | **Number**| Id of the tenant to which the users will be added | 
+ **body** | [**UserIDs**](UserIDs.md)| Object body that will be created. Tenant name is required | 
 
 ### Return type
 
@@ -139,25 +146,27 @@ Create a new tenant. The name of the given tenant needs to be unique. The tenant
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.TenantRequest(); // TenantRequest | Object body that will be created. Tenant name is required
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.createTenants(body).then((data) => {
+var body = new NetilionApiDocumentation.TenantRequest(); // TenantRequest | Object body that will be created. Tenant name is required
+
+apiInstance.createTenants(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -192,25 +201,27 @@ Delete a specific resource in your accessible scope, identified by the id in the
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let id = 789; // Number | Id of the tenant to delete
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.deleteTenant(id).then(() => {
+var id = 789; // Number | Id of the tenant to delete
+
+apiInstance.deleteTenant(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -232,12 +243,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetTenantOptions"></a>
 # **getAssetTenantOptions**
-> Object getAssetTenantOptions(assetId, opts)
+> Tenants getAssetTenantOptions(assetId, opts)
 
 Get all possible tenants of the specified assets
 
@@ -245,30 +256,33 @@ Returns a list of all possible tenants for the specified asset. That is all publ
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.TenantApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetTenantOptions(assetId, opts).then((data) => {
+apiInstance.getAssetTenantOptions(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -286,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Tenants**](Tenants.md)
 
 ### Authorization
 
@@ -294,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getTenantAdmins"></a>
@@ -307,22 +321,25 @@ Returns a list of all admins that are available for the tenant. You can apply qu
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let tenantId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.TenantApi();
+
+var tenantId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -330,9 +347,9 @@ let opts = {
   'lastName': "lastName_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `email`, `first_name`, `last_name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getTenantAdmins(tenantId, opts).then((data) => {
+apiInstance.getTenantAdmins(tenantId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -360,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getTenantUsers"></a>
@@ -373,31 +390,34 @@ Returns a list of all users that are available for the tenant. You can apply que
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let tenantId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.TenantApi();
+
+var tenantId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'firstName': "firstName_example", // String | Filter accepts `*` as wildcard
   'lastName': "lastName_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `email`, `first_name`, `last_name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getTenantUsers(tenantId, opts).then((data) => {
+apiInstance.getTenantUsers(tenantId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -424,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getTenants"></a>
@@ -437,21 +457,23 @@ Returns a list of tenants in your accessible scope. If the query has no matches,
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.TenantApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -459,9 +481,9 @@ let opts = {
   '_public': true, // Boolean | Valid values are true and false
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getTenants(opts).then((data) => {
+apiInstance.getTenants(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -488,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getTenantsById"></a>
@@ -501,25 +523,27 @@ Get a specific tenant in your accessible scope, identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let id = 789; // Number | Id of the tenant to fetch
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.getTenantsById(id).then((data) => {
+var id = 789; // Number | Id of the tenant to fetch
+
+apiInstance.getTenantsById(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -541,12 +565,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeTenantAdmins"></a>
 # **removeTenantAdmins**
-> removeTenantAdmins(bodytenantId)
+> removeTenantAdmins(tenantId, body)
 
 Remove admins from a tenant
 
@@ -554,26 +578,29 @@ Remove one or more admins from a tenant identified by id in the url.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.AdminIDs(); // AdminIDs | Resources that shall be removed.
-let tenantId = 789; // Number | Id of the tenant from which the admins will be removed
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.removeTenantAdmins(bodytenantId).then(() => {
+var tenantId = 789; // Number | Id of the tenant from which the admins will be removed
+
+var body = new NetilionApiDocumentation.AdminIDs(); // AdminIDs | Resources that shall be removed.
+
+apiInstance.removeTenantAdmins(tenantId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -583,8 +610,8 @@ apiInstance.removeTenantAdmins(bodytenantId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AdminIDs**](AdminIDs.md)| Resources that shall be removed. | 
  **tenantId** | **Number**| Id of the tenant from which the admins will be removed | 
+ **body** | [**AdminIDs**](AdminIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -601,7 +628,7 @@ null (empty response body)
 
 <a name="removeTenantUsers"></a>
 # **removeTenantUsers**
-> removeTenantUsers(bodytenantId)
+> removeTenantUsers(tenantId, body)
 
 Remove users from a tenant
 
@@ -609,26 +636,29 @@ Remove one or more users from a tenant identified by id in the url.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
-let tenantId = 789; // Number | Id of the tenant from which the admins will be removed
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.removeTenantUsers(bodytenantId).then(() => {
+var tenantId = 789; // Number | Id of the tenant from which the admins will be removed
+
+var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
+
+apiInstance.removeTenantUsers(tenantId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -638,8 +668,8 @@ apiInstance.removeTenantUsers(bodytenantId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserIDs**](UserIDs.md)| Resources that shall be removed. | 
  **tenantId** | **Number**| Id of the tenant from which the admins will be removed | 
+ **body** | [**UserIDs**](UserIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -656,7 +686,7 @@ null (empty response body)
 
 <a name="replaceTenantAdmins"></a>
 # **replaceTenantAdmins**
-> replaceTenantAdmins(bodytenantId)
+> replaceTenantAdmins(tenantId, body)
 
 Replace the admins of a tenant
 
@@ -664,26 +694,29 @@ Replaces all admins of the tenant. You can send a list of resources that will re
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.AdminIDs(); // AdminIDs | Resources that shall be replaced
-let tenantId = 789; // Number | Id of the tenant of which the admins will be replaced
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.replaceTenantAdmins(bodytenantId).then(() => {
+var tenantId = 789; // Number | Id of the tenant of which the admins will be replaced
+
+var body = new NetilionApiDocumentation.AdminIDs(); // AdminIDs | Resources that shall be replaced
+
+apiInstance.replaceTenantAdmins(tenantId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -693,8 +726,8 @@ apiInstance.replaceTenantAdmins(bodytenantId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AdminIDs**](AdminIDs.md)| Resources that shall be replaced | 
  **tenantId** | **Number**| Id of the tenant of which the admins will be replaced | 
+ **body** | [**AdminIDs**](AdminIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -711,7 +744,7 @@ null (empty response body)
 
 <a name="replaceTenantUsers"></a>
 # **replaceTenantUsers**
-> replaceTenantUsers(bodytenantId)
+> replaceTenantUsers(tenantId, body)
 
 Replace the users of a tenant
 
@@ -719,26 +752,29 @@ Replaces all users of the tenant. You can send a list of resources that will rep
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be replaced
-let tenantId = 789; // Number | Id of the tenant of which the users will be replaced
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.replaceTenantUsers(bodytenantId).then(() => {
+var tenantId = 789; // Number | Id of the tenant of which the users will be replaced
+
+var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be replaced
+
+apiInstance.replaceTenantUsers(tenantId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -748,8 +784,8 @@ apiInstance.replaceTenantUsers(bodytenantId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserIDs**](UserIDs.md)| Resources that shall be replaced | 
  **tenantId** | **Number**| Id of the tenant of which the users will be replaced | 
+ **body** | [**UserIDs**](UserIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -766,7 +802,7 @@ null (empty response body)
 
 <a name="updateTenant"></a>
 # **updateTenant**
-> updateTenant(bodyid)
+> updateTenant(id, body)
 
 Update a tenant
 
@@ -774,26 +810,29 @@ Update accessible parameters of the requested resource in your accessible scope.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.TenantApi();
-let body = new NetilionApiDocumentation.TenantRequest(); // TenantRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the tenant to update
+var apiInstance = new NetilionApiDocumentation.TenantApi();
 
-apiInstance.updateTenant(bodyid).then(() => {
+var id = 789; // Number | Id of the tenant to update
+
+var body = new NetilionApiDocumentation.TenantRequest(); // TenantRequest | Parameters that shall be updated.
+
+apiInstance.updateTenant(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -803,8 +842,8 @@ apiInstance.updateTenant(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TenantRequest**](TenantRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the tenant to update | 
+ **body** | [**TenantRequest**](TenantRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 

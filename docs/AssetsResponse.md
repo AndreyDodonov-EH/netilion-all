@@ -5,3 +5,5 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assets** | [**[AssetResponse]**](AssetResponse.md) |  | 
 **pagination** | [**Pagination**](Pagination.md) |  | 
+
+

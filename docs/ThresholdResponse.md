@@ -9,3 +9,5 @@ Name | Type | Description | Notes
 **lowLow** | **Number** | the lowest critical limit | [optional] 
 **high** | **Number** | the highest warning limit | [optional] 
 **highHigh** | **Number** | the highest critical limit | [optional] 
+
+

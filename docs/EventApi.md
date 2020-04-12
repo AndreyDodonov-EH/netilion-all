@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.EventApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,9 +32,10 @@ Method | HTTP request | Description
 [**updateEvent**](EventApi.md#updateEvent) | **PATCH** /events/{id} | Update an event
 [**updateSpecificationsOfEvent**](EventApi.md#updateSpecificationsOfEvent) | **PATCH** /events/{event_id}/specifications | Update specifications of an event
 
+
 <a name="addDocumentsToEvent"></a>
 # **addDocumentsToEvent**
-> addDocumentsToEvent(bodyeventId)
+> addDocumentsToEvent(eventId, body)
 
 Add documents to an event
 
@@ -42,26 +43,29 @@ Add one or more documents to an event.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-let eventId = 789; // Number | Id of the asset to which the documents will be added
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.addDocumentsToEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the asset to which the documents will be added
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+
+apiInstance.addDocumentsToEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -71,8 +75,8 @@ apiInstance.addDocumentsToEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
  **eventId** | **Number**| Id of the asset to which the documents will be added | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -97,25 +101,27 @@ Event must have a name, status, type and at least one asset or an instrumentatio
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.EventRequest(); // EventRequest | Event object that needs to be created.
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.createEvent(body).then((data) => {
+var body = new NetilionApiDocumentation.EventRequest(); // EventRequest | Event object that needs to be created.
+
+apiInstance.createEvent(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -142,7 +148,7 @@ Name | Type | Description  | Notes
 
 <a name="createEventForAsset"></a>
 # **createEventForAsset**
-> EventResponse createEventForAsset(bodyassetId)
+> EventResponse createEventForAsset(assetId, body)
 
 Create a new event for an asset
 
@@ -150,26 +156,29 @@ Events must have a name, and can have a start_datetime (if not provided, the dat
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.EventRequestNoAssets(); // EventRequestNoAssets | Object to be created.
-let assetId = 789; // Number | Id of the asset
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.createEventForAsset(bodyassetId).then((data) => {
+var assetId = 789; // Number | Id of the asset
+
+var body = new NetilionApiDocumentation.EventRequestNoAssets(); // EventRequestNoAssets | Object to be created.
+
+apiInstance.createEventForAsset(assetId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -179,8 +188,8 @@ apiInstance.createEventForAsset(bodyassetId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventRequestNoAssets**](EventRequestNoAssets.md)| Object to be created. | 
  **assetId** | **Number**| Id of the asset | 
+ **body** | [**EventRequestNoAssets**](EventRequestNoAssets.md)| Object to be created. | 
 
 ### Return type
 
@@ -197,7 +206,7 @@ Name | Type | Description  | Notes
 
 <a name="createEventForInstrumentation"></a>
 # **createEventForInstrumentation**
-> EventResponse createEventForInstrumentation(bodyinstrumentationId)
+> EventResponse createEventForInstrumentation(instrumentationId, body)
 
 Create a new event for an instrumentation
 
@@ -205,26 +214,29 @@ Events must have a name, and can have a start_datetime (if not provided, the dat
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.EventRequestNoInstrumentations(); // EventRequestNoInstrumentations | Object to be created.
-let instrumentationId = 789; // Number | Id of the instrumentation
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.createEventForInstrumentation(bodyinstrumentationId).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var body = new NetilionApiDocumentation.EventRequestNoInstrumentations(); // EventRequestNoInstrumentations | Object to be created.
+
+apiInstance.createEventForInstrumentation(instrumentationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -234,8 +246,8 @@ apiInstance.createEventForInstrumentation(bodyinstrumentationId).then((data) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventRequestNoInstrumentations**](EventRequestNoInstrumentations.md)| Object to be created. | 
  **instrumentationId** | **Number**| Id of the instrumentation | 
+ **body** | [**EventRequestNoInstrumentations**](EventRequestNoInstrumentations.md)| Object to be created. | 
 
 ### Return type
 
@@ -260,25 +272,27 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let id = 789; // Number | Id of the event to delete
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.deleteEvent(id).then(() => {
+var id = 789; // Number | Id of the event to delete
+
+apiInstance.deleteEvent(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -300,7 +314,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetsOfEvent"></a>
@@ -313,22 +327,25 @@ Returns a list of all assets of an event that are available in your scope. You c
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -346,9 +363,9 @@ let opts = {
   'specificationsValue': "specificationsValue_example", // String | Filter accepts `*` as wildcard, supports comma list of values in connection with specifications_key filter. Does not work for vectors
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `serial_number`, `created_at` or `updated_at`, `last_seen_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetsOfEvent(eventId, opts).then((data) => {
+apiInstance.getAssetsOfEvent(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -386,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDocumentsOfEvent"></a>
@@ -399,22 +416,25 @@ Returns a list of documents. If the query has no matches, the response is an emp
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -428,12 +448,12 @@ let opts = {
   'validFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfEvent(eventId, opts).then((data) => {
+apiInstance.getDocumentsOfEvent(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -458,7 +478,7 @@ Name | Type | Description  | Notes
  **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
  **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -470,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventById"></a>
@@ -483,27 +503,30 @@ Get a specific event identified by the id in the URL.  Possible include values: 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let id = 789; // Number | Id of the event to fetch
-let opts = { 
-  'include': "include_example" // String | Comma separated list of objects to include in response
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var id = 789; // Number | Id of the event to fetch
+
+var opts = { 
+  'include': "include_example", // String | Comma separated list of objects to include in response
 };
-apiInstance.getEventById(id, opts).then((data) => {
+apiInstance.getEventById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -526,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventIdStatus"></a>
@@ -539,27 +562,30 @@ Returns the status of the event. Parameters supporting translation: &#x60;&#x60;
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | Id of the specified event
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | Id of the specified event
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getEventIdStatus(eventId, opts).then((data) => {
+apiInstance.getEventIdStatus(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -570,7 +596,7 @@ apiInstance.getEventIdStatus(eventId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **Number**| Id of the specified event | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -582,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventIdType"></a>
@@ -595,27 +621,30 @@ Returns the type of the event. Parameters supporting translation: &#x60;&#x60;&#
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | Id of the specified event
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | Id of the specified event
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getEventIdType(eventId, opts).then((data) => {
+apiInstance.getEventIdType(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -626,7 +655,7 @@ apiInstance.getEventIdType(eventId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **Number**| Id of the specified event | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -638,12 +667,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventStatusesOptions"></a>
 # **getEventStatusesOptions**
-> Object getEventStatusesOptions(eventId, opts)
+> EventStatuses getEventStatusesOptions(eventId, opts)
 
 Get all possible statuses for the specified event
 
@@ -651,33 +680,36 @@ Returns a list of all possible event statuses for the specified event. You can a
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | Id of the specified event
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | Id of the specified event
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'code': "code_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getEventStatusesOptions(eventId, opts).then((data) => {
+apiInstance.getEventStatusesOptions(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -694,11 +726,11 @@ Name | Type | Description  | Notes
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**EventStatuses**](EventStatuses.md)
 
 ### Authorization
 
@@ -706,12 +738,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventTypeesOptions"></a>
 # **getEventTypeesOptions**
-> Object getEventTypeesOptions(eventId, opts)
+> EventTypes getEventTypeesOptions(eventId, opts)
 
 Get all possible types for the specified event
 
@@ -719,33 +751,36 @@ Returns a list of all possible event types for the specified event. You can appl
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | Id of the specified event
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | Id of the specified event
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'code': "code_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getEventTypeesOptions(eventId, opts).then((data) => {
+apiInstance.getEventTypeesOptions(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -762,11 +797,11 @@ Name | Type | Description  | Notes
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**EventTypes**](EventTypes.md)
 
 ### Authorization
 
@@ -774,7 +809,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEvents"></a>
@@ -787,21 +822,23 @@ Returns a list of events. If the query has no matches, the response is an empty 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -817,9 +854,9 @@ let opts = {
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `start_datetime`, `end_datetime`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getEvents(opts).then((data) => {
+apiInstance.getEvents(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -854,12 +891,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventsOfAsset"></a>
 # **getEventsOfAsset**
-> EventsResponse getEventsOfAsset(assetId, opts)
+> EventsResponse getEventsOfAsset(assetId, , opts)
 
 Get all events of one asset
 
@@ -867,22 +904,25 @@ Returns a list of all events belonging to an asset in your accessible scope. You
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let assetId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var assetId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -898,9 +938,9 @@ let opts = {
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `start_datetime`, `end_datetime`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getEventsOfAsset(assetId, opts).then((data) => {
+apiInstance.getEventsOfAsset(assetId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -936,12 +976,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventsOfInstrumentation"></a>
 # **getEventsOfInstrumentation**
-> EventsResponse getEventsOfInstrumentation(instrumentationId, opts)
+> EventsResponse getEventsOfInstrumentation(instrumentationId, , opts)
 
 Get all events of one instrumentation
 
@@ -949,22 +989,25 @@ Returns a list of all events belonging to an instrumentation in your accessible 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -980,9 +1023,9 @@ let opts = {
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `start_datetime`, `end_datetime`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getEventsOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getEventsOfInstrumentation(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1018,7 +1061,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationsOfEvent"></a>
@@ -1031,22 +1074,25 @@ Returns a list of all instrumentations of an event that are available in your sc
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1063,9 +1109,9 @@ let opts = {
   'assetStatusId': "assetStatusId_example", // String | One or multiple ids (comma list). Expected id format is integer. This retrieves all Instrumentations where at least one of its assets has one of the given statuses.
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `tag`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getInstrumentationsOfEvent(eventId, opts).then((data) => {
+apiInstance.getInstrumentationsOfEvent(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1102,7 +1148,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfEvent"></a>
@@ -1115,27 +1161,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let eventId = 789; // Number | Id of the specified event
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.EventApi();
+
+var eventId = 789; // Number | Id of the specified event
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfEvent(eventId, opts).then((data) => {
+apiInstance.getSpecificationsOfEvent(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1146,7 +1195,7 @@ apiInstance.getSpecificationsOfEvent(eventId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **Number**| Id of the specified event | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -1158,12 +1207,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeAssetsFromEvent"></a>
 # **removeAssetsFromEvent**
-> removeAssetsFromEvent(bodyeventId)
+> removeAssetsFromEvent(eventId, body)
 
 Remove assets from an event
 
@@ -1171,26 +1220,29 @@ Remove one or more assets from an event. If the event has no more related assets
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be removed.
-let eventId = 789; // Number | Id of the event where the asset will be removed
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.removeAssetsFromEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the event where the asset will be removed
+
+var body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be removed.
+
+apiInstance.removeAssetsFromEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1200,8 +1252,8 @@ apiInstance.removeAssetsFromEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be removed. | 
  **eventId** | **Number**| Id of the event where the asset will be removed | 
+ **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1218,7 +1270,7 @@ null (empty response body)
 
 <a name="removeDocumentsFromEvent"></a>
 # **removeDocumentsFromEvent**
-> removeDocumentsFromEvent(bodyeventId)
+> removeDocumentsFromEvent(eventId, body)
 
 Remove documents from an event
 
@@ -1226,26 +1278,29 @@ Remove one or more documents from an event.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-let eventId = 789; // Number | Id of the event from which the documents will be removed
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.removeDocumentsFromEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the event from which the documents will be removed
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+
+apiInstance.removeDocumentsFromEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1255,8 +1310,8 @@ apiInstance.removeDocumentsFromEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
  **eventId** | **Number**| Id of the event from which the documents will be removed | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1273,7 +1328,7 @@ null (empty response body)
 
 <a name="removeEventFromAsset"></a>
 # **removeEventFromAsset**
-> removeEventFromAsset(bodyassetId)
+> removeEventFromAsset(assetId, body)
 
 Remove events from an asset
 
@@ -1281,26 +1336,29 @@ Remove one or more events from an asset in your accessible scope. If the event h
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = null; // Object | Resources that shall be removed.
-let assetId = 789; // Number | Id of the asset from which the events will removed.
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.removeEventFromAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the asset from which the events will removed.
+
+var body = new NetilionApiDocumentation.Events(); // Events | Resources that shall be removed.
+
+apiInstance.removeEventFromAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1310,8 +1368,8 @@ apiInstance.removeEventFromAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Resources that shall be removed. | 
  **assetId** | **Number**| Id of the asset from which the events will removed. | 
+ **body** | [**Events**](Events.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1328,7 +1386,7 @@ null (empty response body)
 
 <a name="removeEventFromInstrumentation"></a>
 # **removeEventFromInstrumentation**
-> removeEventFromInstrumentation(bodyinstrumentationId)
+> removeEventFromInstrumentation(instrumentationId, body)
 
 Remove events from an instrumentation
 
@@ -1336,26 +1394,29 @@ Remove one or more events from an instrumentation in your accessible scope. If t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = null; // Object | Resources that shall be removed.
-let instrumentationId = 789; // Number | Id of the instrumentation from which the events will removed.
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.removeEventFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation from which the events will removed.
+
+var body = new NetilionApiDocumentation.Events1(); // Events1 | Resources that shall be removed.
+
+apiInstance.removeEventFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1365,8 +1426,8 @@ apiInstance.removeEventFromInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Resources that shall be removed. | 
  **instrumentationId** | **Number**| Id of the instrumentation from which the events will removed. | 
+ **body** | [**Events1**](Events1.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1383,7 +1444,7 @@ null (empty response body)
 
 <a name="removeInstrumentationsFromEvent"></a>
 # **removeInstrumentationsFromEvent**
-> removeInstrumentationsFromEvent(bodyeventId)
+> removeInstrumentationsFromEvent(eventId, body)
 
 Remove instrumentations from an event
 
@@ -1391,26 +1452,29 @@ Remove one or more instrumentations from an event. If the event has no more rela
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be removed.
-let eventId = 789; // Number | Id of the event where the instrumentation will be removed
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.removeInstrumentationsFromEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the event where the instrumentation will be removed
+
+var body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be removed.
+
+apiInstance.removeInstrumentationsFromEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1420,8 +1484,8 @@ apiInstance.removeInstrumentationsFromEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be removed. | 
  **eventId** | **Number**| Id of the event where the instrumentation will be removed | 
+ **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1438,7 +1502,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromEvent"></a>
 # **removeSpecificationsFromEvent**
-> removeSpecificationsFromEvent(bodyeventId)
+> removeSpecificationsFromEvent(eventId, body)
 
 Delete specifications of an event
 
@@ -1446,26 +1510,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let eventId = 789; // Number | Id of the specified event
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.removeSpecificationsFromEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the specified event
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1475,8 +1542,8 @@ apiInstance.removeSpecificationsFromEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **eventId** | **Number**| Id of the specified event | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -1493,7 +1560,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfEvent"></a>
 # **renameSpecificationsOfEvent**
-> renameSpecificationsOfEvent(bodyeventId)
+> renameSpecificationsOfEvent(eventId, body)
 
 Rename a specification key
 
@@ -1501,26 +1568,29 @@ Rename one specification key of an event in your accessible scope. The key name 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let eventId = 789; // Number | Id of the specified node
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.renameSpecificationsOfEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the specified node
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1530,8 +1600,8 @@ apiInstance.renameSpecificationsOfEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **eventId** | **Number**| Id of the specified node | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1548,7 +1618,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfEvent"></a>
 # **replaceDocumentsOfEvent**
-> replaceDocumentsOfEvent(bodyeventId)
+> replaceDocumentsOfEvent(eventId, body)
 
 Replace the documents of an event
 
@@ -1556,26 +1626,29 @@ Replaces all documents belonging to an event. You can send a list of resources t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-let eventId = 789; // Number | Id of the event of which the documents will be replaced
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.replaceDocumentsOfEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the event of which the documents will be replaced
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+
+apiInstance.replaceDocumentsOfEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1585,8 +1658,8 @@ apiInstance.replaceDocumentsOfEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
  **eventId** | **Number**| Id of the event of which the documents will be replaced | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -1603,7 +1676,7 @@ null (empty response body)
 
 <a name="updateEvent"></a>
 # **updateEvent**
-> updateEvent(bodyid)
+> updateEvent(id, body)
 
 Update an event
 
@@ -1611,26 +1684,29 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = new NetilionApiDocumentation.EventRequest(); // EventRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the event to update
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.updateEvent(bodyid).then(() => {
+var id = 789; // Number | Id of the event to update
+
+var body = new NetilionApiDocumentation.EventRequest(); // EventRequest | Parameters that shall be updated.
+
+apiInstance.updateEvent(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1640,8 +1716,8 @@ apiInstance.updateEvent(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventRequest**](EventRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the event to update | 
+ **body** | [**EventRequest**](EventRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 
@@ -1658,7 +1734,7 @@ null (empty response body)
 
 <a name="updateSpecificationsOfEvent"></a>
 # **updateSpecificationsOfEvent**
-> updateSpecificationsOfEvent(bodyeventId)
+> updateSpecificationsOfEvent(eventId, body)
 
 Update specifications of an event
 
@@ -1666,26 +1742,29 @@ Update the specification object of an event in your accessible scope. To add spe
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.EventApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let eventId = 789; // Number | Id of the specified event
+var apiInstance = new NetilionApiDocumentation.EventApi();
 
-apiInstance.updateSpecificationsOfEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the specified event
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1695,8 +1774,8 @@ apiInstance.updateSpecificationsOfEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **eventId** | **Number**| Id of the specified event | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 

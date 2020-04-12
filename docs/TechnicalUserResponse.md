@@ -4,4 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Id of object | [optional] 
-**links** | **Object** |  | [optional] 
+**links** | [**TechnicalUserCreateResponseLinks**](TechnicalUserCreateResponseLinks.md) |  | [optional] 
+
+

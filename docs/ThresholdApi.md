@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.ThresholdApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,10 @@ Method | HTTP request | Description
 [**getInstrumentationThresholds**](ThresholdApi.md#getInstrumentationThresholds) | **GET** /instrumentations/{instrumentation_id}/thresholds | Get instrumentation thresholds
 [**updateInstrumentationThreshold**](ThresholdApi.md#updateInstrumentationThreshold) | **PATCH** /instrumentations/{instrumentation_id}/thresholds/{id} | Update an instrumentation threshold
 
+
 <a name="createInstrumentationThreshold"></a>
 # **createInstrumentationThreshold**
-> ThresholdResponse createInstrumentationThreshold(bodyinstrumentationId)
+> ThresholdResponse createInstrumentationThreshold(instrumentationId, body)
 
 Create an instrumentation threshold
 
@@ -20,26 +21,29 @@ Create a new instrumentation threshold. Thresholds value order must be &#x60;&#x
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ThresholdApi();
-let body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be created.
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.ThresholdApi();
 
-apiInstance.createInstrumentationThreshold(bodyinstrumentationId).then((data) => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be created.
+
+apiInstance.createInstrumentationThreshold(instrumentationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -49,8 +53,8 @@ apiInstance.createInstrumentationThreshold(bodyinstrumentationId).then((data) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be created. | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be created. | 
 
 ### Return type
 
@@ -75,26 +79,29 @@ Delete an instrumentation threshold.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ThresholdApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation threshold
+var apiInstance = new NetilionApiDocumentation.ThresholdApi();
 
-apiInstance.deleteInstrumentationThreshold(instrumentationId, id).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+apiInstance.deleteInstrumentationThreshold(instrumentationId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -117,7 +124,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationThreshold"></a>
@@ -130,26 +137,29 @@ Get a single threshold of an instrumentation.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ThresholdApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation threshold
+var apiInstance = new NetilionApiDocumentation.ThresholdApi();
 
-apiInstance.getInstrumentationThreshold(instrumentationId, id).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+apiInstance.getInstrumentationThreshold(instrumentationId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -172,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationThresholds"></a>
@@ -185,28 +195,31 @@ Get all thresholds of an instrumentation.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ThresholdApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.ThresholdApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var opts = { 
   'key': "key_example", // String | filter by key
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `key`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getInstrumentationThresholds(instrumentationId, opts).then((data) => {
+apiInstance.getInstrumentationThresholds(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -230,12 +243,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateInstrumentationThreshold"></a>
 # **updateInstrumentationThreshold**
-> ThresholdResponse updateInstrumentationThreshold(bodyinstrumentationIdid)
+> ThresholdResponse updateInstrumentationThreshold(instrumentationId, id, body)
 
 Update an instrumentation threshold
 
@@ -243,27 +256,31 @@ Replaces the threshold belonging to an instrumentation. This action requires &#x
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ThresholdApi();
-let body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be updated.
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation threshold
+var apiInstance = new NetilionApiDocumentation.ThresholdApi();
 
-apiInstance.updateInstrumentationThreshold(bodyinstrumentationIdid).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+var body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be updated.
+
+apiInstance.updateInstrumentationThreshold(instrumentationId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -273,9 +290,9 @@ apiInstance.updateInstrumentationThreshold(bodyinstrumentationIdid).then((data) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be updated. | 
  **instrumentationId** | **Number**| Id of the instrumentation | 
  **id** | **Number**| Id of the instrumentation threshold | 
+ **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be updated. | 
 
 ### Return type
 

@@ -9,3 +9,5 @@ Name | Type | Description | Notes
 **shippingAddress** | [**ShippingAddressRequest**](ShippingAddressRequest.md) |  | [optional] 
 **successor** | [**NestedID**](NestedID.md) |  | [optional] 
 **predecessor** | [**NestedID**](NestedID.md) |  | [optional] 
+
+

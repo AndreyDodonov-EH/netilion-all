@@ -8,4 +8,6 @@ Name | Type | Description | Notes
 **receiver** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **status** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **products** | [**[DeliveryProducts]**](DeliveryProducts.md) |  | [optional] 
-**links** | **Object** |  | [optional] 
+**links** | [**Links5**](Links5.md) |  | [optional] 
+
+

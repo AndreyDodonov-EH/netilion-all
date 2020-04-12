@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.UserGroupApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,10 @@ Method | HTTP request | Description
 [**replaceUsersOfUserGroup**](UserGroupApi.md#replaceUsersOfUserGroup) | **PATCH** /usergroups/{usergroup_id}/users | Replace the users of a user group
 [**updateUserGroup**](UserGroupApi.md#updateUserGroup) | **PATCH** /usergroups/{id} | Update a user group
 
+
 <a name="addUsersToUserGroup"></a>
 # **addUsersToUserGroup**
-> addUsersToUserGroup(bodyusergroupId)
+> addUsersToUserGroup(usergroupId, body)
 
 Add users to a user group
 
@@ -24,26 +25,29 @@ Add one or more users to a user group.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be added.
-let usergroupId = 789; // Number | Id of the user group to which the users will be added
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
 
-apiInstance.addUsersToUserGroup(bodyusergroupId).then(() => {
+var usergroupId = 789; // Number | Id of the user group to which the users will be added
+
+var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be added.
+
+apiInstance.addUsersToUserGroup(usergroupId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -53,8 +57,8 @@ apiInstance.addUsersToUserGroup(bodyusergroupId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserIDs**](UserIDs.md)| Resources that shall be added. | 
  **usergroupId** | **Number**| Id of the user group to which the users will be added | 
+ **body** | [**UserIDs**](UserIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -79,25 +83,27 @@ A user group can have many users and users can belong to several groups.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let body = new NetilionApiDocumentation.UserGroupRequest(); // UserGroupRequest | User group to create
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
 
-apiInstance.createUserGroup(body).then((data) => {
+var body = new NetilionApiDocumentation.UserGroupRequest(); // UserGroupRequest | User group to create
+
+apiInstance.createUserGroup(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -132,25 +138,27 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let id = 789; // Number | Id of the user group to delete
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
 
-apiInstance.deleteUserGroup(id).then(() => {
+var id = 789; // Number | Id of the user group to delete
+
+apiInstance.deleteUserGroup(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -172,7 +180,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUserGroupById"></a>
@@ -185,25 +193,27 @@ Get a specific user group identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let id = 789; // Number | Id of the user group to fetch
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
 
-apiInstance.getUserGroupById(id).then((data) => {
+var id = 789; // Number | Id of the user group to fetch
+
+apiInstance.getUserGroupById(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -225,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUserGroups"></a>
@@ -234,33 +244,35 @@ Name | Type | Description  | Notes
 
 Get a range of user groups
 
-Returns a list of all user group that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#x27;
+Returns a list of all user group that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#39;
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUserGroups(opts).then((data) => {
+apiInstance.getUserGroups(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -285,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getUsersOfUserGroup"></a>
@@ -298,31 +310,34 @@ Returns a list of all users of a specific user group identified by id in the url
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let usergroupId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
+
+var usergroupId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'firstName': "firstName_example", // String | Filter accepts `*` as wildcard
   'lastName': "lastName_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `email`, `first_name`, `last_name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUsersOfUserGroup(usergroupId, opts).then((data) => {
+apiInstance.getUsersOfUserGroup(usergroupId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -349,12 +364,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeUsersFromUserGroup"></a>
 # **removeUsersFromUserGroup**
-> removeUsersFromUserGroup(bodyusergroupId)
+> removeUsersFromUserGroup(usergroupId, body)
 
 Remove users from a user group
 
@@ -362,26 +377,29 @@ Remove one or more users from a user group.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
-let usergroupId = 789; // Number | Id of the user group from which the users will be removed
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
 
-apiInstance.removeUsersFromUserGroup(bodyusergroupId).then(() => {
+var usergroupId = 789; // Number | Id of the user group from which the users will be removed
+
+var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
+
+apiInstance.removeUsersFromUserGroup(usergroupId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -391,8 +409,8 @@ apiInstance.removeUsersFromUserGroup(bodyusergroupId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserIDs**](UserIDs.md)| Resources that shall be removed. | 
  **usergroupId** | **Number**| Id of the user group from which the users will be removed | 
+ **body** | [**UserIDs**](UserIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -409,7 +427,7 @@ null (empty response body)
 
 <a name="replaceUsersOfUserGroup"></a>
 # **replaceUsersOfUserGroup**
-> replaceUsersOfUserGroup(bodyusergroupId)
+> replaceUsersOfUserGroup(usergroupId, body)
 
 Replace the users of a user group
 
@@ -417,26 +435,29 @@ Replaces all users belonging to a user group. You can send a list of resources t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be replaced
-let usergroupId = 789; // Number | Id of the user group of which the users will be replaced
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
 
-apiInstance.replaceUsersOfUserGroup(bodyusergroupId).then(() => {
+var usergroupId = 789; // Number | Id of the user group of which the users will be replaced
+
+var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be replaced
+
+apiInstance.replaceUsersOfUserGroup(usergroupId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -446,8 +467,8 @@ apiInstance.replaceUsersOfUserGroup(bodyusergroupId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserIDs**](UserIDs.md)| Resources that shall be replaced | 
  **usergroupId** | **Number**| Id of the user group of which the users will be replaced | 
+ **body** | [**UserIDs**](UserIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -464,7 +485,7 @@ null (empty response body)
 
 <a name="updateUserGroup"></a>
 # **updateUserGroup**
-> updateUserGroup(bodyid)
+> updateUserGroup(id, body)
 
 Update a user group
 
@@ -472,26 +493,29 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.UserGroupApi();
-let body = new NetilionApiDocumentation.UserGroupRequest(); // UserGroupRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the user group to update
+var apiInstance = new NetilionApiDocumentation.UserGroupApi();
 
-apiInstance.updateUserGroup(bodyid).then(() => {
+var id = 789; // Number | Id of the user group to update
+
+var body = new NetilionApiDocumentation.UserGroupRequest(); // UserGroupRequest | Parameters that shall be updated.
+
+apiInstance.updateUserGroup(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -501,8 +525,8 @@ apiInstance.updateUserGroup(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserGroupRequest**](UserGroupRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the user group to update | 
+ **body** | [**UserGroupRequest**](UserGroupRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 

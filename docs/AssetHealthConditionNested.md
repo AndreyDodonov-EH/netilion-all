@@ -8,4 +8,6 @@ Name | Type | Description | Notes
 **assetStatus** | [**NestedIDHref**](NestedIDHref.md) |  | 
 **channel** | **String** | channel of the nested resource | 
 **module** | **String** | module of the nested resource | 
-**links** | **Object** |  | [optional] 
+**links** | [**Links1**](Links1.md) |  | [optional] 
+
+

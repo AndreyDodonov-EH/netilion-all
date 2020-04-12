@@ -8,4 +8,6 @@ Name | Type | Description | Notes
 **contactPerson** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **technicalUser** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **billingContact** | [**BillingContactResponse**](BillingContactResponse.md) |  | [optional] 
-**links** | **Object** |  | [optional] 
+**links** | [**Links4**](Links4.md) |  | [optional] 
+
+

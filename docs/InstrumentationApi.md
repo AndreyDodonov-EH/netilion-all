@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.InstrumentationApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -52,9 +52,10 @@ Method | HTTP request | Description
 [**updateSpecificationsOfInstrumentation**](InstrumentationApi.md#updateSpecificationsOfInstrumentation) | **PATCH** /instrumentations/{instrumentation_id}/specifications | Update specifications of an instrumentation
 [**uploadInstrumentationPicture**](InstrumentationApi.md#uploadInstrumentationPicture) | **POST** /instrumentations/{id}/pictures | Upload an instrumentation picture
 
+
 <a name="addAssetsToInstrumentation"></a>
 # **addAssetsToInstrumentation**
-> addAssetsToInstrumentation(bodyinstrumentationId)
+> addAssetsToInstrumentation(instrumentationId, body)
 
 Add assets to an instrumentation
 
@@ -62,26 +63,29 @@ Add one or more assets to an instrumentation. This action requires &#x60;can_per
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be added.
-let instrumentationId = 789; // Number | Id of the instrumentation to which the assets will be added
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.addAssetsToInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation to which the assets will be added
+
+var body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be added.
+
+apiInstance.addAssetsToInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -91,8 +95,8 @@ apiInstance.addAssetsToInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be added. | 
  **instrumentationId** | **Number**| Id of the instrumentation to which the assets will be added | 
+ **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -109,7 +113,7 @@ null (empty response body)
 
 <a name="addBillOfMaterialsToInstrumentation"></a>
 # **addBillOfMaterialsToInstrumentation**
-> addBillOfMaterialsToInstrumentation(bodyinstrumentationId)
+> addBillOfMaterialsToInstrumentation(instrumentationId, body)
 
 Add bill of materials to an instrumentation
 
@@ -117,26 +121,29 @@ Add one or more bill of materials to an instrumentation.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be added.
-let instrumentationId = 789; // Number | Id of the instrumentation to which the bill of materials will be added
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.addBillOfMaterialsToInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation to which the bill of materials will be added
+
+var body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be added.
+
+apiInstance.addBillOfMaterialsToInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -146,8 +153,8 @@ apiInstance.addBillOfMaterialsToInstrumentation(bodyinstrumentationId).then(() =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be added. | 
  **instrumentationId** | **Number**| Id of the instrumentation to which the bill of materials will be added | 
+ **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -164,7 +171,7 @@ null (empty response body)
 
 <a name="addDocumentsToInstrumentation"></a>
 # **addDocumentsToInstrumentation**
-> addDocumentsToInstrumentation(bodyinstrumentationId)
+> addDocumentsToInstrumentation(instrumentationId, body)
 
 Add documents to an instrumentation
 
@@ -172,26 +179,29 @@ Add one or more documents to an instrumentation. This action requires &#x60;can_
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-let instrumentationId = 789; // Number | Id of the instrumentation to which the documents will be added
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.addDocumentsToInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation to which the documents will be added
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+
+apiInstance.addDocumentsToInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -201,8 +211,8 @@ apiInstance.addDocumentsToInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
  **instrumentationId** | **Number**| Id of the instrumentation to which the documents will be added | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -219,7 +229,7 @@ null (empty response body)
 
 <a name="addInstrumentationPictureLink"></a>
 # **addInstrumentationPictureLink**
-> PictureResponse addInstrumentationPictureLink(bodyid)
+> PictureResponse addInstrumentationPictureLink(id, body)
 
 Add a link as instrumentation picture
 
@@ -227,26 +237,29 @@ Add an external resource as instrumentation picture.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be created
-let id = 789; // Number | Id of the instrumentation
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.addInstrumentationPictureLink(bodyid).then((data) => {
+var id = 789; // Number | Id of the instrumentation
+
+var body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be created
+
+apiInstance.addInstrumentationPictureLink(id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -256,8 +269,8 @@ apiInstance.addInstrumentationPictureLink(bodyid).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be created | 
  **id** | **Number**| Id of the instrumentation | 
+ **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be created | 
 
 ### Return type
 
@@ -274,7 +287,7 @@ Name | Type | Description  | Notes
 
 <a name="addNodesToInstrumentation"></a>
 # **addNodesToInstrumentation**
-> addNodesToInstrumentation(bodyinstrumentationId)
+> addNodesToInstrumentation(instrumentationId, body)
 
 Add nodes to an instrumentation
 
@@ -282,26 +295,29 @@ Add one or more nodes to an instrumentation in your accessible scope. This actio
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be added.
-let instrumentationId = 789; // Number | Id of the instrumentation to which the nodes will be added
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.addNodesToInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation to which the nodes will be added
+
+var body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be added.
+
+apiInstance.addNodesToInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -311,8 +327,8 @@ apiInstance.addNodesToInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be added. | 
  **instrumentationId** | **Number**| Id of the instrumentation to which the nodes will be added | 
+ **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -329,7 +345,7 @@ null (empty response body)
 
 <a name="createEventForInstrumentation"></a>
 # **createEventForInstrumentation**
-> EventResponse createEventForInstrumentation(bodyinstrumentationId)
+> EventResponse createEventForInstrumentation(instrumentationId, body)
 
 Create a new event for an instrumentation
 
@@ -337,26 +353,29 @@ Events must have a name, and can have a start_datetime (if not provided, the dat
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.EventRequestNoInstrumentations(); // EventRequestNoInstrumentations | Object to be created.
-let instrumentationId = 789; // Number | Id of the instrumentation
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.createEventForInstrumentation(bodyinstrumentationId).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var body = new NetilionApiDocumentation.EventRequestNoInstrumentations(); // EventRequestNoInstrumentations | Object to be created.
+
+apiInstance.createEventForInstrumentation(instrumentationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -366,8 +385,8 @@ apiInstance.createEventForInstrumentation(bodyinstrumentationId).then((data) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventRequestNoInstrumentations**](EventRequestNoInstrumentations.md)| Object to be created. | 
  **instrumentationId** | **Number**| Id of the instrumentation | 
+ **body** | [**EventRequestNoInstrumentations**](EventRequestNoInstrumentations.md)| Object to be created. | 
 
 ### Return type
 
@@ -392,25 +411,27 @@ Create a new instrumentation. The tag of the given instrumentation needs to be u
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.InstrumentationRequest(); // InstrumentationRequest | Instrumentation object that needs to be created. tag, instrumentation status and instrumentation type are required
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.createInstrumentation(body).then((data) => {
+var body = new NetilionApiDocumentation.InstrumentationRequest(); // InstrumentationRequest | Instrumentation object that needs to be created. tag, instrumentation status and instrumentation type are required
+
+apiInstance.createInstrumentation(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -437,7 +458,7 @@ Name | Type | Description  | Notes
 
 <a name="createInstrumentationThreshold"></a>
 # **createInstrumentationThreshold**
-> ThresholdResponse createInstrumentationThreshold(bodyinstrumentationId)
+> ThresholdResponse createInstrumentationThreshold(instrumentationId, body)
 
 Create an instrumentation threshold
 
@@ -445,26 +466,29 @@ Create a new instrumentation threshold. Thresholds value order must be &#x60;&#x
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be created.
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.createInstrumentationThreshold(bodyinstrumentationId).then((data) => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be created.
+
+apiInstance.createInstrumentationThreshold(instrumentationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -474,8 +498,8 @@ apiInstance.createInstrumentationThreshold(bodyinstrumentationId).then((data) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be created. | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be created. | 
 
 ### Return type
 
@@ -500,25 +524,27 @@ Delete a specific resource in your accessible scope, identified by the id in the
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let id = 789; // Number | Id of the instrumentation to delete
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.deleteInstrumentation(id).then(() => {
+var id = 789; // Number | Id of the instrumentation to delete
+
+apiInstance.deleteInstrumentation(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -540,7 +566,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteInstrumentationPicture"></a>
@@ -553,26 +579,29 @@ Delete an instrumentation picture.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation picture
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.deleteInstrumentationPicture(instrumentationId, id).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation picture
+
+apiInstance.deleteInstrumentationPicture(instrumentationId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -595,7 +624,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteInstrumentationThreshold"></a>
@@ -608,26 +637,29 @@ Delete an instrumentation threshold.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation threshold
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.deleteInstrumentationThreshold(instrumentationId, id).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+apiInstance.deleteInstrumentationThreshold(instrumentationId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -650,7 +682,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="downloadInstrumentationPicture"></a>
@@ -663,26 +695,29 @@ Download an instrumentation picture.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation picture
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.downloadInstrumentationPicture(instrumentationId, id).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation picture
+
+apiInstance.downloadInstrumentationPicture(instrumentationId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -705,12 +740,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetsOfInstrumentation"></a>
 # **getAssetsOfInstrumentation**
-> AssetsResponse getAssetsOfInstrumentation(instrumentationId, opts)
+> AssetsResponse getAssetsOfInstrumentation(instrumentationId, , opts)
 
 Get all assets of one instrumentation
 
@@ -718,22 +753,25 @@ Returns a list of all assets that are available in your scope. You can apply que
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -753,9 +791,9 @@ let opts = {
   'nodeId': "nodeId_example", // String | One or multiple ids (comma list). Filter acccepts \"null\" for all objects with no nodes assigned or \"!null\" for any assigned node
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `serial_number`, `created_at` or `updated_at`, `last_seen_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetsOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getAssetsOfInstrumentation(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -795,12 +833,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAssetsOfInstrumentationHistory"></a>
 # **getAssetsOfInstrumentationHistory**
-> InstrumentationAssetsHistoryResponse getAssetsOfInstrumentationHistory(instrumentationId, opts)
+> InstrumentationAssetsHistoryResponse getAssetsOfInstrumentationHistory(instrumentationId, , opts)
 
 Get all assets an instrumentation was assigned to
 
@@ -808,22 +846,25 @@ Returns a list of all assets history available in your scope which have been ass
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'assetId': "assetId_example", // String | One or multiple ids (comma list). Expected id format is integer
@@ -832,9 +873,9 @@ let opts = {
   'eventDatetimeTo': new Date("2013-10-20"), // Date | Ending with + will include the next value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `event` or `event_datetime`, add `-` as a prefix for descending order.
 };
-apiInstance.getAssetsOfInstrumentationHistory(instrumentationId, opts).then((data) => {
+apiInstance.getAssetsOfInstrumentationHistory(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -863,12 +904,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getBillOfMaterialsOfInstrumentation"></a>
 # **getBillOfMaterialsOfInstrumentation**
-> BillOfMaterialsResponse getBillOfMaterialsOfInstrumentation(instrumentationId, opts)
+> BillOfMaterialsResponse getBillOfMaterialsOfInstrumentation(instrumentationId, , opts)
 
 Get all bill of materials of an instrumentation
 
@@ -876,33 +917,36 @@ Returns a list of all bill of materials that are available in your scope. You ca
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'author': "author_example", // String | Filter accepts `*` as wildcard
   '_date': "_date_example", // String | Expected date format is YYYY-MM-DD
   'dateFrom': "dateFrom_example", // String | Expected date format is YYYY-MM-DD
-  'dateTo': "dateTo_example" // String | Expected date format is YYYY-MM-DD
+  'dateTo': "dateTo_example", // String | Expected date format is YYYY-MM-DD
 };
-apiInstance.getBillOfMaterialsOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getBillOfMaterialsOfInstrumentation(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -931,12 +975,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDocumentsOfInstrumentation"></a>
 # **getDocumentsOfInstrumentation**
-> DocumentsResponse getDocumentsOfInstrumentation(instrumentationId, opts)
+> DocumentsResponse getDocumentsOfInstrumentation(instrumentationId, , opts)
 
 Get all documents of an instrumentation
 
@@ -944,22 +988,25 @@ Returns a list of documents. If the query has no matches, the response is an emp
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -975,9 +1022,9 @@ let opts = {
   'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getDocumentsOfInstrumentation(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1001,7 +1048,7 @@ Name | Type | Description  | Notes
  **validFrom** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
  **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
  **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1013,12 +1060,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getEventsOfInstrumentation"></a>
 # **getEventsOfInstrumentation**
-> EventsResponse getEventsOfInstrumentation(instrumentationId, opts)
+> EventsResponse getEventsOfInstrumentation(instrumentationId, , opts)
 
 Get all events of one instrumentation
 
@@ -1026,22 +1073,25 @@ Returns a list of all events belonging to an instrumentation in your accessible 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1057,9 +1107,9 @@ let opts = {
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `start_datetime`, `end_datetime`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getEventsOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getEventsOfInstrumentation(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1095,7 +1145,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationById"></a>
@@ -1108,27 +1158,30 @@ Get a specific instrumentation in your accessible scope, identified by the id in
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let id = 789; // Number | Id of the instrumentation to fetch
-let opts = { 
-  'include': "include_example" // String | Comma separated list of objects to include in response
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var id = 789; // Number | Id of the instrumentation to fetch
+
+var opts = { 
+  'include': "include_example", // String | Comma separated list of objects to include in response
 };
-apiInstance.getInstrumentationById(id, opts).then((data) => {
+apiInstance.getInstrumentationById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1151,7 +1204,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationIdStatus"></a>
@@ -1164,27 +1217,30 @@ Returns the status of the instrumentation. Needed if only permission on instrume
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getInstrumentationIdStatus(instrumentationId, opts).then((data) => {
+apiInstance.getInstrumentationIdStatus(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1195,7 +1251,7 @@ apiInstance.getInstrumentationIdStatus(instrumentationId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentationId** | **Number**| Id of the instrumentation | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1207,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationIdType"></a>
@@ -1220,27 +1276,30 @@ Returns the type of the instrumentation. Needed if only permission on instrument
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getInstrumentationIdType(instrumentationId, opts).then((data) => {
+apiInstance.getInstrumentationIdType(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1251,7 +1310,7 @@ apiInstance.getInstrumentationIdType(instrumentationId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentationId** | **Number**| Id of the instrumentation | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1263,7 +1322,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationPicture"></a>
@@ -1276,26 +1335,29 @@ Get a single picture of an instrumentation.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation picture
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.getInstrumentationPicture(instrumentationId, id).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation picture
+
+apiInstance.getInstrumentationPicture(instrumentationId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1318,7 +1380,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationPictures"></a>
@@ -1331,22 +1393,25 @@ Get all pictures of an instrumentation.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let id = 789; // Number | Id of the instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var id = 789; // Number | Id of the instrumentation
+
+var opts = { 
   'width': 56, // Number | filter by width
   'widthFrom': 56, // Number | filter by width_from
   'widthTo': 56, // Number | filter by width_to
@@ -1354,9 +1419,9 @@ let opts = {
   'heightFrom': 56, // Number | filter by height_from
   'heightTo': 56 // Number | filter by height_to
 };
-apiInstance.getInstrumentationPictures(id, opts).then((data) => {
+apiInstance.getInstrumentationPictures(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1384,12 +1449,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationStatusesOptions"></a>
 # **getInstrumentationStatusesOptions**
-> Object getInstrumentationStatusesOptions(instrumentationId, opts)
+> InstrumentationStatuses getInstrumentationStatusesOptions(instrumentationId, opts)
 
 Get all possible statuses of the specified instrumentation
 
@@ -1397,22 +1462,25 @@ Returns a list of all possible instrumentation statuses for the specified instru
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
@@ -1420,9 +1488,9 @@ let opts = {
   'code': "code_example", // String | Filter accepts `*` as wildcard
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getInstrumentationStatusesOptions(instrumentationId, opts).then((data) => {
+apiInstance.getInstrumentationStatusesOptions(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1438,11 +1506,11 @@ Name | Type | Description  | Notes
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **name** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**InstrumentationStatuses**](InstrumentationStatuses.md)
 
 ### Authorization
 
@@ -1450,7 +1518,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationThreshold"></a>
@@ -1463,26 +1531,29 @@ Get a single threshold of an instrumentation.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation threshold
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.getInstrumentationThreshold(instrumentationId, id).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+apiInstance.getInstrumentationThreshold(instrumentationId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1505,7 +1576,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationThresholds"></a>
@@ -1518,28 +1589,31 @@ Get all thresholds of an instrumentation.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var opts = { 
   'key': "key_example", // String | filter by key
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `key`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getInstrumentationThresholds(instrumentationId, opts).then((data) => {
+apiInstance.getInstrumentationThresholds(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1563,12 +1637,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentationTypesOptions"></a>
 # **getInstrumentationTypesOptions**
-> Object getInstrumentationTypesOptions(instrumentationId, opts)
+> InstrumentationTypes getInstrumentationTypesOptions(instrumentationId, opts)
 
 Get all possible types of the specified instrumentation
 
@@ -1576,22 +1650,25 @@ Returns a list of all possible instrumentation types for the specified instrumen
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
@@ -1599,9 +1676,9 @@ let opts = {
   'code': "code_example", // String | Filter accepts `*` as wildcard
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getInstrumentationTypesOptions(instrumentationId, opts).then((data) => {
+apiInstance.getInstrumentationTypesOptions(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1617,11 +1694,11 @@ Name | Type | Description  | Notes
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **name** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**InstrumentationTypes**](InstrumentationTypes.md)
 
 ### Authorization
 
@@ -1629,7 +1706,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getInstrumentations"></a>
@@ -1642,21 +1719,23 @@ Returns a list of instrumentations in your accessible scope. If the query has no
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1674,9 +1753,9 @@ let opts = {
   'assetStatusId': "assetStatusId_example", // String | One or multiple ids (comma list). Expected id format is integer. This retrieves all Instrumentations where at least one of its assets has one of the given statuses.
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `tag`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getInstrumentations(opts).then((data) => {
+apiInstance.getInstrumentations(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1713,12 +1792,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getNodesOfInstrumentation"></a>
 # **getNodesOfInstrumentation**
-> NodesResponse getNodesOfInstrumentation(instrumentationId, opts)
+> NodesResponse getNodesOfInstrumentation(instrumentationId, , opts)
 
 Get all nodes of one Instrumentation
 
@@ -1726,22 +1805,25 @@ Returns a list of all nodes that are available in your scope. You can apply quer
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1752,9 +1834,9 @@ let opts = {
   'hidden': true, // Boolean | Filter accepts true or false
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getNodesOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getNodesOfInstrumentation(instrumentationId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1785,7 +1867,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationHistoryOfInstrumentation"></a>
@@ -1798,23 +1880,27 @@ This might be useful for history data. The response contains a collection of his
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the specified instrumentation
-let key = "key_example"; // String | the exact key
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var key = "key_example"; // String | the exact key
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'sourceTimestampFrom': new Date("2013-10-20T19:20:30+01:00"), // Date | source_timestamp filter from. Starting with + will include the previous value as well. Expected date format is YYYY-MM-DDThh:mm:ss
@@ -1823,9 +1909,9 @@ let opts = {
   'updatedAtTo': new Date("2013-10-20T19:20:30+01:00"), // Date | updated_at filter to. Ending with + will include the next value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `source_timestamp` or `updated_at`, add `-` as a prefix for descending order.
 };
-apiInstance.getSpecificationHistoryOfInstrumentation(instrumentationId, key, opts).then((data) => {
+apiInstance.getSpecificationHistoryOfInstrumentation(instrumentationId, key, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1855,7 +1941,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfInstrumentation"></a>
@@ -1868,27 +1954,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let instrumentationId = 789; // Number | Id of the specified instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
+
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getSpecificationsOfInstrumentation(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1899,7 +1988,7 @@ apiInstance.getSpecificationsOfInstrumentation(instrumentationId, opts).then((da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -1911,12 +2000,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeAssetsFromInstrumentation"></a>
 # **removeAssetsFromInstrumentation**
-> removeAssetsFromInstrumentation(bodyinstrumentationId)
+> removeAssetsFromInstrumentation(instrumentationId, body)
 
 Remove assets from an instrumentation
 
@@ -1924,26 +2013,29 @@ Remove one or more assets from an instrumentation in your accessible scope. This
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be removed.
-let instrumentationId = 789; // Number | Id of the instrumentation from which the assets will be removed
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.removeAssetsFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation from which the assets will be removed
+
+var body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be removed.
+
+apiInstance.removeAssetsFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1953,8 +2045,8 @@ apiInstance.removeAssetsFromInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be removed. | 
  **instrumentationId** | **Number**| Id of the instrumentation from which the assets will be removed | 
+ **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -1971,7 +2063,7 @@ null (empty response body)
 
 <a name="removeBillOfMaterialsFromInstrumentation"></a>
 # **removeBillOfMaterialsFromInstrumentation**
-> removeBillOfMaterialsFromInstrumentation(bodyinstrumentationId)
+> removeBillOfMaterialsFromInstrumentation(instrumentationId, body)
 
 Remove bill of materials from an instrumentation
 
@@ -1979,26 +2071,29 @@ Remove one or more bill of materials from an instrumentation in your accessible 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be removed.
-let instrumentationId = 789; // Number | Id of the instrumentation from which the bill of materials will be removed
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.removeBillOfMaterialsFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation from which the bill of materials will be removed
+
+var body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be removed.
+
+apiInstance.removeBillOfMaterialsFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2008,8 +2103,8 @@ apiInstance.removeBillOfMaterialsFromInstrumentation(bodyinstrumentationId).then
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be removed. | 
  **instrumentationId** | **Number**| Id of the instrumentation from which the bill of materials will be removed | 
+ **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2026,7 +2121,7 @@ null (empty response body)
 
 <a name="removeDocumentsFromInstrumentation"></a>
 # **removeDocumentsFromInstrumentation**
-> removeDocumentsFromInstrumentation(bodyinstrumentationId)
+> removeDocumentsFromInstrumentation(instrumentationId, body)
 
 Remove documents from an instrumentation
 
@@ -2034,26 +2129,29 @@ Remove one or more documents from an instrumentation. This action requires &#x60
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-let instrumentationId = 789; // Number | Id of the instrumentation from which the documents will be removed
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.removeDocumentsFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation from which the documents will be removed
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+
+apiInstance.removeDocumentsFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2063,8 +2161,8 @@ apiInstance.removeDocumentsFromInstrumentation(bodyinstrumentationId).then(() =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
  **instrumentationId** | **Number**| Id of the instrumentation from which the documents will be removed | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2081,7 +2179,7 @@ null (empty response body)
 
 <a name="removeEventFromInstrumentation"></a>
 # **removeEventFromInstrumentation**
-> removeEventFromInstrumentation(bodyinstrumentationId)
+> removeEventFromInstrumentation(instrumentationId, body)
 
 Remove events from an instrumentation
 
@@ -2089,26 +2187,29 @@ Remove one or more events from an instrumentation in your accessible scope. If t
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = null; // Object | Resources that shall be removed.
-let instrumentationId = 789; // Number | Id of the instrumentation from which the events will removed.
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.removeEventFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation from which the events will removed.
+
+var body = new NetilionApiDocumentation.Events1(); // Events1 | Resources that shall be removed.
+
+apiInstance.removeEventFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2118,8 +2219,8 @@ apiInstance.removeEventFromInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Resources that shall be removed. | 
  **instrumentationId** | **Number**| Id of the instrumentation from which the events will removed. | 
+ **body** | [**Events1**](Events1.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2136,7 +2237,7 @@ null (empty response body)
 
 <a name="removeNodesFromInstrumentation"></a>
 # **removeNodesFromInstrumentation**
-> removeNodesFromInstrumentation(bodyinstrumentationId)
+> removeNodesFromInstrumentation(instrumentationId, body)
 
 Remove nodes from an instrumentation
 
@@ -2144,26 +2245,29 @@ Remove one or more nodes from an instrumentation in your accessible scope. This 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be removed.
-let instrumentationId = 789; // Number | Id of the instrumentation from which the nodes will be removed
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.removeNodesFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation from which the nodes will be removed
+
+var body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be removed.
+
+apiInstance.removeNodesFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2173,8 +2277,8 @@ apiInstance.removeNodesFromInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be removed. | 
  **instrumentationId** | **Number**| Id of the instrumentation from which the nodes will be removed | 
+ **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -2191,7 +2295,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromInstrumentation"></a>
 # **removeSpecificationsFromInstrumentation**
-> removeSpecificationsFromInstrumentation(bodyinstrumentationId)
+> removeSpecificationsFromInstrumentation(instrumentationId, body)
 
 Delete specifications of an instrumentation
 
@@ -2199,26 +2303,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.removeSpecificationsFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2228,8 +2335,8 @@ apiInstance.removeSpecificationsFromInstrumentation(bodyinstrumentationId).then(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -2246,7 +2353,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfInstrumentation"></a>
 # **renameSpecificationsOfInstrumentation**
-> renameSpecificationsOfInstrumentation(bodyinstrumentationId)
+> renameSpecificationsOfInstrumentation(instrumentationId, body)
 
 Rename a specification key
 
@@ -2254,26 +2361,29 @@ Rename one specification key of an instrumentation in your accessible scope. The
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.renameSpecificationsOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2283,8 +2393,8 @@ apiInstance.renameSpecificationsOfInstrumentation(bodyinstrumentationId).then(()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -2301,7 +2411,7 @@ null (empty response body)
 
 <a name="replaceAssetsOfInstrumentation"></a>
 # **replaceAssetsOfInstrumentation**
-> replaceAssetsOfInstrumentation(bodyinstrumentationId)
+> replaceAssetsOfInstrumentation(instrumentationId, body)
 
 Replace the assets of an instrumentation
 
@@ -2309,26 +2419,29 @@ Replaces all assets belonging to an instrumentation. You can send a list of reso
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be replaced
-let instrumentationId = 789; // Number | Id of the instrumentation of which the assets will be replaced
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.replaceAssetsOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation of which the assets will be replaced
+
+var body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be replaced
+
+apiInstance.replaceAssetsOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2338,8 +2451,8 @@ apiInstance.replaceAssetsOfInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be replaced | 
  **instrumentationId** | **Number**| Id of the instrumentation of which the assets will be replaced | 
+ **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2356,7 +2469,7 @@ null (empty response body)
 
 <a name="replaceBillOfMaterialsOfInstrumentation"></a>
 # **replaceBillOfMaterialsOfInstrumentation**
-> replaceBillOfMaterialsOfInstrumentation(bodyinstrumentationId)
+> replaceBillOfMaterialsOfInstrumentation(instrumentationId, body)
 
 Replace the bill of materials of an instrumentation
 
@@ -2364,26 +2477,29 @@ Replaces all bill of materials belonging to an instrumentation. You can send a l
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be replaced
-let instrumentationId = 789; // Number | Id of the instrumentation of which the bill of materials will be replaced
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.replaceBillOfMaterialsOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation of which the bill of materials will be replaced
+
+var body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be replaced
+
+apiInstance.replaceBillOfMaterialsOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2393,8 +2509,8 @@ apiInstance.replaceBillOfMaterialsOfInstrumentation(bodyinstrumentationId).then(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be replaced | 
  **instrumentationId** | **Number**| Id of the instrumentation of which the bill of materials will be replaced | 
+ **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2411,7 +2527,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfInstrumentation"></a>
 # **replaceDocumentsOfInstrumentation**
-> replaceDocumentsOfInstrumentation(bodyinstrumentationId)
+> replaceDocumentsOfInstrumentation(instrumentationId, body)
 
 Replace the documents of an instrumentation
 
@@ -2419,26 +2535,29 @@ Replaces all documents belonging to an instrumentation. You can send a list of r
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-let instrumentationId = 789; // Number | Id of the instrumentation of which the documents will be replaced
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.replaceDocumentsOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation of which the documents will be replaced
+
+var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+
+apiInstance.replaceDocumentsOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2448,8 +2567,8 @@ apiInstance.replaceDocumentsOfInstrumentation(bodyinstrumentationId).then(() => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
  **instrumentationId** | **Number**| Id of the instrumentation of which the documents will be replaced | 
+ **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2466,7 +2585,7 @@ null (empty response body)
 
 <a name="replaceNodesOfInstrumentation"></a>
 # **replaceNodesOfInstrumentation**
-> replaceNodesOfInstrumentation(bodyinstrumentationId)
+> replaceNodesOfInstrumentation(instrumentationId, body)
 
 Replace the nodes of an instrumentation
 
@@ -2474,26 +2593,29 @@ Replaces all nodes belonging to an instrumentation in your accessible scope. You
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be replaced
-let instrumentationId = 789; // Number | Id of the instrumentation of which the nodes will be replaced
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.replaceNodesOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the instrumentation of which the nodes will be replaced
+
+var body = new NetilionApiDocumentation.NodeIDs(); // NodeIDs | Resources that shall be replaced
+
+apiInstance.replaceNodesOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2503,8 +2625,8 @@ apiInstance.replaceNodesOfInstrumentation(bodyinstrumentationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be replaced | 
  **instrumentationId** | **Number**| Id of the instrumentation of which the nodes will be replaced | 
+ **body** | [**NodeIDs**](NodeIDs.md)| Resources that shall be replaced | 
 
 ### Return type
 
@@ -2521,7 +2643,7 @@ null (empty response body)
 
 <a name="updateInstrumentation"></a>
 # **updateInstrumentation**
-> updateInstrumentation(bodyid)
+> updateInstrumentation(id, body)
 
 Update an instrumentation
 
@@ -2529,26 +2651,29 @@ Update accessible parameters of the requested resource in your accessible scope.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.InstrumentationRequest(); // InstrumentationRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the instrumentation to update
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.updateInstrumentation(bodyid).then(() => {
+var id = 789; // Number | Id of the instrumentation to update
+
+var body = new NetilionApiDocumentation.InstrumentationRequest(); // InstrumentationRequest | Parameters that shall be updated.
+
+apiInstance.updateInstrumentation(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2558,8 +2683,8 @@ apiInstance.updateInstrumentation(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InstrumentationRequest**](InstrumentationRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the instrumentation to update | 
+ **body** | [**InstrumentationRequest**](InstrumentationRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 
@@ -2576,7 +2701,7 @@ null (empty response body)
 
 <a name="updateInstrumentationPicture"></a>
 # **updateInstrumentationPicture**
-> PictureResponse updateInstrumentationPicture(imageinstrumentationIdid)
+> PictureResponse updateInstrumentationPicture(instrumentationId, id, image)
 
 Update an instrumentation picture
 
@@ -2584,27 +2709,31 @@ Upload a new instrumentation picture. Check the file-storage quota. Allowed cont
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let image = image_example; // Blob | 
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation picture
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.updateInstrumentationPicture(imageinstrumentationIdid).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation picture
+
+var image = "/path/to/file.txt"; // File | the image to upload (up to 1 MB)
+
+apiInstance.updateInstrumentationPicture(instrumentationId, id, image).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2614,9 +2743,9 @@ apiInstance.updateInstrumentationPicture(imageinstrumentationIdid).then((data) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | **Blob**|  | 
  **instrumentationId** | **Number**| Id of the instrumentation | 
  **id** | **Number**| Id of the instrumentation picture | 
+ **image** | **File**| the image to upload (up to 1 MB) | 
 
 ### Return type
 
@@ -2633,7 +2762,7 @@ Name | Type | Description  | Notes
 
 <a name="updateInstrumentationPictureLink"></a>
 # **updateInstrumentationPictureLink**
-> PictureResponse updateInstrumentationPictureLink(bodyinstrumentationIdid)
+> PictureResponse updateInstrumentationPictureLink(instrumentationId, id, body)
 
 Update an instrumentation picture link
 
@@ -2641,27 +2770,31 @@ Update an instrumentation picture link.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be updated
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation picture
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.updateInstrumentationPictureLink(bodyinstrumentationIdid).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation picture
+
+var body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be updated
+
+apiInstance.updateInstrumentationPictureLink(instrumentationId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2671,9 +2804,9 @@ apiInstance.updateInstrumentationPictureLink(bodyinstrumentationIdid).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be updated | 
  **instrumentationId** | **Number**| Id of the instrumentation | 
  **id** | **Number**| Id of the instrumentation picture | 
+ **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be updated | 
 
 ### Return type
 
@@ -2690,7 +2823,7 @@ Name | Type | Description  | Notes
 
 <a name="updateInstrumentationThreshold"></a>
 # **updateInstrumentationThreshold**
-> ThresholdResponse updateInstrumentationThreshold(bodyinstrumentationIdid)
+> ThresholdResponse updateInstrumentationThreshold(instrumentationId, id, body)
 
 Update an instrumentation threshold
 
@@ -2698,27 +2831,31 @@ Replaces the threshold belonging to an instrumentation. This action requires &#x
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be updated.
-let instrumentationId = 789; // Number | Id of the instrumentation
-let id = 789; // Number | Id of the instrumentation threshold
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.updateInstrumentationThreshold(bodyinstrumentationIdid).then((data) => {
+var instrumentationId = 789; // Number | Id of the instrumentation
+
+var id = 789; // Number | Id of the instrumentation threshold
+
+var body = new NetilionApiDocumentation.ThresholdRequest(); // ThresholdRequest | Object body that will be updated.
+
+apiInstance.updateInstrumentationThreshold(instrumentationId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2728,9 +2865,9 @@ apiInstance.updateInstrumentationThreshold(bodyinstrumentationIdid).then((data) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be updated. | 
  **instrumentationId** | **Number**| Id of the instrumentation | 
  **id** | **Number**| Id of the instrumentation threshold | 
+ **body** | [**ThresholdRequest**](ThresholdRequest.md)| Object body that will be updated. | 
 
 ### Return type
 
@@ -2747,7 +2884,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSpecificationsOfInstrumentation"></a>
 # **updateSpecificationsOfInstrumentation**
-> updateSpecificationsOfInstrumentation(bodyinstrumentationId)
+> updateSpecificationsOfInstrumentation(instrumentationId, body)
 
 Update specifications of an instrumentation
 
@@ -2755,26 +2892,29 @@ Update the specification object of an instrumentation in your accessible scope. 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.updateSpecificationsOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2784,8 +2924,8 @@ apiInstance.updateSpecificationsOfInstrumentation(bodyinstrumentationId).then(()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -2802,7 +2942,7 @@ null (empty response body)
 
 <a name="uploadInstrumentationPicture"></a>
 # **uploadInstrumentationPicture**
-> PictureResponse uploadInstrumentationPicture(imageid)
+> PictureResponse uploadInstrumentationPicture(id, image)
 
 Upload an instrumentation picture
 
@@ -2810,26 +2950,29 @@ Upload a new instrumentation picture. Checks the file-storage quota. Allowed con
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.InstrumentationApi();
-let image = image_example; // Blob | 
-let id = 789; // Number | Id of the instrumentation
+var apiInstance = new NetilionApiDocumentation.InstrumentationApi();
 
-apiInstance.uploadInstrumentationPicture(imageid).then((data) => {
+var id = 789; // Number | Id of the instrumentation
+
+var image = "/path/to/file.txt"; // File | the image to upload (up to 1 MB)
+
+apiInstance.uploadInstrumentationPicture(id, image).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2839,8 +2982,8 @@ apiInstance.uploadInstrumentationPicture(imageid).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | **Blob**|  | 
  **id** | **Number**| Id of the instrumentation | 
+ **image** | **File**| the image to upload (up to 1 MB) | 
 
 ### Return type
 

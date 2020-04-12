@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.ProductHealthConditionApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,9 +9,10 @@ Method | HTTP request | Description
 [**reaplaceHealthConditionsOfProduct**](ProductHealthConditionApi.md#reaplaceHealthConditionsOfProduct) | **PATCH** /products/{product_id}/health_conditions | Replace health conditions of an product
 [**removeHealthConditionsOfProduct**](ProductHealthConditionApi.md#removeHealthConditionsOfProduct) | **DELETE** /products/{product_id}/health_conditions | Remove health conditions of an product
 
+
 <a name="addHealthConditionsToProduct"></a>
 # **addHealthConditionsToProduct**
-> addHealthConditionsToProduct(bodyproductId)
+> addHealthConditionsToProduct(productId, body)
 
 Add health conditions to an product
 
@@ -19,26 +20,29 @@ Add one or more health conditions to an product.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
-let body = new NetilionApiDocumentation.HealthConditionsRequest(); // HealthConditionsRequest | Resources that shall be added.
-let productId = 789; // Number | The resource defined in the URL
+var apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
 
-apiInstance.addHealthConditionsToProduct(bodyproductId).then(() => {
+var productId = 789; // Number | The resource defined in the URL
+
+var body = new NetilionApiDocumentation.HealthConditionsRequest(); // HealthConditionsRequest | Resources that shall be added.
+
+apiInstance.addHealthConditionsToProduct(productId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -48,8 +52,8 @@ apiInstance.addHealthConditionsToProduct(bodyproductId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HealthConditionsRequest**](HealthConditionsRequest.md)| Resources that shall be added. | 
  **productId** | **Number**| The resource defined in the URL | 
+ **body** | [**HealthConditionsRequest**](HealthConditionsRequest.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -66,7 +70,7 @@ null (empty response body)
 
 <a name="getProductHealthConditions"></a>
 # **getProductHealthConditions**
-> HealthConditionsResponse getProductHealthConditions(productId, opts)
+> HealthConditionsResponse getProductHealthConditions(productId, , opts)
 
 Get all health conditions assigned to an product
 
@@ -74,22 +78,25 @@ Returns a list of health conditions of an product.  Possible include value: &#x6
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
-let productId = 789; // Number | The resource defined in the URL
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
+
+var productId = 789; // Number | The resource defined in the URL
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -100,9 +107,9 @@ let opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `diagnosis_code`, `device_ident`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductHealthConditions(productId, opts).then((data) => {
+apiInstance.getProductHealthConditions(productId, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -121,7 +128,7 @@ Name | Type | Description  | Notes
  **deviceIdent** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **protocol** | **String**| Filter accepts &#x60;PROFIBUS&#x60;, &#x60;HART&#x60; and &#x60;MODBUS&#x60; | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;diagnosis_code&#x60;, &#x60;device_ident&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;, add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -133,12 +140,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="reaplaceHealthConditionsOfProduct"></a>
 # **reaplaceHealthConditionsOfProduct**
-> reaplaceHealthConditionsOfProduct(bodyproductId)
+> reaplaceHealthConditionsOfProduct(productId, body)
 
 Replace health conditions of an product
 
@@ -146,26 +153,29 @@ Replaces all health conditions belonging to an product. You can send a list of r
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
-let body = new NetilionApiDocumentation.HealthConditionsRequest(); // HealthConditionsRequest | Resources that shall be replaced.
-let productId = 789; // Number | The resource defined in the URL
+var apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
 
-apiInstance.reaplaceHealthConditionsOfProduct(bodyproductId).then(() => {
+var productId = 789; // Number | The resource defined in the URL
+
+var body = new NetilionApiDocumentation.HealthConditionsRequest(); // HealthConditionsRequest | Resources that shall be replaced.
+
+apiInstance.reaplaceHealthConditionsOfProduct(productId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -175,8 +185,8 @@ apiInstance.reaplaceHealthConditionsOfProduct(bodyproductId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HealthConditionsRequest**](HealthConditionsRequest.md)| Resources that shall be replaced. | 
  **productId** | **Number**| The resource defined in the URL | 
+ **body** | [**HealthConditionsRequest**](HealthConditionsRequest.md)| Resources that shall be replaced. | 
 
 ### Return type
 
@@ -193,7 +203,7 @@ null (empty response body)
 
 <a name="removeHealthConditionsOfProduct"></a>
 # **removeHealthConditionsOfProduct**
-> removeHealthConditionsOfProduct(bodyproductId)
+> removeHealthConditionsOfProduct(productId, body)
 
 Remove health conditions of an product
 
@@ -201,26 +211,29 @@ Remove one or more health conditions from an product.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
-let body = new NetilionApiDocumentation.HealthConditionCauseIDs(); // HealthConditionCauseIDs | Resources that shall be removed.
-let productId = 789; // Number | The resource defined in the URL
+var apiInstance = new NetilionApiDocumentation.ProductHealthConditionApi();
 
-apiInstance.removeHealthConditionsOfProduct(bodyproductId).then(() => {
+var productId = 789; // Number | The resource defined in the URL
+
+var body = new NetilionApiDocumentation.HealthConditionCauseIDs(); // HealthConditionCauseIDs | Resources that shall be removed.
+
+apiInstance.removeHealthConditionsOfProduct(productId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -230,8 +243,8 @@ apiInstance.removeHealthConditionsOfProduct(bodyproductId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HealthConditionCauseIDs**](HealthConditionCauseIDs.md)| Resources that shall be removed. | 
  **productId** | **Number**| The resource defined in the URL | 
+ **body** | [**HealthConditionCauseIDs**](HealthConditionCauseIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 

@@ -4,3 +4,5 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **productFeature** | [**NestedID**](NestedID.md) |  | [optional] 
+
+

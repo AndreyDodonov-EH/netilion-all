@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **parent** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **tenant** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **address** | [**CompanyAddressResponse**](CompanyAddressResponse.md) |  | [optional] 
+
+

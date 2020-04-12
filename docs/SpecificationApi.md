@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.SpecificationApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,9 +35,10 @@ Method | HTTP request | Description
 [**updateSpecificationsOfSubscriptions**](SpecificationApi.md#updateSpecificationsOfSubscriptions) | **PATCH** /subscriptions/{subscription_id}/specifications | Update specifications of a subscription
 [**updateSpecificationsOfUsers**](SpecificationApi.md#updateSpecificationsOfUsers) | **PATCH** /users/{user_id}/specifications | Update specifications of a user
 
+
 <a name="deleteSpecificationsOfAsset"></a>
 # **deleteSpecificationsOfAsset**
-> deleteSpecificationsOfAsset(bodyassetId)
+> deleteSpecificationsOfAsset(assetId, body)
 
 Delete specifications of an asset
 
@@ -45,26 +46,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let assetId = 789; // Number | Id of the specified asset
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.deleteSpecificationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the specified asset
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.deleteSpecificationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -74,8 +78,8 @@ apiInstance.deleteSpecificationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **assetId** | **Number**| Id of the specified asset | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -100,23 +104,27 @@ This might be useful for history data. The response contains a collection of his
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let assetId = 789; // Number | Id of the specified asset
-let key = "key_example"; // String | the exact key
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var key = "key_example"; // String | the exact key
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'sourceTimestampFrom': new Date("2013-10-20T19:20:30+01:00"), // Date | source_timestamp filter from. Starting with + will include the previous value as well. Expected date format is YYYY-MM-DDThh:mm:ss
@@ -125,9 +133,9 @@ let opts = {
   'updatedAtTo': new Date("2013-10-20T19:20:30+01:00"), // Date | updated_at filter to. Ending with + will include the next value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `source_timestamp` or `updated_at`, add `-` as a prefix for descending order.
 };
-apiInstance.getSpecificationHistoryOfAsset(assetId, key, opts).then((data) => {
+apiInstance.getSpecificationHistoryOfAsset(assetId, key, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -157,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationHistoryOfInstrumentation"></a>
@@ -170,23 +178,27 @@ This might be useful for history data. The response contains a collection of his
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let instrumentationId = 789; // Number | Id of the specified instrumentation
-let key = "key_example"; // String | the exact key
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var key = "key_example"; // String | the exact key
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'sourceTimestampFrom': new Date("2013-10-20T19:20:30+01:00"), // Date | source_timestamp filter from. Starting with + will include the previous value as well. Expected date format is YYYY-MM-DDThh:mm:ss
@@ -195,9 +207,9 @@ let opts = {
   'updatedAtTo': new Date("2013-10-20T19:20:30+01:00"), // Date | updated_at filter to. Ending with + will include the next value as well. Expected date format is YYYY-MM-DDThh:mm:ss
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `source_timestamp` or `updated_at`, add `-` as a prefix for descending order.
 };
-apiInstance.getSpecificationHistoryOfInstrumentation(instrumentationId, key, opts).then((data) => {
+apiInstance.getSpecificationHistoryOfInstrumentation(instrumentationId, key, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -227,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfAsset"></a>
@@ -240,27 +252,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let assetId = 789; // Number | Id of the specified asset
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var assetId = 789; // Number | Id of the specified asset
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfAsset(assetId, opts).then((data) => {
+apiInstance.getSpecificationsOfAsset(assetId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -271,7 +286,7 @@ apiInstance.getSpecificationsOfAsset(assetId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **Number**| Id of the specified asset | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -283,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfEvent"></a>
@@ -296,27 +311,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let eventId = 789; // Number | Id of the specified event
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var eventId = 789; // Number | Id of the specified event
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfEvent(eventId, opts).then((data) => {
+apiInstance.getSpecificationsOfEvent(eventId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -327,7 +345,7 @@ apiInstance.getSpecificationsOfEvent(eventId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **Number**| Id of the specified event | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -339,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfInstrumentation"></a>
@@ -352,27 +370,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let instrumentationId = 789; // Number | Id of the specified instrumentation
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfInstrumentation(instrumentationId, opts).then((data) => {
+apiInstance.getSpecificationsOfInstrumentation(instrumentationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -383,7 +404,7 @@ apiInstance.getSpecificationsOfInstrumentation(instrumentationId, opts).then((da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -395,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfNode"></a>
@@ -408,27 +429,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let nodeId = 789; // Number | Id of the specified node
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var nodeId = 789; // Number | Id of the specified node
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfNode(nodeId, opts).then((data) => {
+apiInstance.getSpecificationsOfNode(nodeId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -439,7 +463,7 @@ apiInstance.getSpecificationsOfNode(nodeId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **Number**| Id of the specified node | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -451,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfProduct"></a>
@@ -464,27 +488,30 @@ Returns the specification of an object. If no specifications are defined, this i
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let productId = 789; // Number | Id of the specified product
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var productId = 789; // Number | Id of the specified product
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfProduct(productId, opts).then((data) => {
+apiInstance.getSpecificationsOfProduct(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -495,7 +522,7 @@ apiInstance.getSpecificationsOfProduct(productId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Number**| Id of the specified product | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -507,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfSubscription"></a>
@@ -520,27 +547,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let subscriptionId = 789; // Number | Id of the specified subscription
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var subscriptionId = 789; // Number | Id of the specified subscription
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfSubscription(subscriptionId, opts).then((data) => {
+apiInstance.getSpecificationsOfSubscription(subscriptionId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -551,7 +581,7 @@ apiInstance.getSpecificationsOfSubscription(subscriptionId, opts).then((data) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionId** | **Number**| Id of the specified subscription | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -563,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getSpecificationsOfUser"></a>
@@ -576,27 +606,30 @@ Returns the specification of an object in your accessible scope. If no specifica
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let userId = 789; // Number | Id of the specified user
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
+
+var userId = 789; // Number | Id of the specified user
+
+var opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfUser(userId, opts).then((data) => {
+apiInstance.getSpecificationsOfUser(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -607,7 +640,7 @@ apiInstance.getSpecificationsOfUser(userId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| Id of the specified user | 
- **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
 
 ### Return type
 
@@ -619,12 +652,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="removeSpecificationsFromEvent"></a>
 # **removeSpecificationsFromEvent**
-> removeSpecificationsFromEvent(bodyeventId)
+> removeSpecificationsFromEvent(eventId, body)
 
 Delete specifications of an event
 
@@ -632,26 +665,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let eventId = 789; // Number | Id of the specified event
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.removeSpecificationsFromEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the specified event
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -661,8 +697,8 @@ apiInstance.removeSpecificationsFromEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **eventId** | **Number**| Id of the specified event | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -679,7 +715,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromInstrumentation"></a>
 # **removeSpecificationsFromInstrumentation**
-> removeSpecificationsFromInstrumentation(bodyinstrumentationId)
+> removeSpecificationsFromInstrumentation(instrumentationId, body)
 
 Delete specifications of an instrumentation
 
@@ -687,26 +723,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.removeSpecificationsFromInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -716,8 +755,8 @@ apiInstance.removeSpecificationsFromInstrumentation(bodyinstrumentationId).then(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -734,7 +773,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromNode"></a>
 # **removeSpecificationsFromNode**
-> removeSpecificationsFromNode(bodynodeId)
+> removeSpecificationsFromNode(nodeId, body)
 
 Delete specifications of a node
 
@@ -742,26 +781,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let nodeId = 789; // Number | Id of the specified node
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.removeSpecificationsFromNode(bodynodeId).then(() => {
+var nodeId = 789; // Number | Id of the specified node
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromNode(nodeId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -771,8 +813,8 @@ apiInstance.removeSpecificationsFromNode(bodynodeId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **nodeId** | **Number**| Id of the specified node | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -789,7 +831,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromProduct"></a>
 # **removeSpecificationsFromProduct**
-> removeSpecificationsFromProduct(bodyproductId)
+> removeSpecificationsFromProduct(productId, body)
 
 Delete specifications of a product
 
@@ -797,26 +839,29 @@ The specification keys in the body will be removed. Multiple specification keys 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let productId = 789; // Number | Id of the specified product
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.removeSpecificationsFromProduct(bodyproductId).then(() => {
+var productId = 789; // Number | Id of the specified product
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromProduct(productId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -826,8 +871,8 @@ apiInstance.removeSpecificationsFromProduct(bodyproductId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **productId** | **Number**| Id of the specified product | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -844,7 +889,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromSubscriptions"></a>
 # **removeSpecificationsFromSubscriptions**
-> removeSpecificationsFromSubscriptions(bodysubscriptionId)
+> removeSpecificationsFromSubscriptions(subscriptionId, body)
 
 Delete specifications of a subscription
 
@@ -852,26 +897,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let subscriptionId = 789; // Number | Id of the specified subscription
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.removeSpecificationsFromSubscriptions(bodysubscriptionId).then(() => {
+var subscriptionId = 789; // Number | Id of the specified subscription
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromSubscriptions(subscriptionId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -881,8 +929,8 @@ apiInstance.removeSpecificationsFromSubscriptions(bodysubscriptionId).then(() =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **subscriptionId** | **Number**| Id of the specified subscription | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -899,7 +947,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromUsers"></a>
 # **removeSpecificationsFromUsers**
-> removeSpecificationsFromUsers(bodyuserId)
+> removeSpecificationsFromUsers(userId, body)
 
 Delete specifications of a user
 
@@ -907,26 +955,29 @@ The specification keys in the body will be removed of the object in your accessi
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = ["body_example"]; // [String] | Array of keys to delete from specifications
-let userId = 789; // Number | Id of the specified user
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.removeSpecificationsFromUsers(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the specified user
+
+var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
+
+apiInstance.removeSpecificationsFromUsers(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -936,8 +987,8 @@ apiInstance.removeSpecificationsFromUsers(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **userId** | **Number**| Id of the specified user | 
+ **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -954,7 +1005,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfAsset"></a>
 # **renameSpecificationsOfAsset**
-> renameSpecificationsOfAsset(bodyassetId)
+> renameSpecificationsOfAsset(assetId, body)
 
 Rename a specification key
 
@@ -962,26 +1013,29 @@ Rename one specification key of an asset in your accessible scope. The key name 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let assetId = 789; // Number | Id of the specified asset
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.renameSpecificationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the specified asset
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -991,8 +1045,8 @@ apiInstance.renameSpecificationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **assetId** | **Number**| Id of the specified asset | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1009,7 +1063,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfEvent"></a>
 # **renameSpecificationsOfEvent**
-> renameSpecificationsOfEvent(bodyeventId)
+> renameSpecificationsOfEvent(eventId, body)
 
 Rename a specification key
 
@@ -1017,26 +1071,29 @@ Rename one specification key of an event in your accessible scope. The key name 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let eventId = 789; // Number | Id of the specified node
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.renameSpecificationsOfEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the specified node
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1046,8 +1103,8 @@ apiInstance.renameSpecificationsOfEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **eventId** | **Number**| Id of the specified node | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1064,7 +1121,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfInstrumentation"></a>
 # **renameSpecificationsOfInstrumentation**
-> renameSpecificationsOfInstrumentation(bodyinstrumentationId)
+> renameSpecificationsOfInstrumentation(instrumentationId, body)
 
 Rename a specification key
 
@@ -1072,26 +1129,29 @@ Rename one specification key of an instrumentation in your accessible scope. The
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.renameSpecificationsOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1101,8 +1161,8 @@ apiInstance.renameSpecificationsOfInstrumentation(bodyinstrumentationId).then(()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1119,7 +1179,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfNode"></a>
 # **renameSpecificationsOfNode**
-> renameSpecificationsOfNode(bodynodeId)
+> renameSpecificationsOfNode(nodeId, body)
 
 Rename a specification key
 
@@ -1127,26 +1187,29 @@ Rename one specification key of a node in your accessible scope. The key name al
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let nodeId = 789; // Number | Id of the specified node
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.renameSpecificationsOfNode(bodynodeId).then(() => {
+var nodeId = 789; // Number | Id of the specified node
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfNode(nodeId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1156,8 +1219,8 @@ apiInstance.renameSpecificationsOfNode(bodynodeId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **nodeId** | **Number**| Id of the specified node | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1174,7 +1237,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfProduct"></a>
 # **renameSpecificationsOfProduct**
-> renameSpecificationsOfProduct(bodyproductId)
+> renameSpecificationsOfProduct(productId, body)
 
 rename a key in the specification.
 
@@ -1182,26 +1245,29 @@ Rename a key of the specification object of a product. Instead of delete and rec
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let productId = 789; // Number | Id of the specified product
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.renameSpecificationsOfProduct(bodyproductId).then(() => {
+var productId = 789; // Number | Id of the specified product
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfProduct(productId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1211,8 +1277,8 @@ apiInstance.renameSpecificationsOfProduct(bodyproductId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **productId** | **Number**| Id of the specified product | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1229,7 +1295,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfSubscriptions"></a>
 # **renameSpecificationsOfSubscriptions**
-> renameSpecificationsOfSubscriptions(bodysubscriptionId)
+> renameSpecificationsOfSubscriptions(subscriptionId, body)
 
 Rename a specification key
 
@@ -1237,26 +1303,29 @@ Rename one specification key of a subscription in your accessible scope. The key
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let subscriptionId = 789; // Number | Id of the specified subscription
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.renameSpecificationsOfSubscriptions(bodysubscriptionId).then(() => {
+var subscriptionId = 789; // Number | Id of the specified subscription
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfSubscriptions(subscriptionId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1266,8 +1335,8 @@ apiInstance.renameSpecificationsOfSubscriptions(bodysubscriptionId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **subscriptionId** | **Number**| Id of the specified subscription | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1284,7 +1353,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfUsers"></a>
 # **renameSpecificationsOfUsers**
-> renameSpecificationsOfUsers(bodyuserId)
+> renameSpecificationsOfUsers(userId, body)
 
 Rename a specification key
 
@@ -1292,26 +1361,29 @@ Rename one specification key of a user in your accessible scope. The key name al
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-let userId = 789; // Number | Id of the specified user
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.renameSpecificationsOfUsers(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the specified user
+
+var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+
+apiInstance.renameSpecificationsOfUsers(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1321,8 +1393,8 @@ apiInstance.renameSpecificationsOfUsers(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
  **userId** | **Number**| Id of the specified user | 
+ **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
 
 ### Return type
 
@@ -1339,34 +1411,37 @@ null (empty response body)
 
 <a name="updateSpecificationsOfAsset"></a>
 # **updateSpecificationsOfAsset**
-> updateSpecificationsOfAsset(bodyassetId)
+> updateSpecificationsOfAsset(assetId, body)
 
 Update specifications of an asset
 
-Update the specification object of an asset in your accessible scope. To add specifications, just add the key and set the value object with value, unit and source_timestamp. To mark an existing specification to be unknown, the value could be set to null. To delete keys, use the delete method. Multiple specification objects can be sent in the same request. Keys inside a specification are unique and can only be added once. Keys can only consist of [a-z A-Z 0-9 . - _ ]. All uppercase A-Z are converted to lower-case a-z. For a key that is send multiple times in the request body, only the last key-value is saved.  It is possible to save complex objects in the value as vector. In this case the unit must be &#x27;vector&#x27; and the value a valid object in the following format: &#x60;&#x60;&#x60;       [           {             \&quot;key\&quot;: {              \&quot;value\&quot;: \&quot;string\&quot;,              \&quot;unit\&quot;: \&quot;string\&quot;            }           },           {             \&quot;second_key\&quot;: {               \&quot;value\&quot;: \&quot;string\&quot;             }           }        ]   &#x60;&#x60;&#x60;  - key can only consist of [a-z A-Z 0-9 . - _ ]. - value is mandatory, max length 6000 chars - unit is optional, max length 50 chars - its impossible to filter for vector values
+Update the specification object of an asset in your accessible scope. To add specifications, just add the key and set the value object with value, unit and source_timestamp. To mark an existing specification to be unknown, the value could be set to null. To delete keys, use the delete method. Multiple specification objects can be sent in the same request. Keys inside a specification are unique and can only be added once. Keys can only consist of [a-z A-Z 0-9 . - _ ]. All uppercase A-Z are converted to lower-case a-z. For a key that is send multiple times in the request body, only the last key-value is saved.  It is possible to save complex objects in the value as vector. In this case the unit must be &#39;vector&#39; and the value a valid object in the following format: &#x60;&#x60;&#x60;       [           {             \&quot;key\&quot;: {              \&quot;value\&quot;: \&quot;string\&quot;,              \&quot;unit\&quot;: \&quot;string\&quot;            }           },           {             \&quot;second_key\&quot;: {               \&quot;value\&quot;: \&quot;string\&quot;             }           }        ]   &#x60;&#x60;&#x60;  - key can only consist of [a-z A-Z 0-9 . - _ ]. - value is mandatory, max length 6000 chars - unit is optional, max length 50 chars - its impossible to filter for vector values
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let assetId = 789; // Number | Id of the specified asset
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.updateSpecificationsOfAsset(bodyassetId).then(() => {
+var assetId = 789; // Number | Id of the specified asset
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfAsset(assetId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1376,8 +1451,8 @@ apiInstance.updateSpecificationsOfAsset(bodyassetId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **assetId** | **Number**| Id of the specified asset | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -1394,7 +1469,7 @@ null (empty response body)
 
 <a name="updateSpecificationsOfEvent"></a>
 # **updateSpecificationsOfEvent**
-> updateSpecificationsOfEvent(bodyeventId)
+> updateSpecificationsOfEvent(eventId, body)
 
 Update specifications of an event
 
@@ -1402,26 +1477,29 @@ Update the specification object of an event in your accessible scope. To add spe
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let eventId = 789; // Number | Id of the specified event
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.updateSpecificationsOfEvent(bodyeventId).then(() => {
+var eventId = 789; // Number | Id of the specified event
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfEvent(eventId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1431,8 +1509,8 @@ apiInstance.updateSpecificationsOfEvent(bodyeventId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **eventId** | **Number**| Id of the specified event | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -1449,7 +1527,7 @@ null (empty response body)
 
 <a name="updateSpecificationsOfInstrumentation"></a>
 # **updateSpecificationsOfInstrumentation**
-> updateSpecificationsOfInstrumentation(bodyinstrumentationId)
+> updateSpecificationsOfInstrumentation(instrumentationId, body)
 
 Update specifications of an instrumentation
 
@@ -1457,26 +1535,29 @@ Update the specification object of an instrumentation in your accessible scope. 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let instrumentationId = 789; // Number | Id of the specified instrumentation
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.updateSpecificationsOfInstrumentation(bodyinstrumentationId).then(() => {
+var instrumentationId = 789; // Number | Id of the specified instrumentation
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfInstrumentation(instrumentationId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1486,8 +1567,8 @@ apiInstance.updateSpecificationsOfInstrumentation(bodyinstrumentationId).then(()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **instrumentationId** | **Number**| Id of the specified instrumentation | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -1504,7 +1585,7 @@ null (empty response body)
 
 <a name="updateSpecificationsOfNode"></a>
 # **updateSpecificationsOfNode**
-> updateSpecificationsOfNode(bodynodeId)
+> updateSpecificationsOfNode(nodeId, body)
 
 Update specifications of a node
 
@@ -1512,26 +1593,29 @@ Update the specification object of a node in your accessible scope. To add speci
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let nodeId = 789; // Number | Id of the specified node
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.updateSpecificationsOfNode(bodynodeId).then(() => {
+var nodeId = 789; // Number | Id of the specified node
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfNode(nodeId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1541,8 +1625,8 @@ apiInstance.updateSpecificationsOfNode(bodynodeId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **nodeId** | **Number**| Id of the specified node | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -1559,7 +1643,7 @@ null (empty response body)
 
 <a name="updateSpecificationsOfProduct"></a>
 # **updateSpecificationsOfProduct**
-> updateSpecificationsOfProduct(bodyproductId)
+> updateSpecificationsOfProduct(productId, body)
 
 Update specifications of a product
 
@@ -1567,26 +1651,29 @@ Update the specification object of a product. To add specifications, just add th
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let productId = 789; // Number | Id of the specified product
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.updateSpecificationsOfProduct(bodyproductId).then(() => {
+var productId = 789; // Number | Id of the specified product
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfProduct(productId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1596,8 +1683,8 @@ apiInstance.updateSpecificationsOfProduct(bodyproductId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **productId** | **Number**| Id of the specified product | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -1614,7 +1701,7 @@ null (empty response body)
 
 <a name="updateSpecificationsOfSubscriptions"></a>
 # **updateSpecificationsOfSubscriptions**
-> updateSpecificationsOfSubscriptions(bodysubscriptionId)
+> updateSpecificationsOfSubscriptions(subscriptionId, body)
 
 Update specifications of a subscription
 
@@ -1622,26 +1709,29 @@ Update the specification object of a subscription in your accessible scope. To a
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let subscriptionId = 789; // Number | Id of the specified subscription
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.updateSpecificationsOfSubscriptions(bodysubscriptionId).then(() => {
+var subscriptionId = 789; // Number | Id of the specified subscription
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfSubscriptions(subscriptionId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1651,8 +1741,8 @@ apiInstance.updateSpecificationsOfSubscriptions(bodysubscriptionId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **subscriptionId** | **Number**| Id of the specified subscription | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -1669,7 +1759,7 @@ null (empty response body)
 
 <a name="updateSpecificationsOfUsers"></a>
 # **updateSpecificationsOfUsers**
-> updateSpecificationsOfUsers(bodyuserId)
+> updateSpecificationsOfUsers(userId, body)
 
 Update specifications of a user
 
@@ -1677,26 +1767,29 @@ Update the specification object of a user in your accessible scope. To add speci
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.SpecificationApi();
-let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
-let userId = 789; // Number | Id of the specified user
+var apiInstance = new NetilionApiDocumentation.SpecificationApi();
 
-apiInstance.updateSpecificationsOfUsers(bodyuserId).then(() => {
+var userId = 789; // Number | Id of the specified user
+
+var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
+
+apiInstance.updateSpecificationsOfUsers(userId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1706,8 +1799,8 @@ apiInstance.updateSpecificationsOfUsers(bodyuserId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **userId** | **Number**| Id of the specified user | 
+ **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 

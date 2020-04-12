@@ -3,4 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**healthConditions** | **[Object]** |  | 
+**healthConditions** | [**[HealthConditionsRequestHealthConditions]**](HealthConditionsRequestHealthConditions.md) |  | 
+
+

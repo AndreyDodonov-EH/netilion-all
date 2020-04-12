@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **symbol** | **String** | Symbol of the unit. | [optional] 
 **name** | **String** | Supports translations. Whitespaces are trimmed. | 
 **description** | **String** | Supports translations. | [optional] 
+
+

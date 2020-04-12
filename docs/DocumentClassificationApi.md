@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.DocumentClassificationApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**getDocumentIdClassification**](DocumentClassificationApi.md#getDocumentIdClassification) | **GET** /documents/{document_id}/classification | Get the classification of a specific document
 [**updateDocumentClassification**](DocumentClassificationApi.md#updateDocumentClassification) | **PATCH** /document/classifications/{id} | Update a document classification
 
+
 <a name="createDocumentClassification"></a>
 # **createDocumentClassification**
 > DocumentClassificationResponse createDocumentClassification(body)
@@ -22,25 +23,27 @@ Code must be unique. Parameters supporting translation: &#x60;&#x60;&#x60;name, 
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
-let body = new NetilionApiDocumentation.DocumentClassificationRequest(); // DocumentClassificationRequest | DocumentClassification object to create.
+var apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
 
-apiInstance.createDocumentClassification(body).then((data) => {
+var body = new NetilionApiDocumentation.DocumentClassificationRequest(); // DocumentClassificationRequest | DocumentClassification object to create.
+
+apiInstance.createDocumentClassification(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -75,25 +78,27 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
-let id = 789; // Number | Id of the document classification to delete
+var apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
 
-apiInstance.deleteDocumentClassification(id).then(() => {
+var id = 789; // Number | Id of the document classification to delete
+
+apiInstance.deleteDocumentClassification(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -115,7 +120,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDocumentClassificationById"></a>
@@ -128,27 +133,30 @@ Get a specific document classification identified by the id in the URL. Paramete
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
-let id = 789; // Number | Id of document classification to fetch
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
+
+var id = 789; // Number | Id of document classification to fetch
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentClassificationById(id, opts).then((data) => {
+apiInstance.getDocumentClassificationById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -159,7 +167,7 @@ apiInstance.getDocumentClassificationById(id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of document classification to fetch | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -171,12 +179,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDocumentClassifications"></a>
 # **getDocumentClassifications**
-> Object getDocumentClassifications(opts)
+> DocumentClassifications getDocumentClassifications(opts)
 
 Get a range of document classifications
 
@@ -184,32 +192,34 @@ Returns a list of all document classifications that are available in your scope.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'code': "code_example", // String | Filter accepts `*` as wildcard
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentClassifications(opts).then((data) => {
+apiInstance.getDocumentClassifications(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -225,11 +235,11 @@ Name | Type | Description  | Notes
  **name** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**DocumentClassifications**](DocumentClassifications.md)
 
 ### Authorization
 
@@ -237,12 +247,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDocumentClassificationsOptions"></a>
 # **getDocumentClassificationsOptions**
-> Object getDocumentClassificationsOptions(documentId, opts)
+> DocumentClassifications getDocumentClassificationsOptions(documentId, opts)
 
 Get all possible classifications for the specified document
 
@@ -250,33 +260,36 @@ Returns a list of all possible document classifications for the specified docume
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
-let documentId = 789; // Number | Id of the specified document
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
+
+var documentId = 789; // Number | Id of the specified document
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'code': "code_example", // String | Filter accepts `*` as wildcard
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentClassificationsOptions(documentId, opts).then((data) => {
+apiInstance.getDocumentClassificationsOptions(documentId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -293,11 +306,11 @@ Name | Type | Description  | Notes
  **name** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-**Object**
+[**DocumentClassifications**](DocumentClassifications.md)
 
 ### Authorization
 
@@ -305,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getDocumentIdClassification"></a>
@@ -318,27 +331,30 @@ Returns the classification of the document. Parameters supporting translation: &
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
-let documentId = 789; // Number | Id of the specified document
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
+
+var documentId = 789; // Number | Id of the specified document
+
+var opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentIdClassification(documentId, opts).then((data) => {
+apiInstance.getDocumentIdClassification(documentId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -349,7 +365,7 @@ apiInstance.getDocumentIdClassification(documentId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **documentId** | **Number**| Id of the specified document | 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -361,12 +377,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateDocumentClassification"></a>
 # **updateDocumentClassification**
-> updateDocumentClassification(bodyid, opts)
+> updateDocumentClassification(id, body, opts)
 
 Update a document classification
 
@@ -374,28 +390,32 @@ Update accessible parameters of the requested resource. Parameters supporting tr
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
-let body = new NetilionApiDocumentation.DocumentClassificationRequest(); // DocumentClassificationRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the document classification to update
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.DocumentClassificationApi();
+
+var id = 789; // Number | Id of the document classification to update
+
+var body = new NetilionApiDocumentation.DocumentClassificationRequest(); // DocumentClassificationRequest | Parameters that shall be updated.
+
+var opts = { 
   'contentLanguage': "contentLanguage_example" // String | language of the content
 };
-apiInstance.updateDocumentClassification(bodyid, opts).then(() => {
+apiInstance.updateDocumentClassification(id, body, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -405,8 +425,8 @@ apiInstance.updateDocumentClassification(bodyid, opts).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentClassificationRequest**](DocumentClassificationRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the document classification to update | 
+ **body** | [**DocumentClassificationRequest**](DocumentClassificationRequest.md)| Parameters that shall be updated. | 
  **contentLanguage** | **String**| language of the content | [optional] 
 
 ### Return type

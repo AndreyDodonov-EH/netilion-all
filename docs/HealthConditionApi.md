@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.HealthConditionApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getHealthConditionById**](HealthConditionApi.md#getHealthConditionById) | **GET** /health_conditions/{id} | Get a single health condition
 [**getHealthConditions**](HealthConditionApi.md#getHealthConditions) | **GET** /health_conditions | Get a range of health conditions
 [**updateHealthCondition**](HealthConditionApi.md#updateHealthCondition) | **PATCH** /health_conditions/{id} | Update a health condition
+
 
 <a name="createHealthCondition"></a>
 # **createHealthCondition**
@@ -20,25 +21,27 @@ Health condition must have a diagnosis_code, a protocol and a device ident
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.HealthConditionApi();
-let body = new NetilionApiDocumentation.HealthConditionRequest(); // HealthConditionRequest | Health Condition to create.
+var apiInstance = new NetilionApiDocumentation.HealthConditionApi();
 
-apiInstance.createHealthCondition(body).then((data) => {
+var body = new NetilionApiDocumentation.HealthConditionRequest(); // HealthConditionRequest | Health Condition to create.
+
+apiInstance.createHealthCondition(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -73,25 +76,27 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.HealthConditionApi();
-let id = 789; // Number | Id of the health condition to delete
+var apiInstance = new NetilionApiDocumentation.HealthConditionApi();
 
-apiInstance.deleteHealthCondition(id).then(() => {
+var id = 789; // Number | Id of the health condition to delete
+
+apiInstance.deleteHealthCondition(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,7 +118,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getHealthConditionById"></a>
@@ -126,28 +131,31 @@ Get a specific health condition identified by the id in the URL. Possible includ
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.HealthConditionApi();
-let id = 789; // Number | Id of health condition to fetch
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.HealthConditionApi();
+
+var id = 789; // Number | Id of health condition to fetch
+
+var opts = { 
   'include': "include_example", // String | Comma separated list of objects to include in response
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getHealthConditionById(id, opts).then((data) => {
+apiInstance.getHealthConditionById(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -159,7 +167,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of health condition to fetch | 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -171,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getHealthConditions"></a>
@@ -184,21 +192,23 @@ Returns a list of all health conditions. You can apply query parameters in the r
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.HealthConditionApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.HealthConditionApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -212,9 +222,9 @@ let opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `diagnosis_code`, `device_ident`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getHealthConditions(opts).then((data) => {
+apiInstance.getHealthConditions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -235,7 +245,7 @@ Name | Type | Description  | Notes
  **protocolVersion** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **hidden** | **Boolean**| Filter accepts true or false | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;diagnosis_code&#x60;, &#x60;device_ident&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;, add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -247,12 +257,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateHealthCondition"></a>
 # **updateHealthCondition**
-> updateHealthCondition(bodyid)
+> updateHealthCondition(id, body)
 
 Update a health condition
 
@@ -260,26 +270,29 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.HealthConditionApi();
-let body = new NetilionApiDocumentation.HealthConditionRequest(); // HealthConditionRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the health condition to update
+var apiInstance = new NetilionApiDocumentation.HealthConditionApi();
 
-apiInstance.updateHealthCondition(bodyid).then(() => {
+var id = 789; // Number | Id of the health condition to update
+
+var body = new NetilionApiDocumentation.HealthConditionRequest(); // HealthConditionRequest | Parameters that shall be updated.
+
+apiInstance.updateHealthCondition(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -289,8 +302,8 @@ apiInstance.updateHealthCondition(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HealthConditionRequest**](HealthConditionRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the health condition to update | 
+ **body** | [**HealthConditionRequest**](HealthConditionRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 

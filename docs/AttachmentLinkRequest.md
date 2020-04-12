@@ -10,3 +10,5 @@ Name | Type | Description | Notes
 **remarks** | **String** | remarks of the attachment | [optional] 
 **document** | [**NestedID**](NestedID.md) |  | 
 **languages** | **String** | the languages of the files content | [optional] 
+
+

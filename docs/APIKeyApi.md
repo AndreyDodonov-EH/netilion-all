@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.APIKeyApi
 
-All URIs are relative to */v1*
+All URIs are relative to *https://localhost/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,35 +10,38 @@ Method | HTTP request | Description
 [**getAPIKeys**](APIKeyApi.md#getAPIKeys) | **GET** /api_keys | Get a range of APIKeys
 [**updateAPIKey**](APIKeyApi.md#updateAPIKey) | **PATCH** /api_keys/{id} | Update an APIKey
 
+
 <a name="createAPIKey"></a>
 # **createAPIKey**
 > APIKeyResponse createAPIKey(body)
 
 Create a new APIKey
 
-Create a new APIKey. The values of the api_key and the api_secret can&#x27;t be set and will be generated. To create an APIKey, the client_application must have an API Subscription assigned. valid_from and valid_until will be adopted from the API Subscription
+Create a new APIKey. The values of the api_key and the api_secret can&#39;t be set and will be generated. To create an APIKey, the client_application must have an API Subscription assigned. valid_from and valid_until will be adopted from the API Subscription
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APIKeyApi();
-let body = new NetilionApiDocumentation.APIKeyRequest(); // APIKeyRequest | APIKey object that needs to be created. client_application
+var apiInstance = new NetilionApiDocumentation.APIKeyApi();
 
-apiInstance.createAPIKey(body).then((data) => {
+var body = new NetilionApiDocumentation.APIKeyRequest(); // APIKeyRequest | APIKey object that needs to be created. client_application
+
+apiInstance.createAPIKey(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -73,25 +76,27 @@ Delete a specific resource in your accessible scope, identified by the id in the
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APIKeyApi();
-let id = 789; // Number | Id of the APIKey to delete
+var apiInstance = new NetilionApiDocumentation.APIKeyApi();
 
-apiInstance.deleteAPIKey(id).then(() => {
+var id = 789; // Number | Id of the APIKey to delete
+
+apiInstance.deleteAPIKey(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,7 +118,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAPIKeyById"></a>
@@ -126,25 +131,27 @@ Get a specific APIKey in your accessible scope, identified by the id in the URL.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APIKeyApi();
-let id = 789; // Number | Id of the APIKey to fetch
+var apiInstance = new NetilionApiDocumentation.APIKeyApi();
 
-apiInstance.getAPIKeyById(id).then((data) => {
+var id = 789; // Number | Id of the APIKey to fetch
+
+apiInstance.getAPIKeyById(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -166,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getAPIKeys"></a>
@@ -179,21 +186,23 @@ Returns a list of APIKeys in your accessible scope. If the query has no matches,
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APIKeyApi();
-let opts = { 
+var apiInstance = new NetilionApiDocumentation.APIKeyApi();
+
+var opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'apiKey': "apiKey_example", // String | Filter accepts `*` as wildcard
@@ -205,9 +214,9 @@ let opts = {
   'validUntilTo': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAPIKeys(opts).then((data) => {
+apiInstance.getAPIKeys(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -238,39 +247,42 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateAPIKey"></a>
 # **updateAPIKey**
-> updateAPIKey(bodyid)
+> updateAPIKey(id, body)
 
 Update an APIKey
 
-Update accessible parameters of the requested resource in your accessible scope. The value of the api_key and api_secret can&#x27;t be changed.
+Update accessible parameters of the requested resource in your accessible scope. The value of the api_key and api_secret can&#39;t be changed.
 
 ### Example
 ```javascript
-import NetilionApiDocumentation from 'netilion_api_documentation';
-let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+var NetilionApiDocumentation = require('netilion_api_documentation');
+var defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-let API-Key = defaultClient.authentications['API-Key'];
+var API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
+
 // Configure HTTP basic authorization: Authentication
-let Authentication = defaultClient.authentications['Authentication'];
+var Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-let apiInstance = new NetilionApiDocumentation.APIKeyApi();
-let body = new NetilionApiDocumentation.APIKeyRequest(); // APIKeyRequest | Parameters that shall be updated.
-let id = 789; // Number | Id of the APIKey to update
+var apiInstance = new NetilionApiDocumentation.APIKeyApi();
 
-apiInstance.updateAPIKey(bodyid).then(() => {
+var id = 789; // Number | Id of the APIKey to update
+
+var body = new NetilionApiDocumentation.APIKeyRequest(); // APIKeyRequest | Parameters that shall be updated.
+
+apiInstance.updateAPIKey(id, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -280,8 +292,8 @@ apiInstance.updateAPIKey(bodyid).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**APIKeyRequest**](APIKeyRequest.md)| Parameters that shall be updated. | 
  **id** | **Number**| Id of the APIKey to update | 
+ **body** | [**APIKeyRequest**](APIKeyRequest.md)| Parameters that shall be updated. | 
 
 ### Return type
 

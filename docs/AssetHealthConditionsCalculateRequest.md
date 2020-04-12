@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **protocolVersion** | **String** | definition of the protocol version. For example 5, 6 or 7 for HART | [optional] 
 **diagnosisMessage** | **String** | diagnosis message to use for the calculation | 
 **deviceIdent** | **String** | the protocol dependent device identifier | [optional] 
+
+

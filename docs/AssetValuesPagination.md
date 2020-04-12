@@ -11,3 +11,5 @@ Name | Type | Description | Notes
 **next** | **String** | The link for the immediate next page for the data. | [optional] 
 **first** | **String** | The link for the first page for the data. | [optional] 
 **last** | **String** | The link for the last page for the data. | [optional] 
+
+

@@ -8,3 +8,5 @@ Name | Type | Description | Notes
 **low** | **Number** | the lowest warning threshold. Can be negativ and decimal. Must be the second lowest threshold limit | [optional] 
 **high** | **Number** | the highest warning threshold. Can be negativ and decimal. Must be the second threshold limit | [optional] 
 **highHigh** | **Number** | the highest critical threshold. Can be negativ and decimal. Must be the highest threshold limit | [optional] 
+
+

@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **type** | **String** | type of object. Possible value asset, instrumentation, node. | 
 **title** | **String** | title of object | 
 **description** | **String** | description of object | 
+
+
