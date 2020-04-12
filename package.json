@@ -1,6 +1,6 @@
 {
   "name": "netilion-all",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "https://api.staging-env.iiot.endress.com/doc/v1/",
   "license": "MIT",
   "main": "src/index.js",
