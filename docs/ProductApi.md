@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.ProductApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,10 +68,9 @@ Method | HTTP request | Description
 [**updateSpecificationsOfProduct**](ProductApi.md#updateSpecificationsOfProduct) | **PATCH** /products/{product_id}/specifications | Update specifications of a product
 [**uploadProductPicture**](ProductApi.md#uploadProductPicture) | **POST** /products/{id}/pictures | Upload a product picture
 
-
 <a name="addCategoriesToProduct"></a>
 # **addCategoriesToProduct**
-> addCategoriesToProduct(productId, body)
+> addCategoriesToProduct(bodyproductId)
 
 Add categories to a product
 
@@ -79,29 +78,26 @@ Add one or more categories to a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.CategoryIDs(); // CategoryIDs | Resources that shall be added
+let productId = 789; // Number | Id of the product
 
-var productId = 789; // Number | Id of the product
-
-var body = new NetilionApiDocumentation.CategoryIDs(); // CategoryIDs | Resources that shall be added
-
-apiInstance.addCategoriesToProduct(productId, body).then(function() {
+apiInstance.addCategoriesToProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -111,8 +107,8 @@ apiInstance.addCategoriesToProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product | 
  **body** | [**CategoryIDs**](CategoryIDs.md)| Resources that shall be added | 
+ **productId** | **Number**| Id of the product | 
 
 ### Return type
 
@@ -129,7 +125,7 @@ null (empty response body)
 
 <a name="addDocumentsToProduct"></a>
 # **addDocumentsToProduct**
-> addDocumentsToProduct(productId, body)
+> addDocumentsToProduct(bodyproductId)
 
 Add documents to a product
 
@@ -137,29 +133,26 @@ Add one or more documents to a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+let productId = 789; // Number | Id of the product to which the documents will be added
 
-var productId = 789; // Number | Id of the product to which the documents will be added
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-
-apiInstance.addDocumentsToProduct(productId, body).then(function() {
+apiInstance.addDocumentsToProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -169,8 +162,8 @@ apiInstance.addDocumentsToProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product to which the documents will be added | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
+ **productId** | **Number**| Id of the product to which the documents will be added | 
 
 ### Return type
 
@@ -187,7 +180,7 @@ null (empty response body)
 
 <a name="addEdgeDeviceFeaturesToProduct"></a>
 # **addEdgeDeviceFeaturesToProduct**
-> addEdgeDeviceFeaturesToProduct(productId, body)
+> addEdgeDeviceFeaturesToProduct(bodyproductId)
 
 Add edge device features to a product
 
@@ -195,29 +188,26 @@ Add one or more edge device features to a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.EdgeDeviceFeatureIDs(); // EdgeDeviceFeatureIDs | Resources that shall be added.
+let productId = 789; // Number | Id of the product to which the edge device features will be added
 
-var productId = 789; // Number | Id of the product to which the edge device features will be added
-
-var body = new NetilionApiDocumentation.EdgeDeviceFeatureIDs(); // EdgeDeviceFeatureIDs | Resources that shall be added.
-
-apiInstance.addEdgeDeviceFeaturesToProduct(productId, body).then(function() {
+apiInstance.addEdgeDeviceFeaturesToProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -227,8 +217,8 @@ apiInstance.addEdgeDeviceFeaturesToProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product to which the edge device features will be added | 
  **body** | [**EdgeDeviceFeatureIDs**](EdgeDeviceFeatureIDs.md)| Resources that shall be added. | 
+ **productId** | **Number**| Id of the product to which the edge device features will be added | 
 
 ### Return type
 
@@ -245,7 +235,7 @@ null (empty response body)
 
 <a name="addProductPictureLink"></a>
 # **addProductPictureLink**
-> PictureResponse addProductPictureLink(id, body)
+> PictureResponse addProductPictureLink(bodyid)
 
 Add a link as product picture
 
@@ -253,29 +243,26 @@ Add an external resource as product picture.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be created
+let id = 789; // Number | Id of the product
 
-var id = 789; // Number | Id of the product
-
-var body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be created
-
-apiInstance.addProductPictureLink(id, body).then(function(data) {
+apiInstance.addProductPictureLink(bodyid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -285,8 +272,8 @@ apiInstance.addProductPictureLink(id, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the product | 
  **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be created | 
+ **id** | **Number**| Id of the product | 
 
 ### Return type
 
@@ -303,7 +290,7 @@ Name | Type | Description  | Notes
 
 <a name="addPurchaseOrdersToProduct"></a>
 # **addPurchaseOrdersToProduct**
-> addPurchaseOrdersToProduct(productId, body)
+> addPurchaseOrdersToProduct(bodyproductId)
 
 Add purchase orders to a product
 
@@ -311,29 +298,26 @@ Add one or more purchase orders to a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be added.
+let productId = 789; // Number | Id of the product to which the purchase orders will be added
 
-var productId = 789; // Number | Id of the product to which the purchase orders will be added
-
-var body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be added.
-
-apiInstance.addPurchaseOrdersToProduct(productId, body).then(function() {
+apiInstance.addPurchaseOrdersToProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -343,8 +327,8 @@ apiInstance.addPurchaseOrdersToProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product to which the purchase orders will be added | 
  **body** | [**PurchaseOrderIDs**](PurchaseOrderIDs.md)| Resources that shall be added. | 
+ **productId** | **Number**| Id of the product to which the purchase orders will be added | 
 
 ### Return type
 
@@ -361,7 +345,7 @@ null (empty response body)
 
 <a name="addQuotationsToProduct"></a>
 # **addQuotationsToProduct**
-> addQuotationsToProduct(productId, body)
+> addQuotationsToProduct(bodyproductId)
 
 Add quotations to a product
 
@@ -369,29 +353,26 @@ Add one or more quotations to a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be added.
+let productId = 789; // Number | Id of the product to which the quotations will be added
 
-var productId = 789; // Number | Id of the product to which the quotations will be added
-
-var body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be added.
-
-apiInstance.addQuotationsToProduct(productId, body).then(function() {
+apiInstance.addQuotationsToProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -401,8 +382,8 @@ apiInstance.addQuotationsToProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product to which the quotations will be added | 
  **body** | [**QuotationIDs**](QuotationIDs.md)| Resources that shall be added. | 
+ **productId** | **Number**| Id of the product to which the quotations will be added | 
 
 ### Return type
 
@@ -419,7 +400,7 @@ null (empty response body)
 
 <a name="addSoftwaresToProduct"></a>
 # **addSoftwaresToProduct**
-> addSoftwaresToProduct(productId, body)
+> addSoftwaresToProduct(bodyproductId)
 
 Add software to a product
 
@@ -427,29 +408,26 @@ Add one or more software to a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be added.
+let productId = 789; // Number | Id of the product to which the software will be added
 
-var productId = 789; // Number | Id of the product to which the software will be added
-
-var body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be added.
-
-apiInstance.addSoftwaresToProduct(productId, body).then(function() {
+apiInstance.addSoftwaresToProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -459,8 +437,8 @@ apiInstance.addSoftwaresToProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product to which the software will be added | 
  **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be added. | 
+ **productId** | **Number**| Id of the product to which the software will be added | 
 
 ### Return type
 
@@ -485,27 +463,25 @@ Products need a uninque product_code and a manufacturer (company). Parameters su
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductRequest(); // ProductRequest | Product object that needs to be created.
 
-var body = new NetilionApiDocumentation.ProductRequest(); // ProductRequest | Product object that needs to be created.
-
-apiInstance.createProduct(body).then(function(data) {
+apiInstance.createProduct(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -540,27 +516,25 @@ Products must have a product (user needs product edit rights) and a unique featu
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductFeatureRequest(); // ProductFeatureRequest | Product Feature object that needs to be created.
 
-var body = new NetilionApiDocumentation.ProductFeatureRequest(); // ProductFeatureRequest | Product Feature object that needs to be created.
-
-apiInstance.createProductFeature(body).then(function(data) {
+apiInstance.createProductFeature(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -595,27 +569,25 @@ Products must have a product feature (user needs product feature - product edit 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductOptionRequest(); // ProductOptionRequest | Product option object that needs to be created.
 
-var body = new NetilionApiDocumentation.ProductOptionRequest(); // ProductOptionRequest | Product option object that needs to be created.
-
-apiInstance.createProductOption(body).then(function(data) {
+apiInstance.createProductOption(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -650,27 +622,25 @@ Product Variants must have a product (user needs product edit rights) and a uniq
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductVariantRequest(); // ProductVariantRequest | Product variant object that needs to be created.
 
-var body = new NetilionApiDocumentation.ProductVariantRequest(); // ProductVariantRequest | Product variant object that needs to be created.
-
-apiInstance.createProductVariant(body).then(function(data) {
+apiInstance.createProductVariant(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -697,7 +667,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCategoriesFromProduct"></a>
 # **deleteCategoriesFromProduct**
-> deleteCategoriesFromProduct(productId, body)
+> deleteCategoriesFromProduct(bodyproductId)
 
 Remove categories from a product
 
@@ -705,29 +675,26 @@ Remove one or more categories from a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.CategoryIDs(); // CategoryIDs | Resources that shall be removed.
+let productId = 789; // Number | Id of the product from which the category will be removed
 
-var productId = 789; // Number | Id of the product from which the category will be removed
-
-var body = new NetilionApiDocumentation.CategoryIDs(); // CategoryIDs | Resources that shall be removed.
-
-apiInstance.deleteCategoriesFromProduct(productId, body).then(function() {
+apiInstance.deleteCategoriesFromProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -737,8 +704,8 @@ apiInstance.deleteCategoriesFromProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product from which the category will be removed | 
  **body** | [**CategoryIDs**](CategoryIDs.md)| Resources that shall be removed. | 
+ **productId** | **Number**| Id of the product from which the category will be removed | 
 
 ### Return type
 
@@ -763,27 +730,25 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product to delete
 
-var id = 789; // Number | Id of the product to delete
-
-apiInstance.deleteProduct(id).then(function() {
+apiInstance.deleteProduct(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -805,7 +770,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteProductFeature"></a>
@@ -818,27 +783,25 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product feature to delete
 
-var id = 789; // Number | Id of the product feature to delete
-
-apiInstance.deleteProductFeature(id).then(function() {
+apiInstance.deleteProductFeature(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -860,7 +823,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteProductOption"></a>
@@ -873,27 +836,25 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product option to delete
 
-var id = 789; // Number | Id of the product option to delete
-
-apiInstance.deleteProductOption(id).then(function() {
+apiInstance.deleteProductOption(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -915,7 +876,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteProductPicture"></a>
@@ -928,29 +889,26 @@ Delete a product picture.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | Id of the product
+let id = 789; // Number | Id of the product picture
 
-var productId = 789; // Number | Id of the product
-
-var id = 789; // Number | Id of the product picture
-
-apiInstance.deleteProductPicture(productId, id).then(function() {
+apiInstance.deleteProductPicture(productId, id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -973,7 +931,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteProductVariant"></a>
@@ -986,27 +944,25 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product variant to delete
 
-var id = 789; // Number | Id of the product variant to delete
-
-apiInstance.deleteProductVariant(id).then(function() {
+apiInstance.deleteProductVariant(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1028,7 +984,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="downloadProductPicture"></a>
@@ -1041,29 +997,26 @@ Download a product picture.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | Id of the product
+let id = 789; // Number | Id of the product picture
 
-var productId = 789; // Number | Id of the product
-
-var id = 789; // Number | Id of the product picture
-
-apiInstance.downloadProductPicture(productId, id).then(function() {
+apiInstance.downloadProductPicture(productId, id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1086,12 +1039,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAssetProductOptions"></a>
 # **getAssetProductOptions**
-> Products getAssetProductOptions(assetId, opts)
+> Object getAssetProductOptions(assetId, opts)
 
 Get all possible products of the specified assets
 
@@ -1099,25 +1052,22 @@ Returns a list of all possible products for the specified asset. You can apply t
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var assetId = 789; // Number | Id of the specified asset
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let assetId = 789; // Number | Id of the specified asset
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1128,11 +1078,11 @@ var opts = {
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
   'parentId': "parentId_example", // String | One or multiple ids (comma list). \"null\" to retrieve all objects without parent, \"!null\" for all objects with parent.
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetProductOptions(assetId, opts).then(function(data) {
+apiInstance.getAssetProductOptions(assetId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1157,7 +1107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](Products.md)
+**Object**
 
 ### Authorization
 
@@ -1165,7 +1115,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCategoriesOfProduct"></a>
@@ -1178,25 +1128,22 @@ Get all categories for the specific product identified by the id in the URL. You
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1207,9 +1154,9 @@ var opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getCategoriesOfProduct(productId, opts).then(function(data) {
+apiInstance.getCategoriesOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1228,7 +1175,7 @@ Name | Type | Description  | Notes
  **parentId** | **String**| One or multiple ids (comma list). \&quot;null\&quot; to retrieve all objects without parent, \&quot;!null\&quot; for all objects with parent. | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1240,7 +1187,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCategoriesOptionsOfProduct"></a>
@@ -1253,25 +1200,22 @@ Returns a list of all possible categories for the specific product available in 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1282,9 +1226,9 @@ var opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getCategoriesOptionsOfProduct(productId, opts).then(function(data) {
+apiInstance.getCategoriesOptionsOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1303,7 +1247,7 @@ Name | Type | Description  | Notes
  **parentId** | **String**| One or multiple ids (comma list). \&quot;null\&quot; to retrieve all objects without parent, \&quot;!null\&quot; for all objects with parent. | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1315,7 +1259,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocumentsOfProduct"></a>
@@ -1328,25 +1272,22 @@ Returns a list of documents assigned to the specified product. You can apply the
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -1357,12 +1298,15 @@ var opts = {
   'classificationId': "classificationId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
+  'validFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfProduct(productId, opts).then(function(data) {
+apiInstance.getDocumentsOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1383,8 +1327,11 @@ Name | Type | Description  | Notes
  **classificationId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **categoryId** | **String**| One or multiple ids (comma list). By adding &#x60;+&#x60; after the id, the filter considers the given category and all its children (e.g. 3+). | [optional] 
+ **validFrom** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1396,7 +1343,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getEdgeDeviceFeaturesOfProduct"></a>
@@ -1409,25 +1356,22 @@ Returns a list of edge device features assigned to the specified product. You ca
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -1435,9 +1379,9 @@ var opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getEdgeDeviceFeaturesOfProduct(productId, opts).then(function(data) {
+apiInstance.getEdgeDeviceFeaturesOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1453,7 +1397,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1465,7 +1409,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductById"></a>
@@ -1478,31 +1422,28 @@ Get a specific product identified by the id in the URL. Parameters supporting tr
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var id = 789; // Number | Id of the product to fetch
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product to fetch
+let opts = { 
   'include': "include_example", // String | Comma separated list of objects to include in response
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductById(id, opts).then(function(data) {
+apiInstance.getProductById(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1514,7 +1455,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of the product to fetch | 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1526,7 +1467,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductFeatureById"></a>
@@ -1539,27 +1480,25 @@ Get a specific product feature identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product feature to fetch
 
-var id = 789; // Number | Id of the product feature to fetch
-
-apiInstance.getProductFeatureById(id).then(function(data) {
+apiInstance.getProductFeatureById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1581,7 +1520,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductFeatures"></a>
@@ -1594,32 +1533,30 @@ Get a range of product features
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'productId': "productId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'featureKey': "featureKey_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getProductFeatures(opts).then(function(data) {
+apiInstance.getProductFeatures(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1645,7 +1582,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductIdStatus"></a>
@@ -1658,30 +1595,27 @@ Returns the status of the product. Parameters supporting translation: &#x60;&#x6
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | Id of the specified product
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | Id of the specified product
+let opts = { 
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductIdStatus(productId, opts).then(function(data) {
+apiInstance.getProductIdStatus(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1692,7 +1626,7 @@ apiInstance.getProductIdStatus(productId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Number**| Id of the specified product | 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -1704,7 +1638,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductOptionById"></a>
@@ -1717,27 +1651,25 @@ Get a specific product option identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product option to fetch
 
-var id = 789; // Number | Id of the product option to fetch
-
-apiInstance.getProductOptionById(id).then(function(data) {
+apiInstance.getProductOptionById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1759,7 +1691,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductOptions"></a>
@@ -1772,32 +1704,30 @@ Returns a list of all product options that are available in your scope. You can 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'productFeatureId': "productFeatureId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'optionKey': "optionKey_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getProductOptions(opts).then(function(data) {
+apiInstance.getProductOptions(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1823,7 +1753,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductPicture"></a>
@@ -1836,29 +1766,26 @@ Get a single picture of a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | Id of the product
+let id = 789; // Number | Id of the product picture
 
-var productId = 789; // Number | Id of the product
-
-var id = 789; // Number | Id of the product picture
-
-apiInstance.getProductPicture(productId, id).then(function(data) {
+apiInstance.getProductPicture(productId, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1881,7 +1808,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductPictures"></a>
@@ -1894,36 +1821,33 @@ Get all product pictures of a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var id = 789; // Number | Id of the product
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product
+let opts = { 
   'width': 56, // Number | filter by width
   'widthFrom': 56, // Number | filter by width_from
   'widthTo': 56, // Number | filter by width_to
   'height': 56, // Number | filter by height
   'heightFrom': 56, // Number | filter by height_from
   'heightTo': 56, // Number | filter by height_to
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getProductPictures(id, opts).then(function(data) {
+apiInstance.getProductPictures(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1952,12 +1876,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductStatusesOptions"></a>
 # **getProductStatusesOptions**
-> ProductStatuses getProductStatusesOptions(productId, opts)
+> Object getProductStatusesOptions(productId, opts)
 
 Get all possible statuses for the specified product
 
@@ -1965,25 +1889,22 @@ Returns a list of all possible product statuses for the specified product. You c
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | Id of the specified product
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | Id of the specified product
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -1992,9 +1913,9 @@ var opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductStatusesOptions(productId, opts).then(function(data) {
+apiInstance.getProductStatusesOptions(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2011,11 +1932,11 @@ Name | Type | Description  | Notes
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
-[**ProductStatuses**](ProductStatuses.md)
+**Object**
 
 ### Authorization
 
@@ -2023,7 +1944,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductVaraints"></a>
@@ -2036,32 +1957,30 @@ Get a range of product variants
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'productId': "productId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'varaintCode': "varaintCode_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getProductVaraints(opts).then(function(data) {
+apiInstance.getProductVaraints(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2087,7 +2006,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductVariantById"></a>
@@ -2100,27 +2019,25 @@ Get a specific product variant identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product variant to fetch
 
-var id = 789; // Number | Id of the product variant to fetch
-
-apiInstance.getProductVariantById(id).then(function(data) {
+apiInstance.getProductVariantById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2142,7 +2059,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductVariantConfigurations"></a>
@@ -2155,30 +2072,27 @@ get configuration of a product variant
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var id = 789; // Number | Id of the product variant
-
-var opts = { 
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let id = 789; // Number | Id of the product variant
+let opts = { 
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getProductVariantConfigurations(id, opts).then(function(data) {
+apiInstance.getProductVariantConfigurations(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2201,7 +2115,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProducts"></a>
@@ -2214,23 +2128,21 @@ Returns a list of all products that are available in your scope. You can apply t
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -2246,9 +2158,9 @@ var opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProducts(opts).then(function(data) {
+apiInstance.getProducts(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2271,7 +2183,7 @@ Name | Type | Description  | Notes
  **specificationsKey** | **String**| Filter accepts &#x60;*&#x60; as wildcard (if used as single specifications filter), supports comma list of keys in connection with specifications_value filter | [optional] 
  **specificationsValue** | **String**| Filter accepts &#x60;*&#x60; as wildcard, supports comma list of values in connection with specifications_key filter. Does not work for vectors | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -2283,7 +2195,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductsOfCompany"></a>
@@ -2296,25 +2208,22 @@ Receive a list of products of a specific company, identified by the id in the UR
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var companyId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let companyId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -2324,11 +2233,11 @@ var opts = {
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
   'parentId': "parentId_example", // String | One or multiple ids (comma list). \"null\" to retrieve all objects without parent, \"!null\" for all objects with parent.
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getProductsOfCompany(companyId, opts).then(function(data) {
+apiInstance.getProductsOfCompany(companyId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2360,7 +2269,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPurchaseOrdersOfProduct"></a>
@@ -2373,25 +2282,22 @@ Returns a list of all purchase orders that are available in your scope. You can 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -2403,11 +2309,11 @@ var opts = {
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'quotationId': "quotationId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getPurchaseOrdersOfProduct(productId, opts).then(function(data) {
+apiInstance.getPurchaseOrdersOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2441,7 +2347,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuotationsOfProduct"></a>
@@ -2454,25 +2360,22 @@ Returns a list of all quotations that are available in your scope. You can apply
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -2484,11 +2387,11 @@ var opts = {
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'requestForQuotationId': "requestForQuotationId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getQuotationsOfProduct(productId, opts).then(function(data) {
+apiInstance.getQuotationsOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2522,7 +2425,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSoftwaresOfProduct"></a>
@@ -2535,34 +2438,31 @@ Returns a list of software. Parameters supporting translation: &#x60;&#x60;&#x60
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `version_number`, `name`, `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getSoftwaresOfProduct(productId, opts).then(function(data) {
+apiInstance.getSoftwaresOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2577,7 +2477,7 @@ Name | Type | Description  | Notes
  **perPage** | **Number**| Number of items to load per page | [optional] 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;version_number&#x60;, &#x60;name&#x60;, &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -2589,7 +2489,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSpecificationsOfProduct"></a>
@@ -2598,34 +2498,31 @@ Name | Type | Description  | Notes
 
 Get specifications of a product
 
-Returns the specification of an object. If no specifications are defined, this is just an empty object. The value part of a specification should always follow the form of $ref: &#39;#/definitions/Specification&#39;
+Returns the specification of an object. If no specifications are defined, this is just an empty object.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var productId = 789; // Number | Id of the specified product
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let productId = 789; // Number | Id of the specified product
+let opts = { 
   'key': "key_example" // String | Filter accepts '*' as wildcard
 };
-apiInstance.getSpecificationsOfProduct(productId, opts).then(function(data) {
+apiInstance.getSpecificationsOfProduct(productId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2636,7 +2533,7 @@ apiInstance.getSpecificationsOfProduct(productId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Number**| Id of the specified product | 
- **key** | **String**| Filter accepts &#39;*&#39; as wildcard | [optional] 
+ **key** | **String**| Filter accepts &#x27;*&#x27; as wildcard | [optional] 
 
 ### Return type
 
@@ -2648,12 +2545,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="removeDocumentsFromProduct"></a>
 # **removeDocumentsFromProduct**
-> removeDocumentsFromProduct(productId, body)
+> removeDocumentsFromProduct(bodyproductId)
 
 Remove documents from a product
 
@@ -2661,29 +2558,26 @@ Remove one or more documents from a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+let productId = 789; // Number | Id of the product from which the documents will be removed
 
-var productId = 789; // Number | Id of the product from which the documents will be removed
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-
-apiInstance.removeDocumentsFromProduct(productId, body).then(function() {
+apiInstance.removeDocumentsFromProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2693,8 +2587,8 @@ apiInstance.removeDocumentsFromProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product from which the documents will be removed | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
+ **productId** | **Number**| Id of the product from which the documents will be removed | 
 
 ### Return type
 
@@ -2711,7 +2605,7 @@ null (empty response body)
 
 <a name="removeEdgeDeviceFeaturesFromProduct"></a>
 # **removeEdgeDeviceFeaturesFromProduct**
-> removeEdgeDeviceFeaturesFromProduct(productId, body)
+> removeEdgeDeviceFeaturesFromProduct(bodyproductId)
 
 Remove edge device features from a product
 
@@ -2719,29 +2613,26 @@ Remove one or more edge device features from a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.EdgeDeviceFeatureIDs(); // EdgeDeviceFeatureIDs | Resources that shall be removed.
+let productId = 789; // Number | Id of the product from which the edge device features will be removed
 
-var productId = 789; // Number | Id of the product from which the edge device features will be removed
-
-var body = new NetilionApiDocumentation.EdgeDeviceFeatureIDs(); // EdgeDeviceFeatureIDs | Resources that shall be removed.
-
-apiInstance.removeEdgeDeviceFeaturesFromProduct(productId, body).then(function() {
+apiInstance.removeEdgeDeviceFeaturesFromProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2751,8 +2642,8 @@ apiInstance.removeEdgeDeviceFeaturesFromProduct(productId, body).then(function()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product from which the edge device features will be removed | 
  **body** | [**EdgeDeviceFeatureIDs**](EdgeDeviceFeatureIDs.md)| Resources that shall be removed. | 
+ **productId** | **Number**| Id of the product from which the edge device features will be removed | 
 
 ### Return type
 
@@ -2769,7 +2660,7 @@ null (empty response body)
 
 <a name="removePurchaseOrdersFromProduct"></a>
 # **removePurchaseOrdersFromProduct**
-> removePurchaseOrdersFromProduct(productId, body)
+> removePurchaseOrdersFromProduct(bodyproductId)
 
 Remove purchase orders from a product
 
@@ -2777,29 +2668,26 @@ Remove one or more purchase orders from a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be removed.
+let productId = 789; // Number | Id of the product from which the purchase orders will be removed
 
-var productId = 789; // Number | Id of the product from which the purchase orders will be removed
-
-var body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be removed.
-
-apiInstance.removePurchaseOrdersFromProduct(productId, body).then(function() {
+apiInstance.removePurchaseOrdersFromProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2809,8 +2697,8 @@ apiInstance.removePurchaseOrdersFromProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product from which the purchase orders will be removed | 
  **body** | [**PurchaseOrderIDs**](PurchaseOrderIDs.md)| Resources that shall be removed. | 
+ **productId** | **Number**| Id of the product from which the purchase orders will be removed | 
 
 ### Return type
 
@@ -2827,7 +2715,7 @@ null (empty response body)
 
 <a name="removeQuotationsFromProduct"></a>
 # **removeQuotationsFromProduct**
-> removeQuotationsFromProduct(productId, body)
+> removeQuotationsFromProduct(bodyproductId)
 
 Remove quotations from a product
 
@@ -2835,29 +2723,26 @@ Remove one or more quotations from a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be removed.
+let productId = 789; // Number | Id of the product from which the quotations will be removed
 
-var productId = 789; // Number | Id of the product from which the quotations will be removed
-
-var body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be removed.
-
-apiInstance.removeQuotationsFromProduct(productId, body).then(function() {
+apiInstance.removeQuotationsFromProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2867,8 +2752,8 @@ apiInstance.removeQuotationsFromProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product from which the quotations will be removed | 
  **body** | [**QuotationIDs**](QuotationIDs.md)| Resources that shall be removed. | 
+ **productId** | **Number**| Id of the product from which the quotations will be removed | 
 
 ### Return type
 
@@ -2885,7 +2770,7 @@ null (empty response body)
 
 <a name="removeSoftwaresOfProduct"></a>
 # **removeSoftwaresOfProduct**
-> removeSoftwaresOfProduct(productId, body)
+> removeSoftwaresOfProduct(bodyproductId)
 
 Remove software from a product
 
@@ -2893,29 +2778,26 @@ Remove one or more software from a product.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be removed.
+let productId = 789; // Number | Id of the product from which the software will be removed
 
-var productId = 789; // Number | Id of the product from which the software will be removed
-
-var body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be removed.
-
-apiInstance.removeSoftwaresOfProduct(productId, body).then(function() {
+apiInstance.removeSoftwaresOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2925,8 +2807,8 @@ apiInstance.removeSoftwaresOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product from which the software will be removed | 
  **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be removed. | 
+ **productId** | **Number**| Id of the product from which the software will be removed | 
 
 ### Return type
 
@@ -2943,7 +2825,7 @@ null (empty response body)
 
 <a name="removeSpecificationsFromProduct"></a>
 # **removeSpecificationsFromProduct**
-> removeSpecificationsFromProduct(productId, body)
+> removeSpecificationsFromProduct(bodyproductId)
 
 Delete specifications of a product
 
@@ -2951,29 +2833,26 @@ The specification keys in the body will be removed. Multiple specification keys 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = ["body_example"]; // [String] | Array of keys to delete from specifications
+let productId = 789; // Number | Id of the specified product
 
-var productId = 789; // Number | Id of the specified product
-
-var body = new NetilionApiDocumentation.SpecificationsDelete(); // SpecificationsDelete | Array of keys to delete from specifications
-
-apiInstance.removeSpecificationsFromProduct(productId, body).then(function() {
+apiInstance.removeSpecificationsFromProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -2983,8 +2862,8 @@ apiInstance.removeSpecificationsFromProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**[String]**](String.md)| Array of keys to delete from specifications | 
  **productId** | **Number**| Id of the specified product | 
- **body** | [**SpecificationsDelete**](SpecificationsDelete.md)| Array of keys to delete from specifications | 
 
 ### Return type
 
@@ -3001,7 +2880,7 @@ null (empty response body)
 
 <a name="renameSpecificationsOfProduct"></a>
 # **renameSpecificationsOfProduct**
-> renameSpecificationsOfProduct(productId, body)
+> renameSpecificationsOfProduct(bodyproductId)
 
 rename a key in the specification.
 
@@ -3009,29 +2888,26 @@ Rename a key of the specification object of a product. Instead of delete and rec
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
+let productId = 789; // Number | Id of the specified product
 
-var productId = 789; // Number | Id of the specified product
-
-var body = new NetilionApiDocumentation.SpecificationsRename(); // SpecificationsRename | The specifications object to patch.
-
-apiInstance.renameSpecificationsOfProduct(productId, body).then(function() {
+apiInstance.renameSpecificationsOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3041,8 +2917,8 @@ apiInstance.renameSpecificationsOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the specified product | 
  **body** | [**SpecificationsRename**](SpecificationsRename.md)| The specifications object to patch. | 
+ **productId** | **Number**| Id of the specified product | 
 
 ### Return type
 
@@ -3059,7 +2935,7 @@ null (empty response body)
 
 <a name="replaceCategoriesOfProduct"></a>
 # **replaceCategoriesOfProduct**
-> replaceCategoriesOfProduct(productId, body)
+> replaceCategoriesOfProduct(bodyproductId)
 
 Replace all categories of a product
 
@@ -3067,29 +2943,26 @@ Replaces all categories belonging to a product. You can send a list of resources
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.CategoryIDs(); // CategoryIDs | Resources that shall be added
+let productId = 789; // Number | Id of the product
 
-var productId = 789; // Number | Id of the product
-
-var body = new NetilionApiDocumentation.CategoryIDs(); // CategoryIDs | Resources that shall be added
-
-apiInstance.replaceCategoriesOfProduct(productId, body).then(function() {
+apiInstance.replaceCategoriesOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3099,8 +2972,8 @@ apiInstance.replaceCategoriesOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product | 
  **body** | [**CategoryIDs**](CategoryIDs.md)| Resources that shall be added | 
+ **productId** | **Number**| Id of the product | 
 
 ### Return type
 
@@ -3117,7 +2990,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfProduct"></a>
 # **replaceDocumentsOfProduct**
-> replaceDocumentsOfProduct(productId, body)
+> replaceDocumentsOfProduct(bodyproductId)
 
 Replace the documents of a product
 
@@ -3125,29 +2998,26 @@ Replaces all documents belonging to a product. You can send a list of resources 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+let productId = 789; // Number | Id of the product of which the documents will be replaced
 
-var productId = 789; // Number | Id of the product of which the documents will be replaced
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-
-apiInstance.replaceDocumentsOfProduct(productId, body).then(function() {
+apiInstance.replaceDocumentsOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3157,8 +3027,8 @@ apiInstance.replaceDocumentsOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product of which the documents will be replaced | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
+ **productId** | **Number**| Id of the product of which the documents will be replaced | 
 
 ### Return type
 
@@ -3175,7 +3045,7 @@ null (empty response body)
 
 <a name="replaceEdgeDeviceFeaturesOfProduct"></a>
 # **replaceEdgeDeviceFeaturesOfProduct**
-> replaceEdgeDeviceFeaturesOfProduct(productId, body)
+> replaceEdgeDeviceFeaturesOfProduct(bodyproductId)
 
 Replace the edge device features of a product
 
@@ -3183,29 +3053,26 @@ Replaces all edge device features belonging to a product. You can send a list of
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.EdgeDeviceFeatureIDs(); // EdgeDeviceFeatureIDs | Resources that shall be replaced
+let productId = 789; // Number | Id of the product of which the edge device features will be replaced
 
-var productId = 789; // Number | Id of the product of which the edge device features will be replaced
-
-var body = new NetilionApiDocumentation.EdgeDeviceFeatureIDs(); // EdgeDeviceFeatureIDs | Resources that shall be replaced
-
-apiInstance.replaceEdgeDeviceFeaturesOfProduct(productId, body).then(function() {
+apiInstance.replaceEdgeDeviceFeaturesOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3215,8 +3082,8 @@ apiInstance.replaceEdgeDeviceFeaturesOfProduct(productId, body).then(function() 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product of which the edge device features will be replaced | 
  **body** | [**EdgeDeviceFeatureIDs**](EdgeDeviceFeatureIDs.md)| Resources that shall be replaced | 
+ **productId** | **Number**| Id of the product of which the edge device features will be replaced | 
 
 ### Return type
 
@@ -3233,7 +3100,7 @@ null (empty response body)
 
 <a name="replacePurchaseOrdersOfProduct"></a>
 # **replacePurchaseOrdersOfProduct**
-> replacePurchaseOrdersOfProduct(productId, body)
+> replacePurchaseOrdersOfProduct(bodyproductId)
 
 Replace the purchase orders of a product
 
@@ -3241,29 +3108,26 @@ Replaces all purchase orders belonging to a product. You can send a list of reso
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be replaced
+let productId = 789; // Number | Id of the product of which the purchase orders will be replaced
 
-var productId = 789; // Number | Id of the product of which the purchase orders will be replaced
-
-var body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be replaced
-
-apiInstance.replacePurchaseOrdersOfProduct(productId, body).then(function() {
+apiInstance.replacePurchaseOrdersOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3273,8 +3137,8 @@ apiInstance.replacePurchaseOrdersOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product of which the purchase orders will be replaced | 
  **body** | [**PurchaseOrderIDs**](PurchaseOrderIDs.md)| Resources that shall be replaced | 
+ **productId** | **Number**| Id of the product of which the purchase orders will be replaced | 
 
 ### Return type
 
@@ -3291,7 +3155,7 @@ null (empty response body)
 
 <a name="replaceQuotationsOfProduct"></a>
 # **replaceQuotationsOfProduct**
-> replaceQuotationsOfProduct(productId, body)
+> replaceQuotationsOfProduct(bodyproductId)
 
 Replace the quotations of a product
 
@@ -3299,29 +3163,26 @@ Replaces all quotations belonging to a product. You can send a list of resources
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be replaced
+let productId = 789; // Number | Id of the product of which the quotations will be replaced
 
-var productId = 789; // Number | Id of the product of which the quotations will be replaced
-
-var body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be replaced
-
-apiInstance.replaceQuotationsOfProduct(productId, body).then(function() {
+apiInstance.replaceQuotationsOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3331,8 +3192,8 @@ apiInstance.replaceQuotationsOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product of which the quotations will be replaced | 
  **body** | [**QuotationIDs**](QuotationIDs.md)| Resources that shall be replaced | 
+ **productId** | **Number**| Id of the product of which the quotations will be replaced | 
 
 ### Return type
 
@@ -3349,7 +3210,7 @@ null (empty response body)
 
 <a name="replaceSoftwaresOfProduct"></a>
 # **replaceSoftwaresOfProduct**
-> replaceSoftwaresOfProduct(productId, body)
+> replaceSoftwaresOfProduct(bodyproductId)
 
 Replace the software of a product
 
@@ -3357,29 +3218,26 @@ Replaces all software belonging to a product. You can send a list of resources t
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be replaced
+let productId = 789; // Number | Id of the product of which the software will be replaced
 
-var productId = 789; // Number | Id of the product of which the software will be replaced
-
-var body = new NetilionApiDocumentation.SoftwareIDs(); // SoftwareIDs | Resources that shall be replaced
-
-apiInstance.replaceSoftwaresOfProduct(productId, body).then(function() {
+apiInstance.replaceSoftwaresOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3389,8 +3247,8 @@ apiInstance.replaceSoftwaresOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product of which the software will be replaced | 
  **body** | [**SoftwareIDs**](SoftwareIDs.md)| Resources that shall be replaced | 
+ **productId** | **Number**| Id of the product of which the software will be replaced | 
 
 ### Return type
 
@@ -3407,7 +3265,7 @@ null (empty response body)
 
 <a name="setProductVariantConfiguration"></a>
 # **setProductVariantConfiguration**
-> setProductVariantConfiguration(id, body)
+> setProductVariantConfiguration(bodyid)
 
 update configuration of a product variant
 
@@ -3415,29 +3273,26 @@ set / update configuration of a product variant. The configuration is defined by
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductVariantConfigurationRequest(); // ProductVariantConfigurationRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the product variant to update
 
-var id = 789; // Number | Id of the product variant to update
-
-var body = new NetilionApiDocumentation.ProductVariantConfigurationRequest(); // ProductVariantConfigurationRequest | Parameters that shall be updated.
-
-apiInstance.setProductVariantConfiguration(id, body).then(function() {
+apiInstance.setProductVariantConfiguration(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3447,8 +3302,8 @@ apiInstance.setProductVariantConfiguration(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the product variant to update | 
  **body** | [**ProductVariantConfigurationRequest**](ProductVariantConfigurationRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the product variant to update | 
 
 ### Return type
 
@@ -3465,7 +3320,7 @@ null (empty response body)
 
 <a name="updateProduct"></a>
 # **updateProduct**
-> updateProduct(id, body)
+> updateProduct(bodyid)
 
 Update a product
 
@@ -3473,29 +3328,26 @@ Update accessible parameters of the requested resource. Parameters supporting tr
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductRequest(); // ProductRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the product to update
 
-var id = 789; // Number | Id of the product to update
-
-var body = new NetilionApiDocumentation.ProductRequest(); // ProductRequest | Parameters that shall be updated.
-
-apiInstance.updateProduct(id, body).then(function() {
+apiInstance.updateProduct(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3505,8 +3357,8 @@ apiInstance.updateProduct(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the product to update | 
  **body** | [**ProductRequest**](ProductRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the product to update | 
 
 ### Return type
 
@@ -3523,7 +3375,7 @@ null (empty response body)
 
 <a name="updateProductFeature"></a>
 # **updateProductFeature**
-> updateProductFeature(id, body, opts)
+> updateProductFeature(bodyid, opts)
 
 Update a product feature
 
@@ -3531,32 +3383,28 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
-
-var id = 789; // Number | Id of the product feature to update
-
-var body = new NetilionApiDocumentation.ProductFeatureRequest(); // ProductFeatureRequest | Parameters that shall be updated.
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductFeatureRequest(); // ProductFeatureRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the product feature to update
+let opts = { 
   'contentLanguage': "contentLanguage_example" // String | language of the content
 };
-apiInstance.updateProductFeature(id, body, opts).then(function() {
+apiInstance.updateProductFeature(bodyid, opts).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3566,8 +3414,8 @@ apiInstance.updateProductFeature(id, body, opts).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the product feature to update | 
  **body** | [**ProductFeatureRequest**](ProductFeatureRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the product feature to update | 
  **contentLanguage** | **String**| language of the content | [optional] 
 
 ### Return type
@@ -3585,7 +3433,7 @@ null (empty response body)
 
 <a name="updateProductOption"></a>
 # **updateProductOption**
-> updateProductOption(id, body)
+> updateProductOption(bodyid)
 
 Update a product option
 
@@ -3593,29 +3441,26 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductOptionRequest(); // ProductOptionRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the product option to update
 
-var id = 789; // Number | Id of the product option to update
-
-var body = new NetilionApiDocumentation.ProductOptionRequest(); // ProductOptionRequest | Parameters that shall be updated.
-
-apiInstance.updateProductOption(id, body).then(function() {
+apiInstance.updateProductOption(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3625,8 +3470,8 @@ apiInstance.updateProductOption(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the product option to update | 
  **body** | [**ProductOptionRequest**](ProductOptionRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the product option to update | 
 
 ### Return type
 
@@ -3643,7 +3488,7 @@ null (empty response body)
 
 <a name="updateProductPicture"></a>
 # **updateProductPicture**
-> PictureResponse updateProductPicture(productId, id, image)
+> PictureResponse updateProductPicture(imageproductIdid)
 
 Update a product picture
 
@@ -3651,31 +3496,27 @@ Upload a new product picture. Checks the file-storage quota. Allowed content-typ
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let image = image_example; // Blob | 
+let productId = 789; // Number | Id of the product
+let id = 789; // Number | Id of the product picture
 
-var productId = 789; // Number | Id of the product
-
-var id = 789; // Number | Id of the product picture
-
-var image = "/path/to/file.txt"; // File | the image to upload (up to 1 MB)
-
-apiInstance.updateProductPicture(productId, id, image).then(function(data) {
+apiInstance.updateProductPicture(imageproductIdid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3685,9 +3526,9 @@ apiInstance.updateProductPicture(productId, id, image).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **image** | **Blob**|  | 
  **productId** | **Number**| Id of the product | 
  **id** | **Number**| Id of the product picture | 
- **image** | **File**| the image to upload (up to 1 MB) | 
 
 ### Return type
 
@@ -3704,7 +3545,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProductPictureLink"></a>
 # **updateProductPictureLink**
-> PictureResponse updateProductPictureLink(productId, id, body)
+> PictureResponse updateProductPictureLink(bodyproductIdid)
 
 Update a product picture link
 
@@ -3712,31 +3553,27 @@ Update a product picture link.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be updated
+let productId = 789; // Number | Id of the product
+let id = 789; // Number | Id of the product picture
 
-var productId = 789; // Number | Id of the product
-
-var id = 789; // Number | Id of the product picture
-
-var body = new NetilionApiDocumentation.PictureLinkRequest(); // PictureLinkRequest | Picture link object to be updated
-
-apiInstance.updateProductPictureLink(productId, id, body).then(function(data) {
+apiInstance.updateProductPictureLink(bodyproductIdid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3746,9 +3583,9 @@ apiInstance.updateProductPictureLink(productId, id, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be updated | 
  **productId** | **Number**| Id of the product | 
  **id** | **Number**| Id of the product picture | 
- **body** | [**PictureLinkRequest**](PictureLinkRequest.md)| Picture link object to be updated | 
 
 ### Return type
 
@@ -3765,7 +3602,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProductVariant"></a>
 # **updateProductVariant**
-> updateProductVariant(id, body)
+> updateProductVariant(bodyid)
 
 Update a product variant
 
@@ -3773,29 +3610,26 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = new NetilionApiDocumentation.ProductVariantRequest(); // ProductVariantRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the product variant to update
 
-var id = 789; // Number | Id of the product variant to update
-
-var body = new NetilionApiDocumentation.ProductVariantRequest(); // ProductVariantRequest | Parameters that shall be updated.
-
-apiInstance.updateProductVariant(id, body).then(function() {
+apiInstance.updateProductVariant(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3805,8 +3639,8 @@ apiInstance.updateProductVariant(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the product variant to update | 
  **body** | [**ProductVariantRequest**](ProductVariantRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the product variant to update | 
 
 ### Return type
 
@@ -3823,37 +3657,34 @@ null (empty response body)
 
 <a name="updateSpecificationsOfProduct"></a>
 # **updateSpecificationsOfProduct**
-> updateSpecificationsOfProduct(productId, body)
+> updateSpecificationsOfProduct(bodyproductId)
 
 Update specifications of a product
 
-Update the specification object of a product. To add specifications, just add the key and set the value in form of&#39;#/definitions/Specification&#39;. To mark an existing specification to be unknown, the value could be set to null. To delete keys, use the delete method. Multiple specification objects can be sent in the same request. Keys inside a specification are unique and can only be added once. Keys can only consist of [a-z A-Z 0-9 . - _ ]. All uppercase A-Z are converted to lower-case a-z. If a key occurs more than once in the request body, the last key-value will be saved.
+Update the specification object of a product. To add specifications, just add the key and set the value object with value, unit and source_timestamp. To mark an existing specification to be unknown, the value could be set to null. To delete keys, use the delete method. Multiple specification objects can be sent in the same request. Keys inside a specification are unique and can only be added once. Keys can only consist of [a-z A-Z 0-9 . - _ ]. All uppercase A-Z are converted to lower-case a-z. If a key occurs more than once in the request body, the last key-value will be saved.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let body = null; // {String: SpecificationRequest} | The specifications objects to patch.
+let productId = 789; // Number | Id of the specified product
 
-var productId = 789; // Number | Id of the specified product
-
-var body = new NetilionApiDocumentation.SpecificationsRequest(); // SpecificationsRequest | The specifications objects to patch.
-
-apiInstance.updateSpecificationsOfProduct(productId, body).then(function() {
+apiInstance.updateSpecificationsOfProduct(bodyproductId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3863,8 +3694,8 @@ apiInstance.updateSpecificationsOfProduct(productId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**{String: SpecificationRequest}**](Object.md)| The specifications objects to patch. | 
  **productId** | **Number**| Id of the specified product | 
- **body** | [**SpecificationsRequest**](SpecificationsRequest.md)| The specifications objects to patch. | 
 
 ### Return type
 
@@ -3881,7 +3712,7 @@ null (empty response body)
 
 <a name="uploadProductPicture"></a>
 # **uploadProductPicture**
-> PictureResponse uploadProductPicture(id, image)
+> PictureResponse uploadProductPicture(imageid)
 
 Upload a product picture
 
@@ -3889,29 +3720,26 @@ Upload a new product picture. Checks the file-storage quota. Allowed content-typ
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ProductApi();
+let apiInstance = new NetilionApiDocumentation.ProductApi();
+let image = image_example; // Blob | 
+let id = 789; // Number | Id of the product
 
-var id = 789; // Number | Id of the product
-
-var image = "/path/to/file.txt"; // File | the image to upload (up to 1 MB)
-
-apiInstance.uploadProductPicture(id, image).then(function(data) {
+apiInstance.uploadProductPicture(imageid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -3921,8 +3749,8 @@ apiInstance.uploadProductPicture(id, image).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **image** | **Blob**|  | 
  **id** | **Number**| Id of the product | 
- **image** | **File**| the image to upload (up to 1 MB) | 
 
 ### Return type
 

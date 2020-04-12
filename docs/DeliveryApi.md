@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.DeliveryApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,10 +23,9 @@ Method | HTTP request | Description
 [**replacePurchaseOrdersOfDelivery**](DeliveryApi.md#replacePurchaseOrdersOfDelivery) | **PATCH** /deliveries/{delivery_id}/purchase_orders | Replace the purchase orders of a delivery
 [**updateDelivery**](DeliveryApi.md#updateDelivery) | **PATCH** /deliveries/{id} | Update a delivery
 
-
 <a name="addAssetsToDelivery"></a>
 # **addAssetsToDelivery**
-> addAssetsToDelivery(deliveryId, body)
+> addAssetsToDelivery(bodydeliveryId)
 
 Add assets to a delivery
 
@@ -34,29 +33,26 @@ Add one or more assets to a delivery.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be added.
+let deliveryId = 789; // Number | Id of the delivery to which the assets will be added
 
-var deliveryId = 789; // Number | Id of the delivery to which the assets will be added
-
-var body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be added.
-
-apiInstance.addAssetsToDelivery(deliveryId, body).then(function() {
+apiInstance.addAssetsToDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -66,8 +62,8 @@ apiInstance.addAssetsToDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery to which the assets will be added | 
  **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be added. | 
+ **deliveryId** | **Number**| Id of the delivery to which the assets will be added | 
 
 ### Return type
 
@@ -84,7 +80,7 @@ null (empty response body)
 
 <a name="addDocumentsToDelivery"></a>
 # **addDocumentsToDelivery**
-> addDocumentsToDelivery(deliveryId, body)
+> addDocumentsToDelivery(bodydeliveryId)
 
 Add documents to a delivery
 
@@ -92,29 +88,26 @@ Add one or more documents to a delivery.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+let deliveryId = 789; // Number | Id of the delivery to which the documents will be added
 
-var deliveryId = 789; // Number | Id of the delivery to which the documents will be added
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-
-apiInstance.addDocumentsToDelivery(deliveryId, body).then(function() {
+apiInstance.addDocumentsToDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -124,8 +117,8 @@ apiInstance.addDocumentsToDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery to which the documents will be added | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
+ **deliveryId** | **Number**| Id of the delivery to which the documents will be added | 
 
 ### Return type
 
@@ -142,7 +135,7 @@ null (empty response body)
 
 <a name="addPurchaseOrdersToDelivery"></a>
 # **addPurchaseOrdersToDelivery**
-> addPurchaseOrdersToDelivery(deliveryId, body)
+> addPurchaseOrdersToDelivery(bodydeliveryId)
 
 Add all purchase oders to a delivery
 
@@ -150,29 +143,26 @@ Add one or more all purchase oders to a delivery.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be added.
+let deliveryId = 789; // Number | Id of the delivery to which the all purchase oders will be added
 
-var deliveryId = 789; // Number | Id of the delivery to which the all purchase oders will be added
-
-var body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be added.
-
-apiInstance.addPurchaseOrdersToDelivery(deliveryId, body).then(function() {
+apiInstance.addPurchaseOrdersToDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -182,8 +172,8 @@ apiInstance.addPurchaseOrdersToDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery to which the all purchase oders will be added | 
  **body** | [**PurchaseOrderIDs**](PurchaseOrderIDs.md)| Resources that shall be added. | 
+ **deliveryId** | **Number**| Id of the delivery to which the all purchase oders will be added | 
 
 ### Return type
 
@@ -208,27 +198,25 @@ Delivery must have a name, number, sender, receiver and a status.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.DeliveryRequest(); // DeliveryRequest | Delivery to create
 
-var body = new NetilionApiDocumentation.DeliveryRequest(); // DeliveryRequest | Delivery to create
-
-apiInstance.createDelivery(body).then(function(data) {
+apiInstance.createDelivery(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -263,27 +251,25 @@ Delete a specific resource in your accessible scope, identified by the id in the
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let id = 789; // Number | Id of the delivery to delete
 
-var id = 789; // Number | Id of the delivery to delete
-
-apiInstance.deleteDelivery(id).then(function() {
+apiInstance.deleteDelivery(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -305,7 +291,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAssetsOfDelivery"></a>
@@ -318,25 +304,22 @@ Returns a list of all assets that are available in your scope. You can apply que
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
-
-var deliveryId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let deliveryId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -354,9 +337,9 @@ var opts = {
   'specificationsValue': "specificationsValue_example", // String | Filter accepts `*` as wildcard, supports comma list of values in connection with specifications_key filter. Does not work for vectors
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `serial_number`, `created_at` or `updated_at`, `last_seen_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAssetsOfDelivery(deliveryId, opts).then(function(data) {
+apiInstance.getAssetsOfDelivery(deliveryId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -394,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDeliveries"></a>
@@ -407,23 +390,21 @@ Returns a list of deliveries in your accessible scope. If the query has no match
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   '_number': "_number_example", // String | Filter accepts `*` as wildcard
@@ -434,11 +415,11 @@ var opts = {
   'dateOfShipmentTo': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getDeliveries(opts).then(function(data) {
+apiInstance.getDeliveries(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -470,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDeliveryById"></a>
@@ -483,27 +464,25 @@ Get a specific delivery in your accessible scope, identified by the id in the UR
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let id = 789; // Number | Id of the delivery to fetch
 
-var id = 789; // Number | Id of the delivery to fetch
-
-apiInstance.getDeliveryById(id).then(function(data) {
+apiInstance.getDeliveryById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -525,7 +504,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDeliveryIdStatus"></a>
@@ -538,31 +517,28 @@ Returns the status of the delivery. You can apply the query parameters listed be
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
-
-var deliveryId = 789; // Number | Id of the specified delivery
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let deliveryId = 789; // Number | Id of the specified delivery
+let opts = { 
   'include': "include_example", // String | Comma separated list of objects to include in response
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDeliveryIdStatus(deliveryId, opts).then(function(data) {
+apiInstance.getDeliveryIdStatus(deliveryId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -574,7 +550,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deliveryId** | **Number**| Id of the specified delivery | 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -586,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocumentsOfDelivery"></a>
@@ -599,25 +575,22 @@ Returns a list of documents. If the query has no matches, the response is an emp
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
-
-var deliveryId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let deliveryId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -628,12 +601,15 @@ var opts = {
   'classificationId': "classificationId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
+  'validFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfDelivery(deliveryId, opts).then(function(data) {
+apiInstance.getDocumentsOfDelivery(deliveryId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -654,8 +630,11 @@ Name | Type | Description  | Notes
  **classificationId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **categoryId** | **String**| One or multiple ids (comma list). By adding &#x60;+&#x60; after the id, the filter considers the given category and all its children (e.g. 3+). | [optional] 
+ **validFrom** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -667,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPurchaseOrdersOfDelivery"></a>
@@ -680,25 +659,22 @@ Returns a list of all all purchase oder that are available in your scope. You ca
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
-
-var deliveryId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let deliveryId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -710,11 +686,11 @@ var opts = {
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'quotationId': "quotationId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getPurchaseOrdersOfDelivery(deliveryId, opts).then(function(data) {
+apiInstance.getPurchaseOrdersOfDelivery(deliveryId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -748,12 +724,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="removeAssetsFromDelivery"></a>
 # **removeAssetsFromDelivery**
-> removeAssetsFromDelivery(deliveryId, body)
+> removeAssetsFromDelivery(bodydeliveryId)
 
 Remove assets from a delivery
 
@@ -761,29 +737,26 @@ Remove one or more assets from a delivery in your accessible scope.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be removed.
+let deliveryId = 789; // Number | Id of the delivery from which the assets will be removed
 
-var deliveryId = 789; // Number | Id of the delivery from which the assets will be removed
-
-var body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be removed.
-
-apiInstance.removeAssetsFromDelivery(deliveryId, body).then(function() {
+apiInstance.removeAssetsFromDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -793,8 +766,8 @@ apiInstance.removeAssetsFromDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery from which the assets will be removed | 
  **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be removed. | 
+ **deliveryId** | **Number**| Id of the delivery from which the assets will be removed | 
 
 ### Return type
 
@@ -811,7 +784,7 @@ null (empty response body)
 
 <a name="removeDocumentsFromDelivery"></a>
 # **removeDocumentsFromDelivery**
-> removeDocumentsFromDelivery(deliveryId, body)
+> removeDocumentsFromDelivery(bodydeliveryId)
 
 Remove documents from a delivery
 
@@ -819,29 +792,26 @@ Remove one or more documents from a delivery in your accessible scope.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+let deliveryId = 789; // Number | Id of the delivery from which the documents will be removed
 
-var deliveryId = 789; // Number | Id of the delivery from which the documents will be removed
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-
-apiInstance.removeDocumentsFromDelivery(deliveryId, body).then(function() {
+apiInstance.removeDocumentsFromDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -851,8 +821,8 @@ apiInstance.removeDocumentsFromDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery from which the documents will be removed | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
+ **deliveryId** | **Number**| Id of the delivery from which the documents will be removed | 
 
 ### Return type
 
@@ -869,7 +839,7 @@ null (empty response body)
 
 <a name="removePurchaseOrdersFromDelivery"></a>
 # **removePurchaseOrdersFromDelivery**
-> removePurchaseOrdersFromDelivery(deliveryId, body)
+> removePurchaseOrdersFromDelivery(bodydeliveryId)
 
 Remove purchase orders from a delivery
 
@@ -877,29 +847,26 @@ Remove one or more purchase orders from a delivery in your accessible scope.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be removed.
+let deliveryId = 789; // Number | Id of the delivery from which the purchase orders will be removed
 
-var deliveryId = 789; // Number | Id of the delivery from which the purchase orders will be removed
-
-var body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be removed.
-
-apiInstance.removePurchaseOrdersFromDelivery(deliveryId, body).then(function() {
+apiInstance.removePurchaseOrdersFromDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -909,8 +876,8 @@ apiInstance.removePurchaseOrdersFromDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery from which the purchase orders will be removed | 
  **body** | [**PurchaseOrderIDs**](PurchaseOrderIDs.md)| Resources that shall be removed. | 
+ **deliveryId** | **Number**| Id of the delivery from which the purchase orders will be removed | 
 
 ### Return type
 
@@ -927,7 +894,7 @@ null (empty response body)
 
 <a name="replaceAssetsOfDelivery"></a>
 # **replaceAssetsOfDelivery**
-> replaceAssetsOfDelivery(deliveryId, body)
+> replaceAssetsOfDelivery(bodydeliveryId)
 
 Replace the assets of a delivery
 
@@ -935,29 +902,26 @@ Replaces all assets belonging to a delivery. You can send a list of resources th
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be replaced
+let deliveryId = 789; // Number | Id of the delivery of which the assets will be replaced
 
-var deliveryId = 789; // Number | Id of the delivery of which the assets will be replaced
-
-var body = new NetilionApiDocumentation.AssetIDs(); // AssetIDs | Resources that shall be replaced
-
-apiInstance.replaceAssetsOfDelivery(deliveryId, body).then(function() {
+apiInstance.replaceAssetsOfDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -967,8 +931,8 @@ apiInstance.replaceAssetsOfDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery of which the assets will be replaced | 
  **body** | [**AssetIDs**](AssetIDs.md)| Resources that shall be replaced | 
+ **deliveryId** | **Number**| Id of the delivery of which the assets will be replaced | 
 
 ### Return type
 
@@ -985,7 +949,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfDelivery"></a>
 # **replaceDocumentsOfDelivery**
-> replaceDocumentsOfDelivery(deliveryId, body)
+> replaceDocumentsOfDelivery(bodydeliveryId)
 
 Replace the documents of a delivery
 
@@ -993,29 +957,26 @@ Replaces all documents belonging to a delivery. You can send a list of resources
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+let deliveryId = 789; // Number | Id of the delivery of which the documents will be replaced
 
-var deliveryId = 789; // Number | Id of the delivery of which the documents will be replaced
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-
-apiInstance.replaceDocumentsOfDelivery(deliveryId, body).then(function() {
+apiInstance.replaceDocumentsOfDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1025,8 +986,8 @@ apiInstance.replaceDocumentsOfDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery of which the documents will be replaced | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
+ **deliveryId** | **Number**| Id of the delivery of which the documents will be replaced | 
 
 ### Return type
 
@@ -1043,7 +1004,7 @@ null (empty response body)
 
 <a name="replacePurchaseOrdersOfDelivery"></a>
 # **replacePurchaseOrdersOfDelivery**
-> replacePurchaseOrdersOfDelivery(deliveryId, body)
+> replacePurchaseOrdersOfDelivery(bodydeliveryId)
 
 Replace the purchase orders of a delivery
 
@@ -1051,29 +1012,26 @@ Replaces all purchase orders belonging to a delivery. You can send a list of res
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be replaced
+let deliveryId = 789; // Number | Id of the delivery of which the purchase orders will be replaced
 
-var deliveryId = 789; // Number | Id of the delivery of which the purchase orders will be replaced
-
-var body = new NetilionApiDocumentation.PurchaseOrderIDs(); // PurchaseOrderIDs | Resources that shall be replaced
-
-apiInstance.replacePurchaseOrdersOfDelivery(deliveryId, body).then(function() {
+apiInstance.replacePurchaseOrdersOfDelivery(bodydeliveryId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1083,8 +1041,8 @@ apiInstance.replacePurchaseOrdersOfDelivery(deliveryId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deliveryId** | **Number**| Id of the delivery of which the purchase orders will be replaced | 
  **body** | [**PurchaseOrderIDs**](PurchaseOrderIDs.md)| Resources that shall be replaced | 
+ **deliveryId** | **Number**| Id of the delivery of which the purchase orders will be replaced | 
 
 ### Return type
 
@@ -1101,7 +1059,7 @@ null (empty response body)
 
 <a name="updateDelivery"></a>
 # **updateDelivery**
-> updateDelivery(id, body)
+> updateDelivery(bodyid)
 
 Update a delivery
 
@@ -1109,29 +1067,26 @@ Update accessible parameters of the requested resource in your accessible scope.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let apiInstance = new NetilionApiDocumentation.DeliveryApi();
+let body = new NetilionApiDocumentation.DeliveryRequest(); // DeliveryRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the delivery to update
 
-var id = 789; // Number | Id of the delivery to update
-
-var body = new NetilionApiDocumentation.DeliveryRequest(); // DeliveryRequest | Parameters that shall be updated.
-
-apiInstance.updateDelivery(id, body).then(function() {
+apiInstance.updateDelivery(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1141,8 +1096,8 @@ apiInstance.updateDelivery(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the delivery to update | 
  **body** | [**DeliveryRequest**](DeliveryRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the delivery to update | 
 
 ### Return type
 

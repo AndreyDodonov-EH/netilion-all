@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **sender** | [**NestedID**](NestedID.md) |  | [optional] 
 **receiver** | [**NestedID**](NestedID.md) |  | [optional] 
 **requestForQuotation** | [**NestedID**](NestedID.md) |  | [optional] 
-
-

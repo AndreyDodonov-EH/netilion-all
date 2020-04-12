@@ -8,6 +8,4 @@ Name | Type | Description | Notes
 **status** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **tenant** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **downloadHref** | **String** | the download link | [optional] 
-**links** | [**Links5**](Links5.md) |  | [optional] 
-
-
+**links** | **Object** |  | [optional] 

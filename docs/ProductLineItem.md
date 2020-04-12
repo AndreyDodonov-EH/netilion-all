@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **productCode** | **String** | product code for the requested object | [optional] 
 **quantity** | **Number** | Quantity of the product for the requested object | [optional] 
 **href** | **String** | Link to product | [optional] 
-
-

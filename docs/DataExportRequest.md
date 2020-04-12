@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **startDate** | **String** | start of export date range | [optional] 
 **endDate** | **String** | end of export date range, if not provided, current date will be used | [optional] 
 **instrumentation** | [**NestedID**](NestedID.md) |  | [optional] 
-
-

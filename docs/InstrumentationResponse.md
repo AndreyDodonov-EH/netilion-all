@@ -8,6 +8,4 @@ Name | Type | Description | Notes
 **type** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **parent** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **tenant** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
-**links** | [**Links9**](Links9.md) |  | [optional] 
-
-
+**links** | **Object** |  | [optional] 

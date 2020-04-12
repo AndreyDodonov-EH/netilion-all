@@ -8,5 +8,3 @@ Name | Type | Description | Notes
 **productCode** | **String** | product code | [optional] 
 **href** | **String** | Link to get product information | 
 **manufacturer** | [**CompanyNested**](CompanyNested.md) |  | 
-
-

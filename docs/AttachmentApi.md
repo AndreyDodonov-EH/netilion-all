@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.AttachmentApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**updateLinkAttachment**](AttachmentApi.md#updateLinkAttachment) | **PATCH** /attachments/links/{id} | Update an attachment with a link
 [**uploadAttachment**](AttachmentApi.md#uploadAttachment) | **POST** /attachments | Create and upload a new attachment
 
-
 <a name="createLinkAttachment"></a>
 # **createLinkAttachment**
 > AttachmentResponse createLinkAttachment(body)
@@ -24,27 +23,25 @@ Create an attachments that links to an external resource
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let body = new NetilionApiDocumentation.AttachmentLinkRequest(); // AttachmentLinkRequest | Attachment object that needs to be created
 
-var body = new NetilionApiDocumentation.AttachmentLinkRequest(); // AttachmentLinkRequest | Attachment object that needs to be created
-
-apiInstance.createLinkAttachment(body).then(function(data) {
+apiInstance.createLinkAttachment(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -79,27 +76,25 @@ Delete a specific attachment resource and file identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let id = 789; // Number | Id of the attachment to fetch
 
-var id = 789; // Number | Id of the attachment to fetch
-
-apiInstance.deleteAttachment(id).then(function() {
+apiInstance.deleteAttachment(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -121,7 +116,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="downloadAttachment"></a>
@@ -134,30 +129,27 @@ Download the file of the attachment with the original filename. Content-Transfer
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
-
-var id = 789; // Number | Id of the attachment to fetch
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let id = 789; // Number | Id of the attachment to fetch
+let opts = { 
   'disposition': "disposition_example" // String | Disposition type the download should be returned with. Allowed values are \"inline\" and \"attachment\". Default is \"attachment\".
 };
-apiInstance.downloadAttachment(id, opts).then(function() {
+apiInstance.downloadAttachment(id, opts).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -180,7 +172,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAttachmentById"></a>
@@ -193,27 +185,25 @@ specific attachment in your accessible scope, identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let id = 789; // Number | Id of the attachment to fetch
 
-var id = 789; // Number | Id of the attachment to fetch
-
-apiInstance.getAttachmentById(id).then(function(data) {
+apiInstance.getAttachmentById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -235,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAttachments"></a>
@@ -244,27 +234,25 @@ Name | Type | Description  | Notes
 
 Get a range of attachments
 
-Returns a list of all attachments that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#39;
+Returns a list of all attachments that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#x27;
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'contentAuthor': "contentAuthor_example", // String | Filter accepts `*` as wildcard
@@ -274,11 +262,11 @@ var opts = {
   'contentDateFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM-DDThh:mm:ss
   'contentDateTo': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM-DDThh:mm:ss
   'fileName': "fileName_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAttachments(opts).then(function(data) {
+apiInstance.getAttachments(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -309,12 +297,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateAttachment"></a>
 # **updateAttachment**
-> updateAttachment(id, opts)
+> updateAttachment(id)
 
 Update an attachment and especially its file
 
@@ -322,35 +310,25 @@ The attachment object and also the file can be changed with a patch call. Checks
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let id = 789; // Number | Id of the attachment to update
 
-var id = 789; // Number | Id of the attachment to update
-
-var opts = { 
-  'file': "/path/to/file.txt", // File | the filedata to upload
-  'documentId': 789, // Number | the document this attachment belongs to
-  'contentAuthor': "contentAuthor_example", // String | the file authors name
-  'contentDate': "contentDate_example", // String | last edit date of the file. Datetime must be in format YYYY-MM-DD or YYYY-MM-DDThh:mm:ss
-  'remarks': "remarks_example", // String | remarks on the attachment
-  'languages': "languages_example" // String | the files content languages. Send as comma separated list with alpha2 language codes (eg. de,en,fr). Supported languages are defined in ISO639-1
-};
-apiInstance.updateAttachment(id, opts).then(function() {
+apiInstance.updateAttachment(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -361,12 +339,12 @@ apiInstance.updateAttachment(id, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of the attachment to update | 
- **file** | **File**| the filedata to upload | [optional] 
- **documentId** | **Number**| the document this attachment belongs to | [optional] 
- **contentAuthor** | **String**| the file authors name | [optional] 
- **contentDate** | **String**| last edit date of the file. Datetime must be in format YYYY-MM-DD or YYYY-MM-DDThh:mm:ss | [optional] 
- **remarks** | **String**| remarks on the attachment | [optional] 
- **languages** | **String**| the files content languages. Send as comma separated list with alpha2 language codes (eg. de,en,fr). Supported languages are defined in ISO639-1 | [optional] 
+ **file** | **Blob**|  | [optional] 
+ **documentId** | **Number**|  | [optional] 
+ **contentAuthor** | **String**|  | [optional] 
+ **contentDate** | **String**|  | [optional] 
+ **remarks** | **String**|  | [optional] 
+ **languages** | **String**|  | [optional] 
 
 ### Return type
 
@@ -383,7 +361,7 @@ null (empty response body)
 
 <a name="updateLinkAttachment"></a>
 # **updateLinkAttachment**
-> AttachmentResponse updateLinkAttachment(id, body)
+> AttachmentResponse updateLinkAttachment(bodyid)
 
 Update an attachment with a link
 
@@ -391,29 +369,26 @@ update an attachment that has a link
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let body = new NetilionApiDocumentation.AttachmentLinkRequest(); // AttachmentLinkRequest | Attachment object that needs to be created
+let id = 789; // Number | Id of the attachment to update
 
-var id = 789; // Number | Id of the attachment to update
-
-var body = new NetilionApiDocumentation.AttachmentLinkRequest(); // AttachmentLinkRequest | Attachment object that needs to be created
-
-apiInstance.updateLinkAttachment(id, body).then(function(data) {
+apiInstance.updateLinkAttachment(bodyid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -423,8 +398,8 @@ apiInstance.updateLinkAttachment(id, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the attachment to update | 
  **body** | [**AttachmentLinkRequest**](AttachmentLinkRequest.md)| Attachment object that needs to be created | 
+ **id** | **Number**| Id of the attachment to update | 
 
 ### Return type
 
@@ -441,7 +416,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadAttachment"></a>
 # **uploadAttachment**
-> AttachmentResponse uploadAttachment(file, documentId, opts)
+> AttachmentResponse uploadAttachment(filedocumentIdcontentAuthorcontentVersioncontentDateremarkslanguages)
 
 Create and upload a new attachment
 
@@ -449,36 +424,31 @@ the creation of an attachment works through a multipart/form-data upload of the 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let apiInstance = new NetilionApiDocumentation.AttachmentApi();
+let file = file_example; // Blob | 
+let documentId = 789; // Number | 
+let contentAuthor = "contentAuthor_example"; // String | 
+let contentVersion = "contentVersion_example"; // String | 
+let contentDate = "contentDate_example"; // String | 
+let remarks = "remarks_example"; // String | 
+let languages = "languages_example"; // String | 
 
-var file = "/path/to/file.txt"; // File | the filedata to upload
-
-var documentId = 789; // Number | the document this attachment belongs to
-
-var opts = { 
-  'contentAuthor': "contentAuthor_example", // String | the file authors name
-  'contentVersion': "contentVersion_example", // String | The version can be set as float
-  'contentDate': "contentDate_example", // String | last edit date of the file. Datetime must be in format YYYY-MM-DD or YYYY-MM-DDThh:mm:ss
-  'remarks': "remarks_example", // String | remarks on the attachment
-  'languages': "languages_example" // String | the files content languages. Send as comma separated list with alpha2 language codes (eg. de,en,fr). Supported languages are defined in ISO639-1
-};
-apiInstance.uploadAttachment(file, documentId, opts).then(function(data) {
+apiInstance.uploadAttachment(filedocumentIdcontentAuthorcontentVersioncontentDateremarkslanguages).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -488,13 +458,13 @@ apiInstance.uploadAttachment(file, documentId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**| the filedata to upload | 
- **documentId** | **Number**| the document this attachment belongs to | 
- **contentAuthor** | **String**| the file authors name | [optional] 
- **contentVersion** | **String**| The version can be set as float | [optional] 
- **contentDate** | **String**| last edit date of the file. Datetime must be in format YYYY-MM-DD or YYYY-MM-DDThh:mm:ss | [optional] 
- **remarks** | **String**| remarks on the attachment | [optional] 
- **languages** | **String**| the files content languages. Send as comma separated list with alpha2 language codes (eg. de,en,fr). Supported languages are defined in ISO639-1 | [optional] 
+ **file** | **Blob**|  | 
+ **documentId** | **Number**|  | 
+ **contentAuthor** | **String**|  | 
+ **contentVersion** | **String**|  | 
+ **contentDate** | **String**|  | 
+ **remarks** | **String**|  | 
+ **languages** | **String**|  | 
 
 ### Return type
 

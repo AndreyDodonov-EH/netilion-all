@@ -8,6 +8,4 @@ Name | Type | Description | Notes
 **manufacturer** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **parent** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **tenant** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
-**links** | [**ProductResponseLinks**](ProductResponseLinks.md) |  | [optional] 
-
-
+**links** | **Object** |  | [optional] 

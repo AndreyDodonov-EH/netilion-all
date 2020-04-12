@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.PurchaseOrderApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,10 +24,9 @@ Method | HTTP request | Description
 [**updateProductQuantitiesOfPurchaseOrder**](PurchaseOrderApi.md#updateProductQuantitiesOfPurchaseOrder) | **PATCH** /purchase_orders/{purchase_order_id}/products/quantity | Change the product quantity in a purchase order
 [**updatePurchaseOrder**](PurchaseOrderApi.md#updatePurchaseOrder) | **PATCH** /purchase_orders/{id} | Update a purchase order
 
-
 <a name="addDeliviersToPurchaseOrder"></a>
 # **addDeliviersToPurchaseOrder**
-> addDeliviersToPurchaseOrder(purchaseOrderId, body)
+> addDeliviersToPurchaseOrder(bodypurchaseOrderId)
 
 Add deliveries to a purchase order
 
@@ -35,29 +34,26 @@ Add one or more deliveries to a purchase order.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be added.
+let purchaseOrderId = 789; // Number | Id of the purchase order to which the deliveries will be added
 
-var purchaseOrderId = 789; // Number | Id of the purchase order to which the deliveries will be added
-
-var body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be added.
-
-apiInstance.addDeliviersToPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.addDeliviersToPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -67,8 +63,8 @@ apiInstance.addDeliviersToPurchaseOrder(purchaseOrderId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order to which the deliveries will be added | 
  **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be added. | 
+ **purchaseOrderId** | **Number**| Id of the purchase order to which the deliveries will be added | 
 
 ### Return type
 
@@ -85,7 +81,7 @@ null (empty response body)
 
 <a name="addDocumentsToPurchaseOrder"></a>
 # **addDocumentsToPurchaseOrder**
-> addDocumentsToPurchaseOrder(purchaseOrderId, body)
+> addDocumentsToPurchaseOrder(bodypurchaseOrderId)
 
 Add documents to a purchase order
 
@@ -93,29 +89,26 @@ Add one or more documents to a purchase order.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+let purchaseOrderId = 789; // Number | Id of the purchase order to which the documents will be added
 
-var purchaseOrderId = 789; // Number | Id of the purchase order to which the documents will be added
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-
-apiInstance.addDocumentsToPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.addDocumentsToPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -125,8 +118,8 @@ apiInstance.addDocumentsToPurchaseOrder(purchaseOrderId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order to which the documents will be added | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
+ **purchaseOrderId** | **Number**| Id of the purchase order to which the documents will be added | 
 
 ### Return type
 
@@ -143,7 +136,7 @@ null (empty response body)
 
 <a name="addProductsToPurchaseOrder"></a>
 # **addProductsToPurchaseOrder**
-> addProductsToPurchaseOrder(purchaseOrderId, body)
+> addProductsToPurchaseOrder(bodypurchaseOrderId)
 
 Add products to a purchase order
 
@@ -151,29 +144,26 @@ Add one or more products to a purchase order.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.ProductIDs(); // ProductIDs | Resources that shall be added.
+let purchaseOrderId = 789; // Number | Id of the purchase order to which the products will be added
 
-var purchaseOrderId = 789; // Number | Id of the purchase order to which the products will be added
-
-var body = new NetilionApiDocumentation.ProductIDs(); // ProductIDs | Resources that shall be added.
-
-apiInstance.addProductsToPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.addProductsToPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -183,8 +173,8 @@ apiInstance.addProductsToPurchaseOrder(purchaseOrderId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order to which the products will be added | 
  **body** | [**ProductIDs**](ProductIDs.md)| Resources that shall be added. | 
+ **purchaseOrderId** | **Number**| Id of the purchase order to which the products will be added | 
 
 ### Return type
 
@@ -209,27 +199,25 @@ Create a new purchase order with a sender and a receiver.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.PurchaseOrderRequest(); // PurchaseOrderRequest | Object body that will be created.
 
-var body = new NetilionApiDocumentation.PurchaseOrderRequest(); // PurchaseOrderRequest | Object body that will be created.
-
-apiInstance.createPurchaseOrder(body).then(function(data) {
+apiInstance.createPurchaseOrder(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -264,27 +252,25 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let id = 789; // Number | Id of the purchase order to delete
 
-var id = 789; // Number | Id of the purchase order to delete
-
-apiInstance.deletePurchaseOrder(id).then(function() {
+apiInstance.deletePurchaseOrder(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -306,7 +292,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDeliviersOfPurchaseOrder"></a>
@@ -319,25 +305,22 @@ Returns a list of all deliveries that are available in your scope. You can apply
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
-
-var purchaseOrderId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let purchaseOrderId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   '_number': "_number_example", // String | Filter accepts `*` as wildcard
@@ -348,11 +331,11 @@ var opts = {
   'statusId': "statusId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getDeliviersOfPurchaseOrder(purchaseOrderId, opts).then(function(data) {
+apiInstance.getDeliviersOfPurchaseOrder(purchaseOrderId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -385,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocumentsOfPurchaseOrder"></a>
@@ -398,25 +381,22 @@ Returns a list of documents. If the query has no matches, the response is an emp
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
-
-var purchaseOrderId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let purchaseOrderId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -427,12 +407,15 @@ var opts = {
   'classificationId': "classificationId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
+  'validFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfPurchaseOrder(purchaseOrderId, opts).then(function(data) {
+apiInstance.getDocumentsOfPurchaseOrder(purchaseOrderId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -453,8 +436,11 @@ Name | Type | Description  | Notes
  **classificationId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **categoryId** | **String**| One or multiple ids (comma list). By adding &#x60;+&#x60; after the id, the filter considers the given category and all its children (e.g. 3+). | [optional] 
+ **validFrom** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -466,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProductsOfPurchaseOrder"></a>
@@ -479,25 +465,22 @@ Returns a list of all products that are available in your scope. You can apply t
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
-
-var purchaseOrderId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let purchaseOrderId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -511,9 +494,9 @@ var opts = {
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getProductsOfPurchaseOrder(purchaseOrderId, opts).then(function(data) {
+apiInstance.getProductsOfPurchaseOrder(purchaseOrderId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -535,7 +518,7 @@ Name | Type | Description  | Notes
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **categoryId** | **String**| One or multiple ids (comma list). By adding &#x60;+&#x60; after the id, the filter considers the given category and all its children (e.g. 3+). | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -547,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPurchaseOrderById"></a>
@@ -560,27 +543,25 @@ Get a specific purchase order identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let id = 789; // Number | Id of the purchase order to fetch
 
-var id = 789; // Number | Id of the purchase order to fetch
-
-apiInstance.getPurchaseOrderById(id).then(function(data) {
+apiInstance.getPurchaseOrderById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -602,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPurchaseOrderIdStatus"></a>
@@ -615,31 +596,28 @@ Returns the status of the purchase order. Needed if only permission on purchase 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
-
-var purchaseOrderId = 789; // Number | Id of the specified purchase order
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let purchaseOrderId = 789; // Number | Id of the specified purchase order
+let opts = { 
   'include': "include_example", // String | Comma separated list of objects to include in response
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getPurchaseOrderIdStatus(purchaseOrderId, opts).then(function(data) {
+apiInstance.getPurchaseOrderIdStatus(purchaseOrderId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -651,7 +629,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **purchaseOrderId** | **Number**| Id of the specified purchase order | 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -663,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPurchaseOrders"></a>
@@ -676,23 +654,21 @@ Returns a list of purchase orders. If the query has no matches, the response is 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -704,11 +680,11 @@ var opts = {
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'quotationId': "quotationId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getPurchaseOrders(opts).then(function(data) {
+apiInstance.getPurchaseOrders(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -741,12 +717,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="removeDeliviersFromPurchaseOrder"></a>
 # **removeDeliviersFromPurchaseOrder**
-> removeDeliviersFromPurchaseOrder(purchaseOrderId, body)
+> removeDeliviersFromPurchaseOrder(bodypurchaseOrderId)
 
 Remove deliveries from a purchase order
 
@@ -754,29 +730,26 @@ Remove one or more deliveries from a purchase order.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be removed.
+let purchaseOrderId = 789; // Number | Id of the purchase order from which the deliveries will be removed
 
-var purchaseOrderId = 789; // Number | Id of the purchase order from which the deliveries will be removed
-
-var body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be removed.
-
-apiInstance.removeDeliviersFromPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.removeDeliviersFromPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -786,8 +759,8 @@ apiInstance.removeDeliviersFromPurchaseOrder(purchaseOrderId, body).then(functio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order from which the deliveries will be removed | 
  **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be removed. | 
+ **purchaseOrderId** | **Number**| Id of the purchase order from which the deliveries will be removed | 
 
 ### Return type
 
@@ -804,7 +777,7 @@ null (empty response body)
 
 <a name="removeDocumentsFromPurchaseOrder"></a>
 # **removeDocumentsFromPurchaseOrder**
-> removeDocumentsFromPurchaseOrder(purchaseOrderId, body)
+> removeDocumentsFromPurchaseOrder(bodypurchaseOrderId)
 
 Remove documents from a purchase order
 
@@ -812,29 +785,26 @@ Remove one or more documents from a purchase order.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+let purchaseOrderId = 789; // Number | Id of the purchase order from which the documents will be removed
 
-var purchaseOrderId = 789; // Number | Id of the purchase order from which the documents will be removed
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-
-apiInstance.removeDocumentsFromPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.removeDocumentsFromPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -844,8 +814,8 @@ apiInstance.removeDocumentsFromPurchaseOrder(purchaseOrderId, body).then(functio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order from which the documents will be removed | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
+ **purchaseOrderId** | **Number**| Id of the purchase order from which the documents will be removed | 
 
 ### Return type
 
@@ -862,7 +832,7 @@ null (empty response body)
 
 <a name="removeProductsFromPurchaseOrder"></a>
 # **removeProductsFromPurchaseOrder**
-> removeProductsFromPurchaseOrder(purchaseOrderId, body)
+> removeProductsFromPurchaseOrder(bodypurchaseOrderId)
 
 Remove products from a purchase order
 
@@ -870,29 +840,26 @@ Remove one or more products from a purchase order.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.ProductIDs(); // ProductIDs | Resources that shall be removed.
+let purchaseOrderId = 789; // Number | Id of the purchase order from which the products will be removed
 
-var purchaseOrderId = 789; // Number | Id of the purchase order from which the products will be removed
-
-var body = new NetilionApiDocumentation.ProductIDs(); // ProductIDs | Resources that shall be removed.
-
-apiInstance.removeProductsFromPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.removeProductsFromPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -902,8 +869,8 @@ apiInstance.removeProductsFromPurchaseOrder(purchaseOrderId, body).then(function
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order from which the products will be removed | 
  **body** | [**ProductIDs**](ProductIDs.md)| Resources that shall be removed. | 
+ **purchaseOrderId** | **Number**| Id of the purchase order from which the products will be removed | 
 
 ### Return type
 
@@ -920,7 +887,7 @@ null (empty response body)
 
 <a name="replaceDeliviersOfPurchaseOrder"></a>
 # **replaceDeliviersOfPurchaseOrder**
-> replaceDeliviersOfPurchaseOrder(purchaseOrderId, body)
+> replaceDeliviersOfPurchaseOrder(bodypurchaseOrderId)
 
 Replace the deliveries of a purchase order
 
@@ -928,29 +895,26 @@ Replaces all deliveries belonging to a purchase order. You can send a list of re
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be replaced
+let purchaseOrderId = 789; // Number | Id of the purchase order of which the deliveries will be replaced
 
-var purchaseOrderId = 789; // Number | Id of the purchase order of which the deliveries will be replaced
-
-var body = new NetilionApiDocumentation.DeliveryIDs(); // DeliveryIDs | Resources that shall be replaced
-
-apiInstance.replaceDeliviersOfPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.replaceDeliviersOfPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -960,8 +924,8 @@ apiInstance.replaceDeliviersOfPurchaseOrder(purchaseOrderId, body).then(function
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order of which the deliveries will be replaced | 
  **body** | [**DeliveryIDs**](DeliveryIDs.md)| Resources that shall be replaced | 
+ **purchaseOrderId** | **Number**| Id of the purchase order of which the deliveries will be replaced | 
 
 ### Return type
 
@@ -978,7 +942,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfPurchaseOrder"></a>
 # **replaceDocumentsOfPurchaseOrder**
-> replaceDocumentsOfPurchaseOrder(purchaseOrderId, body)
+> replaceDocumentsOfPurchaseOrder(bodypurchaseOrderId)
 
 Replace the documents of a purchase order
 
@@ -986,29 +950,26 @@ Replaces all documents belonging to a purchase order. You can send a list of res
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+let purchaseOrderId = 789; // Number | Id of the purchase order of which the documents will be replaced
 
-var purchaseOrderId = 789; // Number | Id of the purchase order of which the documents will be replaced
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-
-apiInstance.replaceDocumentsOfPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.replaceDocumentsOfPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1018,8 +979,8 @@ apiInstance.replaceDocumentsOfPurchaseOrder(purchaseOrderId, body).then(function
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order of which the documents will be replaced | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
+ **purchaseOrderId** | **Number**| Id of the purchase order of which the documents will be replaced | 
 
 ### Return type
 
@@ -1036,7 +997,7 @@ null (empty response body)
 
 <a name="replaceProductsOfPurchaseOrder"></a>
 # **replaceProductsOfPurchaseOrder**
-> replaceProductsOfPurchaseOrder(purchaseOrderId, body)
+> replaceProductsOfPurchaseOrder(bodypurchaseOrderId)
 
 Replace the products of a purchase order
 
@@ -1044,29 +1005,26 @@ Replaces all products belonging to a purchase order. You can send a list of reso
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.ProductIDs(); // ProductIDs | Resources that shall be replaced
+let purchaseOrderId = 789; // Number | Id of the purchase order of which the products will be replaced
 
-var purchaseOrderId = 789; // Number | Id of the purchase order of which the products will be replaced
-
-var body = new NetilionApiDocumentation.ProductIDs(); // ProductIDs | Resources that shall be replaced
-
-apiInstance.replaceProductsOfPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.replaceProductsOfPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1076,8 +1034,8 @@ apiInstance.replaceProductsOfPurchaseOrder(purchaseOrderId, body).then(function(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order of which the products will be replaced | 
  **body** | [**ProductIDs**](ProductIDs.md)| Resources that shall be replaced | 
+ **purchaseOrderId** | **Number**| Id of the purchase order of which the products will be replaced | 
 
 ### Return type
 
@@ -1094,7 +1052,7 @@ null (empty response body)
 
 <a name="updateProductQuantitiesOfPurchaseOrder"></a>
 # **updateProductQuantitiesOfPurchaseOrder**
-> updateProductQuantitiesOfPurchaseOrder(purchaseOrderId, body)
+> updateProductQuantitiesOfPurchaseOrder(bodypurchaseOrderId)
 
 Change the product quantity in a purchase order
 
@@ -1102,29 +1060,26 @@ Sets a new quantity of a product in a purchase order or deletes the line in case
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.ProductQuantity(); // ProductQuantity | Resources that shall be changed or removed
+let purchaseOrderId = 789; // Number | Id of the purchase order of which the change will be done
 
-var purchaseOrderId = 789; // Number | Id of the purchase order of which the change will be done
-
-var body = new NetilionApiDocumentation.ProductQuantity(); // ProductQuantity | Resources that shall be changed or removed
-
-apiInstance.updateProductQuantitiesOfPurchaseOrder(purchaseOrderId, body).then(function() {
+apiInstance.updateProductQuantitiesOfPurchaseOrder(bodypurchaseOrderId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1134,8 +1089,8 @@ apiInstance.updateProductQuantitiesOfPurchaseOrder(purchaseOrderId, body).then(f
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchaseOrderId** | **Number**| Id of the purchase order of which the change will be done | 
  **body** | [**ProductQuantity**](ProductQuantity.md)| Resources that shall be changed or removed | 
+ **purchaseOrderId** | **Number**| Id of the purchase order of which the change will be done | 
 
 ### Return type
 
@@ -1152,7 +1107,7 @@ null (empty response body)
 
 <a name="updatePurchaseOrder"></a>
 # **updatePurchaseOrder**
-> updatePurchaseOrder(id, body)
+> updatePurchaseOrder(bodyid)
 
 Update a purchase order
 
@@ -1160,29 +1115,26 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let apiInstance = new NetilionApiDocumentation.PurchaseOrderApi();
+let body = new NetilionApiDocumentation.PurchaseOrderRequest(); // PurchaseOrderRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the purchase order to update
 
-var id = 789; // Number | Id of the purchase order to update
-
-var body = new NetilionApiDocumentation.PurchaseOrderRequest(); // PurchaseOrderRequest | Parameters that shall be updated.
-
-apiInstance.updatePurchaseOrder(id, body).then(function() {
+apiInstance.updatePurchaseOrder(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1192,8 +1144,8 @@ apiInstance.updatePurchaseOrder(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the purchase order to update | 
  **body** | [**PurchaseOrderRequest**](PurchaseOrderRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the purchase order to update | 
 
 ### Return type
 

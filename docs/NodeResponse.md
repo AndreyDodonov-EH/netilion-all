@@ -7,6 +7,4 @@ Name | Type | Description | Notes
 **type** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **parent** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **tenant** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
-**links** | [**Links10**](Links10.md) |  | [optional] 
-
-
+**links** | **Object** |  | [optional] 

@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **canUpdate** | **Boolean** |  | [optional] 
 **canDelete** | **Boolean** |  | [optional] 
 **canPermit** | **Boolean** |  | [optional] 
-
-

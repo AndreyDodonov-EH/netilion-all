@@ -8,5 +8,3 @@ Name | Type | Description | Notes
 **redirectUris** | **[String]** | Redirect URIs array | [optional] 
 **isInsider** | **Boolean** | Endress+Hauser Application | [optional] 
 **canSendMails** | **Boolean** | Is client application allowed to send mails? | [optional] 
-
-

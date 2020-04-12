@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.BillOfMaterialApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,10 +22,9 @@ Method | HTTP request | Description
 [**replaceRequestForQuotationsOfBillOfMaterial**](BillOfMaterialApi.md#replaceRequestForQuotationsOfBillOfMaterial) | **PATCH** /bill_of_materials/{bill_of_material_id}/request_for_quotations | Replace the request for quotations of a bill of material
 [**updateBillOfMaterial**](BillOfMaterialApi.md#updateBillOfMaterial) | **PATCH** /bill_of_materials/{id} | Update a bill of material
 
-
 <a name="addDocumentsToBillOfMaterial"></a>
 # **addDocumentsToBillOfMaterial**
-> addDocumentsToBillOfMaterial(billOfMaterialId, body)
+> addDocumentsToBillOfMaterial(bodybillOfMaterialId)
 
 Add documents to a bill of material
 
@@ -33,29 +32,26 @@ Add one or more documents to a bill of material.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+let billOfMaterialId = 789; // Number | Id of the bill of material to which the documents will be added
 
-var billOfMaterialId = 789; // Number | Id of the bill of material to which the documents will be added
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-
-apiInstance.addDocumentsToBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.addDocumentsToBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -65,8 +61,8 @@ apiInstance.addDocumentsToBillOfMaterial(billOfMaterialId, body).then(function()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material to which the documents will be added | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
+ **billOfMaterialId** | **Number**| Id of the bill of material to which the documents will be added | 
 
 ### Return type
 
@@ -83,7 +79,7 @@ null (empty response body)
 
 <a name="addInstrumentationsToBillOfMaterial"></a>
 # **addInstrumentationsToBillOfMaterial**
-> addInstrumentationsToBillOfMaterial(billOfMaterialId, body)
+> addInstrumentationsToBillOfMaterial(bodybillOfMaterialId)
 
 Add instrumentations to a bill of material
 
@@ -91,29 +87,26 @@ Add one or more instrumentations to a bill of material.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be added.
+let billOfMaterialId = 789; // Number | Id of the bill of material to which the instrumentations will be added
 
-var billOfMaterialId = 789; // Number | Id of the bill of material to which the instrumentations will be added
-
-var body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be added.
-
-apiInstance.addInstrumentationsToBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.addInstrumentationsToBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -123,8 +116,8 @@ apiInstance.addInstrumentationsToBillOfMaterial(billOfMaterialId, body).then(fun
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material to which the instrumentations will be added | 
  **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be added. | 
+ **billOfMaterialId** | **Number**| Id of the bill of material to which the instrumentations will be added | 
 
 ### Return type
 
@@ -141,7 +134,7 @@ null (empty response body)
 
 <a name="addRequestForQuotationsToBillOfMaterial"></a>
 # **addRequestForQuotationsToBillOfMaterial**
-> addRequestForQuotationsToBillOfMaterial(billOfMaterialId, body)
+> addRequestForQuotationsToBillOfMaterial(bodybillOfMaterialId)
 
 Add request for quotations to a bill of material
 
@@ -149,29 +142,26 @@ Add one or more request for quotations to a bill of material.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.RequestForQuotationIDs(); // RequestForQuotationIDs | Resources that shall be added.
+let billOfMaterialId = 789; // Number | Id of the bill of material to which the request for quotations will be added
 
-var billOfMaterialId = 789; // Number | Id of the bill of material to which the request for quotations will be added
-
-var body = new NetilionApiDocumentation.RequestForQuotationIDs(); // RequestForQuotationIDs | Resources that shall be added.
-
-apiInstance.addRequestForQuotationsToBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.addRequestForQuotationsToBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -181,8 +171,8 @@ apiInstance.addRequestForQuotationsToBillOfMaterial(billOfMaterialId, body).then
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material to which the request for quotations will be added | 
  **body** | [**RequestForQuotationIDs**](RequestForQuotationIDs.md)| Resources that shall be added. | 
+ **billOfMaterialId** | **Number**| Id of the bill of material to which the request for quotations will be added | 
 
 ### Return type
 
@@ -207,27 +197,25 @@ Create a new bill of material
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.BillOfMaterialRequest(); // BillOfMaterialRequest | Object body that will be created.
 
-var body = new NetilionApiDocumentation.BillOfMaterialRequest(); // BillOfMaterialRequest | Object body that will be created.
-
-apiInstance.createBillOfMaterial(body).then(function(data) {
+apiInstance.createBillOfMaterial(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -262,27 +250,25 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let id = 789; // Number | Id of the bill of material to delete
 
-var id = 789; // Number | Id of the bill of material to delete
-
-apiInstance.deleteBillOfMaterial(id).then(function() {
+apiInstance.deleteBillOfMaterial(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -304,7 +290,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBillOfMaterialById"></a>
@@ -317,27 +303,25 @@ Get a specific bill of material identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let id = 789; // Number | Id of the bill of material to fetch
 
-var id = 789; // Number | Id of the bill of material to fetch
-
-apiInstance.getBillOfMaterialById(id).then(function(data) {
+apiInstance.getBillOfMaterialById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -359,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBillOfMaterials"></a>
@@ -372,23 +356,21 @@ Returns a list of bill of materials. If the query has no matches, the response i
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -396,11 +378,11 @@ var opts = {
   '_date': "_date_example", // String | Expected date format is YYYY-MM-DD
   'dateFrom': "dateFrom_example", // String | Expected date format is YYYY-MM-DD
   'dateTo': "dateTo_example", // String | Expected date format is YYYY-MM-DD
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getBillOfMaterials(opts).then(function(data) {
+apiInstance.getBillOfMaterials(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -429,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocumentsOfBillOfMaterial"></a>
@@ -442,25 +424,22 @@ Returns a list of documents. If the query has no matches, the response is an emp
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
-
-var billOfMaterialId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let billOfMaterialId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -471,12 +450,15 @@ var opts = {
   'classificationId': "classificationId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
+  'validFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfBillOfMaterial(billOfMaterialId, opts).then(function(data) {
+apiInstance.getDocumentsOfBillOfMaterial(billOfMaterialId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -497,8 +479,11 @@ Name | Type | Description  | Notes
  **classificationId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **categoryId** | **String**| One or multiple ids (comma list). By adding &#x60;+&#x60; after the id, the filter considers the given category and all its children (e.g. 3+). | [optional] 
+ **validFrom** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -510,7 +495,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getInstrumentationsOfBillOfMaterial"></a>
@@ -523,25 +508,22 @@ Returns a list of all instrumentations that are available in your scope. You can
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
-
-var billOfMaterialId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let billOfMaterialId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -557,9 +539,9 @@ var opts = {
   'assetStatusId': "assetStatusId_example", // String | One or multiple ids (comma list). Expected id format is integer. This retrieves all Instrumentations where at least one of its assets has one of the given statuses.
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `tag`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getInstrumentationsOfBillOfMaterial(billOfMaterialId, opts).then(function(data) {
+apiInstance.getInstrumentationsOfBillOfMaterial(billOfMaterialId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -595,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRequestForQuotationsOfBillOfMaterial"></a>
@@ -608,25 +590,22 @@ Returns a list of all request for quotations that are available in your scope. Y
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
-
-var billOfMaterialId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let billOfMaterialId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -638,11 +617,11 @@ var opts = {
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'author': "author_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getRequestForQuotationsOfBillOfMaterial(billOfMaterialId, opts).then(function(data) {
+apiInstance.getRequestForQuotationsOfBillOfMaterial(billOfMaterialId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -676,12 +655,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="removeDocumentsFromBillOfMaterial"></a>
 # **removeDocumentsFromBillOfMaterial**
-> removeDocumentsFromBillOfMaterial(billOfMaterialId, body)
+> removeDocumentsFromBillOfMaterial(bodybillOfMaterialId)
 
 Remove documents from a bill of material
 
@@ -689,29 +668,26 @@ Remove one or more documents from a bill of material.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+let billOfMaterialId = 789; // Number | Id of the bill of material from which the documents will be removed
 
-var billOfMaterialId = 789; // Number | Id of the bill of material from which the documents will be removed
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-
-apiInstance.removeDocumentsFromBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.removeDocumentsFromBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -721,8 +697,8 @@ apiInstance.removeDocumentsFromBillOfMaterial(billOfMaterialId, body).then(funct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material from which the documents will be removed | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
+ **billOfMaterialId** | **Number**| Id of the bill of material from which the documents will be removed | 
 
 ### Return type
 
@@ -739,7 +715,7 @@ null (empty response body)
 
 <a name="removeInstrumentationsFromBillOfMaterial"></a>
 # **removeInstrumentationsFromBillOfMaterial**
-> removeInstrumentationsFromBillOfMaterial(billOfMaterialId, body)
+> removeInstrumentationsFromBillOfMaterial(bodybillOfMaterialId)
 
 Remove instrumentations from a bill of material
 
@@ -747,29 +723,26 @@ Remove one or more instrumentations from a bill of material.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be removed.
+let billOfMaterialId = 789; // Number | Id of the bill of material from which the instrumentations will be removed
 
-var billOfMaterialId = 789; // Number | Id of the bill of material from which the instrumentations will be removed
-
-var body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be removed.
-
-apiInstance.removeInstrumentationsFromBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.removeInstrumentationsFromBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -779,8 +752,8 @@ apiInstance.removeInstrumentationsFromBillOfMaterial(billOfMaterialId, body).the
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material from which the instrumentations will be removed | 
  **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be removed. | 
+ **billOfMaterialId** | **Number**| Id of the bill of material from which the instrumentations will be removed | 
 
 ### Return type
 
@@ -797,7 +770,7 @@ null (empty response body)
 
 <a name="removeRequestForQuotationsOfBillOfMaterial"></a>
 # **removeRequestForQuotationsOfBillOfMaterial**
-> removeRequestForQuotationsOfBillOfMaterial(billOfMaterialId, body)
+> removeRequestForQuotationsOfBillOfMaterial(bodybillOfMaterialId)
 
 Remove request for quotations from a bill of material
 
@@ -805,29 +778,26 @@ Remove one or more request for quotations from a bill of material.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.RequestForQuotationIDs(); // RequestForQuotationIDs | Resources that shall be removed.
+let billOfMaterialId = 789; // Number | Id of the bill of material from which the request for quotations will be removed
 
-var billOfMaterialId = 789; // Number | Id of the bill of material from which the request for quotations will be removed
-
-var body = new NetilionApiDocumentation.RequestForQuotationIDs(); // RequestForQuotationIDs | Resources that shall be removed.
-
-apiInstance.removeRequestForQuotationsOfBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.removeRequestForQuotationsOfBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -837,8 +807,8 @@ apiInstance.removeRequestForQuotationsOfBillOfMaterial(billOfMaterialId, body).t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material from which the request for quotations will be removed | 
  **body** | [**RequestForQuotationIDs**](RequestForQuotationIDs.md)| Resources that shall be removed. | 
+ **billOfMaterialId** | **Number**| Id of the bill of material from which the request for quotations will be removed | 
 
 ### Return type
 
@@ -855,7 +825,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfBillOfMaterial"></a>
 # **replaceDocumentsOfBillOfMaterial**
-> replaceDocumentsOfBillOfMaterial(billOfMaterialId, body)
+> replaceDocumentsOfBillOfMaterial(bodybillOfMaterialId)
 
 Replace the documents of a bill of material
 
@@ -863,29 +833,26 @@ Replaces all documents belonging to a bill of material. You can send a list of r
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+let billOfMaterialId = 789; // Number | Id of the bill of material of which the documents will be replaced
 
-var billOfMaterialId = 789; // Number | Id of the bill of material of which the documents will be replaced
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-
-apiInstance.replaceDocumentsOfBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.replaceDocumentsOfBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -895,8 +862,8 @@ apiInstance.replaceDocumentsOfBillOfMaterial(billOfMaterialId, body).then(functi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material of which the documents will be replaced | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
+ **billOfMaterialId** | **Number**| Id of the bill of material of which the documents will be replaced | 
 
 ### Return type
 
@@ -913,7 +880,7 @@ null (empty response body)
 
 <a name="replaceInstrumentationsOfBillOfMaterial"></a>
 # **replaceInstrumentationsOfBillOfMaterial**
-> replaceInstrumentationsOfBillOfMaterial(billOfMaterialId, body)
+> replaceInstrumentationsOfBillOfMaterial(bodybillOfMaterialId)
 
 Replace the instrumentations of a bill of material
 
@@ -921,29 +888,26 @@ Replaces all instrumentations belonging to a bill of material. You can send a li
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be replaced
+let billOfMaterialId = 789; // Number | Id of the bill of material of which the instrumentations will be replaced
 
-var billOfMaterialId = 789; // Number | Id of the bill of material of which the instrumentations will be replaced
-
-var body = new NetilionApiDocumentation.InstrumentationIDs(); // InstrumentationIDs | Resources that shall be replaced
-
-apiInstance.replaceInstrumentationsOfBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.replaceInstrumentationsOfBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -953,8 +917,8 @@ apiInstance.replaceInstrumentationsOfBillOfMaterial(billOfMaterialId, body).then
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material of which the instrumentations will be replaced | 
  **body** | [**InstrumentationIDs**](InstrumentationIDs.md)| Resources that shall be replaced | 
+ **billOfMaterialId** | **Number**| Id of the bill of material of which the instrumentations will be replaced | 
 
 ### Return type
 
@@ -971,7 +935,7 @@ null (empty response body)
 
 <a name="replaceRequestForQuotationsOfBillOfMaterial"></a>
 # **replaceRequestForQuotationsOfBillOfMaterial**
-> replaceRequestForQuotationsOfBillOfMaterial(billOfMaterialId, body)
+> replaceRequestForQuotationsOfBillOfMaterial(bodybillOfMaterialId)
 
 Replace the request for quotations of a bill of material
 
@@ -979,29 +943,26 @@ Replaces all request for quotations belonging to a bill of material. You can sen
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.RequestForQuotationIDs(); // RequestForQuotationIDs | Resources that shall be replaced
+let billOfMaterialId = 789; // Number | Id of the bill of material of which the request for quotations will be replaced
 
-var billOfMaterialId = 789; // Number | Id of the bill of material of which the request for quotations will be replaced
-
-var body = new NetilionApiDocumentation.RequestForQuotationIDs(); // RequestForQuotationIDs | Resources that shall be replaced
-
-apiInstance.replaceRequestForQuotationsOfBillOfMaterial(billOfMaterialId, body).then(function() {
+apiInstance.replaceRequestForQuotationsOfBillOfMaterial(bodybillOfMaterialId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1011,8 +972,8 @@ apiInstance.replaceRequestForQuotationsOfBillOfMaterial(billOfMaterialId, body).
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billOfMaterialId** | **Number**| Id of the bill of material of which the request for quotations will be replaced | 
  **body** | [**RequestForQuotationIDs**](RequestForQuotationIDs.md)| Resources that shall be replaced | 
+ **billOfMaterialId** | **Number**| Id of the bill of material of which the request for quotations will be replaced | 
 
 ### Return type
 
@@ -1029,7 +990,7 @@ null (empty response body)
 
 <a name="updateBillOfMaterial"></a>
 # **updateBillOfMaterial**
-> updateBillOfMaterial(id, body)
+> updateBillOfMaterial(bodyid)
 
 Update a bill of material
 
@@ -1037,29 +998,26 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let apiInstance = new NetilionApiDocumentation.BillOfMaterialApi();
+let body = new NetilionApiDocumentation.BillOfMaterialRequest(); // BillOfMaterialRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the bill of material to update
 
-var id = 789; // Number | Id of the bill of material to update
-
-var body = new NetilionApiDocumentation.BillOfMaterialRequest(); // BillOfMaterialRequest | Parameters that shall be updated.
-
-apiInstance.updateBillOfMaterial(id, body).then(function() {
+apiInstance.updateBillOfMaterial(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1069,8 +1027,8 @@ apiInstance.updateBillOfMaterial(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the bill of material to update | 
  **body** | [**BillOfMaterialRequest**](BillOfMaterialRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the bill of material to update | 
 
 ### Return type
 

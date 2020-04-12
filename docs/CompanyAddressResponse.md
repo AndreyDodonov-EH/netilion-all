@@ -7,5 +7,3 @@ Name | Type | Description | Notes
 **lastName** | **String** | last_name | [optional] 
 **email** | **String** | email | [optional] 
 **countryName** | **String** | name of the country | [optional] 
-
-

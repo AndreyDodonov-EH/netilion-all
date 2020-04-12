@@ -4,5 +4,3 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billOfMaterials** | [**[NestedID]**](NestedID.md) |  | 
-
-

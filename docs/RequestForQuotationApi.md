@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.RequestForQuotationApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,10 +23,9 @@ Method | HTTP request | Description
 [**replaceQuotationsOfRequestForQuotation**](RequestForQuotationApi.md#replaceQuotationsOfRequestForQuotation) | **PATCH** /request_for_quotations/{request_for_quotation_id}/quotations | Replace the quotations of a request for quotation
 [**updateRequestForQuotation**](RequestForQuotationApi.md#updateRequestForQuotation) | **PATCH** /request_for_quotations/{id} | Update a request for quotation
 
-
 <a name="addBillOfMaterialsToRequestForQuotation"></a>
 # **addBillOfMaterialsToRequestForQuotation**
-> addBillOfMaterialsToRequestForQuotation(requestForQuotationId, body)
+> addBillOfMaterialsToRequestForQuotation(bodyrequestForQuotationId)
 
 Add bill of materials to a request for quotation
 
@@ -34,29 +33,26 @@ Add one or more bill of materials to a request for quotation.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be added.
+let requestForQuotationId = 789; // Number | Id of the request for quotation to which the bill of materials will be added
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation to which the bill of materials will be added
-
-var body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be added.
-
-apiInstance.addBillOfMaterialsToRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.addBillOfMaterialsToRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -66,8 +62,8 @@ apiInstance.addBillOfMaterialsToRequestForQuotation(requestForQuotationId, body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation to which the bill of materials will be added | 
  **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be added. | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation to which the bill of materials will be added | 
 
 ### Return type
 
@@ -84,7 +80,7 @@ null (empty response body)
 
 <a name="addDocumentsToRequestForQuotation"></a>
 # **addDocumentsToRequestForQuotation**
-> addDocumentsToRequestForQuotation(requestForQuotationId, body)
+> addDocumentsToRequestForQuotation(bodyrequestForQuotationId)
 
 Add documents to a request for quotation
 
@@ -92,29 +88,26 @@ Add one or more documents to a request for quotation.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
+let requestForQuotationId = 789; // Number | Id of the request for quotation to which the documents will be added
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation to which the documents will be added
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be added.
-
-apiInstance.addDocumentsToRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.addDocumentsToRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -124,8 +117,8 @@ apiInstance.addDocumentsToRequestForQuotation(requestForQuotationId, body).then(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation to which the documents will be added | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be added. | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation to which the documents will be added | 
 
 ### Return type
 
@@ -142,7 +135,7 @@ null (empty response body)
 
 <a name="addQuotationsToRequestForQuotation"></a>
 # **addQuotationsToRequestForQuotation**
-> addQuotationsToRequestForQuotation(requestForQuotationId, body)
+> addQuotationsToRequestForQuotation(bodyrequestForQuotationId)
 
 Add quotations to a request for quotation
 
@@ -150,29 +143,26 @@ Add one or more quotations to a request for quotation.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be added.
+let requestForQuotationId = 789; // Number | Id of the request for quotation to which the quotations will be added
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation to which the quotations will be added
-
-var body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be added.
-
-apiInstance.addQuotationsToRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.addQuotationsToRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -182,8 +172,8 @@ apiInstance.addQuotationsToRequestForQuotation(requestForQuotationId, body).then
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation to which the quotations will be added | 
  **body** | [**QuotationIDs**](QuotationIDs.md)| Resources that shall be added. | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation to which the quotations will be added | 
 
 ### Return type
 
@@ -208,27 +198,25 @@ Create a new request for quotation.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.RequestForQuotationRequest(); // RequestForQuotationRequest | Object body that will be created
 
-var body = new NetilionApiDocumentation.RequestForQuotationRequest(); // RequestForQuotationRequest | Object body that will be created
-
-apiInstance.createRequestForQuotation(body).then(function(data) {
+apiInstance.createRequestForQuotation(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -255,7 +243,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteBillOfMaterialsFromRequestForQuotation"></a>
 # **deleteBillOfMaterialsFromRequestForQuotation**
-> deleteBillOfMaterialsFromRequestForQuotation(requestForQuotationId, body)
+> deleteBillOfMaterialsFromRequestForQuotation(bodyrequestForQuotationId)
 
 Remove bill of materials from a request for quotation
 
@@ -263,29 +251,26 @@ Remove one or more bill of materials from a request for quotation.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be removed.
+let requestForQuotationId = 789; // Number | Id of the request for quotation from which the bill of materials will be removed
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation from which the bill of materials will be removed
-
-var body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be removed.
-
-apiInstance.deleteBillOfMaterialsFromRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.deleteBillOfMaterialsFromRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -295,8 +280,8 @@ apiInstance.deleteBillOfMaterialsFromRequestForQuotation(requestForQuotationId, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation from which the bill of materials will be removed | 
  **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be removed. | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation from which the bill of materials will be removed | 
 
 ### Return type
 
@@ -313,7 +298,7 @@ null (empty response body)
 
 <a name="deleteDocumentsOfRequestForQuotation"></a>
 # **deleteDocumentsOfRequestForQuotation**
-> deleteDocumentsOfRequestForQuotation(requestForQuotationId, body)
+> deleteDocumentsOfRequestForQuotation(bodyrequestForQuotationId)
 
 Remove documents from a request for quotation
 
@@ -321,29 +306,26 @@ Remove one or more documents from a request for quotation.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
+let requestForQuotationId = 789; // Number | Id of the request for quotation from which the documents will be removed
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation from which the documents will be removed
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be removed.
-
-apiInstance.deleteDocumentsOfRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.deleteDocumentsOfRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -353,8 +335,8 @@ apiInstance.deleteDocumentsOfRequestForQuotation(requestForQuotationId, body).th
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation from which the documents will be removed | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be removed. | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation from which the documents will be removed | 
 
 ### Return type
 
@@ -371,7 +353,7 @@ null (empty response body)
 
 <a name="deleteQuotationsFromRequestForQuotation"></a>
 # **deleteQuotationsFromRequestForQuotation**
-> deleteQuotationsFromRequestForQuotation(requestForQuotationId, body)
+> deleteQuotationsFromRequestForQuotation(bodyrequestForQuotationId)
 
 Remove quotations from a request for quotation
 
@@ -379,29 +361,26 @@ Remove one or more quotations from a request for quotation.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be removed.
+let requestForQuotationId = 789; // Number | Id of the request for quotation from which the quotations will be removed
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation from which the quotations will be removed
-
-var body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be removed.
-
-apiInstance.deleteQuotationsFromRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.deleteQuotationsFromRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -411,8 +390,8 @@ apiInstance.deleteQuotationsFromRequestForQuotation(requestForQuotationId, body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation from which the quotations will be removed | 
  **body** | [**QuotationIDs**](QuotationIDs.md)| Resources that shall be removed. | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation from which the quotations will be removed | 
 
 ### Return type
 
@@ -437,27 +416,25 @@ Delete a specific resource identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let id = 789; // Number | Id of the request for quotation to delete
 
-var id = 789; // Number | Id of the request for quotation to delete
-
-apiInstance.deleteRequestForQuotation(id).then(function() {
+apiInstance.deleteRequestForQuotation(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -479,7 +456,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBillOfMaterialsOfRequestForQuotation"></a>
@@ -492,25 +469,22 @@ Returns a list of all bill of materials that are available in your scope. You ca
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
-
-var requestForQuotationId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let requestForQuotationId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -518,11 +492,11 @@ var opts = {
   '_date': "_date_example", // String | Expected date format is YYYY-MM-DD
   'dateFrom': "dateFrom_example", // String | Expected date format is YYYY-MM-DD
   'dateTo': "dateTo_example", // String | Expected date format is YYYY-MM-DD
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getBillOfMaterialsOfRequestForQuotation(requestForQuotationId, opts).then(function(data) {
+apiInstance.getBillOfMaterialsOfRequestForQuotation(requestForQuotationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -552,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocumentsOfRequestForQuotation"></a>
@@ -565,25 +539,22 @@ Returns a list of documents. You can apply the query parameters listed below to 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
-
-var requestForQuotationId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let requestForQuotationId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
@@ -594,12 +565,15 @@ var opts = {
   'classificationId': "classificationId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'categoryId': "categoryId_example", // String | One or multiple ids (comma list). By adding `+` after the id, the filter considers the given category and all its children (e.g. 3+).
+  'validFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
+  'validAt': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD or YYYY-MM or YYYY
   'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getDocumentsOfRequestForQuotation(requestForQuotationId, opts).then(function(data) {
+apiInstance.getDocumentsOfRequestForQuotation(requestForQuotationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -620,8 +594,11 @@ Name | Type | Description  | Notes
  **classificationId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **tenantId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
  **categoryId** | **String**| One or multiple ids (comma list). By adding &#x60;+&#x60; after the id, the filter considers the given category and all its children (e.g. 3+). | [optional] 
+ **validFrom** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validUntil** | **Date**| Expected date format is YYYY-MM-DD | [optional] 
+ **validAt** | **Date**| Expected date format is YYYY-MM-DD or YYYY-MM or YYYY | [optional] 
  **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -633,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuotationsOfRequestForQuotation"></a>
@@ -646,25 +623,22 @@ Returns a list of all quotations that are available in your scope. You can apply
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
-
-var requestForQuotationId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let requestForQuotationId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -675,11 +649,11 @@ var opts = {
   'dateTo': "dateTo_example", // String | Expected date format is YYYY-MM-DD
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getQuotationsOfRequestForQuotation(requestForQuotationId, opts).then(function(data) {
+apiInstance.getQuotationsOfRequestForQuotation(requestForQuotationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -712,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRequestForQuotationById"></a>
@@ -725,27 +699,25 @@ Get a specific request for quotation identified by the id in the URL.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let id = 789; // Number | Id of the request for quotation to fetch
 
-var id = 789; // Number | Id of the request for quotation to fetch
-
-apiInstance.getRequestForQuotationById(id).then(function(data) {
+apiInstance.getRequestForQuotationById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -767,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRequestForQuotationIdStatus"></a>
@@ -780,31 +752,28 @@ Returns the status of the request for quotation. Needed if only permission on re
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
-
-var requestForQuotationId = 789; // Number | Id of the specified request for quotation
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let requestForQuotationId = 789; // Number | Id of the specified request for quotation
+let opts = { 
   'include': "include_example", // String | Comma separated list of objects to include in response
   'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
 };
-apiInstance.getRequestForQuotationIdStatus(requestForQuotationId, opts).then(function(data) {
+apiInstance.getRequestForQuotationIdStatus(requestForQuotationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -816,7 +785,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestForQuotationId** | **Number**| Id of the specified request for quotation | 
  **include** | **String**| Comma separated list of objects to include in response | [optional] 
- **acceptLanguage** | **String**| The client&#39;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
 
 ### Return type
 
@@ -828,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRequestForQuotations"></a>
@@ -841,23 +810,21 @@ Returns a list of request for quotations. If the query has no matches, the respo
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
@@ -869,11 +836,11 @@ var opts = {
   'senderId': "senderId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'receiverId': "receiverId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'author': "author_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getRequestForQuotations(opts).then(function(data) {
+apiInstance.getRequestForQuotations(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -906,12 +873,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="replaceBillOfMaterialsOfRequestForQuotation"></a>
 # **replaceBillOfMaterialsOfRequestForQuotation**
-> replaceBillOfMaterialsOfRequestForQuotation(requestForQuotationId, body)
+> replaceBillOfMaterialsOfRequestForQuotation(bodyrequestForQuotationId)
 
 Replace the bill of materials of a request for quotation
 
@@ -919,29 +886,26 @@ Replaces all bill of materials belonging to a request for quotation. You can sen
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be replaced
+let requestForQuotationId = 789; // Number | Id of the request for quotation of which the bill of materials will be replaced
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation of which the bill of materials will be replaced
-
-var body = new NetilionApiDocumentation.BillOfMaterialIDs(); // BillOfMaterialIDs | Resources that shall be replaced
-
-apiInstance.replaceBillOfMaterialsOfRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.replaceBillOfMaterialsOfRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -951,8 +915,8 @@ apiInstance.replaceBillOfMaterialsOfRequestForQuotation(requestForQuotationId, b
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation of which the bill of materials will be replaced | 
  **body** | [**BillOfMaterialIDs**](BillOfMaterialIDs.md)| Resources that shall be replaced | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation of which the bill of materials will be replaced | 
 
 ### Return type
 
@@ -969,7 +933,7 @@ null (empty response body)
 
 <a name="replaceDocumentsOfRequestForQuotation"></a>
 # **replaceDocumentsOfRequestForQuotation**
-> replaceDocumentsOfRequestForQuotation(requestForQuotationId, body)
+> replaceDocumentsOfRequestForQuotation(bodyrequestForQuotationId)
 
 Replace the documents of a request for quotation
 
@@ -977,29 +941,26 @@ Replaces all documents belonging to a request for quotation. You can send a list
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
+let requestForQuotationId = 789; // Number | Id of the request for quotation of which the documents will be replaced
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation of which the documents will be replaced
-
-var body = new NetilionApiDocumentation.DocumentIDs(); // DocumentIDs | Resources that shall be replaced
-
-apiInstance.replaceDocumentsOfRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.replaceDocumentsOfRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1009,8 +970,8 @@ apiInstance.replaceDocumentsOfRequestForQuotation(requestForQuotationId, body).t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation of which the documents will be replaced | 
  **body** | [**DocumentIDs**](DocumentIDs.md)| Resources that shall be replaced | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation of which the documents will be replaced | 
 
 ### Return type
 
@@ -1027,7 +988,7 @@ null (empty response body)
 
 <a name="replaceQuotationsOfRequestForQuotation"></a>
 # **replaceQuotationsOfRequestForQuotation**
-> replaceQuotationsOfRequestForQuotation(requestForQuotationId, body)
+> replaceQuotationsOfRequestForQuotation(bodyrequestForQuotationId)
 
 Replace the quotations of a request for quotation
 
@@ -1035,29 +996,26 @@ Replaces all quotations belonging to a request for quotation. You can send a lis
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be replaced
+let requestForQuotationId = 789; // Number | Id of the request for quotation of which the quotations will be replaced
 
-var requestForQuotationId = 789; // Number | Id of the request for quotation of which the quotations will be replaced
-
-var body = new NetilionApiDocumentation.QuotationIDs(); // QuotationIDs | Resources that shall be replaced
-
-apiInstance.replaceQuotationsOfRequestForQuotation(requestForQuotationId, body).then(function() {
+apiInstance.replaceQuotationsOfRequestForQuotation(bodyrequestForQuotationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1067,8 +1025,8 @@ apiInstance.replaceQuotationsOfRequestForQuotation(requestForQuotationId, body).
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestForQuotationId** | **Number**| Id of the request for quotation of which the quotations will be replaced | 
  **body** | [**QuotationIDs**](QuotationIDs.md)| Resources that shall be replaced | 
+ **requestForQuotationId** | **Number**| Id of the request for quotation of which the quotations will be replaced | 
 
 ### Return type
 
@@ -1085,7 +1043,7 @@ null (empty response body)
 
 <a name="updateRequestForQuotation"></a>
 # **updateRequestForQuotation**
-> updateRequestForQuotation(id, body)
+> updateRequestForQuotation(bodyid)
 
 Update a request for quotation
 
@@ -1093,29 +1051,26 @@ Update accessible parameters of the requested resource.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let apiInstance = new NetilionApiDocumentation.RequestForQuotationApi();
+let body = new NetilionApiDocumentation.RequestForQuotationRequest(); // RequestForQuotationRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the request for quotation to update
 
-var id = 789; // Number | Id of the request for quotation to update
-
-var body = new NetilionApiDocumentation.RequestForQuotationRequest(); // RequestForQuotationRequest | Parameters that shall be updated.
-
-apiInstance.updateRequestForQuotation(id, body).then(function() {
+apiInstance.updateRequestForQuotation(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1125,8 +1080,8 @@ apiInstance.updateRequestForQuotation(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the request for quotation to update | 
  **body** | [**RequestForQuotationRequest**](RequestForQuotationRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the request for quotation to update | 
 
 ### Return type
 

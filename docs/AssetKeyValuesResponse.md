@@ -12,5 +12,3 @@ Name | Type | Description | Notes
 **mean** | **String** | the mean (average) value for the requested time slot | [optional] 
 **data** | [**[AssetKeyValuesData]**](AssetKeyValuesData.md) |  | [optional] 
 **pagination** | [**AssetValuesPagination**](AssetValuesPagination.md) |  | 
-
-

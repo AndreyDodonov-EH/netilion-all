@@ -7,6 +7,4 @@ Name | Type | Description | Notes
 **status** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **sender** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **receiver** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
-**links** | [**Links14**](Links14.md) |  | [optional] 
-
-
+**links** | **Object** |  | [optional] 

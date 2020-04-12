@@ -8,5 +8,3 @@ Name | Type | Description | Notes
 **quantity** | **Number** | quantity of the product with this delivery | 
 **href** | **String** | Link to get collection of related objects | 
 **assets** | [**[DeliveryProductsAssets]**](DeliveryProductsAssets.md) |  | [optional] 
-
-

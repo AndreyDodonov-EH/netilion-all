@@ -1,9 +1,10 @@
 # NetilionApiDocumentation.ClientApplicationApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addClientApplicationsToEdgeApplication**](ClientApplicationApi.md#addClientApplicationsToEdgeApplication) | **POST** /edge_device/applications/{edge_device_application_id}/client_applications | Add client applications to an edge device application
 [**addUsersToClientApplicationUserRole**](ClientApplicationApi.md#addUsersToClientApplicationUserRole) | **POST** /client_applications/{client_application_id}/roles/{userrole_id}/users | Add users to a client application user role
 [**createClientApplication**](ClientApplicationApi.md#createClientApplication) | **POST** /client_applications | Create a new client_application
 [**deleteClientApplication**](ClientApplicationApi.md#deleteClientApplication) | **DELETE** /client_applications/{id} | Delete an client_application
@@ -11,46 +12,44 @@ Method | HTTP request | Description
 [**getAPIKeysOfClientApplication**](ClientApplicationApi.md#getAPIKeysOfClientApplication) | **GET** /client_applications/{client_application_id}/api_keys | GetAPI Keys of Client Application
 [**getClientApplicationById**](ClientApplicationApi.md#getClientApplicationById) | **GET** /client_applications/{id} | Get a single client_application
 [**getClientApplications**](ClientApplicationApi.md#getClientApplications) | **GET** /client_applications | Get a range of client_applications
+[**getClientApplicationsOfEdgeDeviceApplication**](ClientApplicationApi.md#getClientApplicationsOfEdgeDeviceApplication) | **GET** /edge_device/applications/{edge_device_application_id}/client_applications | Get all client applications of one edge device application
 [**getCurrentClientApplication**](ClientApplicationApi.md#getCurrentClientApplication) | **GET** /client_applications/current | Get current client_application
+[**getEdgeDeviceApplicationsOfClientApplication**](ClientApplicationApi.md#getEdgeDeviceApplicationsOfClientApplication) | **GET** /client_applications/{client_application_id}/edge_device/applications | Get all edge devices applications for an client application
 [**getUsersOfClientApplicationUserRole**](ClientApplicationApi.md#getUsersOfClientApplicationUserRole) | **GET** /client_applications/{client_application_id}/roles/{userrole_id}/users | Get all users of a user role assigned to a client application
+[**removeClientApplicationsOfEdgeDeviceApplication**](ClientApplicationApi.md#removeClientApplicationsOfEdgeDeviceApplication) | **DELETE** /edge_device/applications/{edge_device_application_id}/client_applications | Remove client applications from an edge device application
+[**replaceClientApplicationsOfEdgeDeviceApplication**](ClientApplicationApi.md#replaceClientApplicationsOfEdgeDeviceApplication) | **PATCH** /edge_device/applications/{edge_device_application_id}/client_applications | Replace the client applications of an edge device application
 [**updateClientApplication**](ClientApplicationApi.md#updateClientApplication) | **PATCH** /client_applications/{id} | Update an client_application
 
+<a name="addClientApplicationsToEdgeApplication"></a>
+# **addClientApplicationsToEdgeApplication**
+> addClientApplicationsToEdgeApplication(bodyedgeDeviceApplicationId)
 
-<a name="addUsersToClientApplicationUserRole"></a>
-# **addUsersToClientApplicationUserRole**
-> addUsersToClientApplicationUserRole(clientApplicationId, userroleIdbody)
+Add client applications to an edge device application
 
-Add users to a client application user role
-
-Add one or more users to a user role.
+Add one or more client applications to an edge device application. This action requires the edge device admin role.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be added.
+let edgeDeviceApplicationId = 789; // Number | Id of the edge device application to which the client applications will be added
 
-var clientApplicationId = 789; // Number | The resource defined in the URL
-
-var userroleId = 789; // Number | The resource defined in the URL
-
-var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be added.
-
-apiInstance.addUsersToClientApplicationUserRole(clientApplicationId, userroleIdbody).then(function() {
+apiInstance.addClientApplicationsToEdgeApplication(bodyedgeDeviceApplicationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -60,9 +59,65 @@ apiInstance.addUsersToClientApplicationUserRole(clientApplicationId, userroleIdb
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be added. | 
+ **edgeDeviceApplicationId** | **Number**| Id of the edge device application to which the client applications will be added | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addUsersToClientApplicationUserRole"></a>
+# **addUsersToClientApplicationUserRole**
+> addUsersToClientApplicationUserRole(bodyclientApplicationIduserroleId)
+
+Add users to a client application user role
+
+Add one or more users to a user role.
+
+### Example
+```javascript
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+let API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: Authentication
+let Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be added.
+let clientApplicationId = 789; // Number | The resource defined in the URL
+let userroleId = 789; // Number | The resource defined in the URL
+
+apiInstance.addUsersToClientApplicationUserRole(bodyclientApplicationIduserroleId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UserIDs**](UserIDs.md)| Resources that shall be added. | 
  **clientApplicationId** | **Number**| The resource defined in the URL | 
  **userroleId** | **Number**| The resource defined in the URL | 
- **body** | [**UserIDs**](UserIDs.md)| Resources that shall be added. | 
 
 ### Return type
 
@@ -87,27 +142,25 @@ Create a new client_application.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let body = new NetilionApiDocumentation.ClientApplicationRequest(); // ClientApplicationRequest | ClientApplication object that needs to be created. name and contact_person are required.
 
-var body = new NetilionApiDocumentation.ClientApplicationRequest(); // ClientApplicationRequest | ClientApplication object that needs to be created. name and contact_person are required.
-
-apiInstance.createClientApplication(body).then(function(data) {
+apiInstance.createClientApplication(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -142,27 +195,25 @@ Delete a specific resource in your accessible scope, identified by the id in the
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let id = 789; // Number | Id of the client_application to delete
 
-var id = 789; // Number | Id of the client_application to delete
-
-apiInstance.deleteClientApplication(id).then(function() {
+apiInstance.deleteClientApplication(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -184,12 +235,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteUsersFromClientApplicationUserRole"></a>
 # **deleteUsersFromClientApplicationUserRole**
-> deleteUsersFromClientApplicationUserRole(clientApplicationId, userroleIdbody)
+> deleteUsersFromClientApplicationUserRole(bodyclientApplicationIduserroleId)
 
 Remove users from a client application user role
 
@@ -197,31 +248,27 @@ Remove one or more users from an user role. To work with roles, admin role is re
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
+let clientApplicationId = 789; // Number | The resource defined in the URL
+let userroleId = 789; // Number | The resource defined in the URL
 
-var clientApplicationId = 789; // Number | The resource defined in the URL
-
-var userroleId = 789; // Number | The resource defined in the URL
-
-var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
-
-apiInstance.deleteUsersFromClientApplicationUserRole(clientApplicationId, userroleIdbody).then(function() {
+apiInstance.deleteUsersFromClientApplicationUserRole(bodyclientApplicationIduserroleId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -231,9 +278,9 @@ apiInstance.deleteUsersFromClientApplicationUserRole(clientApplicationId, userro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UserIDs**](UserIDs.md)| Resources that shall be removed. | 
  **clientApplicationId** | **Number**| The resource defined in the URL | 
  **userroleId** | **Number**| The resource defined in the URL | 
- **body** | [**UserIDs**](UserIDs.md)| Resources that shall be removed. | 
 
 ### Return type
 
@@ -250,7 +297,7 @@ null (empty response body)
 
 <a name="getAPIKeysOfClientApplication"></a>
 # **getAPIKeysOfClientApplication**
-> ClientApplicationResponse getAPIKeysOfClientApplication(clientApplicationId, , opts)
+> ClientApplicationResponse getAPIKeysOfClientApplication(clientApplicationId, opts)
 
 GetAPI Keys of Client Application
 
@@ -258,25 +305,22 @@ Returns a list of api_keys of an client application. If the query has no matches
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
-
-var clientApplicationId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let clientApplicationId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'apiKey': "apiKey_example", // String | Filter accepts `*` as wildcard
@@ -286,11 +330,11 @@ var opts = {
   'validUntil': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'validUntilFrom': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
   'validUntilTo': new Date("2013-10-20"), // Date | Expected date format is YYYY-MM-DD
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getAPIKeysOfClientApplication(clientApplicationId, , opts).then(function(data) {
+apiInstance.getAPIKeysOfClientApplication(clientApplicationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -322,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClientApplicationById"></a>
@@ -335,30 +379,27 @@ Get a specific client_application in your accessible scope, identified by the id
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
-
-var id = 789; // Number | Id of the client_application to fetch
-
-var opts = { 
-  'include': "include_example", // String | Comma separated list of objects to include in response
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let id = 789; // Number | Id of the client_application to fetch
+let opts = { 
+  'include': "include_example" // String | Comma separated list of objects to include in response
 };
-apiInstance.getClientApplicationById(id, opts).then(function(data) {
+apiInstance.getClientApplicationById(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -381,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClientApplications"></a>
@@ -390,37 +431,35 @@ Name | Type | Description  | Notes
 
 Get a range of client_applications
 
-Returns a list of client_applications in your accessible scope. If the query has no matches, the response is an empty list. Only client_applications on which the user has the can_read permission are loaded. Possible include values: &#x60;&#x60;&#x60;technical_user
+Returns a list of client_applications in your accessible scope. If the query has no matches, the response is an empty list. Only client_applications on which the user has the can_read permission are loaded. Possible include values: &#x60;&#x60;&#x60;technical_user&#x60;&#x60;&#x60;
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'include': "include_example", // String | Comma separated list of objects to include in response
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'contactPersonId': "contactPersonId_example", // String | One or multiple ids (comma list). Expected id format is integer
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getClientApplications(opts).then(function(data) {
+apiInstance.getClientApplications(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -447,7 +486,75 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getClientApplicationsOfEdgeDeviceApplication"></a>
+# **getClientApplicationsOfEdgeDeviceApplication**
+> ClientApplicationsResponse getClientApplicationsOfEdgeDeviceApplication(edgeDeviceApplicationId, opts)
+
+Get all client applications of one edge device application
+
+Returns a list of all client applications associated with the selected edge device application. Possible include values: &#x60;&#x60;&#x60;technical_user&#x60;&#x60;&#x60; You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.
+
+### Example
+```javascript
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+let API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: Authentication
+let Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let edgeDeviceApplicationId = 789; // Number | The resource defined in the URL
+let opts = { 
+  'page': 56, // Number | Page number to load
+  'perPage': 56, // Number | Number of items to load per page
+  'include': "include_example", // String | Comma separated list of objects to include in response
+  'name': "name_example", // String | Filter accepts `*` as wildcard
+  'code': "code_example", // String | Filter accepts `*` as wildcard
+  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
+};
+apiInstance.getClientApplicationsOfEdgeDeviceApplication(edgeDeviceApplicationId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **edgeDeviceApplicationId** | **Number**| The resource defined in the URL | 
+ **page** | **Number**| Page number to load | [optional] 
+ **perPage** | **Number**| Number of items to load per page | [optional] 
+ **include** | **String**| Comma separated list of objects to include in response | [optional] 
+ **name** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
+ **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
+ **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;. Add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+
+### Return type
+
+[**ClientApplicationsResponse**](ClientApplicationsResponse.md)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCurrentClientApplication"></a>
@@ -460,24 +567,23 @@ Returns current client application used to access the api.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
-apiInstance.getCurrentClientApplication().then(function(data) {
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+apiInstance.getCurrentClientApplication().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -496,7 +602,77 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getEdgeDeviceApplicationsOfClientApplication"></a>
+# **getEdgeDeviceApplicationsOfClientApplication**
+> EdgeDeviceApplicationsResponse getEdgeDeviceApplicationsOfClientApplication(clientApplicationId, opts)
+
+Get all edge devices applications for an client application
+
+Returns a list of all edge devices applications of an client application. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.
+
+### Example
+```javascript
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+let API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: Authentication
+let Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let clientApplicationId = 789; // Number | id of the client application to fetch
+let opts = { 
+  'page': 56, // Number | Page number to load
+  'perPage': 56, // Number | Number of items to load per page
+  'name': "name_example", // String | Filter accepts `*` as wildcard
+  'code': "code_example", // String | Filter accepts `*` as wildcard
+  'edgeDeviceTypeId': "edgeDeviceTypeId_example", // String | One or multiple ids (comma list). Expected id format is integer
+  'softwareVersionId': "softwareVersionId_example", // String | One or multiple ids (comma list). Expected id format is integer
+  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`, add `-` as a prefix for descending order. Default value is `id`
+  'acceptLanguage': "acceptLanguage_example" // String | The client's accepted languages. One or several (e.g. fr,de,en)
+};
+apiInstance.getEdgeDeviceApplicationsOfClientApplication(clientApplicationId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clientApplicationId** | **Number**| id of the client application to fetch | 
+ **page** | **Number**| Page number to load | [optional] 
+ **perPage** | **Number**| Number of items to load per page | [optional] 
+ **name** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
+ **code** | **String**| Filter accepts &#x60;*&#x60; as wildcard | [optional] 
+ **edgeDeviceTypeId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
+ **softwareVersionId** | **String**| One or multiple ids (comma list). Expected id format is integer | [optional] 
+ **orderBy** | **String**| Order result by attribute value, accepts &#x60;id&#x60;, &#x60;name&#x60;, &#x60;created_at&#x60; or &#x60;updated_at&#x60;, add &#x60;-&#x60; as a prefix for descending order. Default value is &#x60;id&#x60; | [optional] 
+ **acceptLanguage** | **String**| The client&#x27;s accepted languages. One or several (e.g. fr,de,en) | [optional] 
+
+### Return type
+
+[**EdgeDeviceApplicationsResponse**](EdgeDeviceApplicationsResponse.md)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsersOfClientApplicationUserRole"></a>
@@ -509,36 +685,32 @@ Returns a list of all users that are available in your scope. You can apply quer
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
-
-var clientApplicationId = 789; // Number | The resource defined in the URL
-
-var userroleId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let clientApplicationId = 789; // Number | The resource defined in the URL
+let userroleId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'firstName': "firstName_example", // String | Filter accepts `*` as wildcard
   'lastName': "lastName_example", // String | Filter accepts `*` as wildcard
-  'orderBy': "orderBy_example", // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
+  'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUsersOfClientApplicationUserRole(clientApplicationId, userroleId, opts).then(function(data) {
+apiInstance.getUsersOfClientApplicationUserRole(clientApplicationId, userroleId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -566,42 +738,39 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateClientApplication"></a>
-# **updateClientApplication**
-> updateClientApplication(id, body)
+<a name="removeClientApplicationsOfEdgeDeviceApplication"></a>
+# **removeClientApplicationsOfEdgeDeviceApplication**
+> removeClientApplicationsOfEdgeDeviceApplication(bodyedgeDeviceApplicationId)
 
-Update an client_application
+Remove client applications from an edge device application
 
-Update accessible parameters of the requested resource in your accessible scope.
+Remove one or more client applications from an edge device application. This action requires the edge device admin role.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be removed.
+let edgeDeviceApplicationId = 789; // Number | Id of the edge device application from which the client applications will be removed
 
-var id = 789; // Number | Id of the client_application to update
-
-var body = new NetilionApiDocumentation.ClientApplicationRequest(); // ClientApplicationRequest | Parameters that shall be updated.
-
-apiInstance.updateClientApplication(id, body).then(function() {
+apiInstance.removeClientApplicationsOfEdgeDeviceApplication(bodyedgeDeviceApplicationId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -611,8 +780,118 @@ apiInstance.updateClientApplication(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the client_application to update | 
+ **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be removed. | 
+ **edgeDeviceApplicationId** | **Number**| Id of the edge device application from which the client applications will be removed | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="replaceClientApplicationsOfEdgeDeviceApplication"></a>
+# **replaceClientApplicationsOfEdgeDeviceApplication**
+> replaceClientApplicationsOfEdgeDeviceApplication(bodyedgeDeviceApplicationId)
+
+Replace the client applications of an edge device application
+
+Replaces all client applications belonging to an edge device application. You can send a list of resources that will replace all previous values. This action requires the edge device admin role.
+
+### Example
+```javascript
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+let API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: Authentication
+let Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let body = new NetilionApiDocumentation.ClientApplicationIDs(); // ClientApplicationIDs | Resources that shall be replaced
+let edgeDeviceApplicationId = 789; // Number | Id of the edge device application of which the client applications will be replaced
+
+apiInstance.replaceClientApplicationsOfEdgeDeviceApplication(bodyedgeDeviceApplicationId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ClientApplicationIDs**](ClientApplicationIDs.md)| Resources that shall be replaced | 
+ **edgeDeviceApplicationId** | **Number**| Id of the edge device application of which the client applications will be replaced | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[API-Key](../README.md#API-Key), [Authentication](../README.md#Authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateClientApplication"></a>
+# **updateClientApplication**
+> updateClientApplication(bodyid)
+
+Update an client_application
+
+Update accessible parameters of the requested resource in your accessible scope.
+
+### Example
+```javascript
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
+
+// Configure API key authorization: API-Key
+let API-Key = defaultClient.authentications['API-Key'];
+API-Key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//API-Key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: Authentication
+let Authentication = defaultClient.authentications['Authentication'];
+Authentication.username = 'YOUR USERNAME';
+Authentication.password = 'YOUR PASSWORD';
+
+let apiInstance = new NetilionApiDocumentation.ClientApplicationApi();
+let body = new NetilionApiDocumentation.ClientApplicationRequest(); // ClientApplicationRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the client_application to update
+
+apiInstance.updateClientApplication(bodyid).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **body** | [**ClientApplicationRequest**](ClientApplicationRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the client_application to update | 
 
 ### Return type
 

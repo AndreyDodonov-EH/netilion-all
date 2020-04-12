@@ -9,6 +9,4 @@ Name | Type | Description | Notes
 **receiver** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **quotation** | [**NestedIDHref**](NestedIDHref.md) |  | [optional] 
 **lineItems** | [**[ProductLineItem]**](ProductLineItem.md) |  | [optional] 
-**links** | [**Links12**](Links12.md) |  | [optional] 
-
-
+**links** | **Object** |  | [optional] 

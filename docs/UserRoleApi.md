@@ -1,6 +1,6 @@
 # NetilionApiDocumentation.UserRoleApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,10 +14,9 @@ Method | HTTP request | Description
 [**replaceUsersOfUserRole**](UserRoleApi.md#replaceUsersOfUserRole) | **PATCH** /userroles/{userrole_id}/users | Replace the users of a user role
 [**updateUserRole**](UserRoleApi.md#updateUserRole) | **PATCH** /userroles/{id} | Update a user role
 
-
 <a name="addUsersToUserRole"></a>
 # **addUsersToUserRole**
-> addUsersToUserRole(userroleId, body)
+> addUsersToUserRole(bodyuserroleId)
 
 Add users to a user role
 
@@ -25,29 +24,26 @@ Add one or more users to a user role. To work with roles, admin role is required
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be added.
+let userroleId = 789; // Number | Id of the user role to which the users will be added
 
-var userroleId = 789; // Number | Id of the user role to which the users will be added
-
-var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be added.
-
-apiInstance.addUsersToUserRole(userroleId, body).then(function() {
+apiInstance.addUsersToUserRole(bodyuserroleId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -57,8 +53,8 @@ apiInstance.addUsersToUserRole(userroleId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userroleId** | **Number**| Id of the user role to which the users will be added | 
  **body** | [**UserIDs**](UserIDs.md)| Resources that shall be added. | 
+ **userroleId** | **Number**| Id of the user role to which the users will be added | 
 
 ### Return type
 
@@ -83,27 +79,25 @@ A user role can have many users and users can belong to several roles. To work w
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let body = new NetilionApiDocumentation.UserRoleRequest(); // UserRoleRequest | User role to create
 
-var body = new NetilionApiDocumentation.UserRoleRequest(); // UserRoleRequest | User role to create
-
-apiInstance.createUserRole(body).then(function(data) {
+apiInstance.createUserRole(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -138,27 +132,25 @@ Delete a specific resource identified by the id in the URL. To work with roles, 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let id = 789; // Number | Id of the user role to delete
 
-var id = 789; // Number | Id of the user role to delete
-
-apiInstance.deleteUserRole(id).then(function() {
+apiInstance.deleteUserRole(id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -180,12 +172,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteUsersFromUserRole"></a>
 # **deleteUsersFromUserRole**
-> deleteUsersFromUserRole(userroleId, body)
+> deleteUsersFromUserRole(bodyuserroleId)
 
 Remove users from a user role
 
@@ -193,29 +185,26 @@ Remove one or more users from an user role. To work with roles, admin role is re
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
+let userroleId = 789; // Number | Id of the user role from which the users will be removed
 
-var userroleId = 789; // Number | Id of the user role from which the users will be removed
-
-var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be removed.
-
-apiInstance.deleteUsersFromUserRole(userroleId, body).then(function() {
+apiInstance.deleteUsersFromUserRole(bodyuserroleId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -225,8 +214,8 @@ apiInstance.deleteUsersFromUserRole(userroleId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userroleId** | **Number**| Id of the user role from which the users will be removed | 
  **body** | [**UserIDs**](UserIDs.md)| Resources that shall be removed. | 
+ **userroleId** | **Number**| Id of the user role from which the users will be removed | 
 
 ### Return type
 
@@ -251,27 +240,25 @@ Get a specific user role identified by the id in the URL. To work with roles, ad
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let id = 789; // Number | Id of the user role to fetch
 
-var id = 789; // Number | Id of the user role to fetch
-
-apiInstance.getUserRoleById(id).then(function(data) {
+apiInstance.getUserRoleById(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -293,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserRoles"></a>
@@ -302,36 +289,34 @@ Name | Type | Description  | Notes
 
 Get a range of user roles
 
-Returns a list of all user roles that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#39; To work with roles, admin role is required.
+Returns a list of all user roles that are available in your scope. You can apply query parameters in the request to get a filtered list. If the query has no matches, the response will show an empty array.&#x27; To work with roles, admin role is required.
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'name': "name_example", // String | Filter accepts `*` as wildcard
   'tenantId': "tenantId_example", // String | One or multiple ids (comma list). Expected id format is integer
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUserRoles(opts).then(function(data) {
+apiInstance.getUserRoles(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -357,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsersOfUserRole"></a>
@@ -370,34 +355,31 @@ Returns a list of all users that are available in your scope. You can apply quer
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
-
-var userroleId = 789; // Number | The resource defined in the URL
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let userroleId = 789; // Number | The resource defined in the URL
+let opts = { 
   'page': 56, // Number | Page number to load
   'perPage': 56, // Number | Number of items to load per page
   'firstName': "firstName_example", // String | Filter accepts `*` as wildcard
   'lastName': "lastName_example", // String | Filter accepts `*` as wildcard
   'orderBy': "orderBy_example" // String | Order result by attribute value, accepts `id`, `email`, `first_name`, `last_name`, `created_at` or `updated_at`. Add `-` as a prefix for descending order. Default value is `id`
 };
-apiInstance.getUsersOfUserRole(userroleId, opts).then(function(data) {
+apiInstance.getUsersOfUserRole(userroleId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -424,12 +406,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="replaceUsersOfUserRole"></a>
 # **replaceUsersOfUserRole**
-> replaceUsersOfUserRole(userroleId, body)
+> replaceUsersOfUserRole(bodyuserroleId)
 
 Replace the users of a user role
 
@@ -437,29 +419,26 @@ Replaces all users belonging to an user role. You can send a list of resources t
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be replaced
+let userroleId = 789; // Number | Id of the user role of which the users will be replaced
 
-var userroleId = 789; // Number | Id of the user role of which the users will be replaced
-
-var body = new NetilionApiDocumentation.UserIDs(); // UserIDs | Resources that shall be replaced
-
-apiInstance.replaceUsersOfUserRole(userroleId, body).then(function() {
+apiInstance.replaceUsersOfUserRole(bodyuserroleId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -469,8 +448,8 @@ apiInstance.replaceUsersOfUserRole(userroleId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userroleId** | **Number**| Id of the user role of which the users will be replaced | 
  **body** | [**UserIDs**](UserIDs.md)| Resources that shall be replaced | 
+ **userroleId** | **Number**| Id of the user role of which the users will be replaced | 
 
 ### Return type
 
@@ -487,7 +466,7 @@ null (empty response body)
 
 <a name="updateUserRole"></a>
 # **updateUserRole**
-> updateUserRole(id, body)
+> updateUserRole(bodyid)
 
 Update a user role
 
@@ -495,29 +474,26 @@ Update accessible parameters of the requested resource. To work with roles, admi
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let apiInstance = new NetilionApiDocumentation.UserRoleApi();
+let body = new NetilionApiDocumentation.UserRoleRequest(); // UserRoleRequest | Parameters that shall be updated.
+let id = 789; // Number | Id of the user role to update
 
-var id = 789; // Number | Id of the user role to update
-
-var body = new NetilionApiDocumentation.UserRoleRequest(); // UserRoleRequest | Parameters that shall be updated.
-
-apiInstance.updateUserRole(id, body).then(function() {
+apiInstance.updateUserRole(bodyid).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -527,8 +503,8 @@ apiInstance.updateUserRole(id, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Id of the user role to update | 
  **body** | [**UserRoleRequest**](UserRoleRequest.md)| Parameters that shall be updated. | 
+ **id** | **Number**| Id of the user role to update | 
 
 ### Return type
 

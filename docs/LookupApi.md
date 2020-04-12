@@ -1,13 +1,12 @@
 # NetilionApiDocumentation.LookupApi
 
-All URIs are relative to *https://localhost/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ehExtendedOrderCodeLookup**](LookupApi.md#ehExtendedOrderCodeLookup) | **GET** /endress/extended_order_code_lookup | lookup for the extended order code for Endress+Hauser products
 [**ehProductLookup**](LookupApi.md#ehProductLookup) | **GET** /endress/product_lookup | lookup for Endress+Hauser products with asset specific search criterias
 [**ehSuccessorLookup**](LookupApi.md#ehSuccessorLookup) | **GET** /endress/successor_lookup | lookup for Endress+Hauser successor products
-
 
 <a name="ehExtendedOrderCodeLookup"></a>
 # **ehExtendedOrderCodeLookup**
@@ -19,27 +18,25 @@ Returns an extended order code for Endress+Hauser products when the given order 
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.LookupApi();
+let apiInstance = new NetilionApiDocumentation.LookupApi();
+let orderCode = "orderCode_example"; // String | any Endress+Hauser order code
 
-var orderCode = "orderCode_example"; // String | any Endress+Hauser order code
-
-apiInstance.ehExtendedOrderCodeLookup(orderCode).then(function(data) {
+apiInstance.ehExtendedOrderCodeLookup(orderCode).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -61,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="ehProductLookup"></a>
@@ -74,27 +71,25 @@ Returns an Endress+Hauser product, matching the serial number. The serial number
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.LookupApi();
+let apiInstance = new NetilionApiDocumentation.LookupApi();
+let serialNumber = "serialNumber_example"; // String | Any Endress+Hauser serial number
 
-var serialNumber = "serialNumber_example"; // String | Any Endress+Hauser serial number
-
-apiInstance.ehProductLookup(serialNumber).then(function(data) {
+apiInstance.ehProductLookup(serialNumber).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -116,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="ehSuccessorLookup"></a>
@@ -129,31 +124,29 @@ Returns successor information, if a serial_number or order code was provided, th
 
 ### Example
 ```javascript
-var NetilionApiDocumentation = require('netilion_api_documentation');
-var defaultClient = NetilionApiDocumentation.ApiClient.instance;
+import NetilionApiDocumentation from 'netilion_api_documentation';
+let defaultClient = NetilionApiDocumentation.ApiClient.instance;
 
 // Configure API key authorization: API-Key
-var API-Key = defaultClient.authentications['API-Key'];
+let API-Key = defaultClient.authentications['API-Key'];
 API-Key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //API-Key.apiKeyPrefix = 'Token';
-
 // Configure HTTP basic authorization: Authentication
-var Authentication = defaultClient.authentications['Authentication'];
+let Authentication = defaultClient.authentications['Authentication'];
 Authentication.username = 'YOUR USERNAME';
 Authentication.password = 'YOUR PASSWORD';
 
-var apiInstance = new NetilionApiDocumentation.LookupApi();
-
-var opts = { 
+let apiInstance = new NetilionApiDocumentation.LookupApi();
+let opts = { 
   'include': "include_example", // String | Comma separated list of objects to include in response
   'serialNumber': "serialNumber_example", // String | Any Endress+Hauser serial number
   'orderCode': "orderCode_example", // String | an Endress+Hauser order code
   'productCode': "productCode_example" // String | an Endress+Hauser product_code
 };
-apiInstance.ehSuccessorLookup(opts).then(function(data) {
+apiInstance.ehSuccessorLookup(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -178,6 +171,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

@@ -18,5 +18,3 @@ Name | Type | Description | Notes
 **instrumentation** | [**NestedIDHrefTag**](NestedIDHrefTag.md) |  | [optional] 
 **downloadHref** | **String** | download link | [optional] 
 **availableUntil** | **String** | date until the download is available, after that the download will automatically removed | [optional] 
-
-
